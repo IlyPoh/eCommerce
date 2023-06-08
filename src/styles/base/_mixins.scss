@@ -1,0 +1,69 @@
+// font-sizes
+@mixin h1 {
+  font-size: 32px;
+  line-height: 45px;
+}
+
+@mixin h2 {
+  font-size: 26px;
+  line-height: 39px;
+}
+
+@mixin h3 {
+  font-size: 22px;
+  line-height: 33px;
+}
+
+@mixin h4 {
+  font-size: 18px;
+  line-height: 27px;
+}
+
+@mixin defaultFontSize {
+  font-size: 15px;
+  line-height: 23px;
+}
+
+@mixin smallFontSize {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+// display
+@mixin display_flex(
+  $align: flex-start,
+  $justify: flex-start,
+  $direction: row,
+  $gap: 0
+) {
+  @extend %display_flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+  gap: $gap;
+  @content;
+}
+
+@mixin display_grid($columns, $gap: 0) {
+  @extend %display_grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-gap: $gap;
+  @content;
+}
+
+// media
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin desktop-hr {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
