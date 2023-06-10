@@ -45,4 +45,14 @@ h4,
 a {
   color: $color-green-6a;
   text-decoration: none;
+
+  &.no-color {
+    color: $color-black;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }

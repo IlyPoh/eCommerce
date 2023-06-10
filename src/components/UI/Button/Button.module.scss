@@ -1,0 +1,107 @@
+@import '../../../styles/base/config';
+@import '../../../styles/base/extends';
+@import '../../../styles/base/mixins';
+
+.btn {
+  @extend %display_flex;
+  gap: 12px;
+
+  font-weight: 700;
+
+  border-radius: 12px;
+
+  box-shadow: none;
+
+  transition: border $defaultTransition, background $defaultTransition,
+    color $defaultTransition, box-shadow $defaultTransition;
+
+  &:hover {
+    box-shadow: 0px 0px 5px 2px $color-box-shadow;
+  }
+
+  &[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  span[class^='icon-'] {
+    font-weight: 700;
+  }
+
+  &-large {
+    padding: 17px 48px;
+  }
+
+  &-medium {
+    padding: 12px 16px;
+  }
+
+  &-small {
+    padding: 7px 12px;
+  }
+
+  &-green {
+    color: $color-white;
+    background: $color-green-6a;
+    border: 2px solid $color-green-46;
+
+    &:hover {
+      background: $color-green-46;
+    }
+  }
+
+  &-white {
+    color: $color-black;
+    background: none;
+    border: 2px solid $color-green-92;
+
+    span[class^='icon-'] {
+      color: $color-green-6a;
+    }
+
+    &:hover {
+      background: $color-grey-d1;
+      border-color: $color-green-46;
+    }
+  }
+
+  &-grey {
+    border: none;
+    background: $color-white-f5;
+
+    &:hover {
+      color: $color-white;
+      background: $color-grey-a9;
+    }
+  }
+
+  &-transparent {
+    border: none;
+    background: none;
+
+    span[class^='icon-'] {
+      color: $color-green-6a;
+    }
+
+    &:hover {
+      background: $color-grey-d1;
+    }
+  }
+
+  &-icon {
+    font-size: 20px;
+
+    background: none;
+
+    padding: 2px;
+
+    border: none;
+    border-radius: 50%;
+
+    &:hover {
+      box-shadow: none;
+      background: $color-black;
+      color: $color-white;
+    }
+  }
+}

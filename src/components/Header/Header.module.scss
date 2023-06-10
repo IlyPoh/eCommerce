@@ -1,0 +1,54 @@
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.header {
+  .info {
+    @extend %display_flex;
+    justify-content: space-between;
+
+    font-family: $ff-open;
+    @include smallFontSize;
+
+    padding: 16px 0;
+    margin-bottom: 40px;
+
+    border-bottom: 1px solid rgba(21, 21, 21, 0.05);
+
+    .left {
+      @extend %display_flex;
+      gap: 35px;
+    }
+    .right {
+      @extend %display_flex;
+      gap: 35px;
+    }
+
+    a {
+      transition: text-shadow $defaultTransition;
+
+      &:hover {
+        text-shadow: 0 0 2px;
+      }
+    }
+  }
+
+  .content {
+    @include display_flex($align: center, $justify: space-between, $gap: 40px);
+    margin-bottom: 48px;
+
+    .buttons {
+      @include display_flex($align: center, $justify: flex-end, $gap: 40px);
+    }
+
+    & > div {
+      width: calc(100% / 3);
+    }
+  }
+
+  .nav {
+    background-color: $color-white-f9;
+    padding: 16px 0;
+    font-weight: 500;
+  }
+}
