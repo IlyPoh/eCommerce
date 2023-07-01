@@ -1,7 +1,11 @@
+import styles from './Mainpage.module.scss';
+
 export const Mainpage: React.FC = () => {
   return (
     <>
-      <h1>Mainpage</h1>
+      <div className="container">
+        <div className={styles['section']}></div>
+      </div>
     </>
   );
 };

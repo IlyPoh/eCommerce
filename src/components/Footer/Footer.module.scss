@@ -1,5 +1,24 @@
 @import '../../styles/base/config';
+@import '../../styles/base/mixins';
+@import '../../styles/base/extends';
 
 .footer {
-  min-height: 270px;
+  padding: 64px 0;
+
+  .sections {
+    @extend %display_flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .columns {
+    @extend %display_flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .copyright {
+    font-family: $ff-open;
+    font-size: 14px;
+  }
 }

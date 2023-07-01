@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 
 // components
+import { NavBar } from '../NavBar/NavBar';
 import { Button } from '../UI/Button/Button';
 
 // assets
@@ -41,7 +42,21 @@ export const Header: React.FC = () => {
               </Link>
             </div>
             <div className={styles['input']}>
-              <input type="text" />
+              <div className={styles['search-filter']}>
+                <Button classes="btn btn-transparent">
+                  All Categories{' '}
+                  <span
+                    className={`${styles['icon-green']} icon-chevron-down`}
+                  ></span>
+                </Button>
+              </div>
+              <input
+                type="text"
+                placeholder="Search Products, categories ..."
+              />
+              <Button classes="btn btn-transparent btn-search">
+                <span className="icon-actions-search"></span>
+              </Button>
             </div>
             <div className={styles['buttons']}>
               <Button classes="btn btn-icon">
@@ -54,7 +69,9 @@ export const Header: React.FC = () => {
           </div>
         </div>
         <nav className={styles['nav']}>
-          <div className="container"></div>
+          <div className="container">
+            <NavBar />
+          </div>
         </nav>
       </div>
     </>

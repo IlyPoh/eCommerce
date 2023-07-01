@@ -1,0 +1,12 @@
+@import '../../styles/base/config';
+@import '../../styles/base/mixins';
+@import '../../styles/base/extends';
+
+.column {
+  @include display_flex(flex-start, space-between, column, 16px);
+
+  .link {
+    font-family: $ff-open;
+    font-size: 14px;
+  }
+}

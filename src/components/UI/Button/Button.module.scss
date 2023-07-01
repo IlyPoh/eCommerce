@@ -4,7 +4,8 @@
 
 .btn {
   @extend %display_flex;
-  gap: 12px;
+  align-items: center;
+  gap: 6px;
 
   font-weight: 700;
 
@@ -12,12 +13,9 @@
 
   box-shadow: none;
 
-  transition: border $defaultTransition, background $defaultTransition,
-    color $defaultTransition, box-shadow $defaultTransition;
-
-  &:hover {
-    box-shadow: 0px 0px 5px 2px $color-box-shadow;
-  }
+  transition: border $shortTransition, background $shortTransition,
+    color $shortTransition, box-shadow $shortTransition,
+    text-shadow $shortTransition;
 
   &[disabled] {
     opacity: 0.6;
@@ -67,7 +65,7 @@
 
   &-grey {
     border: none;
-    background: $color-white-f5;
+    background: $color-grey-f5;
 
     &:hover {
       color: $color-white;
@@ -82,10 +80,6 @@
     span[class^='icon-'] {
       color: $color-green-6a;
     }
-
-    &:hover {
-      background: $color-grey-d1;
-    }
   }
 
   &-icon {
@@ -99,9 +93,33 @@
     border-radius: 50%;
 
     &:hover {
-      box-shadow: none;
       background: $color-black;
       color: $color-white;
     }
+  }
+
+  &-search {
+    font-size: 16px;
+
+    padding: 0;
+
+    span[class^='icon-'] {
+      color: $color-black;
+    }
+
+    &:hover {
+      text-shadow: 0 0 2px;
+      cursor: pointer;
+    }
+  }
+
+  &-shadow {
+    &:hover {
+      box-shadow: 0px 0px 5px 2px $color-box-shadow;
+    }
+  }
+
+  &-small-gap {
+    gap: 2px;
   }
 }

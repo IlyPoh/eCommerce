@@ -1,0 +1,6 @@
+@import '../../styles/base/mixins';
+@import '../../styles/base/extends';
+
+.nav {
+  @include display_flex(center, flex-start);
+}
