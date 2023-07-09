@@ -30,3 +30,8 @@ export interface IFooterLink {
   title: string;
   links: ILink[];
 }
+
+export interface IError {
+  message?: string;
+  status?: number;
+}

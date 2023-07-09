@@ -5,14 +5,15 @@ import { useSelector } from 'react-redux';
 import { NavBarLink } from '../NavBarLink/NavBarLink';
 
 // store
-import { ICategory, IStore } from '../../types/store';
+import { RootState } from '../../store';
+import { ICategory } from '../../types/store';
 
 // styles
 import styles from './NavBar.module.scss';
 
 export const NavBar: React.FC = () => {
   const categories = useSelector(
-    (state: IStore) => state.categories.categories
+    (state: RootState) => state.categoryState.categories
   );
 
   return (

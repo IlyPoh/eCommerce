@@ -1,40 +1,14 @@
-// libraries
-import axios from 'axios';
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-// state
-import { setError, setLoading } from './appSlice';
-
-// types
-import { ICategoryState, IProduct } from '../../types/store';
-
-export const fetchCategories = createAsyncThunk(
-  'categories/fetchCategories',
-  async (_, { dispatch }) => {
-    try {
-      dispatch(setLoading(true));
-      dispatch(setError(null));
-
-      const { data } = await axios.get('/db/categories.json');
-
-      return data;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (error: any) {
-      dispatch(setError(error.message));
-    } finally {
-      dispatch(setLoading(false));
-    }
-  }
-);
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { ICategory, ICategoryState, IProduct } from '../../types/store';
 
 const initialState: ICategoryState = {
   categories: [],
-  category: '',
+  currentCategory: null,
   categoryProducts: [],
 };
 
-const categoriesSlice = createSlice({
-  name: 'categories',
+export const categorySlice = createSlice({
+  name: 'category',
   initialState,
   reducers: {
     setCategories: (state, action) => {
@@ -42,9 +16,12 @@ const categoriesSlice = createSlice({
     },
     setCategory: (
       state,
-      action: PayloadAction<{ category: string; categoryProducts: IProduct[] }>
+      action: PayloadAction<{
+        currentCategory: ICategory;
+        categoryProducts: IProduct[];
+      }>
     ) => {
-      const { category, categoryProducts } = action.payload;
+      const { currentCategory, categoryProducts } = action.payload;
       console.log(
         '🚀 ~ file: categorySlice.ts:32 ~ action.payload:',
         action.payload
@@ -53,18 +30,16 @@ const categoriesSlice = createSlice({
         '🚀 ~ file: categorySlice.ts:32 ~ categoryProducts:',
         categoryProducts
       );
-      console.log('🚀 ~ file: categorySlice.ts:32 ~ category:', category);
-      state.category = category;
+      console.log(
+        '🚀 ~ file: categorySlice.ts:32 ~ category:',
+        currentCategory
+      );
+      state.currentCategory = currentCategory;
       state.categoryProducts = categoryProducts;
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(fetchCategories.fulfilled, (state, action) => {
-      state.categories = action.payload;
-    });
-  },
 });
 
-export const { setCategories, setCategory } = categoriesSlice.actions;
+export const { setCategories, setCategory } = categorySlice.actions;
 
-export default categoriesSlice.reducer;
+export default categorySlice.reducer;

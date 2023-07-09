@@ -1,20 +1,24 @@
 // libraries
 import { configureStore } from '@reduxjs/toolkit';
 
+// apis
+import { api } from './API/api';
+
 // slices
-import appStateSlice from './Slices/appSlice';
-import categoriesSlice from './Slices/categorySlice';
 import tagsSlice from './Slices/tagsSlice';
+import appStateSlice from './Slices/appSlice';
+import categorySlice from './Slices/categorySlice';
 
 export const store = configureStore({
   reducer: {
     appState: appStateSlice,
-    categories: categoriesSlice,
-    tags: tagsSlice,
+    tagsState: tagsSlice,
+    categoryState: categorySlice,
+    [api.reducerPath]: api.reducer,
   },
-  devTools: true,
+  middleware: (getDefaultMiddleware) => {
+    return getDefaultMiddleware().concat([api.middleware]);
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
-
-export type AppDispatch = typeof store.dispatch;

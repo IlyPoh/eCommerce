@@ -1,10 +1,3 @@
-// Store
-export interface IStore {
-  appState: IAppState;
-  categories: ICategoryState;
-  tags: ITagsState;
-}
-
 // App
 export interface IAppState {
   loading: boolean;
@@ -14,7 +7,7 @@ export interface IAppState {
 // Category
 export interface ICategoryState {
   categories: ICategory[];
-  category: string;
+  currentCategory: ICategory | null;
   categoryProducts: IProduct[];
 }
 
@@ -30,6 +23,11 @@ export interface ISubcategory {
 }
 
 // Product
+export interface IProductsState {
+  products: IProduct[];
+  currentProduct: IProduct | null;
+}
+
 export interface IProduct {
   id: number;
   name: string;
@@ -40,25 +38,23 @@ export interface IProduct {
   stock: number;
   new: boolean;
   company: string;
-  characteristics: Characteristics;
+  characteristics: ICharacteristics;
   tags: string[];
   price: number;
-  sale: boolean;
-  sale_percent: number;
+  discount?: IDiscount;
 }
 
-export interface Characteristics {
+interface ICharacteristics {
   color?: string;
-  size?: Size;
+  size?: string;
   storage?: string;
   author?: string;
   genre?: string;
 }
 
-export enum Size {
-  L = 'L',
-  M = 'M',
-  S = 'S',
+interface IDiscount {
+  discount_percent: number;
+  final_price: number;
 }
 
 // Tags
@@ -69,4 +65,16 @@ export interface ITagsState {
 export interface ITag {
   id: number;
   name: string;
+}
+
+// Reviews
+export interface IReviewsState {
+  reviews: IReview[];
+}
+
+export interface IReview {
+  id: number;
+  image: string;
+  name: string;
+  review: string;
 }
