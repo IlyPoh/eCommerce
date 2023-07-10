@@ -1,7 +1,6 @@
 // libraries
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 
 // components
 import { Layout } from './components/Layout/Layout';
@@ -13,7 +12,6 @@ import { Mainpage } from './pages/Mainpage/Mainpage';
 import { Category } from './pages/Category/Category';
 
 // store
-import { RootState } from './store';
 import { setTags } from './store/Slices/tagsSlice';
 import { setLoading } from './store/Slices/appSlice';
 import { setCategories } from './store/Slices/categorySlice';
@@ -28,16 +26,18 @@ import { IError } from './types';
 
 // utils
 import { errorHandler } from './utils/helpers';
+import { useAppDispatch, useAppSelector } from './utils/hooks';
 
 // styles
 import './styles/app.scss';
 
 function App(): React.JSX.Element {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+  const { error, loading } = useAppSelector((state) => state.appState);
+
   const categoryQuery = useGetCategoriesQuery();
   const tagsQuery = useGetTagsQuery();
   const productsQuery = useGetProductsQuery();
-  const { error, loading } = useSelector((state: RootState) => state.appState);
 
   useEffect(() => {
     if (categoryQuery.error) {
@@ -47,9 +47,7 @@ function App(): React.JSX.Element {
     } else if (productsQuery.error) {
       errorHandler(productsQuery.error as IError, dispatch);
     }
-  }, [categoryQuery, tagsQuery, productsQuery, dispatch]);
 
-  useEffect(() => {
     if (
       categoryQuery.isLoading ||
       tagsQuery.isLoading ||
@@ -59,12 +57,10 @@ function App(): React.JSX.Element {
     } else {
       dispatch(setLoading(false));
     }
-  }, [categoryQuery, tagsQuery, productsQuery, dispatch]);
 
-  useEffect(() => {
-    dispatch(setTags(tagsQuery.data));
-    dispatch(setCategories(categoryQuery.data));
-  }, [tagsQuery, categoryQuery, dispatch]);
+    if (tagsQuery.data) dispatch(setTags(tagsQuery.data));
+    if (categoryQuery.data) dispatch(setCategories(categoryQuery.data));
+  }, [categoryQuery, tagsQuery, productsQuery, dispatch]);
 
   return (
     <>

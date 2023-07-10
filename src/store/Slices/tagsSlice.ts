@@ -8,7 +8,7 @@ const initialState: ITagsState = {
   tags: [],
 };
 
-export const tagsSlice = createSlice({
+const tagsSlice = createSlice({
   name: 'tags',
   initialState,
   reducers: {

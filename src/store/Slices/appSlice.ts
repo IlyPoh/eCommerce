@@ -9,7 +9,7 @@ const initialState: IAppState = {
   error: null,
 };
 
-export const appSlice = createSlice({
+const appSlice = createSlice({
   name: 'appState',
   initialState,
   reducers: {

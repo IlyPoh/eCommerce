@@ -1,18 +1,17 @@
 // libraries
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 // utils
 import { firstLettertoUppercase } from '../../utils/helpers';
 
-// store
-import { RootState } from '../../store';
+// utils
+import { useAppSelector } from '../../utils/hooks';
 
 // styles
 import styles from './FooterTags.module.scss';
 
 export const FooterTags = (): React.JSX.Element => {
-  const tags = useSelector((state: RootState) => state.tagsState.tags);
+  const tags = useAppSelector((state) => state.tagsState.tags);
 
   return (
     <>

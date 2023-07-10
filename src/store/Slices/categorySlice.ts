@@ -7,7 +7,7 @@ const initialState: ICategoryState = {
   categoryProducts: [],
 };
 
-export const categorySlice = createSlice({
+const categorySlice = createSlice({
   name: 'category',
   initialState,
   reducers: {
