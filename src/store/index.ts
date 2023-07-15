@@ -8,12 +8,14 @@ import { api } from './API/api';
 import tagsSlice from './Slices/tagsSlice';
 import appStateSlice from './Slices/appSlice';
 import categorySlice from './Slices/categorySlice';
+import productsSlice from './Slices/productsSlice';
 
 export const store = configureStore({
   reducer: {
     appState: appStateSlice,
     tagsState: tagsSlice,
     categoryState: categorySlice,
+    productState: productsSlice,
     [api.reducerPath]: api.reducer,
   },
   middleware: (getDefaultMiddleware) => {

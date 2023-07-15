@@ -33,9 +33,11 @@ export const NavBarLink: React.FC<INavBarLinkProps> = ({ category }) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <Button classes="btn btn-transparent btn-small-gap">
-          {category.name} <span className="icon-chevron-down"></span>
-        </Button>
+        <Button
+          classes="btn btn-transparent btn-small-gap"
+          text={category.name}
+          icon="icon-chevron-down"
+        />
         {category.subcategories && (
           <div
             className={open ? styles['dropdown'] : styles['dropdown-hidden']}

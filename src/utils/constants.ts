@@ -1,4 +1,4 @@
-import { IApiUrls, IHeaderLinks, IFooterLink } from '../types';
+import { IApiUrls, IHeaderLinks, IFooterLink, ILink } from '../types';
 
 // apis
 export const API_URLS: IApiUrls = {
@@ -133,6 +133,52 @@ export const FOOTER_LINKS: IFooterLink[] = [
   {
     title: 'Account',
     links: footerFourthColumnLinks,
+  },
+];
+// sidebar links
+export const FIRST_SIDEBAR_LINKS: ILink[] = [
+  {
+    text: 'Kitchen',
+    link: '/kitchen',
+  },
+  {
+    text: 'Meat and Fish',
+    link: '/meat_and_fish',
+  },
+  {
+    text: 'Special nutrition',
+    link: '/special_nutrition',
+  },
+  {
+    text: 'Pharmacy',
+    link: '/pharmacy',
+  },
+  {
+    text: 'Baby',
+    link: '/baby',
+  },
+];
+
+export const SECOND_SIDEBAR_LINKS: ILink[] = [
+  {
+    text: 'Carrots',
+    link: '/carrots',
+  },
+  {
+    text: 'Tomatoes',
+    link: '/tomatoes',
+  },
+  {
+    text: 'Potatoes',
+    link: '/potatoes',
+  },
+  {
+    text: 'Chicken',
+    link: '/chicken',
+  },
+  {
+    text: 'Pork',
+    link: '/pork',
   },
 ];
 

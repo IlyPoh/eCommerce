@@ -54,17 +54,14 @@ export const Header: React.FC = () => {
                 type="text"
                 placeholder="Search Products, categories ..."
               />
-              <Button classes="btn btn-transparent btn-search">
-                <span className="icon-actions-search"></span>
-              </Button>
+              <Button
+                classes="btn btn-transparent btn-search"
+                icon="icon-actions-search"
+              />
             </div>
             <div className={styles['buttons']}>
-              <Button classes="btn btn-icon">
-                <span className="icon-actions-user"></span>
-              </Button>
-              <Button classes="btn btn-icon">
-                <span className="icon-ecommerce-basket"></span>
-              </Button>
+              <Button classes="btn btn-icon" icon="icon-actions-user" />
+              <Button classes="btn btn-icon" icon="icon-ecommerce-basket" />
             </div>
           </div>
         </div>

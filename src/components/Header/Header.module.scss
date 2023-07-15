@@ -4,11 +4,10 @@
 
 .header {
   .info {
-    @extend %display_flex;
-    justify-content: space-between;
+    @include display_flex($justify: space-between);
 
     font-family: $ff-open;
-    @include smallFontSize;
+    @extend %smallFontSize;
 
     padding: 16px 0;
     margin-bottom: 40px;
@@ -16,12 +15,10 @@
     border-bottom: 1px solid rgba(21, 21, 21, 0.05);
 
     .left {
-      @extend %display_flex;
-      gap: 35px;
+      @include display_flex($gap: 35px);
     }
     .right {
-      @extend %display_flex;
-      gap: 35px;
+      @include display_flex($gap: 35px);
     }
 
     a {
@@ -34,12 +31,11 @@
   }
 
   .content {
-    @include display_flex(center, space-between, $gap: 40px);
+    @include display_flex($align: center, $justify: space-between, $gap: 40px);
     margin-bottom: 48px;
 
     .input {
-      @extend %display_flex;
-      align-items: center;
+      @include display_flex($align: center);
 
       white-space: nowrap;
 
@@ -81,7 +77,7 @@
     }
 
     .buttons {
-      @include display_flex(center, flex-end, $gap: 40px);
+      @include display_flex($align: center, $justify: flex-end, $gap: 40px);
     }
   }
 

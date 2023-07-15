@@ -1,20 +1,24 @@
+// props for button component
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
   classes?: string;
+  icon?: string;
 }
 
-export interface ILink {
-  text: string;
-  link: string;
-}
-
+// API URLs
 export interface IApiUrls {
   products: string;
   categories: string;
   tags: string;
   reviews: string;
   news: string;
+}
+
+// Links
+export interface ILink {
+  text: string;
+  link: string;
 }
 
 export interface IHeaderLinks {
@@ -31,7 +35,15 @@ export interface IFooterLink {
   links: ILink[];
 }
 
+// Error handler type
 export interface IError {
   message?: string;
   status?: number;
+}
+
+// Button with link props
+export interface IButtonWithLinkProps {
+  text?: string;
+  link?: string;
+  icon?: string;
 }

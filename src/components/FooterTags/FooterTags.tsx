@@ -17,15 +17,19 @@ export const FooterTags = (): React.JSX.Element => {
     <>
       <h4>Product tags</h4>
       <div className={styles['tags']}>
-        {tags?.map((tag) => (
-          <Link
-            to={`/tag/${tag.id}`}
-            key={tag.id}
-            className={styles['tags-tag']}
-          >
-            {firstLettertoUppercase(tag.name)}
-          </Link>
-        ))}
+        {tags.length ? (
+          tags.map((tag) => (
+            <Link
+              to={`/tag/${tag.id}`}
+              key={tag.id}
+              className={styles['tags-tag']}
+            >
+              {firstLettertoUppercase(tag.name)}
+            </Link>
+          ))
+        ) : (
+          <div className={styles['no-tags']}>No tags</div>
+        )}
       </div>
     </>
   );

@@ -3,9 +3,7 @@
 @import '../../../styles/base/mixins';
 
 .btn {
-  @extend %display_flex;
-  align-items: center;
-  gap: 6px;
+  @include display_flex($align: center, $gap: 6px);
 
   font-weight: 700;
 
@@ -17,12 +15,18 @@
     color $shortTransition, box-shadow $shortTransition,
     text-shadow $shortTransition;
 
+  a {
+    @include display_flex($align: center, $gap: 6px);
+
+    color: $color-black;
+  }
+
   &[disabled] {
     opacity: 0.6;
     cursor: not-allowed;
   }
 
-  span[class^='icon-'] {
+  i[class^='icon-'] {
     font-weight: 700;
   }
 
@@ -48,17 +52,17 @@
     }
   }
 
-  &-white {
+  &-no-bg {
     color: $color-black;
     background: none;
     border: 2px solid $color-green-92;
 
-    span[class^='icon-'] {
+    i[class^='icon-'] {
       color: $color-green-6a;
     }
 
     &:hover {
-      background: $color-grey-d1;
+      background: $color-white-transparent;
       border-color: $color-green-46;
     }
   }
@@ -68,7 +72,6 @@
     background: $color-grey-f5;
 
     &:hover {
-      color: $color-white;
       background: $color-grey-a9;
     }
   }
@@ -77,7 +80,7 @@
     border: none;
     background: none;
 
-    span[class^='icon-'] {
+    i[class^='icon-'] {
       color: $color-green-6a;
     }
   }
@@ -103,7 +106,7 @@
 
     padding: 0;
 
-    span[class^='icon-'] {
+    i[class^='icon-'] {
       color: $color-black;
     }
 
@@ -121,5 +124,9 @@
 
   &-small-gap {
     gap: 2px;
+
+    a {
+      gap: 2px;
+    }
   }
 }

@@ -1,4 +1,7 @@
+// libraries
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+
+// types
 import { ICategory, ICategoryState, IProduct } from '../../types/store';
 
 const initialState: ICategoryState = {

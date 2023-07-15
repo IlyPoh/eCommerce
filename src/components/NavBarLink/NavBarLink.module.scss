@@ -46,6 +46,6 @@
   }
 
   ul {
-    @include display_flex(flex-start, flex-start, column, 10px);
+    @include display_flex($direction: column, $gap: 10px);
   }
 }

@@ -1,0 +1,91 @@
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.card {
+  max-width: 270px;
+  width: 100%;
+
+  @include display_flex(
+    $justify: space-between,
+    $direction: column,
+    $gap: 16px
+  );
+
+  padding: 16px;
+
+  border: 1px solid $color-grey-d1;
+  border-radius: 12px;
+
+  .image {
+    position: relative;
+
+    .discount {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+
+      @extend %smallFontSize;
+      font-weight: 600;
+      color: $color-green-6a;
+
+      padding: 0 8px;
+
+      background-color: $color-white-f4;
+
+      border-radius: 12px;
+    }
+
+    img {
+      border-radius: 12px;
+      width: 100%;
+
+      object-fit: cover;
+    }
+  }
+
+  .title {
+    font-weight: 500;
+  }
+
+  .subtitle {
+    @extend %smallFontSize;
+    color: $color-grey-57;
+
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      width: 30px;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 1) 70%
+      );
+    }
+  }
+
+  .footer {
+    @include display_flex($align: center, $justify: space-between);
+
+    .prices {
+      font-weight: 600;
+
+      .price {
+        @extend %h4;
+      }
+      .old-price {
+        @extend %smallFontSize;
+        color: $color-grey-a9;
+        text-decoration: line-through;
+      }
+    }
+  }
+}

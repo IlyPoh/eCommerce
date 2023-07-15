@@ -1,0 +1,36 @@
+@import '../../../styles/base/config';
+@import '../../../styles/base/extends';
+@import '../../../styles/base/mixins';
+
+.banner {
+  width: 100%;
+
+  background: $color-white-f4;
+
+  border-radius: 12px;
+
+  &-background {
+    @include display_flex($align: flex-start, $direction: column, $gap: 94px);
+
+    height: 100%;
+
+    padding: 32px;
+
+    background: url(/src/assets/images/card-background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 12px;
+  }
+
+  &-header {
+    @include display_flex($direction: column, $gap: 8px);
+  }
+
+  &-subtitle {
+    @extend %smallFontSize;
+    color: $color-green-6a;
+    font-weight: 600;
+  }
+}

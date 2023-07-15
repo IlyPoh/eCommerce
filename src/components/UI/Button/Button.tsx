@@ -10,6 +10,7 @@ import styles from './Button.module.scss';
 export const Button: React.FC<ButtonProps> = ({
   text,
   classes = '',
+  icon,
   children,
   ...props
 }: ButtonProps) => {
@@ -24,6 +25,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button className={buttonClasses} {...props}>
       {text ?? children}
+      {icon && <i className={icon}></i>}
     </button>
   );
 };

@@ -6,15 +6,11 @@
   padding: 64px 0;
 
   .sections {
-    @extend %display_flex;
-    flex-direction: column;
-    gap: 48px;
+    @include display_flex($direction: column, $gap: 48px);
   }
 
   .columns {
-    @extend %display_flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    @include display_flex($align: flex-start, $justify: space-between);
   }
 
   .copyright {

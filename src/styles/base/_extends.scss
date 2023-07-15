@@ -1,6 +1,38 @@
+// display
 %display_flex {
   display: flex;
 }
 %display_grid {
   display: grid;
+}
+
+// font-sizes
+%h1 {
+  font-size: 32px;
+  line-height: 45px;
+}
+
+%h2 {
+  font-size: 26px;
+  line-height: 39px;
+}
+
+%h3 {
+  font-size: 22px;
+  line-height: 33px;
+}
+
+%h4 {
+  font-size: 18px;
+  line-height: 27px;
+}
+
+%defaultFontSize {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+%smallFontSize {
+  font-size: 12px;
+  line-height: 18px;
 }

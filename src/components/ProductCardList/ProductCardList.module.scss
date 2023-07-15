@@ -1,0 +1,7 @@
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.list {
+  @include display_flex($gap: 32px);
+}

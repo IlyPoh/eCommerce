@@ -1,53 +1,39 @@
-// font-sizes
-@mixin h1 {
-  font-size: 32px;
-  line-height: 45px;
-}
-
-@mixin h2 {
-  font-size: 26px;
-  line-height: 39px;
-}
-
-@mixin h3 {
-  font-size: 22px;
-  line-height: 33px;
-}
-
-@mixin h4 {
-  font-size: 18px;
-  line-height: 27px;
-}
-
-@mixin defaultFontSize {
-  font-size: 15px;
-  line-height: 22px;
-}
-
-@mixin smallFontSize {
-  font-size: 12px;
-  line-height: 18px;
-}
-
 // display
 @mixin display_flex(
-  $align: flex-start,
-  $justify: flex-start,
-  $direction: row,
-  $gap: 0
+  $align: null,
+  $justify: null,
+  $direction: null,
+  $gap: null,
+  $wrap: null
 ) {
   @extend %display_flex;
-  align-items: $align;
-  justify-content: $justify;
-  flex-direction: $direction;
-  gap: $gap;
+
+  @if ($align) {
+    align-items: $align;
+  }
+  @if ($justify) {
+    justify-content: $justify;
+  }
+  @if ($direction) {
+    flex-direction: $direction;
+  }
+  @if ($gap) {
+    gap: $gap;
+  }
+  @if ($wrap) {
+    flex-wrap: $wrap;
+  }
+
   @content;
 }
 
-@mixin display_grid($columns, $gap: 0) {
+@mixin display_grid($columns, $gap: null) {
   @extend %display_grid;
   grid-template-columns: repeat($columns, 1fr);
-  grid-gap: $gap;
+
+  @if ($gap) {
+    grid-gap: $gap;
+  }
   @content;
 }
 

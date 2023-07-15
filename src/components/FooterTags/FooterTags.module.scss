@@ -3,12 +3,10 @@
 @import '../../styles/base/extends';
 
 .tags {
-  @extend %display_flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  @include display_flex($wrap: wrap, $gap: 16px);
 
   &-tag {
-    @include smallFontSize;
+    @extend %smallFontSize;
     color: $color-black;
     font-weight: 700;
 
@@ -17,5 +15,9 @@
     background-color: $color-grey-f5;
 
     border-radius: 12px;
+  }
+
+  .no-tags {
+    font-weight: 700;
   }
 }

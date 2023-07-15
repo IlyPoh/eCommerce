@@ -1,0 +1,31 @@
+@import '../../../styles/base/config';
+@import '../../../styles/base/extends';
+@import '../../../styles/base/mixins';
+
+.sidebar {
+  max-width: 270px;
+  width: 100%;
+
+  @include display_flex(
+    $align: flex-start,
+    $justify: space-between,
+    $direction: column,
+    $gap: 16px
+  );
+
+  .content {
+    h4 {
+      margin-bottom: 16px;
+    }
+
+    .links {
+      @include display_flex($align: flex-start, $direction: column, $gap: 12px);
+
+      text-decoration: underline;
+      font-family: $ff-open;
+      font-size: 14px;
+
+      margin-bottom: 32px;
+    }
+  }
+}

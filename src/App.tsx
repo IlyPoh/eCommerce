@@ -15,11 +15,7 @@ import { Category } from './pages/Category/Category';
 import { setTags } from './store/Slices/tagsSlice';
 import { setLoading } from './store/Slices/appSlice';
 import { setCategories } from './store/Slices/categorySlice';
-import {
-  useGetCategoriesQuery,
-  useGetProductsQuery,
-  useGetTagsQuery,
-} from './store/API/api';
+import { useGetCategoriesQuery, useGetTagsQuery } from './store/API/api';
 
 // types
 import { IError } from './types';
@@ -37,22 +33,15 @@ function App(): React.JSX.Element {
 
   const categoryQuery = useGetCategoriesQuery();
   const tagsQuery = useGetTagsQuery();
-  const productsQuery = useGetProductsQuery();
 
   useEffect(() => {
     if (categoryQuery.error) {
       errorHandler(categoryQuery.error as IError, dispatch);
     } else if (tagsQuery.error) {
       errorHandler(tagsQuery.error as IError, dispatch);
-    } else if (productsQuery.error) {
-      errorHandler(productsQuery.error as IError, dispatch);
     }
 
-    if (
-      categoryQuery.isLoading ||
-      tagsQuery.isLoading ||
-      productsQuery.isLoading
-    ) {
+    if (categoryQuery.isLoading || tagsQuery.isLoading) {
       dispatch(setLoading(true));
     } else {
       dispatch(setLoading(false));
@@ -60,7 +49,7 @@ function App(): React.JSX.Element {
 
     if (tagsQuery.data) dispatch(setTags(tagsQuery.data));
     if (categoryQuery.data) dispatch(setCategories(categoryQuery.data));
-  }, [categoryQuery, tagsQuery, productsQuery, dispatch]);
+  }, [categoryQuery, tagsQuery, dispatch]);
 
   return (
     <>

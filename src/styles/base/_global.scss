@@ -2,7 +2,7 @@
 
 * {
   font-family: $ff-poppins;
-  @include defaultFontSize;
+  @extend %defaultFontSize;
 }
 
 html {
@@ -13,7 +13,7 @@ body {
   height: 100%;
 
   font-family: $ff-poppins;
-  @include defaultFontSize;
+  @extend %defaultFontSize;
 }
 
 #root {
@@ -24,22 +24,22 @@ body {
 
 h1,
 .h1 {
-  @include h1;
+  @extend %h1;
 }
 
 h2,
 .h2 {
-  @include h2;
+  @extend %h2;
 }
 
 h3,
 .h3 {
-  @include h3;
+  @extend %h3;
 }
 
 h4,
 .h4 {
-  @include h4;
+  @extend %h4;
 }
 
 a {
