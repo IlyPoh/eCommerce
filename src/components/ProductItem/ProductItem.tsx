@@ -1,15 +1,17 @@
+// components
+import { Link } from 'react-router-dom';
+
 // store
 import { useGetProductsQuery } from '../../store/API/api';
-import { Button } from '../UI/Button/Button';
 
 // styles
-import styles from './ProductCard.module.scss';
+import styles from './ProductItem.module.scss';
 
-interface ProductCardProps {
+interface ProductItemProps {
   id: number;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ id }) => {
+export const ProductItem: React.FC<ProductItemProps> = ({ id }) => {
   const { data } = useGetProductsQuery({ id: id });
   const productInfo = data ? data[0] : null;
 
@@ -49,7 +51,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({ id }) => {
               <div className={styles['price']}>{productInfo?.price} USD</div>
             </div>
           )}
-          <Button classes="btn btn-small btn-green" text="Buy now" />
+          <Link
+            className="btn btn-small btn-green"
+            to={`/product/${productInfo?.id}`}
+          >
+            Buy Now
+          </Link>
         </div>
       </div>
     </>

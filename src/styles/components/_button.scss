@@ -1,0 +1,136 @@
+.btn {
+  @include display_flex($align: center, $gap: 6px);
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  border-radius: 12px;
+
+  box-shadow: none;
+
+  transition: border $shortTransition, background $shortTransition,
+    color $shortTransition, box-shadow $shortTransition,
+    text-shadow $shortTransition, filter $shortTransition;
+
+  a {
+    @include display_flex($align: center, $gap: 6px);
+
+    color: $color-black;
+  }
+
+  &[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  i[class^='icon-'] {
+    font-weight: 700;
+  }
+
+  &-large {
+    padding: 17px 48px;
+  }
+
+  &-medium {
+    padding: 12px 16px;
+  }
+
+  &-small {
+    padding: 7px 12px;
+  }
+
+  &-green {
+    color: $color-white;
+    background: $color-green-6a;
+    border: 2px solid $color-green-46;
+
+    &:hover {
+      background: $color-green-46;
+    }
+  }
+
+  &-no-bg {
+    color: $color-black;
+    background: none;
+    border: 2px solid $color-green-92;
+
+    i[class^='icon-'] {
+      color: $color-green-6a;
+    }
+
+    &:hover {
+      background: $color-white-transparent;
+      border-color: $color-green-46;
+    }
+  }
+
+  &-grey {
+    color: $color-black;
+    border: none;
+    background: $color-grey-f5;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  &-transparent {
+    color: $color-black;
+    border: none;
+    background: none;
+
+    i[class^='icon-'] {
+      color: $color-green-6a;
+    }
+
+    &:hover {
+      background: $color-grey-eb;
+    }
+  }
+
+  &-icon {
+    font-size: 20px;
+
+    background: none;
+
+    padding: 2px;
+
+    border: none;
+    border-radius: 50%;
+
+    &:hover {
+      background: $color-black;
+      color: $color-white;
+    }
+  }
+
+  &-search {
+    font-size: 16px;
+
+    padding: 0;
+
+    i[class^='icon-'] {
+      color: $color-black;
+    }
+
+    &:hover {
+      text-shadow: 0 0 2px;
+      cursor: pointer;
+    }
+  }
+
+  &-shadow {
+    &:hover {
+      box-shadow: 0px 0px 5px 2px $color-box-shadow;
+    }
+  }
+
+  &-small-gap {
+    gap: 2px;
+
+    a {
+      gap: 2px;
+    }
+  }
+}

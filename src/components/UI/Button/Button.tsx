@@ -12,6 +12,7 @@ export const Button: React.FC<ButtonProps> = ({
   classes = '',
   icon,
   children,
+  className,
   ...props
 }: ButtonProps) => {
   const classList = classes.split(' ');
@@ -23,7 +24,7 @@ export const Button: React.FC<ButtonProps> = ({
   );
 
   return (
-    <button className={buttonClasses} {...props}>
+    <button className={`${buttonClasses} ${className}`} {...props}>
       {text ?? children}
       {icon && <i className={icon}></i>}
     </button>

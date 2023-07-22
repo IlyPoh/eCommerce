@@ -1,11 +1,8 @@
 // libraries
 import { Link } from 'react-router-dom';
 
-// components
-import { Button } from '../../../components/UI/Button/Button';
-
 // types
-import { IButtonWithLinkProps } from '../../../types';
+import { ILinkProps } from '../../../types';
 
 // styles
 import styles from './BannerBlock.module.scss';
@@ -13,21 +10,21 @@ import styles from './BannerBlock.module.scss';
 interface IBannerBlockProps {
   title?: string;
   subtitle?: string;
-  button?: IButtonWithLinkProps;
+  link?: ILinkProps;
   children?: React.ReactNode;
 }
 
 export const BannerBlock: React.FC<IBannerBlockProps> = ({
   title,
   subtitle,
-  button,
+  link,
 }) => {
-  let buttonText;
+  let linkText;
 
-  if (button?.text) {
-    buttonText = button.text;
+  if (link?.text) {
+    linkText = link.text;
   } else {
-    buttonText = 'Button text';
+    linkText = 'Button text';
   }
 
   return (
@@ -40,9 +37,10 @@ export const BannerBlock: React.FC<IBannerBlockProps> = ({
             </div>
             <h3>{title ? title : 'Space for heading'}</h3>
           </div>
-          <Button classes="btn btn-medium btn-no-bg" icon={button?.icon}>
-            <Link to={button?.link ?? '/'}>{buttonText}</Link>
-          </Button>
+          <Link className="btn btn-medium btn-no-bg" to={link?.link ?? '/'}>
+            {linkText}
+            <i className={link?.icon}></i>
+          </Link>
         </div>
       </div>
     </>

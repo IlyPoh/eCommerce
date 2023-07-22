@@ -440,7 +440,7 @@
   "reviews": [
     {
       "id": 1,
-      "image": "/db/images/reviews/Eclipse 1.jpg",
+      "image": "/db/images/reviews/Ellipse_1.png",
       "name": "Lily Bee",
       "review": "This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here"
     },
@@ -451,7 +451,7 @@
     },
     {
       "id": 3,
-      "image": "/db/images/reviews/Eclipse 2.jpg",
+      "image": "/db/images/reviews/Ellipse_2.png",
       "name": "John Doe",
       "review": "This shop is a hidden gem! I stumbled upon it while exploring the neighborhood, and I'm so glad I did. The selection of items they have is fantastic, and the quality is top-notch. The staff members are incredibly helpful and went above and beyond to assist me in finding what I needed. The prices are competitive, and I even managed to snag a great deal during their ongoing sale. I will definitely be returning to this shop in the future and recommending it to my friends."
     },
@@ -459,6 +459,17 @@
       "id": 4,
       "name": "Jane Doe",
       "review": "I love this shop! They have a great selection of products, and the staff is always friendly and helpful. I've been coming here for years, and I've never had a bad experience. The prices are reasonable, and they always have what I need. I would recommend this shop to anyone looking for a new place to shop."
+    },
+    {
+      "id": 5,
+      "image": "/db/images/reviews/Ellipse_3.png",
+      "name": "Alex Smith",
+      "review": "I had an amazing experience at this shop! The customer service was exceptional, and the staff went out of their way to assist me. The product selection was diverse, and I found exactly what I was looking for. The prices were reasonable, and I even got a special discount for being a loyal customer. I highly recommend this shop to everyone!"
+    },
+    {
+      "id": 6,
+      "name": "Emily Johnson",
+      "review": "This is my go-to shop for all my needs. The variety of products they offer is unmatched, and the quality is always top-notch. The staff is friendly and knowledgeable, making my shopping experience enjoyable. The prices are competitive, and I often find great deals on my favorite items. I can't recommend this shop enough!"
     }
   ],
   "tags": [

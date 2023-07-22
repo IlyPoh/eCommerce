@@ -4,16 +4,16 @@ import {
   SidebarInBlock,
 } from '../SidebarInBlock/SidebarInBlock';
 import {
-  ProductCardList,
-  ProductCardListProps,
-} from '../../../components/ProductCardList/ProductCardList';
+  ProductList,
+  IProductListProps,
+} from '../../../components/ProductList/ProductList';
 
 // styles
 import styles from './BlockWithProducts.module.scss';
 
 interface BlockWithProductsProps {
   sidebarData: ISidebarInBlockProps;
-  productList: ProductCardListProps;
+  productList: IProductListProps;
 }
 
 export const BlockWithProducts: React.FC<BlockWithProductsProps> = ({
@@ -26,10 +26,10 @@ export const BlockWithProducts: React.FC<BlockWithProductsProps> = ({
         <SidebarInBlock
           data={sidebarData.data}
           title={sidebarData.title}
-          button={sidebarData.button}
+          link={sidebarData.link}
           limit={sidebarData.limit}
         />
-        <ProductCardList list={productList.list} limit={productList.limit} />
+        <ProductList list={productList.list} limit={productList.limit} />
       </div>
     </>
   );

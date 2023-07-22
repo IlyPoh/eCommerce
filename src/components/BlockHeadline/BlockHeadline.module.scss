@@ -1,0 +1,8 @@
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.title {
+  @include display_flex($align: center, $justify: space-between);
+  margin-bottom: 32px;
+}

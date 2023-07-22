@@ -34,7 +34,7 @@ export const NavBarLink: React.FC<INavBarLinkProps> = ({ category }) => {
         onMouseLeave={handleMouseLeave}
       >
         <Button
-          classes="btn btn-transparent btn-small-gap"
+          className="btn btn-transparent btn-small-gap"
           text={category.name}
           icon="icon-chevron-down"
         />

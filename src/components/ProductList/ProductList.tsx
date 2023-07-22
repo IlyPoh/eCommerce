@@ -1,15 +1,15 @@
 // components
-import { ProductCard } from '../ProductCard/ProductCard';
+import { ProductItem } from '../ProductItem/ProductItem';
 
 // styles
-import styles from './ProductCardList.module.scss';
+import styles from './ProductList.module.scss';
 
-export interface ProductCardListProps {
+export interface IProductListProps {
   list: number[];
   limit?: number;
 }
 
-export const ProductCardList: React.FC<ProductCardListProps> = ({
+export const ProductList: React.FC<IProductListProps> = ({
   list,
   limit = 3,
 }) => {
@@ -19,7 +19,7 @@ export const ProductCardList: React.FC<ProductCardListProps> = ({
     <>
       <div className={styles['list']}>
         {renderedList.map((item) => (
-          <ProductCard key={item} id={item} />
+          <ProductItem key={item} id={item} />
         ))}
       </div>
     </>

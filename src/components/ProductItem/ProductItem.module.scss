@@ -57,18 +57,7 @@
     overflow: hidden;
 
     &::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-
-      width: 30px;
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 1) 70%
-      );
+      @include fadeEffect($position: right, $width: 30px, $color: $color-white);
     }
   }
 

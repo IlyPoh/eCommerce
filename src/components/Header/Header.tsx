@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
             </div>
             <div className={styles['input']}>
               <div className={styles['search-filter']}>
-                <Button classes="btn btn-transparent">
+                <Button className="btn btn-transparent">
                   All Categories{' '}
                   <span
                     className={`${styles['icon-green']} icon-chevron-down`}
@@ -55,13 +55,13 @@ export const Header: React.FC = () => {
                 placeholder="Search Products, categories ..."
               />
               <Button
-                classes="btn btn-transparent btn-search"
+                className="btn btn-transparent btn-search"
                 icon="icon-actions-search"
               />
             </div>
             <div className={styles['buttons']}>
-              <Button classes="btn btn-icon" icon="icon-actions-user" />
-              <Button classes="btn btn-icon" icon="icon-ecommerce-basket" />
+              <Button className="btn btn-icon" icon="icon-actions-user" />
+              <Button className="btn btn-icon" icon="icon-ecommerce-basket" />
             </div>
           </div>
         </div>

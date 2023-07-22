@@ -1,0 +1,48 @@
+@import '../../../styles/base/config';
+@import '../../../styles/base/extends';
+@import '../../../styles/base/mixins';
+
+.item {
+  position: relative;
+
+  padding: 24px 32px 40px;
+  margin-bottom: 24px;
+
+  border: 1px solid $color-grey-f1;
+  border-radius: 12px;
+
+  cursor: grab;
+
+  .body {
+    @include display_flex($align: center, $direction: column, $gap: 24px);
+    text-align: center;
+  }
+
+  .text {
+    font-weight: 500;
+  }
+
+  .name {
+    @extend %smallFontSize;
+    font-weight: 600;
+    color: $color-grey-a9;
+  }
+
+  .image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+    }
+  }
+}

@@ -9,6 +9,7 @@ import tagsSlice from './Slices/tagsSlice';
 import appStateSlice from './Slices/appSlice';
 import categorySlice from './Slices/categorySlice';
 import productsSlice from './Slices/productsSlice';
+import reviewSlice from './Slices/reviewSlice';
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     tagsState: tagsSlice,
     categoryState: categorySlice,
     productState: productsSlice,
+    reviewsState: reviewSlice,
     [api.reducerPath]: api.reducer,
   },
   middleware: (getDefaultMiddleware) => {

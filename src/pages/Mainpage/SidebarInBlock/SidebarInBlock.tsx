@@ -1,12 +1,9 @@
 // libraries
 import { Link } from 'react-router-dom';
 
-// components
-import { Button } from '../../../components/UI/Button/Button';
-
 // types
 import { ICategory } from '../../../types/store';
-import { IButtonWithLinkProps, ILink } from '../../../types';
+import { ILinkProps, ILink } from '../../../types';
 
 // styles
 import styles from './SidebarInBlock.module.scss';
@@ -15,16 +12,16 @@ export interface ISidebarInBlockProps {
   data: (ILink | ICategory)[];
   title: string;
   limit?: number;
-  button?: IButtonWithLinkProps;
+  link?: ILinkProps;
 }
 
 export const SidebarInBlock: React.FC<ISidebarInBlockProps> = ({
   data,
   title,
   limit = 5,
-  button,
+  link,
 }) => {
-  const buttonText = button?.text ?? 'Button text';
+  const linkText = link?.text ?? 'Link text';
 
   if (data === null) return null;
 
@@ -61,9 +58,10 @@ export const SidebarInBlock: React.FC<ISidebarInBlockProps> = ({
           ))}
         </div>
       </div>
-      <Button classes="btn btn-medium btn-grey" icon={button?.icon}>
-        <Link to={button?.link ?? '/'}>{buttonText}</Link>
-      </Button>
+      <Link className="btn btn-medium btn-grey" to={link?.link ?? '/'}>
+        {linkText}
+        <i className={link?.icon} />
+      </Link>
     </div>
   );
 };

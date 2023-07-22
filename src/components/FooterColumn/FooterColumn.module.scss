@@ -3,7 +3,12 @@
 @import '../../styles/base/extends';
 
 .column {
-  @include display_flex(flex-start, space-between, column, 16px);
+  @include display_flex(
+    $direction: column,
+    $align: flex-start,
+    $justify: space-between,
+    $gap: 16px
+  );
 
   .link {
     font-family: $ff-open;
