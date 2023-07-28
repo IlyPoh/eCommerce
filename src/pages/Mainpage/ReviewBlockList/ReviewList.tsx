@@ -38,7 +38,6 @@ export const ReviewList: React.FC<IReviewListProps> = ({
           <div className={styles['list']}>
             <Swiper
               modules={[Navigation]}
-              slidesPerView={'auto'}
               spaceBetween={32}
               scrollbar={{ draggable: true }}
               initialSlide={1}
@@ -46,6 +45,20 @@ export const ReviewList: React.FC<IReviewListProps> = ({
               loop
               centeredSlides
               slideToClickedSlide
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+                1200: {
+                  slidesPerView: 4,
+                },
+              }}
             >
               <div className="swipper-container">
                 {data.map((item) => (

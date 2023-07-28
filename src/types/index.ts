@@ -7,12 +7,11 @@ export interface ButtonProps
 }
 
 // API URLs
-export interface IApiUrls {
+export interface IStoreApiUrls {
   products: string;
   categories: string;
   tags: string;
   reviews: string;
-  news: string;
 }
 
 // Links
@@ -46,4 +45,14 @@ export interface ILinkProps {
   text?: string;
   link?: string;
   icon?: string;
+}
+
+// news
+export interface INewsEndpointOptions {
+  q?: string;
+  pageSize?: number;
+  page?: number;
+  category?: string;
+  from?: string;
+  to?: string;
 }

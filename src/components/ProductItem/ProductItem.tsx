@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 
 // store
-import { useGetProductsQuery } from '../../store/API/api';
+import { useGetProductsQuery } from '../../store/API/storeApi';
 
 // styles
 import styles from './ProductItem.module.scss';

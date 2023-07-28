@@ -7,7 +7,7 @@
   inset: 0;
   z-index: 2;
 
-  @include display_flex(center, center);
+  @include display_flex($align: center, $justify: center);
 
   backdrop-filter: blur(30px);
 

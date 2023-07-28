@@ -1,13 +1,17 @@
-import { IApiUrls, IHeaderLinks, IFooterLink, ILink } from '../types';
+import { IStoreApiUrls, IHeaderLinks, IFooterLink, ILink } from '../types';
 
 // apis
-export const API_URLS: IApiUrls = {
-  categories: '/db/categories.json',
-  products: '/db/products.json',
-  tags: '/db/tags.json',
-  reviews: '/db/reviews.json',
-  news: 'https://jsonplaceholder.typicode.com/posts/',
+export const STORE_API_URL = 'http://localhost:3001/';
+
+export const STORE_API_ENDPOINTS: IStoreApiUrls = {
+  categories: 'categories',
+  products: 'products',
+  tags: 'tags',
+  reviews: 'reviews',
 };
+
+export const NEWS_API_URL = 'https://newsapi.org/v2/everything';
+export const NEWS_API_KEY: string = import.meta.env.VITE_NEWS_API_KEY;
 
 // links
 export const HEADER_LINKS: IHeaderLinks = {

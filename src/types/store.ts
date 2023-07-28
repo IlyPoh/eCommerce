@@ -78,3 +78,26 @@ export interface IReview {
   name: string;
   review: string;
 }
+
+// News
+export interface IArticles {
+  status: string;
+  totalResults: number;
+  articles: IArticle[];
+}
+
+export interface IArticle {
+  source: ISource;
+  author: string;
+  title: string;
+  description: string;
+  url: string;
+  urlToImage: string;
+  publishedAt: Date;
+  content: string;
+}
+
+export interface ISource {
+  id: string;
+  name: string;
+}

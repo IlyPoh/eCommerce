@@ -38,45 +38,45 @@ export const Mainpage: React.FC = () => {
     <>
       {categoryData && (
         <div className="container">
-          <div className={styles['section']}>
+          <section className={styles['section']}>
             <TwoBlocks categoryData={categoryData} />
-          </div>
+          </section>
         </div>
       )}
       {firstSidebarData && (
         <div className="container">
-          <div className={styles['section']}>
+          <section className={styles['section']}>
             <BlockWithProducts
               sidebarData={firstSidebarData}
               productList={{ list: [1, 2, 3] }}
             />
-          </div>
+          </section>
         </div>
       )}
       {secondSidebarData && (
         <div className="container">
-          <div className={styles['section']}>
+          <section className={styles['section']}>
             <BlockWithProducts
               sidebarData={secondSidebarData}
               productList={{ list: [5, 7, 16] }}
             />
-          </div>
+          </section>
         </div>
       )}
       {reviewData && (
-        <div className={styles['section']}>
+        <section className={styles['section']}>
           <ReviewList
             data={reviewData}
             title="Our customers says"
             link={{ icon: 'icon-chevron-right' }}
           />
-        </div>
+        </section>
       )}
       <div className="container">
-        <div className={styles['section']}>
+        <section className={styles['section']}>
           <BlockHeadline />
           <ProductList list={[3, 5, 1, 20]} limit={4} />
-        </div>
+        </section>
       </div>
     </>
   );
