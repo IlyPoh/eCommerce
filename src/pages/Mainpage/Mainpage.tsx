@@ -9,7 +9,7 @@ import {
   FIRST_SIDEBAR_LINKS as firstLinks,
   SECOND_SIDEBAR_LINKS as secondLinks,
 } from '../../utils/constants';
-import { useAppSelector } from '../../utils/hooks';
+import { useAppSelector, useFetchReviews } from '../../utils/hooks';
 
 // styles
 import styles from './Mainpage.module.scss';
@@ -33,6 +33,8 @@ export const Mainpage: React.FC = () => {
     title: 'Best from Farmers',
     link: { text: 'More products', icon: 'icon-chevron-right' },
   };
+
+  useFetchReviews();
 
   return (
     <>

@@ -54,7 +54,6 @@ export const useFetchCategories = () => {
 
 export const useFetchTags = () => {
   const dispatch = useAppDispatch();
-  const { error, loading } = useAppSelector((state) => state.appState);
   const tagsQuery = useGetTagsQuery();
 
   useEffect(() => {
@@ -70,12 +69,10 @@ export const useFetchTags = () => {
       dispatch(setLoading(false));
     }
   }, [tagsQuery, dispatch]);
-  return { error, loading };
 };
 
 export const useFetchReviews = () => {
   const dispatch = useAppDispatch();
-  const { error, loading } = useAppSelector((state) => state.appState);
   const reviewQuery = useGetReviewsQuery();
 
   useEffect(() => {
@@ -91,12 +88,10 @@ export const useFetchReviews = () => {
       dispatch(setLoading(false));
     }
   }, [reviewQuery, dispatch]);
-  return { error, loading };
 };
 
 export const useFetchNews = (options: Partial<INewsEndpointOptions> = {}) => {
   const dispatch = useAppDispatch();
-  const { error, loading } = useAppSelector((state) => state.appState);
   const newsQuery = useGetNewsQuery(options);
 
   useEffect(() => {
@@ -112,12 +107,10 @@ export const useFetchNews = (options: Partial<INewsEndpointOptions> = {}) => {
       dispatch(setLoading(false));
     }
   }, [newsQuery, dispatch]);
-  return { error, loading };
 };
 
 export const useFetchProducts = (options: Partial<IProduct> = {}) => {
   const dispatch = useAppDispatch();
-  const { error, loading } = useAppSelector((state) => state.appState);
   const productQuery = useGetProductsQuery(options);
 
   useEffect(() => {
@@ -131,5 +124,4 @@ export const useFetchProducts = (options: Partial<IProduct> = {}) => {
       dispatch(setLoading(false));
     }
   }, [productQuery, dispatch]);
-  return { error, loading };
 };

@@ -32,7 +32,7 @@ export const SidebarInBlock: React.FC<ISidebarInBlockProps> = ({
     : (data as ILink[]);
 
   return (
-    <div className={styles['sidebar']}>
+    <aside className={styles['sidebar']}>
       <div className={styles['content']}>
         <h4>{title || 'No title'}</h4>
         <div className={styles['links']}>
@@ -62,6 +62,6 @@ export const SidebarInBlock: React.FC<ISidebarInBlockProps> = ({
         {linkText}
         <i className={link?.icon} />
       </Link>
-    </div>
+    </aside>
   );
 };

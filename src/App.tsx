@@ -15,22 +15,17 @@ import { Category } from './pages/Category/Category';
 import {
   useAppSelector,
   useFetchCategories,
-  useFetchReviews,
   useFetchTags,
 } from './utils/hooks';
 
 // styles
 import './styles/app.scss';
-import { setLoading } from './store/Slices/appSlice';
 
 function App(): React.JSX.Element {
   const { error, loading } = useAppSelector((state) => state.appState);
 
   useFetchCategories();
   useFetchTags();
-  useFetchReviews();
-
-  setLoading(true);
 
   return (
     <>
