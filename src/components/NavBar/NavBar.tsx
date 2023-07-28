@@ -1,3 +1,4 @@
+// IMPORTS
 // components
 import { NavBarLink } from '../NavBarLink/NavBarLink';
 
@@ -10,6 +11,7 @@ import { useAppSelector } from '../../utils/hooks';
 // styles
 import styles from './NavBar.module.scss';
 
+// COMPONENT
 export const NavBar: React.FC = () => {
   const categories = useAppSelector((state) => state.categoryState.categories);
 

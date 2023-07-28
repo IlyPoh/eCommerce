@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import { Link } from 'react-router-dom';
 
@@ -14,6 +15,7 @@ import { HEADER_LINKS as links } from '../../utils/constants';
 // styles
 import styles from './Header.module.scss';
 
+// COMPONENT
 export const Header: React.FC = () => {
   return (
     <>

@@ -1,3 +1,4 @@
+// IMPORTS
 // components
 import { BannerBlock } from '../BannerBlock/BannerBlock';
 import { SidebarInBlock } from '../SidebarInBlock/SidebarInBlock';
@@ -8,10 +9,12 @@ import { ICategory } from '../../../types/store';
 // styles
 import styles from './TwoBlocks.module.scss';
 
+// TYPES
 interface TwoBlocksProps {
   categoryData: ICategory[];
 }
 
+// COMPONENT
 export const TwoBlocks: React.FC<TwoBlocksProps> = ({ categoryData }) => {
   if (!categoryData) return null;
 

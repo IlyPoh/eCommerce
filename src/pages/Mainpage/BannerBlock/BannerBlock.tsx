@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import { Link } from 'react-router-dom';
 
@@ -7,6 +8,7 @@ import { ILinkProps } from '../../../types';
 // styles
 import styles from './BannerBlock.module.scss';
 
+//  TYPES
 interface IBannerBlockProps {
   title?: string;
   subtitle?: string;
@@ -14,6 +16,7 @@ interface IBannerBlockProps {
   children?: React.ReactNode;
 }
 
+//  COMPONENT
 export const BannerBlock: React.FC<IBannerBlockProps> = ({
   title,
   subtitle,

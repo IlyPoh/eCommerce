@@ -1,10 +1,13 @@
+// IMPORTS
 import { createSlice } from '@reduxjs/toolkit';
 
+// INITIAL STATE
 const initialState = {
   news: [],
   currentNews: null,
 };
 
+// SLICE
 const newsSlice = createSlice({
   name: 'newsSlice',
   initialState,

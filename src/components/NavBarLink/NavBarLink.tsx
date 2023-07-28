@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import { useState } from 'react';
 
@@ -10,10 +11,12 @@ import { ICategory } from '../../types/store';
 // styles
 import styles from './NavBarLink.module.scss';
 
+//  TYPES
 interface INavBarLinkProps {
   category: ICategory;
 }
 
+// COMPONENT
 export const NavBarLink: React.FC<INavBarLinkProps> = ({ category }) => {
   const [open, setOpen] = useState<boolean>(false);
 

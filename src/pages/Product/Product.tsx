@@ -1,6 +1,8 @@
+// IMPORTS
 // styles
 import styles from './Product.module.scss';
 
+// COMPONENT
 export const Product: React.FC = () => {
   return (
     <>

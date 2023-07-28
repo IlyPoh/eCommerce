@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import { Link } from 'react-router-dom';
 
@@ -10,6 +11,7 @@ import { useAppSelector } from '../../utils/hooks';
 // styles
 import styles from './FooterTags.module.scss';
 
+// COMPONENT
 export const FooterTags = (): React.JSX.Element => {
   const tags = useAppSelector((state) => state.tagsState.tags);
 

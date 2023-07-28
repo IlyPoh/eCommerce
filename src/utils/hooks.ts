@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import { useEffect } from 'react';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
@@ -25,103 +26,55 @@ import type { RootState, AppDispatch } from '../store';
 // utils
 import { errorHandler } from './helpers';
 import { IProduct } from '../types/store';
+import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 
-// store hooks
+// HOOKS
+// Store hooks
 export const useAppDispatch = () => useDispatch<AppDispatch>();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
-// fetch hooks
+// Fetch hooks
+// Custom hook to handle fetching data and dispatching actions
+const useFetchData = (
+  queryFunction: any,
+  successAction: ActionCreatorWithPayload<AppDispatch>,
+  options = {}
+) => {
+  const dispatch = useAppDispatch();
+  const query = queryFunction(options);
+
+  useEffect(() => {
+    if (query.error) {
+      errorHandler(query.error as IError, dispatch);
+    } else if (query.data) {
+      dispatch(successAction(query.data));
+    }
+
+    dispatch(setLoading(query.isLoading));
+  }, [query, dispatch, successAction]);
+};
+
+// Custom hook for fetching categories
 export const useFetchCategories = () => {
-  const dispatch = useAppDispatch();
-  const { error, loading } = useAppSelector((state) => state.appState);
-  const categoryQuery = useGetCategoriesQuery();
-
-  useEffect(() => {
-    if (categoryQuery.error) {
-      errorHandler(categoryQuery.error as IError, dispatch);
-    } else if (categoryQuery.data) {
-      dispatch(setCategories(categoryQuery.data));
-    }
-
-    if (categoryQuery.isLoading) {
-      dispatch(setLoading(true));
-    } else {
-      dispatch(setLoading(false));
-    }
-  }, [categoryQuery, dispatch]);
-  return { error, loading };
+  return useFetchData(useGetCategoriesQuery, setCategories);
 };
 
+// Custom hook for fetching tags
 export const useFetchTags = () => {
-  const dispatch = useAppDispatch();
-  const tagsQuery = useGetTagsQuery();
-
-  useEffect(() => {
-    if (tagsQuery.error) {
-      errorHandler(tagsQuery.error as IError, dispatch);
-    } else if (tagsQuery.data) {
-      dispatch(setTags(tagsQuery.data));
-    }
-
-    if (tagsQuery.isLoading) {
-      dispatch(setLoading(true));
-    } else {
-      dispatch(setLoading(false));
-    }
-  }, [tagsQuery, dispatch]);
+  return useFetchData(useGetTagsQuery, setTags);
 };
 
+// Custom hook for fetching reviews
 export const useFetchReviews = () => {
-  const dispatch = useAppDispatch();
-  const reviewQuery = useGetReviewsQuery();
-
-  useEffect(() => {
-    if (reviewQuery.error) {
-      errorHandler(reviewQuery.error as IError, dispatch);
-    } else if (reviewQuery.data) {
-      dispatch(setReviews(reviewQuery.data));
-    }
-
-    if (reviewQuery.isLoading) {
-      dispatch(setLoading(true));
-    } else {
-      dispatch(setLoading(false));
-    }
-  }, [reviewQuery, dispatch]);
+  return useFetchData(useGetReviewsQuery, setReviews);
 };
 
+// Custom hook for fetching news
 export const useFetchNews = (options: Partial<INewsEndpointOptions> = {}) => {
-  const dispatch = useAppDispatch();
-  const newsQuery = useGetNewsQuery(options);
-
-  useEffect(() => {
-    if (newsQuery.error) {
-      errorHandler(newsQuery.error as IError, dispatch);
-    } else if (newsQuery.data) {
-      dispatch(setNews(newsQuery.data));
-    }
-
-    if (newsQuery.isLoading) {
-      dispatch(setLoading(true));
-    } else {
-      dispatch(setLoading(false));
-    }
-  }, [newsQuery, dispatch]);
+  return useFetchData(useGetNewsQuery, setNews, options);
 };
 
+// Custom hook for fetching products
 export const useFetchProducts = (options: Partial<IProduct> = {}) => {
-  const dispatch = useAppDispatch();
-  const productQuery = useGetProductsQuery(options);
-
-  useEffect(() => {
-    if (productQuery.error) {
-      errorHandler(productQuery.error as IError, dispatch);
-    }
-
-    if (productQuery.isLoading) {
-      dispatch(setLoading(true));
-    } else {
-      dispatch(setLoading(false));
-    }
-  }, [productQuery, dispatch]);
+  return useFetchData(useGetProductsQuery, setLoading, options);
 };

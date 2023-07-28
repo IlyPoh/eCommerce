@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import classNames from 'classnames';
 
@@ -7,6 +8,7 @@ import { ButtonProps } from '../../../types';
 // style
 import styles from './Button.module.scss';
 
+//  COMPONENT
 export const Button: React.FC<ButtonProps> = ({
   text,
   classes = '',

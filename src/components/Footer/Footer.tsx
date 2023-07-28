@@ -1,3 +1,4 @@
+// IMPORTS
 // components
 import { FooterTags } from '../FooterTags/FooterTags';
 import { FooterColumn } from '../FooterColumn/FooterColumn';
@@ -8,6 +9,7 @@ import { FOOTER_LINKS as links, COPYRIGHT } from '../../utils/constants';
 // styles
 import styles from './Footer.module.scss';
 
+// COMPONENT
 export const Footer: React.FC = () => {
   return (
     <>

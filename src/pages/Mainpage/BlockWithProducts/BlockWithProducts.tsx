@@ -1,3 +1,4 @@
+// IMPORTS
 // components
 import {
   ISidebarInBlockProps,
@@ -11,11 +12,13 @@ import {
 // styles
 import styles from './BlockWithProducts.module.scss';
 
+// TYPES
 interface BlockWithProductsProps {
   sidebarData: ISidebarInBlockProps;
   productList: IProductListProps;
 }
 
+// COMPONENT
 export const BlockWithProducts: React.FC<BlockWithProductsProps> = ({
   sidebarData,
   productList,

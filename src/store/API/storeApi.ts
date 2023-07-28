@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
@@ -8,6 +9,7 @@ import { ICategory, IProduct, IReview, ITag } from '../../types/store';
 import { buildProductQueryString } from '../../utils/helpers';
 import { STORE_API_URL, STORE_API_ENDPOINTS } from '../../utils/constants';
 
+// API
 export const storeApi = createApi({
   reducerPath: 'storeApi',
   tagTypes: ['Products', 'Categories', 'Tags', 'Reviews'],

@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import { configureStore } from '@reduxjs/toolkit';
 
@@ -13,6 +14,7 @@ import reviewSlice from './Slices/reviewSlice';
 import categorySlice from './Slices/categorySlice';
 import productsSlice from './Slices/productsSlice';
 
+// STORE
 export const store = configureStore({
   reducer: {
     appState: appStateSlice,
@@ -32,5 +34,6 @@ export const store = configureStore({
   },
 });
 
+// TYPES FOR STORE
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

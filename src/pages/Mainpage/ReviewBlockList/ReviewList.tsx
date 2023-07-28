@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,12 +17,14 @@ import 'swiper/css/navigation';
 import 'swiper/css/virtual';
 import styles from './ReviewList.module.scss';
 
+// TYPES
 interface IReviewListProps {
   data: IReview[];
   title?: string;
   link?: ILinkProps;
 }
 
+// COMPONENT
 export const ReviewList: React.FC<IReviewListProps> = ({
   data,
   title,

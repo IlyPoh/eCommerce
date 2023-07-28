@@ -1,3 +1,5 @@
+// IMPORTS
+//  COMPONENT
 export const Category: React.FC = () => {
   return (
     <>

@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import { Outlet } from 'react-router-dom';
 
@@ -8,6 +9,7 @@ import { Footer } from '../Footer/Footer';
 // styles
 import styles from './Layout.module.scss';
 
+// COMPONENT
 export const Layout: React.FC = () => {
   return (
     <>

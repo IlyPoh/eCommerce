@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import { Routes, Route } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ import {
 // styles
 import './styles/app.scss';
 
+// COMPONENT
 function App(): React.JSX.Element {
   const { error, loading } = useAppSelector((state) => state.appState);
 

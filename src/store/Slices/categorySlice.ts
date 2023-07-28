@@ -1,15 +1,18 @@
+// IMPORTS
 // libraries
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 // types
 import { ICategory, ICategoryState, IProduct } from '../../types/store';
 
+// INITIAL STATE
 const initialState: ICategoryState = {
   categories: [],
   currentCategory: null,
   categoryProducts: [],
 };
 
+// SLICE
 const categorySlice = createSlice({
   name: 'category',
   initialState,

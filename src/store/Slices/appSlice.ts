@@ -1,14 +1,17 @@
+// IMPORTS
 // libraries
 import { createSlice } from '@reduxjs/toolkit';
 
 // types
 import { IAppState } from '../../types/store';
 
+// INITIAL STATE
 const initialState: IAppState = {
   loading: false,
   error: null,
 };
 
+// SLICE
 const appSlice = createSlice({
   name: 'appState',
   initialState,

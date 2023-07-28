@@ -1,3 +1,4 @@
+// IMPORTS
 // components
 import { Link } from 'react-router-dom';
 
@@ -7,10 +8,12 @@ import { useGetProductsQuery } from '../../store/API/storeApi';
 // styles
 import styles from './ProductItem.module.scss';
 
+// TYPES
 interface ProductItemProps {
   id: number;
 }
 
+// COMPONENT
 export const ProductItem: React.FC<ProductItemProps> = ({ id }) => {
   const { data } = useGetProductsQuery({ id: id });
   const productInfo = data ? data[0] : null;

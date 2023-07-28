@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import { Link } from 'react-router-dom';
 
@@ -12,6 +13,7 @@ interface IBlockHeadlineProps {
   link?: ILinkProps;
 }
 
+// COMPONENT
 export const BlockHeadline: React.FC<IBlockHeadlineProps> = ({
   title,
   link,

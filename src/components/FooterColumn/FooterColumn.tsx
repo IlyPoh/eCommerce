@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import { Link } from 'react-router-dom';
 
@@ -7,10 +8,12 @@ import { IFooterLink } from '../../types';
 // styles
 import styles from './FooterColumn.module.scss';
 
+// TYPES
 interface IFooterColumn {
   column: IFooterLink;
 }
 
+// COMPONENT
 export const FooterColumn = ({ column }: IFooterColumn): React.JSX.Element => {
   return (
     <>

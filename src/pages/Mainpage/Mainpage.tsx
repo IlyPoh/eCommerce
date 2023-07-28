@@ -1,3 +1,4 @@
+// IMPORTS
 // components
 import { TwoBlocks } from './TwoBlocks/TwoBlocks';
 import { ReviewList } from './ReviewBlockList/ReviewList';
@@ -16,6 +17,7 @@ import styles from './Mainpage.module.scss';
 import { BlockHeadline } from '../../components/BlockHeadline/BlockHeadline';
 import { ProductList } from '../../components/ProductList/ProductList';
 
+// COMPONENT
 export const Mainpage: React.FC = () => {
   const categoryData = useAppSelector(
     (state) => state.categoryState.categories

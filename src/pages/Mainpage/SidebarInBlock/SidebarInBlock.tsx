@@ -1,3 +1,4 @@
+// IMPORTS
 // libraries
 import { Link } from 'react-router-dom';
 
@@ -8,6 +9,7 @@ import { ILinkProps, ILink } from '../../../types';
 // styles
 import styles from './SidebarInBlock.module.scss';
 
+// TYPES
 export interface ISidebarInBlockProps {
   data: (ILink | ICategory)[];
   title: string;
@@ -15,6 +17,7 @@ export interface ISidebarInBlockProps {
   link?: ILinkProps;
 }
 
+// COMPONENT
 export const SidebarInBlock: React.FC<ISidebarInBlockProps> = ({
   data,
   title,

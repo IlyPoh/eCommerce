@@ -1,6 +1,8 @@
+// IMPORTS
 // style
 import styles from './Loading.module.scss';
 
+// COMPONENT
 export const Loading: React.FC = () => {
   return (
     <div className={styles['loading']}>

@@ -1,14 +1,17 @@
+// IMPORTS
 // components
 import { ProductItem } from '../ProductItem/ProductItem';
 
 // styles
 import styles from './ProductList.module.scss';
 
+//  TYPES
 export interface IProductListProps {
   list: number[];
   limit?: number;
 }
 
+//  COMPONENT
 export const ProductList: React.FC<IProductListProps> = ({
   list,
   limit = 3,
