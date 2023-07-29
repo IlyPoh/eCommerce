@@ -8,6 +8,7 @@ export const STORE_API_ENDPOINTS: IStoreApiUrls = {
   products: 'products',
   tags: 'tags',
   reviews: 'reviews',
+  news: 'news',
 };
 
 export const NEWS_API_URL = 'https://newsapi.org/v2/everything';

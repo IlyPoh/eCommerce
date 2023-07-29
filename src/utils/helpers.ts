@@ -5,10 +5,8 @@ import { AnyAction, Dispatch } from '@reduxjs/toolkit';
 import { setError } from '../store/Slices/appSlice';
 
 // types
-import { IError, INewsEndpointOptions } from '../types';
-import { IProduct } from '../types/store';
-
-// utils
+import { IError } from '../types';
+import { IProductsEndpointOptions, INewsEndpointOptions } from '../types/store';
 
 export const firstLettertoUppercase = (string: string): string => {
   return string[0].toUpperCase() + string.slice(1);
@@ -39,9 +37,18 @@ const errorCodeChecker = (code: number | undefined): string => {
   }
 };
 
+export const formatDate = (inputDate: string): string => {
+  const dateObj = new Date(inputDate);
+  const day = String(dateObj.getDate()).padStart(2, '0');
+  const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+  const year = dateObj.getFullYear();
+
+  return `${day}.${month}.${year}`;
+};
+
 export const buildProductQueryString = (
   endpoint: string,
-  searchOptions: Partial<IProduct>
+  searchOptions: Partial<IProductsEndpointOptions>
 ): string => {
   const { id, name, category_id, subcategory_id, tags } = searchOptions;
   let queryString = endpoint;
@@ -61,25 +68,15 @@ export const buildProductQueryString = (
 };
 
 export const buildNewsQueryString = (
-  searchOptions: Partial<INewsEndpointOptions>,
-  apiKey: string
-): string => {
-  const {
-    q = 'technology',
-    pageSize = 9,
-    page = 1,
-    ...otherOptions
-  } = searchOptions;
+  endpoint: string,
+  searchOptions: INewsEndpointOptions
+) => {
+  const { id, limit, page } = searchOptions;
+  let queryString = endpoint;
 
-  let queryString = `?apiKey=${apiKey}&q=${encodeURIComponent(
-    q
-  )}&pageSize=${pageSize}&page=${page}`;
-
-  if (Object.keys(otherOptions).length) {
-    queryString += `&${Object.keys(otherOptions)
-      .map((key) => `${key}=${encodeURIComponent((otherOptions as any)[key])}`)
-      .join('&')}`;
-  }
+  if (id) queryString += `?id=${id}`;
+  else if (limit) queryString += `?_limit=${limit}`;
+  else if (page) queryString += `?_page=${page}`;
 
   return queryString;
 };

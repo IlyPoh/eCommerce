@@ -26,7 +26,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({ id }) => {
         <div className={styles['image']}>
           {productInfo?.discount && (
             <>
-              <div className={styles['discount']}>
+              <div className={`tag ${styles['discount']}`}>
                 - {productInfo?.discount.discount_percent} %
               </div>
             </>

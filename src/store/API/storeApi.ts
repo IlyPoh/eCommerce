@@ -3,10 +3,21 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 // types
-import { ICategory, IProduct, IReview, ITag } from '../../types/store';
+import {
+  IArticle,
+  ICategory,
+  INewsEndpointOptions,
+  IProduct,
+  IProductsEndpointOptions,
+  IReview,
+  ITag,
+} from '../../types/store';
 
 // utils
-import { buildProductQueryString } from '../../utils/helpers';
+import {
+  buildNewsQueryString,
+  buildProductQueryString,
+} from '../../utils/helpers';
 import { STORE_API_URL, STORE_API_ENDPOINTS } from '../../utils/constants';
 
 // API
@@ -15,7 +26,7 @@ export const storeApi = createApi({
   tagTypes: ['Products', 'Categories', 'Tags', 'Reviews'],
   baseQuery: fetchBaseQuery({ baseUrl: STORE_API_URL }),
   endpoints: (builder) => ({
-    getProducts: builder.query<IProduct[], Partial<IProduct>>({
+    getProducts: builder.query<IProduct[], Partial<IProductsEndpointOptions>>({
       query: (searchOptions) =>
         buildProductQueryString(STORE_API_ENDPOINTS.products, searchOptions),
       providesTags: ['Products'],
@@ -32,6 +43,11 @@ export const storeApi = createApi({
       query: () => STORE_API_ENDPOINTS.reviews,
       providesTags: ['Reviews'],
     }),
+    getNews: builder.query<IArticle[], Partial<INewsEndpointOptions>>({
+      query: (searchOptions) =>
+        buildNewsQueryString(STORE_API_ENDPOINTS.news, searchOptions),
+      providesTags: ['Reviews'],
+    }),
   }),
 });
 
@@ -40,4 +56,5 @@ export const {
   useGetCategoriesQuery,
   useGetTagsQuery,
   useGetReviewsQuery,
+  useGetNewsQuery,
 } = storeApi;

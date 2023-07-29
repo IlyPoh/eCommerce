@@ -12,6 +12,7 @@ export interface IStoreApiUrls {
   categories: string;
   tags: string;
   reviews: string;
+  news: string;
 }
 
 // Links
@@ -47,12 +48,7 @@ export interface ILinkProps {
   icon?: string;
 }
 
-// news
-export interface INewsEndpointOptions {
-  q?: string;
-  pageSize?: number;
-  page?: number;
-  category?: string;
-  from?: string;
-  to?: string;
+export interface IBannerProps {
+  title?: string;
+  subtitle?: string;
 }

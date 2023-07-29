@@ -1,0 +1,12 @@
+.tag {
+  display: inline-block;
+  @extend %smallFontSize;
+  font-weight: 600;
+  color: $color-green-6a;
+
+  padding: 0 8px;
+
+  background-color: $color-white-f4;
+
+  border-radius: 12px;
+}

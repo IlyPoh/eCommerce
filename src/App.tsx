@@ -8,6 +8,7 @@ import { Loading } from './components/Loading/Loading';
 import { ErrorBox } from './components/ErrorBox/ErrorBox';
 
 // pages
+import { Blog } from './pages/Blog/Blog';
 import { Product } from './pages/Product/Product';
 import { Mainpage } from './pages/Mainpage/Mainpage';
 import { Category } from './pages/Category/Category';
@@ -39,6 +40,7 @@ function App(): React.JSX.Element {
           <Route path="/:category" element={<Category />} />
           <Route path="/:category/:subcategory" element={<Category />} />
           <Route path="/product/:product" element={<Product />} />
+          <Route path="/blog" element={<Blog />} />
         </Route>
       </Routes>
     </>

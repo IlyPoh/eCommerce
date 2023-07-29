@@ -3,7 +3,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 // apis
-import { newsApi } from './API/newsApi';
 import { storeApi } from './API/storeApi';
 
 // slices
@@ -23,14 +22,10 @@ export const store = configureStore({
     newsState: newsSlice,
     tagsState: tagsSlice,
     reviewsState: reviewSlice,
-    [newsApi.reducerPath]: newsApi.reducer,
     [storeApi.reducerPath]: storeApi.reducer,
   },
   middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware().concat([
-      storeApi.middleware,
-      newsApi.middleware,
-    ]);
+    return getDefaultMiddleware().concat([storeApi.middleware]);
   },
 });
 

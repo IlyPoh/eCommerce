@@ -57,6 +57,18 @@ interface IDiscount {
   final_price: number;
 }
 
+export interface IProductsEndpointOptions {
+  id?: number;
+  name?: string;
+  limit?: number;
+  page?: number;
+  category_id?: number;
+  subcategory_id?: number;
+  tags?: string[];
+  sort?: string;
+  order?: string;
+}
+
 // Tags
 export interface ITagsState {
   tags: ITag[];
@@ -80,24 +92,20 @@ export interface IReview {
 }
 
 // News
-export interface IArticles {
-  status: string;
-  totalResults: number;
-  articles: IArticle[];
-}
-
 export interface IArticle {
-  source: ISource;
+  id: number;
   author: string;
   title: string;
   description: string;
   url: string;
   urlToImage: string;
-  publishedAt: Date;
+  publishedAt: Date | string;
   content: string;
+  tags?: string[];
 }
 
-export interface ISource {
-  id: string;
-  name: string;
+export interface INewsEndpointOptions {
+  id?: number;
+  limit?: number;
+  page?: number;
 }

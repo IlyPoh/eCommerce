@@ -10,12 +10,17 @@ import {
   FIRST_SIDEBAR_LINKS as firstLinks,
   SECOND_SIDEBAR_LINKS as secondLinks,
 } from '../../utils/constants';
-import { useAppSelector, useFetchReviews } from '../../utils/hooks';
+import {
+  useAppSelector,
+  useFetchNews,
+  useFetchReviews,
+} from '../../utils/hooks';
 
 // styles
 import styles from './Mainpage.module.scss';
 import { BlockHeadline } from '../../components/BlockHeadline/BlockHeadline';
 import { ProductList } from '../../components/ProductList/ProductList';
+import { BlogBlock } from './BlogBlock/BlogBlock';
 
 // COMPONENT
 export const Mainpage: React.FC = () => {
@@ -23,6 +28,8 @@ export const Mainpage: React.FC = () => {
     (state) => state.categoryState.categories
   );
   const reviewData = useAppSelector((state) => state.reviewsState.reviews);
+  const newsData = useAppSelector((state) => state.newsState.news);
+  console.log('🚀 ~ file: Mainpage.tsx:31 ~ newsData:', newsData);
 
   const firstSidebarData: ISidebarInBlockProps = {
     data: firstLinks,
@@ -37,6 +44,7 @@ export const Mainpage: React.FC = () => {
   };
 
   useFetchReviews();
+  useFetchNews({ limit: 5 });
 
   return (
     <>
@@ -80,6 +88,15 @@ export const Mainpage: React.FC = () => {
         <section className={styles['section']}>
           <BlockHeadline />
           <ProductList list={[3, 5, 1, 20]} limit={4} />
+        </section>
+      </div>
+      <div className="container">
+        <section className={styles['section']}>
+          <BlockHeadline
+            title="Read our Blog posts"
+            link={{ link: '/blog', text: 'Go to Blog' }}
+          />
+          <BlogBlock data={newsData} />
         </section>
       </div>
     </>

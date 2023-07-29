@@ -7,25 +7,25 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { setNews } from '../store/Slices/newsSlice';
 import { setTags } from '../store/Slices/tagsSlice';
 import { setLoading } from '../store/Slices/appSlice';
-import { useGetNewsQuery } from '../store/API/newsApi';
 import { setReviews } from '../store/Slices/reviewSlice';
 import { setCategories } from '../store/Slices/categorySlice';
 import {
   useGetCategoriesQuery,
+  useGetNewsQuery,
   useGetProductsQuery,
   useGetReviewsQuery,
   useGetTagsQuery,
 } from '../store/API/storeApi';
 
 // types
-import { IError, INewsEndpointOptions } from '../types';
+import { IError } from '../types';
 
 // store types
 import type { RootState, AppDispatch } from '../store';
 
 // utils
 import { errorHandler } from './helpers';
-import { IProduct } from '../types/store';
+import { INewsEndpointOptions, IProduct } from '../types/store';
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 
 // HOOKS
@@ -36,6 +36,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 // Fetch hooks
 // Custom hook to handle fetching data and dispatching actions
 const useFetchData = (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   queryFunction: any,
   successAction: ActionCreatorWithPayload<AppDispatch>,
   options = {}

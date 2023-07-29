@@ -62,7 +62,7 @@ export const SidebarInBlock: React.FC<ISidebarInBlockProps> = ({
         </div>
       </div>
       <Link className="btn btn-medium btn-grey" to={link?.link ?? '/'}>
-        {linkText}
+        {linkText ?? 'Link text'}
         <i className={link?.icon} />
       </Link>
     </aside>
