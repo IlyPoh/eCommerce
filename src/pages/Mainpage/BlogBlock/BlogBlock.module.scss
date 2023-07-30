@@ -8,7 +8,7 @@
   .highlight {
     position: relative;
 
-    height: 400px;
+    min-height: 400px;
     min-width: 40%;
     width: 100%;
 
@@ -97,8 +97,10 @@
 
   .info {
     @include display_flex($align: center, $gap: 16px);
+
     font-family: $ff-open;
     @extend %smallFontSize;
+    white-space: nowrap;
 
     .author {
       @include display_flex($align: center, $gap: 8px);

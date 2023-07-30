@@ -21,8 +21,8 @@ export interface ISidebarInBlockProps {
 export const SidebarInBlock: React.FC<ISidebarInBlockProps> = ({
   data,
   title,
-  limit = 5,
   link,
+  limit = 5,
 }) => {
   const linkText = link?.text ?? 'Link text';
 
@@ -61,10 +61,12 @@ export const SidebarInBlock: React.FC<ISidebarInBlockProps> = ({
           ))}
         </div>
       </div>
-      <Link className="btn btn-medium btn-grey" to={link?.link ?? '/'}>
-        {linkText ?? 'Link text'}
-        <i className={link?.icon} />
-      </Link>
+      {link && (
+        <Link className="btn btn-medium btn-grey" to={link?.link ?? '/'}>
+          {linkText ?? 'Link text'}
+          <i className={link?.icon} />
+        </Link>
+      )}
     </aside>
   );
 };

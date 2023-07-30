@@ -71,7 +71,7 @@ export const buildNewsQueryString = (
   endpoint: string,
   searchOptions: INewsEndpointOptions
 ) => {
-  const { id, limit, page } = searchOptions;
+  const { id, page, limit = 9 } = searchOptions;
   let queryString = endpoint;
 
   if (id) queryString += `?id=${id}`;

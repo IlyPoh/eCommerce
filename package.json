@@ -22,7 +22,8 @@
     "react-router-dom": "^6.12.1",
     "sass": "^1.63.2",
     "sort-by": "^0.0.2",
-    "swiper": "^10.0.4"
+    "swiper": "^10.0.4",
+    "use-react-router-breadcrumbs": "^4.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.3.3",
