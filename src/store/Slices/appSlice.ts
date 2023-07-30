@@ -9,6 +9,7 @@ import { IAppState } from '../../types/store';
 const initialState: IAppState = {
   loading: false,
   error: null,
+  gridView: true,
 };
 
 // SLICE
@@ -21,6 +22,9 @@ const appSlice = createSlice({
     },
     setError: (state, action) => {
       state.error = action.payload;
+    },
+    setView: (state, action) => {
+      state.gridView = action.payload;
     },
   },
 });

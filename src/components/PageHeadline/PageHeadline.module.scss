@@ -1,0 +1,33 @@
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.title {
+  @include display_flex($align: center, $justify: space-between);
+  padding: 8px 0;
+
+  .filters {
+    @include display_flex($gap: 24px);
+
+    .item {
+      @include display_flex($align: center, $gap: 4px);
+
+      font-size: 12px;
+      color: $color-grey-a9;
+
+      i {
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+
+    .active {
+      color: $color-main;
+      pointer-events: none;
+
+      i {
+        color: $color-green-6a;
+      }
+    }
+  }
+}

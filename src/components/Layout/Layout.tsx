@@ -15,9 +15,9 @@ export const Layout: React.FC = () => {
     <>
       <Header />
 
-      <div className={styles['content']}>
+      <main className={styles['content']}>
         <Outlet />
-      </div>
+      </main>
 
       <Footer />
     </>

@@ -19,7 +19,7 @@ import styles from './Header.module.scss';
 export const Header: React.FC = () => {
   return (
     <>
-      <div className={styles['header']}>
+      <header className={styles['header']}>
         <div className="container">
           <div className={styles['info']}>
             <div className={styles['left']}>
@@ -72,7 +72,7 @@ export const Header: React.FC = () => {
             <NavBar />
           </div>
         </nav>
-      </div>
+      </header>
     </>
   );
 };

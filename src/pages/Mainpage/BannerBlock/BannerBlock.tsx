@@ -10,14 +10,14 @@ import styles from './BannerBlock.module.scss';
 
 //  TYPES
 interface IBannerBlockProps {
-  title?: string;
-  subtitle?: string;
-  link?: ILinkProps;
-  children?: React.ReactNode;
+  title: string;
+  subtitle: string;
+  link: ILinkProps;
+  children: React.ReactNode;
 }
 
 //  COMPONENT
-export const BannerBlock: React.FC<IBannerBlockProps> = ({
+export const BannerBlock: React.FC<Partial<IBannerBlockProps>> = ({
   title,
   subtitle,
   link,

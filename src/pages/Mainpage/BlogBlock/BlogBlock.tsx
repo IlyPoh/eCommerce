@@ -1,7 +1,7 @@
 // IMPORTS
 // placeholder image
 import { Link } from 'react-router-dom';
-import placeholder from '../../../../db/images/placeholder.png';
+import placeholder from '/images/placeholder.png';
 
 // store
 import { IArticle } from '../../../types/store';
@@ -29,6 +29,7 @@ const defaultTags: IDefaultTags = {
 // COMPONENT
 export const BlogBlock: React.FC<IBlogBlockProps> = ({ data }) => {
   if (!data || data.length == 0) return null;
+
   return (
     <>
       <div className={styles['blog']}>

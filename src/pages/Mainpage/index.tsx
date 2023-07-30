@@ -1,9 +1,12 @@
 // IMPORTS
 // components
 import { TwoBlocks } from './TwoBlocks/TwoBlocks';
+import { BlogBlock } from './BlogBlock/BlogBlock';
 import { ReviewList } from './ReviewBlockList/ReviewList';
+import { ProductList } from '../../components/ProductList/ProductList';
 import { ISidebarInBlockProps } from './SidebarInBlock/SidebarInBlock';
 import { BlockWithProducts } from './BlockWithProducts/BlockWithProducts';
+import { BlockHeadline } from '../../components/BlockHeadline/BlockHeadline';
 
 // utils
 import {
@@ -16,20 +19,13 @@ import {
   useFetchReviews,
 } from '../../utils/hooks';
 
-// styles
-import styles from './Mainpage.module.scss';
-import { BlockHeadline } from '../../components/BlockHeadline/BlockHeadline';
-import { ProductList } from '../../components/ProductList/ProductList';
-import { BlogBlock } from './BlogBlock/BlogBlock';
-
 // COMPONENT
 export const Mainpage: React.FC = () => {
   const categoryData = useAppSelector(
     (state) => state.categoryState.categories
   );
-  const reviewData = useAppSelector((state) => state.reviewsState.reviews);
   const newsData = useAppSelector((state) => state.newsState.news);
-  console.log('🚀 ~ file: Mainpage.tsx:31 ~ newsData:', newsData);
+  const reviewData = useAppSelector((state) => state.reviewsState.reviews);
 
   const firstSidebarData: ISidebarInBlockProps = {
     data: firstLinks,
@@ -50,14 +46,14 @@ export const Mainpage: React.FC = () => {
     <>
       {categoryData && (
         <div className="container">
-          <section className={styles['section']}>
+          <section className="section">
             <TwoBlocks categoryData={categoryData} />
           </section>
         </div>
       )}
       {firstSidebarData && (
         <div className="container">
-          <section className={styles['section']}>
+          <section className="section">
             <BlockWithProducts
               sidebarData={firstSidebarData}
               productList={{ list: [1, 2, 3] }}
@@ -67,7 +63,7 @@ export const Mainpage: React.FC = () => {
       )}
       {secondSidebarData && (
         <div className="container">
-          <section className={styles['section']}>
+          <section className="section">
             <BlockWithProducts
               sidebarData={secondSidebarData}
               productList={{ list: [5, 7, 16] }}
@@ -76,7 +72,7 @@ export const Mainpage: React.FC = () => {
         </div>
       )}
       {reviewData && (
-        <section className={styles['section']}>
+        <section className="section">
           <ReviewList
             data={reviewData}
             title="Our customers says"
@@ -85,20 +81,22 @@ export const Mainpage: React.FC = () => {
         </section>
       )}
       <div className="container">
-        <section className={styles['section']}>
+        <section className="section">
           <BlockHeadline />
           <ProductList list={[3, 5, 1, 20]} limit={4} />
         </section>
       </div>
-      <div className="container">
-        <section className={styles['section']}>
-          <BlockHeadline
-            title="Read our Blog posts"
-            link={{ link: '/blog', text: 'Go to Blog' }}
-          />
-          <BlogBlock data={newsData} />
-        </section>
-      </div>
+      {newsData && (
+        <div className="container">
+          <section className="section">
+            <BlockHeadline
+              title="Read our Blog posts"
+              link={{ link: '/blog', text: 'Go to Blog' }}
+            />
+            <BlogBlock data={newsData} />
+          </section>
+        </div>
+      )}
     </>
   );
 };

@@ -2,6 +2,7 @@
 export interface IAppState {
   loading: boolean;
   error: string | null;
+  gridView: boolean;
 }
 
 // Category

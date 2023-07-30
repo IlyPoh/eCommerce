@@ -9,8 +9,8 @@ import { ErrorBox } from './components/ErrorBox/ErrorBox';
 
 // pages
 import { Blog } from './pages/Blog/Blog';
+import { Mainpage } from './pages/Mainpage';
 import { Product } from './pages/Product/Product';
-import { Mainpage } from './pages/Mainpage/Mainpage';
 import { Category } from './pages/Category/Category';
 
 // utils

@@ -13,7 +13,7 @@ import styles from './Footer.module.scss';
 export const Footer: React.FC = () => {
   return (
     <>
-      <div className={styles['footer']}>
+      <footer className={styles['footer']}>
         <div className="container">
           <div className={styles['sections']}>
             <div className={styles['columns']}>
@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
             <div className={styles['copyright']}>{COPYRIGHT}</div>
           </div>
         </div>
-      </div>
+      </footer>
     </>
   );
 };
