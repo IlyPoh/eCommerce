@@ -23,12 +23,12 @@ const appSlice = createSlice({
     setError: (state, action) => {
       state.error = action.payload;
     },
-    setView: (state, action) => {
+    setGridView: (state, action) => {
       state.gridView = action.payload;
     },
   },
 });
 
-export const { setLoading, setError } = appSlice.actions;
+export const { setLoading, setError, setGridView } = appSlice.actions;
 
 export default appSlice.reducer;

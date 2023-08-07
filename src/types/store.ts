@@ -98,15 +98,17 @@ export interface IArticle {
   author: string;
   title: string;
   description: string;
+  tags?: string[];
   url: string;
   urlToImage: string;
   publishedAt: Date | string;
   content: string;
-  tags?: string[];
 }
 
 export interface INewsEndpointOptions {
-  id?: number;
-  limit?: number;
-  page?: number;
+  limit: number;
+  page: number;
+  year: number;
+  month: number;
+  category: string;
 }

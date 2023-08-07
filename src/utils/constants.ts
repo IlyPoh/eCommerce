@@ -187,5 +187,51 @@ export const SECOND_SIDEBAR_LINKS: ILink[] = [
   },
 ];
 
+export const BLOG_LINKS_MONTHS: ILink[] = [
+  {
+    text: 'July 2023',
+    link: '/blog/2023/7',
+  },
+  {
+    text: 'June 2023',
+    link: '/blog/2023/6',
+  },
+  {
+    text: 'May 2023',
+    link: '/blog/2023/5',
+  },
+  {
+    text: 'April 2023',
+    link: '/blog/2023/4',
+  },
+  {
+    text: 'March 2023',
+    link: '/blog/2023/3',
+  },
+];
+
+export const BLOG_LINKS_CATEGORIES: ILink[] = [
+  {
+    text: 'AI',
+    link: '/blog/category/ai',
+  },
+  {
+    text: 'Ukraine',
+    link: '/blog/category/Ukraine',
+  },
+  {
+    text: 'News',
+    link: '/blog/category/news',
+  },
+  {
+    text: 'Politics',
+    link: '/blog/category/politics',
+  },
+  {
+    text: 'Business',
+    link: '/blog/category/business',
+  },
+];
+
 // other
 export const COPYRIGHT = 'Copyright © 2020 petrbilek.com';

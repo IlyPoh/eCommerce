@@ -23,7 +23,7 @@ import { STORE_API_URL, STORE_API_ENDPOINTS } from '../../utils/constants';
 // API
 export const storeApi = createApi({
   reducerPath: 'storeApi',
-  tagTypes: ['Products', 'Categories', 'Tags', 'Reviews'],
+  tagTypes: ['Products', 'Categories', 'Tags', 'Reviews', 'News', 'Article'],
   baseQuery: fetchBaseQuery({ baseUrl: STORE_API_URL }),
   endpoints: (builder) => ({
     getProducts: builder.query<IProduct[], Partial<IProductsEndpointOptions>>({
@@ -46,7 +46,11 @@ export const storeApi = createApi({
     getNews: builder.query<IArticle[], Partial<INewsEndpointOptions>>({
       query: (searchOptions) =>
         buildNewsQueryString(STORE_API_ENDPOINTS.news, searchOptions),
-      providesTags: ['Reviews'],
+      providesTags: ['News'],
+    }),
+    getArticle: builder.query<IArticle, string | number>({
+      query: (id) => `${STORE_API_ENDPOINTS.news}/${id}`,
+      providesTags: ['Article'],
     }),
   }),
 });
@@ -57,4 +61,5 @@ export const {
   useGetTagsQuery,
   useGetReviewsQuery,
   useGetNewsQuery,
+  useGetArticleQuery,
 } = storeApi;

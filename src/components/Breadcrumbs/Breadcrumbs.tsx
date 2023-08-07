@@ -1,16 +1,14 @@
 // IMPORTS
 // libraries
+import { Link } from 'react-router-dom';
 import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
 
 // styles
 import styles from './Breadcrumbs.module.scss';
-import { Link } from 'react-router-dom';
 
 // COMPONENT
 export const Breadcrumbs: React.FC = () => {
   const breadcrumbs = useReactRouterBreadcrumbs();
-
-  console.log(breadcrumbs);
 
   return (
     <>

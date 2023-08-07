@@ -36,11 +36,24 @@ function App(): React.JSX.Element {
       {loading && <Loading />}
       <Routes>
         <Route path="/" element={<Layout />}>
+          {/* Main page */}
           <Route index element={<Mainpage />} />
+
+          {/* Category */}
           <Route path="/:category" element={<Category />} />
           <Route path="/:category/:subcategory" element={<Category />} />
+
+          {/* Product */}
           <Route path="/product/:product" element={<Product />} />
-          <Route path="/blog" element={<Blog />} />
+
+          {/* Blog */}
+          <Route path="/blog/" element={<Blog />} />
+          <Route path="/blog/:page" element={<Blog />} />
+          <Route path="/blog/:year/:month" element={<Blog />} />
+          <Route path="/blog/:year/:month/:page" element={<Blog />} />
+          <Route path="/blog/category" element={<Blog />} />
+          <Route path="/blog/category/:tag" element={<Blog />} />
+          <Route path="/blog/category/:tag/:page" element={<Blog />} />
         </Route>
       </Routes>
     </>

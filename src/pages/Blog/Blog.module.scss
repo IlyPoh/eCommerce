@@ -1,0 +1,35 @@
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.headline {
+  @include display_flex($gap: 32px);
+}
+.body {
+  @include display_flex($justify: space-between, $gap: 32px);
+
+  aside {
+    max-width: 270px;
+    width: 100%;
+
+    @include display_flex($direction: column, $gap: 48px);
+
+    .categories {
+      a {
+        color: $color-grey-a9;
+      }
+    }
+  }
+
+  .content {
+    transition: gap $shortTransition, display $shortTransition;
+
+    &.grid {
+      @include display_grid($columns: 3, $gap: 32px);
+    }
+    &.list {
+      width: 100%;
+      @include display_flex($direction: column, $gap: 16px);
+    }
+  }
+}

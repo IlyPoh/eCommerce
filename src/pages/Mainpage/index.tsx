@@ -4,7 +4,7 @@ import { TwoBlocks } from './TwoBlocks/TwoBlocks';
 import { BlogBlock } from './BlogBlock/BlogBlock';
 import { ReviewList } from './ReviewBlockList/ReviewList';
 import { ProductList } from '../../components/ProductList/ProductList';
-import { ISidebarInBlockProps } from './SidebarInBlock/SidebarInBlock';
+import { ISidebarInBlockProps } from '../../components/SidebarInBlock/SidebarInBlock';
 import { BlockWithProducts } from './BlockWithProducts/BlockWithProducts';
 import { BlockHeadline } from '../../components/BlockHeadline/BlockHeadline';
 

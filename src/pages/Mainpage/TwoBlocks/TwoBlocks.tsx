@@ -1,11 +1,11 @@
 // IMPORTS
 // components
 import { BannerBlock } from '../BannerBlock/BannerBlock';
-import { SidebarInBlock } from '../SidebarInBlock/SidebarInBlock';
+import { SidebarInBlock } from '../../../components/SidebarInBlock/SidebarInBlock';
 
 // types
-import { IBannerProps, ILinkProps } from '../../../types';
 import { ICategory } from '../../../types/store';
+import { IBannerProps, ILinkProps } from '../../../types';
 
 // styles
 import styles from './TwoBlocks.module.scss';

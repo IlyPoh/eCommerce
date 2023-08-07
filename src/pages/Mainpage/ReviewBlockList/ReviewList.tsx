@@ -8,8 +8,8 @@ import { ReviewItem } from '../ReviewItem/ReviewItem';
 import { BlockHeadline } from '../../../components/BlockHeadline/BlockHeadline';
 
 // types
-import { IReview } from '../../../types/store';
 import { ILinkProps } from '../../../types';
+import { IReview } from '../../../types/store';
 
 // styles
 import 'swiper/css';

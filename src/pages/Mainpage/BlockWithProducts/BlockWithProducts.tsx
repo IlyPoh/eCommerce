@@ -1,13 +1,13 @@
 // IMPORTS
 // components
 import {
-  ISidebarInBlockProps,
-  SidebarInBlock,
-} from '../SidebarInBlock/SidebarInBlock';
-import {
   ProductList,
   IProductListProps,
 } from '../../../components/ProductList/ProductList';
+import {
+  ISidebarInBlockProps,
+  SidebarInBlock,
+} from '../../../components/SidebarInBlock/SidebarInBlock';
 
 // styles
 import styles from './BlockWithProducts.module.scss';

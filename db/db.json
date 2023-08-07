@@ -510,6 +510,7 @@
       "author": "Peter Guest",
       "title": "Startups Under Fire: The Remarkable Resilience of Ukraine’s Tech Sector",
       "description": "Ukraine’s technology industry grew in 2022, adapting to do more than survive under constant disruption.",
+      "tags": ["Startups", "Tech Sector", "Resilience", "Ukraine"],
       "url": "https://www.wired.com/story/ukraine-startups-resilience-tech-sector/",
       "urlToImage": "https://media.wired.com/photos/64a5ffefe416fd283a85c4a1/191:100/w_1280,c_limit/20230617_Andriy_Dakhovsky-112-Web.jpg",
       "publishedAt": "2023-07-17T06:00:00Z",
@@ -520,6 +521,7 @@
       "author": "Khari Johnson",
       "title": "AI Could Change How Blind People See the World",
       "description": "Assistive technology services are integrating OpenAI's GPT-4, using artificial intelligence to help describe objects and people.",
+      "tags": ["AI", "Blindness", "Innovation", "World"],
       "url": "https://www.wired.com/story/ai-gpt4-could-change-how-blind-people-see-the-world/",
       "urlToImage": "https://media.wired.com/photos/649b45f1c30f50376ee875a4/191:100/w_1280,c_limit/business_gpt4_ai_google_glass_blind.jpg",
       "publishedAt": "2023-07-05T11:00:00Z",
@@ -530,6 +532,7 @@
       "author": "Will Knight",
       "title": "More Battlefield AI Will Make the Fog of War More Deadly",
       "description": "The Pentagon’s embrace of military AI raises questions about what limits should be placed on the technology—and how to keep humans in control.",
+      "tags": ["AI", "Battlefield", "Fog of War", "Military"],
       "url": "https://www.wired.com/story/fast-forward-battlefield-ai-will-make-the-fog-of-war-more-deadly/",
       "urlToImage": "https://media.wired.com/photos/64c1b3dd9ec11a2433532d3d/191:100/w_1280,c_limit/AI-War-US-Fast-Forward-Business-1540566906.jpg",
       "publishedAt": "2023-07-27T16:00:00Z",
@@ -540,6 +543,7 @@
       "author": "Emma Roth",
       "title": "OpenAI will use Associated Press news stories to train its models",
       "description": "OpenAI and The Associated Press have announced a partnership that will allow the AI company to train its models on AP’s news stories. AP will get access to OpenAI’s technology in return.",
+      "tags": ["OpenAI", "Associated Press", "News", "AI Models"],
       "url": "https://www.theverge.com/2023/7/13/23793810/openai-associated-press-ai-models",
       "urlToImage": "https://cdn.vox-cdn.com/thumbor/gapqdOPrQE7L6x3iMxFcfg-6SjI=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/13292779/acastro_181017_1777_brain_ai_0002.jpg",
       "publishedAt": "2023-07-13T16:46:10Z",
@@ -550,6 +554,11 @@
       "author": "Roberto Baldwin",
       "title": "Why charge an EV when you can just swap its battery?",
       "description": "EV battery swapping could help solve the problem of inadequate charging infrastructure, but the technology relies on specialized battery packs that seem beyond what US automakers are willing to consider.",
+      "tags": [
+        "Electric Vehicles",
+        "Battery Swapping",
+        "Sustainable Transportation"
+      ],
       "url": "https://www.theverge.com/23809811/ev-battery-swap-ample-fisker-tesla",
       "urlToImage": "https://cdn.vox-cdn.com/thumbor/3HaZdLu2R0VT2OgijHt0HWXCjM4=/0x0:7952x5304/1200x628/filters:focal(3976x2652:3977x2653)/cdn.vox-cdn.com/uploads/chorus_asset/file/24813561/AmpleEVChargingBatterySwapping3.jpg",
       "publishedAt": "2023-07-27T15:51:43Z",
@@ -560,6 +569,7 @@
       "author": "Emilia David",
       "title": "GitHub and others call for more open-source support in EU AI law",
       "description": "Open-source AI developers suggested some tweaks to the proposed rules as EU lawmakers move toward finalizing the AI Act. Their goal is to make it easier for open-sourced artificial intelligence technology to flourish.",
+      "tags": ["GitHub", "Open-source", "EU AI law", "Technology Regulation"],
       "url": "https://www.theverge.com/2023/7/26/23807218/github-ai-open-source-creative-commons-hugging-face-eu-regulations",
       "urlToImage": "https://cdn.vox-cdn.com/thumbor/LCeDXqVmX4bvvi3R9BK2BqHZnrI=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/11742011/acastro_1800724_1777_EU_0002.jpg",
       "publishedAt": "2023-07-26T07:00:00Z",
@@ -570,6 +580,7 @@
       "author": "Hartley Charlton",
       "title": "iPhone 15 Could Feature Stacked Battery Technology",
       "description": "Apple's iPhone 15 lineup could feature stacked battery technology for increased energy density and prolonged lifespan, a recent rumor claims.\n\n\n\n‌iPhone 15‌ lineup dummy models.\n\nAccording to the Twitter user \"RGcloudS,\" the ‌iPhone 15‌ lineup will feature st…",
+      "tags": ["iPhone", "Battery Technology", "Innovation", "Mobile Devices"],
       "url": "https://www.macrumors.com/2023/07/17/iphone-15-could-feature-stacked-battery-technology/",
       "urlToImage": "https://images.macrumors.com/t/YJqidUuUjqTWt19nMzvM2LYr2A4=/3840x/article-new/2023/05/iphone-15-dummy.jpg",
       "publishedAt": "2023-07-17T13:18:37Z",
@@ -580,6 +591,7 @@
       "author": "Mariella Moon",
       "title": "Google is reportedly testing an AI tool that can generate news articles",
       "description": "Google is testing a new AI technology codenamed \"Genesis\" that can generate news articles, according to The New York Times. The tech giant has reportedly demonstrated the tool not just for The Times, but also for executives at The Washington Post and News Cor…",
+      "tags": ["Google", "AI", "News Generation", "Technology Testing"],
       "url": "https://www.engadget.com/google-is-reportedly-testing-an-ai-tool-that-can-generate-news-articles-054602544.html",
       "urlToImage": "https://s.yimg.com/uu/api/res/1.2/bYdQJFcdoqTuE_102ynQew--~B/Zmk9ZmlsbDtoPTYzMDtweW9mZj0wO3c9MTIwMDthcHBpZD15dGFjaHlvbg--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2023-07/f2a5e070-26b4-11ee-bffb-655df49b92b8.cf.jpg",
       "publishedAt": "2023-07-20T05:46:02Z",
@@ -590,6 +602,7 @@
       "author": "Will Knight",
       "title": "The Huge Power and Potential Danger of AI-Generated Code",
       "description": "Programming can be faster when algorithms help out, but there is evidence AI coding assistants also make bugs more common.",
+      "tags": ["AI", "Code Generation", "Technology Impact", "Ethics"],
       "url": "https://www.wired.com/story/fast-forward-power-danger-ai-generated-code/",
       "urlToImage": "https://media.wired.com/photos/649cd8329ec11a2433532c08/191:100/w_1280,c_limit/AI-Coding-Assistants-Fast-Forward-Business-932736250.jpg",
       "publishedAt": "2023-06-29T16:00:00Z",
@@ -600,9 +613,15 @@
       "author": null,
       "title": "TSX opens higher on financials, technology boost - Reuters",
       "description": "TSX opens higher on financials, technology boost  Reuters",
+      "tags": [
+        "TSX",
+        "Financial Markets",
+        "Technology Stocks",
+        "Economic News"
+      ],
       "url": "https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMiXGh0dHBzOi8vd3d3LnJldXRlcnMuY29tL21hcmtldHMvdHN4LWZ1dHVyZXMtZ2Fpbi1iZXRzLWZlZC1uZWFyaW5nLWVuZC1yYXRlLWhpa2VzLTIwMjMtMDctMTQv0gEA?oc%3D5&gl=FR&hl=en-US&cm=2&pc=n&src=1",
       "urlToImage": null,
-      "publishedAt": "2023-07-14T13:37:00Z",
+      "publishedAt": "2023-06-28T13:37:00Z",
       "content": "We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]"
     },
     {
@@ -610,9 +629,10 @@
       "author": null,
       "title": "Technology, energy stocks push TSX higher at open - Reuters Canada",
       "description": "Technology, energy stocks push TSX higher at open  Reuters Canada",
+      "tags": ["Technology Stocks", "Energy Industry", "TSX", "Market Trends"],
       "url": "https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMieGh0dHBzOi8vd3d3LnJldXRlcnMuY29tL3dvcmxkL2FtZXJpY2FzL3RzeC1mdXR1cmVzLXJpc2UtaGlnaGVyLWNydWRlLXByaWNlcy1haGVhZC1tYWpvci1jYmFua3MtcmF0ZS1tZWV0aW5ncy0yMDIzLTA3LTI0L9IBAA?oc%3D5&gl=FR&hl=en-US&cm=2&pc=n&src=1",
       "urlToImage": null,
-      "publishedAt": "2023-07-24T13:33:00Z",
+      "publishedAt": "2023-06-24T13:33:00Z",
       "content": "We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]"
     },
     {
@@ -620,6 +640,12 @@
       "author": "Juli Clover",
       "title": "Apple Releases Safari Technology Preview 173 With Safari 17 Features",
       "description": "Apple today released a new update for Safari Technology Preview, the experimental browser Apple first introduced in March 2016. Apple designed the ‌Safari Technology Preview‌ to test features that may be introduced into future release versions of Safari.\n\n\n\n\n…",
+      "tags": [
+        "Apple",
+        "Safari Technology Preview",
+        "Software Updates",
+        "Web Browsing"
+      ],
       "url": "https://www.macrumors.com/2023/06/28/apple-releases-safari-technology-preview-173/",
       "urlToImage": "https://images.macrumors.com/t/jHD1aGfXq86Ln_kfzTyWIF68vOo=/2368x/article-new/2021/02/Safari-Technology-Preview-Feature.jpg",
       "publishedAt": "2023-06-28T21:36:28Z",
@@ -630,9 +656,10 @@
       "author": "Deanna Ritchie",
       "title": "Robots: The Next Generation of Wearable Technology",
       "description": "In the lightning-fast world of technology, the scope of possible innovations is virtually limitless. The most recent development in this […]\nThe post Robots: The Next Generation of Wearable Technology appeared first on ReadWrite.",
+      "tags": ["Robots", "Wearable Technology", "Innovation", "Automation"],
       "url": "https://readwrite.com/robots-the-next-generation-of-wearable-technology/",
       "urlToImage": "https://images.readwrite.com/wp-content/uploads/2023/07/cash-macanaya-X9Cemmq4YjM-unsplash.jpg",
-      "publishedAt": "2023-07-07T17:31:17Z",
+      "publishedAt": "2023-06-07T17:31:17Z",
       "content": "In the lightning-fast world of technology, the scope of possible innovations is virtually limitless. The most recent development in this field was made by a group of scientists at the University of T… [+6859 chars]"
     },
     {
@@ -640,9 +667,15 @@
       "author": "Mia Sato",
       "title": "G/O Media’s AI ‘innovation’ is off to a rocky start",
       "description": "G/O Media owns outlets like The A.V. Club, Gizmodo, and The Onion and announced last week it would begin experimenting with AI tools. The first article already contains errors.",
+      "tags": [
+        "AI Innovation",
+        "Media Industry",
+        "Challenges",
+        "Technology Implementation"
+      ],
       "url": "https://www.theverge.com/2023/7/6/23785645/go-media-ai-generated-articles-gizmodo-av-club-artificial-intelligence-bots",
       "urlToImage": "https://cdn.vox-cdn.com/thumbor/gapqdOPrQE7L6x3iMxFcfg-6SjI=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/13292779/acastro_181017_1777_brain_ai_0002.jpg",
-      "publishedAt": "2023-07-06T15:25:58Z",
+      "publishedAt": "2023-05-06T15:25:58Z",
       "content": "G/O Medias AI innovation is off to a rocky start\r\nG/O Medias AI innovation is off to a rocky start\r\n / The company, which owns outlets like The A.V. Club, Gizmodo, and The Onion, announced last week … [+3630 chars]"
     },
     {
@@ -650,9 +683,15 @@
       "author": "Andrew Liszewski",
       "title": "This Machine Can Fix Broken Smartphone OLED Screens While They're Still Turned On",
       "description": "By leveraging the same technology and techniques used to manufacture OLED panels, including lasers, a new machine that recently debuted in China can be used to fix broken OLED panels exhibiting malfunctioning vertical lines without a device’s screen having to…",
+      "tags": [
+        "Technology Repair",
+        "Smartphone Screens",
+        "Innovation",
+        "Electronics"
+      ],
       "url": "https://gizmodo.com/machine-lasers-to-fix-broken-smartphone-oled-screens-1850647722",
       "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/1c0a848184d3b824cb2dfd530b6a3696.gif",
-      "publishedAt": "2023-07-17T18:05:00Z",
+      "publishedAt": "2023-05-17T18:05:00Z",
       "content": "By leveraging the same technology and techniques used to manufacture OLED panels, including lasers, a new machine that recently debuted in China can be used to fix broken OLED panels exhibiting malfu… [+2161 chars]"
     },
     {
@@ -660,9 +699,10 @@
       "author": "Sanae Okamoto, The Conversation",
       "title": "How to Cope With Anxiety About AI",
       "description": "Even tech experts have been astonished by the recent, rapid growth of AI technology, able to hold human-like conversations in multiple languages, create music and pass medical exams. While the potential benefits of AI in fields such as healthcare are indeed i…",
+      "tags": ["AI", "Anxiety", "Coping Strategies", "Ethical Concerns"],
       "url": "https://gizmodo.com/ai-how-to-cope-with-anxiety-about-ai-1850586142",
       "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/eec5adb773c99d595f07bfd1ba470c5d.jpg",
-      "publishedAt": "2023-07-03T13:00:00Z",
+      "publishedAt": "2023-05-03T13:00:00Z",
       "content": "Even tech experts have been astonished by the recent, rapid growth of AI technology, able to hold human-like conversations in multiple languages, create music and pass medical exams. While the potent… [+5043 chars]"
     },
     {
@@ -670,9 +710,15 @@
       "author": "Lawrence Bonk",
       "title": "James Webb telescope marks first anniversary with an image of a nearby stellar nursery",
       "description": "It’s hard to believe, but the James Webb Space Telescope started sending out stunning images of the universe\r\n one full year ago. To commemorate the milestone, NASA's letting the telescope do what it does best, showing us obscenely cool space shots. The lates…",
+      "tags": [
+        "James Webb Telescope",
+        "Space Exploration",
+        "Astronomy",
+        "Stellar Observations"
+      ],
       "url": "https://www.engadget.com/james-webb-telescope-marks-first-anniversary-with-an-image-of-a-nearby-stellar-nursery-163444912.html",
       "urlToImage": "https://s.yimg.com/uu/api/res/1.2/RK_keg8utYBifCYGa5_05A--~B/Zmk9ZmlsbDtoPTYzMDtweW9mZj0wO3c9MTIwMDthcHBpZD15dGFjaHlvbg--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2023-07/a4317300-20ce-11ee-bd9d-abe92f29481f.cf.jpg",
-      "publishedAt": "2023-07-12T16:34:44Z",
+      "publishedAt": "2023-05-12T16:34:44Z",
       "content": "Its hard to believe, but the James Webb Space Telescope started sending out stunning images of the universe\r\n one full year ago. To commemorate the milestone, NASA's letting the telescope do what it … [+1537 chars]"
     },
     {
@@ -680,9 +726,15 @@
       "author": "EditorDavid",
       "title": "100 Bands Including RATM Boycott Venues Using Facial Recognition Technology",
       "description": "Rolling Stone reports:\n\n\nOver 100 artists including Rage Against the Machine co-founders Tom Morello and Zack de la Rocha, along with Boots Riley and Speedy Ortiz, have announced that they are boycotting any concert venue that uses facial recognition technolo…",
+      "tags": [
+        "Music Industry",
+        "Facial Recognition",
+        "Privacy Concerns",
+        "Ethics"
+      ],
       "url": "https://entertainment.slashdot.org/story/23/07/02/0140223/100-bands-including-ratm-boycott-venues-using-facial-recognition-technology",
       "urlToImage": "https://a.fsdn.com/sd/topics/ai_64.png",
-      "publishedAt": "2023-07-02T17:34:00Z",
+      "publishedAt": "2023-05-02T17:34:00Z",
       "content": "Over 100 artists including Rage Against the Machine co-founders Tom Morello and Zack de la Rocha, along with Boots Riley and Speedy Ortiz, have announced that they are boycotting any concert venue th… [+1514 chars]"
     },
     {
@@ -690,9 +742,15 @@
       "author": "Verge Staff",
       "title": "Readers pick the best tech books of all time",
       "description": "Last month, The Verge assembled a list of the greatest tech books ever. But we opened the door for readers to submit anything they felt should’ve been on the list — and boy did they have opinions.",
+      "tags": [
+        "Tech Books",
+        "Reader Recommendations",
+        "Literature",
+        "Knowledge"
+      ],
       "url": "https://www.theverge.com/23799444/readers-best-tech-nonfiction-books-of-all-time",
       "urlToImage": "https://cdn.vox-cdn.com/thumbor/EB4E9ANdo2sPiNDXJLqcIBNtGaU=/0x0:3000x2000/1200x628/filters:focal(1500x1000:1501x1001)/cdn.vox-cdn.com/uploads/chorus_asset/file/24795507/236672_Best_Tech_books_Parkin_REDUX.jpg",
-      "publishedAt": "2023-07-19T12:00:00Z",
+      "publishedAt": "2023-05-19T12:00:00Z",
       "content": "We asked you for your favorites, and you delivered.\r\nByVerge Staff\r\nJul 19, 2023, 12:00 PM UTC|Comments\r\nIf you buy something from a Verge link, Vox Media may earn a commission.See our ethics stateme… [+11012 chars]"
     },
     {
@@ -700,9 +758,15 @@
       "author": "EditorDavid",
       "title": "The Technology Behind the New Las Vegas Sphere",
       "description": "The world's largest spherical structure \"squats on the Las Vegas skyline like an enormous spaceship, black and mysterious,\" reports CNN, \"until night falls, when it will glow like the Earth from space.\" \n\nThe $2 billion arena — called \"The Sphere\" — was built…",
+      "tags": [
+        "Technology",
+        "Innovation",
+        "Entertainment",
+        "Architectural Design"
+      ],
       "url": "https://entertainment.slashdot.org/story/23/07/09/0038244/the-technology-behind-the-new-las-vegas-sphere",
       "urlToImage": "https://a.fsdn.com/sd/topics/music_64.png",
-      "publishedAt": "2023-07-09T15:34:00Z",
+      "publishedAt": "2023-05-09T15:34:00Z",
       "content": "The world's largest spherical structure \"squats on the Las Vegas skyline like an enormous spaceship, black and mysterious,\" reports CNN, \"until night falls, when it will glow like the Earth from spac… [+2236 chars]"
     },
     {
@@ -710,9 +774,15 @@
       "author": "EditorDavid",
       "title": "Is There Still Room to Improve ICE Technology?",
       "description": "Here's how long-time Slashdot reader Baron_Yam summarizes a radically new tiny-but-powerful \"opposed-piston engine\" created by INNengine of Granada, Spain. \"500cc, 120 horsepower, under 40 kilograms (85 pounds). No cylinder head in the motor, no camshaft, no …",
+      "tags": [
+        "ICE Technology",
+        "Automotive Industry",
+        "Innovation",
+        "Environmental Impact"
+      ],
       "url": "https://tech.slashdot.org/story/23/07/16/2140244/is-there-still-room-to-improve-ice-technology",
       "urlToImage": "https://a.fsdn.com/sd/topics/transportation_64.png",
-      "publishedAt": "2023-07-16T23:34:00Z",
+      "publishedAt": "2023-04-16T23:34:00Z",
       "content": "Here's how long-time Slashdot reader Baron_Yam summarizes a radically new tiny-but-powerful \"opposed-piston engine\" created by INNengine of Granada, Spain. \"500cc, 120 horsepower, under 40 kilograms … [+1928 chars]"
     },
     {
@@ -720,9 +790,15 @@
       "author": "hello@smashingmagazine.com (Adriano Raiano)",
       "title": "Modern Technology And The Future Of Language Translation",
       "description": "The field of language translation has never been more exciting. Explore the evolution of language translation platforms, how we got to where we are today, and what advancements we can look forward to in the coming years.",
+      "tags": [
+        "Modern Technology",
+        "Language Translation",
+        "Communication",
+        "Globalization"
+      ],
       "url": "https://www.smashingmagazine.com/2023/07/modern-technology-future-language-translation/",
       "urlToImage": "https://files.smashing.media/articles/modern-technology-future-language-translation/modern-technology-future-language-translation.jpg",
-      "publishedAt": "2023-07-26T12:00:00Z",
+      "publishedAt": "2023-04-26T12:00:00Z",
       "content": "Multilingual content development presents its own set of difficulties, necessitating close attention to language translations and the use of the right tools. The exciting part is that translation tec… [+18155 chars]"
     },
     {
@@ -730,9 +806,10 @@
       "author": "Jessica Kanzler",
       "title": "You Can Get a Lifetime Subscription to Curiosity Stream for Over 50% Off Right Now",
       "description": "Want to learn something while you binge? If you’re someone who likes to keep your brain busy even while relaxing, a lifetime subscription to a Curiosity Stream standard plan is a record-low $179.97 right now—over $200 off the usual price. The price runs throu…",
+      "tags": ["Subscription Service", "Streaming", "Entertainment", "Deals"],
       "url": "https://lifehacker.com/you-can-get-a-lifetime-subscription-to-curiosity-stream-1850589361",
       "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/b7d43f06f6021a76548b93b73a4bfe21.jpg",
-      "publishedAt": "2023-06-30T12:30:00Z",
+      "publishedAt": "2023-04-30T12:30:00Z",
       "content": "Want to learn something while you binge? If youre someone who likes to keep your brain busy even while relaxing, a lifetime subscription to a Curiosity Stream standard plan is a record-low $179.97 ri… [+659 chars]"
     },
     {
@@ -740,9 +817,10 @@
       "author": null,
       "title": "Airbus trials new wing designs in technology race with Boeing - Reuters.com",
       "description": "Airbus trials new wing designs in technology race with Boeing  Reuters.com",
+      "tags": ["Airbus", "Boeing", "Aerospace Industry", "Innovation"],
       "url": "https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMieWh0dHBzOi8vd3d3LnJldXRlcnMuY29tL2J1c2luZXNzL2Flcm9zcGFjZS1kZWZlbnNlL2FpcmJ1cy10cmlhbHMtbmV3LXdpbmctZGVzaWducy10ZWNobm9sb2d5LXJhY2Utd2l0aC1ib2VpbmctMjAyMy0wNy0wNC_SAQA?oc%3D5&gl=FR&hl=en-US&cm=2&pc=n&src=1",
       "urlToImage": null,
-      "publishedAt": "2023-07-04T15:03:00Z",
+      "publishedAt": "2023-04-04T15:03:00Z",
       "content": "We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]"
     },
     {
@@ -750,9 +828,10 @@
       "author": null,
       "title": "Airbus trials new wing designs in technology race with Boeing - Flipboard",
       "description": "Airbus trials new wing designs in technology race with Boeing  Flipboard",
+      "tags": ["Airbus", "Boeing", "Aerospace Industry", "Innovation"],
       "url": "https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMitgFodHRwczovL2ZsaXBib2FyZC5jb20vQGNhcmliYi9haXItdHJhdmVsLW5ld3MtNzVsc2ZhNTV6L2FpcmJ1cy10cmlhbHMtbmV3LXdpbmctZGVzaWducy1pbi10ZWNobm9sb2d5LXJhY2Utd2l0aC1ib2VpbmcvYS1xRThTR1JSTFE5LUZDdU1DZlo1QjZ3JTNBYSUzQTEzMDI4NDc3LWUwODMwMDUwOTYlMkZyZXV0ZXJzLmNvbdIBwQFodHRwczovL2ZsaXBib2FyZC5jb20vQGNhcmliYi9haXItdHJhdmVsLW5ld3MtNzVsc2ZhNTV6L2FpcmJ1cy10cmlhbHMtbmV3LXdpbmctZGVzaWducy1pbi10ZWNobm9sb2d5LXJhY2Utd2l0aC1ib2VpbmcvYS1xRThTR1JSTFE5LUZDdU1DZlo1QjZ3JTNBYSUzQTEzMDI4NDc3LWUwODMwMDUwOTYlMkZyZXV0ZXJzLmNvbT9mb3JtYXQ9YW1w?oc%3D5&gl=FR&hl=en-US&cm=2&pc=n&src=1",
       "urlToImage": null,
-      "publishedAt": "2023-07-05T11:14:04Z",
+      "publishedAt": "2023-04-05T11:14:04Z",
       "content": "We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]"
     },
     {
@@ -760,9 +839,15 @@
       "author": "Mia Sato",
       "title": "Media execs haven’t learned a thing from these AI tests",
       "description": "G/O Media is the latest media company to have embarrassing results with a new AI experiment. Journalists are promised AI will benefit them but have little control over the tools their companies are using.",
+      "tags": [
+        "Media Industry",
+        "AI Testing",
+        "Learning",
+        "Technology Adoption"
+      ],
       "url": "https://www.theverge.com/23794986/news-media-ai-experiments-chatgpt-go-media-cnet",
       "urlToImage": "https://cdn.vox-cdn.com/thumbor/Jjaz1rr-cOLqS4qS9J4umCjkyqE=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/24390468/STK149_AI_Chatbot_K_Radtke.jpg",
-      "publishedAt": "2023-07-14T16:30:00Z",
+      "publishedAt": "2023-04-14T16:30:00Z",
       "content": "Image: The Verge\r\n\n \n\n Over the last eight months, disparate segments of the public have clamored to integrate generative AI software like OpenAI’s ChatGPT into their daily lives — and especially int… [+7553 chars]"
     },
     {
@@ -770,9 +855,16 @@
       "author": null,
       "title": "EU and Belgium invest $1.6 bln in chip technology firm Imec - Reuters",
       "description": "EU and Belgium invest $1.6 bln in chip technology firm Imec  Reuters",
+      "tags": [
+        "EU",
+        "Belgium",
+        "Investment",
+        "Chip Technology",
+        "Tech Innovation"
+      ],
       "url": "https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMiYWh0dHBzOi8vd3d3LnJldXRlcnMuY29tL3RlY2hub2xvZ3kvZXUtYmVsZ2l1bS1pbnZlc3QtMTYtYmxuLWNoaXAtdGVjaG5vbG9neS1maXJtLWltZWMtMjAyMy0wNy0wNy_SAQA?oc%3D5&gl=FR&hl=en-US&cm=2&pc=n&src=1",
       "urlToImage": null,
-      "publishedAt": "2023-07-07T09:58:00Z",
+      "publishedAt": "2023-04-07T09:58:00Z",
       "content": "We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]"
     },
     {
@@ -780,9 +872,10 @@
       "author": "Angelica Mari",
       "title": "Porto Digital Is the Quixotic Tech Hub That Actually Worked",
       "description": "Created in 2000 to halt urban decay in the Brazilian city of Recife, the initiative has brought thousands of tech jobs to the region.",
+      "tags": ["Tech Hub", "Innovation", "Porto Digital", "Success Story"],
       "url": "https://www.wired.com/story/porto-digital-is-the-quixotic-tech-hub-that-actually-worked/",
       "urlToImage": "https://media.wired.com/photos/649e201bda92561daff93bbd/191:100/w_1280,c_limit/W30-Porto-Digital-Is-the-Quixotic-Tech-Hub-That-Actually-Worked-Business-1.jpg",
-      "publishedAt": "2023-06-30T11:00:00Z",
+      "publishedAt": "2023-04-30T11:00:00Z",
       "content": "Cristiano Lincoln Mattos, CEO and cofounder at Tempest, which also spun out of Cesar, attributes the very existence of his company to the ecosystem's ability to translate expertise from the academic … [+3582 chars]"
     },
     {
@@ -790,9 +883,15 @@
       "author": "Lawrence Bonk",
       "title": "Artiphon’s Chorda ‘band in a box’ allows you to produce beats just about anywhere",
       "description": "Niche music gadget manufacturer Artiphon is back with a new instrument called the Chorda.\r\n This unique bit of gear is a combo meal of sorts, bundling together the form factor of the Instrument 1\r\n with the standalone functionality and looper of the Orba 2\r\n.…",
+      "tags": [
+        "Artiphon",
+        "Music Technology",
+        "Innovation",
+        "Creative Expression"
+      ],
       "url": "https://www.engadget.com/artiphons-chorda-band-in-a-box-allows-you-to-produce-beats-just-about-anywhere-173851795.html",
       "urlToImage": "https://s.yimg.com/uu/api/res/1.2/E33Mdtl1MPwGsN4yjYJgBw--~B/Zmk9ZmlsbDtoPTYzMDtweW9mZj0wO3c9MTIwMDthcHBpZD15dGFjaHlvbg--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2023-07/d9653cd0-24c2-11ee-beff-b7695467ea38.cf.jpg",
-      "publishedAt": "2023-07-17T17:38:51Z",
+      "publishedAt": "2023-04-17T17:38:51Z",
       "content": "Niche music gadget manufacturer Artiphon is back with a new instrument called the Chorda.\r\n This unique bit of gear is a combo meal of sorts, bundling together the form factor of the Instrument 1\r\n w… [+1909 chars]"
     },
     {
@@ -800,9 +899,15 @@
       "author": "Peter Cao",
       "title": "The $9,995 Fuell Fllow electric motorcycle is available for pre-order today",
       "description": "Erik Buell, best known for founding Buell Motorcycles, announced Fuell, his new electric motorcycle venture, back in 2019. In that same announcement, he said that Fuell would begin work on its first electric motorcycle: the Fuell Fllow. Following though a few…",
+      "tags": [
+        "Electric Motorcycle",
+        "Sustainable Transportation",
+        "Innovation",
+        "Pre-order"
+      ],
       "url": "https://www.engadget.com/the-9995-fuell-fllow-electric-motorcycle-is-available-for-pre-order-today-220016821.html",
       "urlToImage": "https://s.yimg.com/uu/api/res/1.2/Uc.Pboc2FxaUvBujFhPtTA--~B/Zmk9ZmlsbDtoPTYzMDtweW9mZj0wO3c9MTIwMDthcHBpZD15dGFjaHlvbg--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2023-06/46226c50-1459-11ee-b7ef-d938c5fa2fce.cf.jpg",
-      "publishedAt": "2023-07-26T22:00:16Z",
+      "publishedAt": "2023-04-26T22:00:16Z",
       "content": "Erik Buell, best known for founding Buell Motorcycles, announced Fuell, his new electric motorcycle venture, back in 2019. In that same announcement, he said that Fuell would begin work on its first … [+2262 chars]"
     },
     {
@@ -810,9 +915,15 @@
       "author": "Deanna Ritchie",
       "title": "Breakthrough: University of Washington Develops Compact and Affordable LiDAR Technology",
       "description": "LiDAR (Light Detection and Ranging) technology has been a crucial sensing tool for various applications, ranging from autonomous vehicles to […]\nThe post Breakthrough: University of Washington Develops Compact and Affordable LiDAR Technology appeared first on…",
+      "tags": [
+        "Breakthrough",
+        "University Research",
+        "LiDAR Technology",
+        "Innovation"
+      ],
       "url": "https://readwrite.com/breakthrough-university-of-washington-develops-compact-and-affordable-lidar-technology/",
       "urlToImage": "https://images.readwrite.com/wp-content/uploads/2023/07/scott-blake-1GW45VDkFI0-unsplash.jpg",
-      "publishedAt": "2023-07-05T21:55:39Z",
+      "publishedAt": "2023-04-05T21:55:39Z",
       "content": "LiDAR technology has a rich history spanning over half a century. Similar to radar, LiDAR utilizes laser beams to scan an area and measures the reflected signals to create a 3D image of the surroundi… [+6343 chars]"
     },
     {
@@ -820,9 +931,10 @@
       "author": "Brad Anderson",
       "title": "US Probe Uncovers Chinese Spy Balloon Exploiting American Technology",
       "description": "The discovery of a Chinese spy balloon that infiltrated the airspace of the United States earlier this year has raised […]\nThe post US Probe Uncovers Chinese Spy Balloon Exploiting American Technology appeared first on ReadWrite.",
+      "tags": ["US Probe", "Espionage", "Technology", "Security"],
       "url": "https://readwrite.com/us-probe-uncovers-chinese-spy-balloon-exploiting-american-technology/",
       "urlToImage": "https://images.readwrite.com/wp-content/uploads/2023/06/chris-yang-1tnS_BVy9Jk-unsplash-1.jpg",
-      "publishedAt": "2023-06-29T20:35:21Z",
+      "publishedAt": "2023-04-29T20:35:21Z",
       "content": "The discovery of a Chinese spy balloon that infiltrated the airspace of the United States earlier this year has raised concerns about the extent of surveillance capabilities employed by foreign entit… [+3448 chars]"
     },
     {
@@ -830,9 +942,15 @@
       "author": "Brad Anderson",
       "title": "AI Technology Drastically Cuts Treatment Time for Cancer Radiotherapy",
       "description": "Artificial intelligence (AI) technology has emerged as a game-changer in the field of cancer radiotherapy. With the ability to significantly […]\nThe post AI Technology Drastically Cuts Treatment Time for Cancer Radiotherapy appeared first on ReadWrite.",
+      "tags": [
+        "AI Technology",
+        "Cancer Treatment",
+        "Medical Innovation",
+        "Radiotherapy"
+      ],
       "url": "https://readwrite.com/ai-technology-drastically-cuts-treatment-time-for-cancer-radiotherapy/",
       "urlToImage": "https://images.readwrite.com/wp-content/uploads/2023/06/craig-cameron-cWRVSX6lfBg-unsplash-scaled.jpg",
-      "publishedAt": "2023-07-02T23:04:29Z",
+      "publishedAt": "2023-03-02T23:04:29Z",
       "content": "Artificial intelligence (AI) technology has emerged as a game-changer in the field of cancer radiotherapy. With the ability to significantly reduce the waiting time for patients, this cutting-edge te… [+4632 chars]"
     },
     {
@@ -840,9 +958,10 @@
       "author": "tips@androidcentral.com (Nickolas Diaz)",
       "title": "Google's clever patent could bring an enhanced Airplane mode to your phone",
       "description": "A new patent from Google has appeared and details a new airplane-mode technology.",
+      "tags": ["Google", "Patent", "Airplane Mode", "Mobile Technology"],
       "url": "https://www.androidcentral.com/phones/google-connected-flight-mode-patent",
       "urlToImage": "https://cdn.mos.cms.futurecdn.net/z6tvCEtF9C5BiHta3vMEoh-1200-80.jpeg",
-      "publishedAt": "2023-07-14T19:19:54Z",
+      "publishedAt": "2023-03-14T19:19:54Z",
       "content": "<ul><li>A patent by Google has appeared, detailing a new \"connected flight mode\" which automatically swaps a device into a version of airplane mode.</li><li>This flight mode utilizes certain \"trigger… [+2372 chars]"
     },
     {
@@ -850,9 +969,15 @@
       "author": "Juli Clover",
       "title": "Apple Releases Safari Technology Preview 175 With Bug Fixes and Performance Improvements",
       "description": "Apple today released a new update for Safari Technology Preview, the experimental browser Apple first introduced in March 2016. Apple designed the ‌Safari Technology Preview‌ to test features that may be introduced into future release versions of Safari.\n\n\n\n\n…",
+      "tags": [
+        "Apple",
+        "Safari Technology Preview",
+        "Software Update",
+        "Improvements"
+      ],
       "url": "https://www.macrumors.com/2023/07/27/apple-releases-safari-technology-preview-175/",
       "urlToImage": "https://images.macrumors.com/t/jHD1aGfXq86Ln_kfzTyWIF68vOo=/2368x/article-new/2021/02/Safari-Technology-Preview-Feature.jpg",
-      "publishedAt": "2023-07-28T00:23:40Z",
+      "publishedAt": "2023-03-28T00:23:40Z",
       "content": "Apple today released a new update for Safari Technology Preview, the experimental browser Apple first introduced in March 2016. Apple designed the ‌Safari Technology Preview‌ to test features that ma… [+1482 chars]"
     },
     {
@@ -860,9 +985,15 @@
       "author": "tips@androidcentral.com (Nickolas Diaz)",
       "title": "Galaxy S24 Ultra may utilize battery technology found in EVs for faster charging",
       "description": "Rumors suggest Samsung is working on featuring stacked battery technology in the Galaxy S24 Ultra and S24+.",
+      "tags": [
+        "Galaxy S24 Ultra",
+        "Battery Technology",
+        "Mobile Devices",
+        "Charging Innovation"
+      ],
       "url": "https://www.androidcentral.com/phones/galaxy-s24-ultra-stacked-battery-charging-leak",
       "urlToImage": "https://cdn.mos.cms.futurecdn.net/XSLquJodyr3g9rC2JnRUfD-1200-80.jpg",
-      "publishedAt": "2023-07-13T18:48:03Z",
+      "publishedAt": "2023-03-13T18:48:03Z",
       "content": "<ul><li>Rumors suggest the Galaxy S24 Ultra and S24+ may utilize a new stacked battery technology.</li><li>Both devices may receive a 5,000mAh battery, but the Ultra model might jump to 65W charging.… [+2717 chars]"
     },
     {
@@ -870,9 +1001,10 @@
       "author": "Victor Dey",
       "title": "Celestial AI raises $100M to expand Photonic Fabric technology platform",
       "description": "Celestial AI claims that its Photonic Fabric platform's optical connectivity performance can surpass existing technologies.",
+      "tags": ["Celestial AI", "Funding", "Technology Platform", "Expansion"],
       "url": "https://venturebeat.com/ai/celestial-ai-raises-100m-to-expand-photonic-fabric-technology-platform/",
       "urlToImage": "https://venturebeat.com/wp-content/uploads/2023/07/2021_Celestial_logo-black1.jpg?w=1200&strip=all",
-      "publishedAt": "2023-07-04T15:42:04Z",
+      "publishedAt": "2023-03-04T15:42:04Z",
       "content": "Join top executives in San Francisco on July 11-12 and learn how business leaders are getting ahead of the generative AI revolution. Learn More\r\nCelestial AI, a developer of optical interconnect tech… [+1219 chars]"
     },
     {
@@ -880,9 +1012,10 @@
       "author": "Nikki Main",
       "title": "11 Times Tech Really Did Take Our Jobs",
       "description": "Artificial intelligence is replacing hundreds of jobs across the U.S., creating skepticism and uncertainty about the future of humanity. It is a daunting development as even the creator of AI has warned about the technology’s potential takeover.Read more...",
+      "tags": ["Tech Impact", "Automation", "Employment", "Workforce"],
       "url": "https://gizmodo.com/11-times-tech-really-did-take-our-jobs-1850575895",
       "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/c1cf5c259ba361159552d27c44e1ec47.jpg",
-      "publishedAt": "2023-07-08T13:00:00Z",
+      "publishedAt": "2023-03-08T13:00:00Z",
       "content": "Artificial intelligence is replacing hundreds of jobs across the U.S., creating skepticism and uncertainty about the future of humanity. It is a daunting development as even the creator of AI has war… [+2053 chars]"
     },
     {
@@ -890,9 +1023,10 @@
       "author": "Jessica Kanzler",
       "title": "You Can Get a Babbel Lifetime Subscription for Over 50% Off Right Now",
       "description": "There’s no substitute for immersing yourself in a new culture, but there are modern tools that can help you learn a new language. Through July 14, a lifetime subscription to Babbel Language Learning is available at only $179.97 (reg. $399) with no coupon requ…",
+      "tags": ["Language Learning", "Subscription", "Educational", "Deals"],
       "url": "https://lifehacker.com/you-can-get-a-babbel-lifetime-subscription-for-over-50-1850589333",
       "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/9596b3d5406593e6f263e68815829119.jpg",
-      "publishedAt": "2023-06-29T19:30:00Z",
+      "publishedAt": "2023-03-29T19:30:00Z",
       "content": "Theres no substitute for immersing yourself in a new culture, but there are modern tools that can help you learn a new language. Through July 14, a lifetime subscription to Babbel Language Learning i… [+1196 chars]"
     },
     {
@@ -900,9 +1034,15 @@
       "author": "by CNET Paid Content Studio",
       "title": "How Passkeys Will Usher In a Safer, Passwordless Future - CNET",
       "description": "Passwords can still be stolen and phished, even when using password managers. A new technology looks to solve the problem.",
+      "tags": [
+        "Passkeys",
+        "Security",
+        "Passwordless Future",
+        "Technology Trends"
+      ],
       "url": "https://www.cnet.com/tech/services-and-software/how-passkeys-will-usher-in-a-safer-passwordless-future/",
       "urlToImage": "https://www.cnet.com/a/img/resize/f4be587e29cc5f84e96af7f82d9e4bbf27240626/hub/2023/07/18/70ced204-4e83-4c98-bf45-9a62d6b45584/summer-lifestyle-affiliate-refresh-b2b-1-2000x1333.jpg?auto=webp&fit=crop&height=675&width=1200",
-      "publishedAt": "2023-07-25T13:11:00Z",
+      "publishedAt": "2023-03-25T13:11:00Z",
       "content": "The question isn't if your passwords will get stolen, but when.\r\nOver 24 billion usernames and passwords were available on the dark web last year, a 65% increase since 2020, according to research fro… [+3750 chars]"
     },
     {
@@ -910,9 +1050,15 @@
       "author": "Sponsor Post",
       "title": "The average employee goes into the office less than twice a week. Here's what your business can do to help remote workers succeed.",
       "description": "Pay attention to what your remote workers want from their technology.",
+      "tags": [
+        "Remote Work",
+        "Employee Productivity",
+        "Business Solutions",
+        "Workplace Trends"
+      ],
       "url": "https://www.businessinsider.com/sc/how-your-business-can-help-remote-workers-succeed",
       "urlToImage": "https://i.insider.com/6493637665b9ce0018a45ca3?width=1200&format=jpeg",
-      "publishedAt": "2023-07-05T15:24:55Z",
+      "publishedAt": "2023-03-05T15:24:55Z",
       "content": "COROIMAGE/Getty Images\r\n<ul>\n<li>Employees today go into the office an average of 1.4 times per week, according to a study from the Advanced Workplace Association.</li>\n<li>Many people work remotely,… [+6558 chars]"
     },
     {
@@ -920,9 +1066,15 @@
       "author": "Deanna Ritchie",
       "title": "Voice.ai’s Real-Time Voice Changer Technology Attracts $6 Million in Funding",
       "description": "Voice.ai, a leading provider of real-time voice changing technology, has recently secured $6 million in funding to further develop its […]\nThe post Voice.ai’s Real-Time Voice Changer Technology Attracts $6 Million in Funding appeared first on ReadWrite.",
+      "tags": [
+        "Voice.ai",
+        "Real-Time Voice Changer",
+        "Funding",
+        "Voice Technology"
+      ],
       "url": "https://readwrite.com/voice-ais-real-time-voice-changer-technology-attracts-6-million-in-funding/",
       "urlToImage": "https://images.readwrite.com/wp-content/uploads/2023/06/ritupon-baishya-HkqFGB7T2g0-unsplash-scaled.jpg",
-      "publishedAt": "2023-07-01T06:21:05Z",
+      "publishedAt": "2023-03-01T06:21:05Z",
       "content": "Voice.ai, a leading provider of real-time voice changing technology, has recently secured $6 million in funding to further develop its innovative platform. The investment, led by Mucker Capital and M… [+4107 chars]"
     },
     {
@@ -930,9 +1082,10 @@
       "author": "Asia London Palomba",
       "title": "How AI technology could change the way we watch sports according to IBM's Jonathan Adashek",
       "description": "Jonathan Adashek chief communications officer and SVP, marketing and communications at IBM, spoke to Insider about AI innovation at the Cannes Lions International Festival of Creativity.",
+      "tags": ["AI Technology", "Sports", "Technology Impact", "IBM"],
       "url": "https://www.businessinsider.com/jonathan-adashek-chief-communications-officer-and-svp-2023-6",
       "urlToImage": "https://i.insider.com/64a41e244cc8540019cb5a61?width=1200&format=jpeg",
-      "publishedAt": "2023-07-04T14:07:01Z",
+      "publishedAt": "2023-03-04T14:07:01Z",
       "content": "Read the original article on Business Insider"
     },
     {
@@ -940,9 +1093,15 @@
       "author": "Stephanie Hallett",
       "title": "Black homeowners' properties are chronically undervalued by appraisers. A new immersive technology promises to change that.",
       "description": "In Pennsylvania, new, powerful technology will address systemic racial bias in the home appraisal process. Advocates say it will make the real estate market a better, equitable place for everyone.",
+      "tags": [
+        "Real Estate",
+        "Appraisals",
+        "Undervaluation",
+        "Immersive Technology"
+      ],
       "url": "https://www.businessinsider.com/computer-program-track-end-home-appraisal-racial-bias-2023-7",
       "urlToImage": "https://i.insider.com/64c28ab9048ff200190ba457?width=1200&format=jpeg",
-      "publishedAt": "2023-07-27T20:33:31Z",
+      "publishedAt": "2023-03-27T20:33:31Z",
       "content": ".insider-raw-embed + p { display: none; }\r\n\n // put series title here\n const seriesTitle = \"Advancing Cities\";\n // put sponsor text here\n const text = \"Presented by\";\n // put the viking id for the im… [+8330 chars]"
     },
     {
@@ -950,9 +1109,15 @@
       "author": "Jon Fingas",
       "title": "Sonic the Hedgehog co-creator Yuji Naka receives suspended prison sentence for insider trading",
       "description": "Yuji Naka likely won't face prison time over his insider trading. Tokyo judge Madoka Hiruta has given the Sonic the Hedgehog co-creator a suspended 2.5-year prison sentence, deferred for four years, as well as two fines worth the equivalent of $1.1 million an…",
+      "tags": [
+        "Yuji Naka",
+        "Sonic the Hedgehog",
+        "Insider Trading",
+        "Legal News"
+      ],
       "url": "https://www.engadget.com/sonic-the-hedgehog-co-creator-yuji-naka-receives-suspended-prison-sentence-for-insider-trading-173010653.html",
       "urlToImage": "https://s.yimg.com/uu/api/res/1.2/jwApD.KNKsluKTIyIFjQNg--~B/Zmk9ZmlsbDtoPTYzMDtweW9mZj0wO3c9MTIwMDthcHBpZD15dGFjaHlvbg--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2022-10/6d52cdc0-44a1-11ed-bfde-c7364b295ff0.cf.jpg",
-      "publishedAt": "2023-07-07T17:30:10Z",
+      "publishedAt": "2023-03-07T17:30:10Z",
       "content": "Yuji Naka likely won't face prison time over his insider trading. Tokyo judge Madoka Hiruta has given the Sonic the Hedgehog co-creator a suspended 2.5-year prison sentence, deferred for four years, … [+1147 chars]"
     },
     {
@@ -960,9 +1125,10 @@
       "author": "Jon Fingas",
       "title": "The ChatGPT app is now available for Android",
       "description": "OpenAI was true to its word. As promised, the company has released a ChatGPT app for Android. Like the iOS version, you can talk to the generative AI to get advice, answers and other (hopefully) helpful responses. You can make voice requests using OpenAI's in…",
+      "tags": ["ChatGPT", "Mobile App", "Android", "AI Technology"],
       "url": "https://www.engadget.com/the-chatgpt-app-is-now-available-for-android-163607202.html",
       "urlToImage": "https://s.yimg.com/uu/api/res/1.2/pDtGqWgopFtIVJIhETVIyQ--~B/Zmk9ZmlsbDtoPTYzMDtweW9mZj0wO3c9MTIwMDthcHBpZD15dGFjaHlvbg--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2023-07/53404370-2b07-11ee-9ffb-78409eb78186.cf.jpg",
-      "publishedAt": "2023-07-25T16:36:07Z",
+      "publishedAt": "2023-03-25T16:36:07Z",
       "content": "OpenAI was true to its word. As promised, the company has released a ChatGPT app for Android. Like the iOS version, you can talk to the generative AI to get advice, answers and other (hopefully) help… [+1284 chars]"
     },
     {
@@ -970,9 +1136,15 @@
       "author": "Will Shanklin",
       "title": "The man behind the USB-C iPhone rebuilt the AirPods Pro case to make it repairable",
       "description": "Robotics engineer Ken Pillonel, known for creating a makeshift USB-C iPhone and AirPods, has revealed his next project. The modding wunderkind has deconstructed Apple’s AirPods Pro case and built a custom repairable version. Pillonel is sharing the design for…",
+      "tags": [
+        "USB-C iPhone",
+        "AirPods Pro Case",
+        "Repairability",
+        "Mobile Technology"
+      ],
       "url": "https://www.engadget.com/the-man-behind-the-usb-c-iphone-rebuilt-the-airpods-pro-case-to-make-it-repairable-130008565.html",
       "urlToImage": "https://s.yimg.com/uu/api/res/1.2/JbABt5BZazH1eYUugtJA0g--~B/Zmk9ZmlsbDtoPTYzMDtweW9mZj0wO3c9MTIwMDthcHBpZD15dGFjaHlvbg--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2023-07/136b4ad0-2b0a-11ee-adeb-e69074b08c79.cf.jpg",
-      "publishedAt": "2023-07-26T13:00:08Z",
+      "publishedAt": "2023-03-26T13:00:08Z",
       "content": "Robotics engineer Ken Pillonel, known for creating a makeshift USB-C iPhone and AirPods, has revealed his next project. The modding wunderkind has deconstructed Apples AirPods Pro case and built a cu… [+2702 chars]"
     },
     {
@@ -980,9 +1152,10 @@
       "author": "Aaron Mok",
       "title": "Your Word, Outlook, and Excel apps might look different. Microsoft just changed its default font for the first time in 15 years.",
       "description": "Microsoft changed its default font from Calibri to Aptos as part of an effort to keep up with new technology.",
+      "tags": ["Microsoft", "Office Apps", "Default Font", "Software Updates"],
       "url": "https://www.businessinsider.com/microsoft-office-new-default-font-word-excel-outlook-aptos-2023-7",
       "urlToImage": "https://i.insider.com/64b165179751e300192a1e47?width=1200&format=jpeg",
-      "publishedAt": "2023-07-14T16:41:43Z",
+      "publishedAt": "2023-03-14T16:41:43Z",
       "content": "Microsoft announced it's changing its default font from Calibri to Aptos.Wikimedia Commons; Microsoft\r\n<ul>\n<li>Microsoft announced this week that it's changing its default Office font to Aptos. </li… [+2536 chars]"
     },
     {
@@ -990,9 +1163,10 @@
       "author": "Sarah Sloat",
       "title": "Shakespeare's works have inspired innovation for over 400 years. Now, 5G could make his plays even more immersive.",
       "description": "The Royal Shakespeare Company has used technology to present Shakespeare's works for years and began experimenting with 5G in 2022.",
+      "tags": ["Shakespeare", "Literature", "Innovation", "5G Technology"],
       "url": "https://www.businessinsider.com/royal-shakespeare-company-5g-immersive-theater-2023-7",
       "urlToImage": "https://i.insider.com/64a80e3b6d7e02001af86a7f?width=1200&format=jpeg",
-      "publishedAt": "2023-07-25T15:15:57Z",
+      "publishedAt": "2023-03-25T15:15:57Z",
       "content": ".insider-raw-embed + p { display: none; }\r\n\n // 5G Playbook\n const seriesTitle = \"5G Playbook\";\n // put sponsor text here\n const text = \"Presented by\";\n // 6495cb1365b9ce0018a496f9\n const sponsorLogo… [+6741 chars]"
     },
     {
@@ -1000,9 +1174,15 @@
       "author": "Kari Paul in San Francisco, Dominic Rushe in New York and wires",
       "title": "Top tech firms commit to AI safeguards amid fears over pace of change",
       "description": "Microsoft, Alphabet and OpenAI agree eight measures in effort to encourage responsible practices around fast-moving technologyTop players in the development of artificial intelligence, including Amazon, Google, Meta, Microsoft and OPenAI, will announce new sa…",
+      "tags": [
+        "Tech Firms",
+        "AI Safeguards",
+        "Technology Regulation",
+        "Ethics"
+      ],
       "url": "https://www.theguardian.com/technology/2023/jul/21/ai-ethics-guidelines-google-meta-amazon",
       "urlToImage": "https://i.guim.co.uk/img/media/18b5a7f4faffa94269401bb2dda085ad3e34393d/0_0_4000_2399/master/4000.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=d3848e78f417f6e115df2798746ad4e2",
-      "publishedAt": "2023-07-21T13:52:15Z",
+      "publishedAt": "2023-03-21T13:52:15Z",
       "content": "Top players in the development of artificial intelligence, including Amazon, Google, Meta, Microsoft and OPenAI, will announce new safeguards for the fast-moving technology at the White House on Frid… [+4109 chars]"
     }
   ]

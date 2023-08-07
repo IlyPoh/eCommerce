@@ -28,18 +28,6 @@ const categorySlice = createSlice({
       }>
     ) => {
       const { currentCategory, categoryProducts } = action.payload;
-      console.log(
-        '🚀 ~ file: categorySlice.ts:32 ~ action.payload:',
-        action.payload
-      );
-      console.log(
-        '🚀 ~ file: categorySlice.ts:32 ~ categoryProducts:',
-        categoryProducts
-      );
-      console.log(
-        '🚀 ~ file: categorySlice.ts:32 ~ category:',
-        currentCategory
-      );
       state.currentCategory = currentCategory;
       state.categoryProducts = categoryProducts;
     },

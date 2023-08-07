@@ -1,3 +1,14 @@
+// ENUMS
+export enum EView {
+  GRID = 'grid',
+  LIST = 'list',
+}
+
+export enum EType {
+  PRODUCTS = 'products',
+  NEWS = 'news',
+}
+
 // props for button component
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -51,4 +62,10 @@ export interface ILinkProps {
 export interface IBannerProps {
   title?: string;
   subtitle?: string;
+}
+
+// Indexes for pagination
+export interface IPaginationIndexes {
+  start: number;
+  end: number;
 }

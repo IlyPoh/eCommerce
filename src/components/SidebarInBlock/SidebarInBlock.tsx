@@ -3,8 +3,8 @@
 import { Link } from 'react-router-dom';
 
 // types
-import { ICategory } from '../../../types/store';
-import { ILinkProps, ILink } from '../../../types';
+import { ICategory } from '../../types/store';
+import { ILinkProps, ILink } from '../../types';
 
 // styles
 import styles from './SidebarInBlock.module.scss';

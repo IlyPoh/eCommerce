@@ -1,0 +1,62 @@
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.highlight {
+  position: relative;
+
+  min-height: 400px;
+  min-width: 40%;
+  width: 100%;
+
+  @include display_flex($direction: column, $justify: flex-end);
+
+  color: $color-white;
+
+  background-position: center;
+
+  .tags {
+    @include display_flex($align: center, $wrap: wrap, $gap: 8px);
+
+    position: absolute;
+    top: 24px;
+    left: 24px;
+  }
+
+  .body {
+    @include display_flex($direction: column, $justify: flex-end, $gap: 8px);
+    height: 50%;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+
+    padding: 24px;
+  }
+
+  .title {
+    h3 {
+      a {
+        color: $color-white;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .info {
+    @include display_flex($align: center, $gap: 16px);
+
+    font-family: $ff-open;
+    @extend %smallFontSize;
+    white-space: nowrap;
+
+    .author {
+      @include display_flex($align: center, $gap: 8px);
+
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+}

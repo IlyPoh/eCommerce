@@ -12,6 +12,13 @@ export const firstLettertoUppercase = (string: string): string => {
   return string[0].toUpperCase() + string.slice(1);
 };
 
+export const getPaginationIndexes = (page: number, productsPerPage = 10) => {
+  const start = page * productsPerPage - productsPerPage;
+  const end = page * productsPerPage;
+
+  return { start, end };
+};
+
 export const errorHandler = (error: IError, dispatch: Dispatch<AnyAction>) => {
   if ('status' in error) {
     dispatch(setError(errorCodeChecker(error.status)));
@@ -51,32 +58,50 @@ export const buildProductQueryString = (
   searchOptions: Partial<IProductsEndpointOptions>
 ): string => {
   const { id, name, category_id, subcategory_id, tags } = searchOptions;
-  let queryString = endpoint;
+  const queryParameters = [];
 
-  if (id) queryString += `?id=${id}`;
-  else if (name) queryString += `?name=${encodeURIComponent(name)}`;
-  else if (category_id) queryString += `?category_id=${category_id}`;
-  else if (subcategory_id) queryString += `?subcategory_id=${subcategory_id}`;
+  if (id) queryParameters.push(`id=${id}`);
+  else if (name) queryParameters.push(`name=${encodeURIComponent(name)}`);
+  else if (category_id) queryParameters.push(`category_id=${category_id}`);
+  else if (subcategory_id)
+    queryParameters.push(`subcategory_id=${subcategory_id}`);
   else if (tags) {
     const tagsQuery = tags
-      .map((tag) => `tags[]=${encodeURIComponent(tag)}`)
+      .map((tag) => `tags_like=${encodeURIComponent(tag)}`)
       .join('&');
-    queryString += `?${tagsQuery}`;
+    queryParameters.push(`?${tagsQuery}`);
   }
 
-  return queryString;
+  const queryString =
+    queryParameters.length > 0 ? `?${queryParameters.join('&')}` : '';
+
+  return endpoint + queryString;
 };
 
 export const buildNewsQueryString = (
   endpoint: string,
-  searchOptions: INewsEndpointOptions
+  searchOptions: Partial<INewsEndpointOptions>
 ) => {
-  const { id, page, limit = 9 } = searchOptions;
-  let queryString = endpoint;
+  const { year, month, limit, page, category } = searchOptions;
+  const queryParameters = [];
 
-  if (id) queryString += `?id=${id}`;
-  else if (limit) queryString += `?_limit=${limit}`;
-  else if (page) queryString += `?_page=${page}`;
+  if (limit) queryParameters.push(`_limit=${limit}`);
+  else if (page) queryParameters.push(`_page=${page}`);
 
-  return queryString;
+  if (year && month) {
+    const startDate = new Date(year, month - 1, 1);
+    const endDate = new Date(year, month, 1);
+    const isoStartDate = startDate.toISOString();
+    const isoEndDate = endDate.toISOString();
+
+    queryParameters.push(`publishedAt_gte=${isoStartDate}`);
+    queryParameters.push(`publishedAt_lte=${isoEndDate}`);
+  }
+
+  if (category) queryParameters.push(`tags_like=${category}`);
+
+  const queryString =
+    queryParameters.length > 0 ? `?${queryParameters.join('&')}` : '';
+
+  return endpoint + queryString;
 };

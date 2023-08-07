@@ -1,6 +1,7 @@
 // IMPORTS
 // libraries
 import { useEffect } from 'react';
+import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 // store
@@ -8,6 +9,7 @@ import { setNews } from '../store/Slices/newsSlice';
 import { setTags } from '../store/Slices/tagsSlice';
 import { setLoading } from '../store/Slices/appSlice';
 import { setReviews } from '../store/Slices/reviewSlice';
+import { setProducts } from '../store/Slices/productsSlice';
 import { setCategories } from '../store/Slices/categorySlice';
 import {
   useGetCategoriesQuery,
@@ -22,11 +24,10 @@ import { IError } from '../types';
 
 // store types
 import type { RootState, AppDispatch } from '../store';
+import { INewsEndpointOptions, IProduct } from '../types/store';
 
 // utils
 import { errorHandler } from './helpers';
-import { INewsEndpointOptions, IProduct } from '../types/store';
-import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 
 // HOOKS
 // Store hooks
@@ -77,5 +78,5 @@ export const useFetchNews = (options: Partial<INewsEndpointOptions> = {}) => {
 
 // Custom hook for fetching products
 export const useFetchProducts = (options: Partial<IProduct> = {}) => {
-  return useFetchData(useGetProductsQuery, setLoading, options);
+  return useFetchData(useGetProductsQuery, setProducts, options);
 };

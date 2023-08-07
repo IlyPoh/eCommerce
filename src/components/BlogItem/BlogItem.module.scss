@@ -1,0 +1,89 @@
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.item {
+  width: 100%;
+  @include display_flex($align: center, $gap: 24px);
+
+  transition: width $shortTransition, max-width $shortTransition;
+
+  &.grid {
+    flex-direction: column;
+    max-width: 270px;
+    width: 100%;
+
+    .image {
+      max-width: 270px;
+      width: 100%;
+      height: 180px;
+
+      img {
+        max-width: 270px;
+        width: 100%;
+        height: 180px;
+      }
+    }
+
+    .tags {
+      @include display_flex($align: center, $wrap: wrap, $gap: 8px);
+      margin-bottom: 8px;
+    }
+
+    .title {
+      a {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &.list {
+    max-width: 100%;
+    width: 100%;
+
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    .title {
+      a {
+        font-weight: 500;
+      }
+    }
+    .image {
+      width: 96px;
+      height: 96px;
+
+      img {
+        width: 96px;
+        height: 96px;
+      }
+    }
+  }
+
+  .image {
+    img {
+      object-fit: cover;
+      object-position: center;
+
+      border-radius: 12px;
+
+      transition: width $shortTransition, height $shortTransition;
+    }
+  }
+
+  .title {
+    margin-bottom: 16px;
+
+    a {
+      color: $color-main;
+    }
+  }
+
+  .info {
+    @include display_flex($align: center, $gap: 16px);
+
+    font-family: $ff-open;
+    @extend %smallFontSize;
+    white-space: nowrap;
+  }
+}
