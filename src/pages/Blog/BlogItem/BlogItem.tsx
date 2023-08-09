@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import placeholder from '/images/placeholder.png';
 
 // utils
-import { formatDate } from '../../utils/helpers';
+import { formatDate } from '../../../utils/helpers';
 
 // types
-import { EView } from '../../types';
-import { IArticle } from '../../types/store';
+import { EView } from '../../../types';
+import { IArticle } from '../../../types/store';
 
 // styles
 import styles from './BlogItem.module.scss';
@@ -55,7 +55,7 @@ export const BlogItem: React.FC<IBlogItemProps> = ({ article, view }) => {
             )}
           </div>
           <div className={styles['info']}>
-            <span>{article.author}</span>
+            <span className={styles['author']}>{article.author}</span>
             <span>{formatDate(`${article.publishedAt}`)}</span>
           </div>
         </div>

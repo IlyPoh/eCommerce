@@ -7,10 +7,10 @@ import { ICategory } from '../../types/store';
 import { ILinkProps, ILink } from '../../types';
 
 // styles
-import styles from './SidebarInBlock.module.scss';
+import styles from './SidebarLinks.module.scss';
 
 // TYPES
-export interface ISidebarInBlockProps {
+export interface ISidebarLinksProps {
   data: (ILink | ICategory)[];
   title: string;
   limit?: number;
@@ -18,7 +18,7 @@ export interface ISidebarInBlockProps {
 }
 
 // COMPONENT
-export const SidebarInBlock: React.FC<ISidebarInBlockProps> = ({
+export const SidebarLinks: React.FC<ISidebarLinksProps> = ({
   data,
   title,
   link,

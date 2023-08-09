@@ -1,6 +1,6 @@
 // IMPORTS
 // components
-import { BlogItem } from '../../../components/BlogItem/BlogItem';
+import { BlogItem } from '../../Blog/BlogItem/BlogItem';
 import { HightlightArticle } from '../../../components/HightlightArticle/HightlightArticle';
 // store
 import { IArticle } from '../../../types/store';

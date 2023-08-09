@@ -54,8 +54,14 @@ a {
 section {
   padding: 48px 0;
 
+  &.section,
   .section {
     padding: 64px 0;
+  }
+
+  &.section-small,
+  .section-small {
+    padding: 16px 0;
   }
 }
 

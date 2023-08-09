@@ -1,0 +1,26 @@
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.block {
+  @include display_flex($justify: space-between, $align: center, $gap: 24px);
+
+  .list {
+    @include display_flex($gap: 8px);
+
+    @extend %smallFontSize;
+    font-family: $ff-open;
+  }
+
+  .buttons {
+    @include display_flex($gap: 16px);
+  }
+
+  .link {
+    color: $color-black;
+
+    &.active {
+      color: $color-green-6a;
+    }
+  }
+}

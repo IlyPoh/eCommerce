@@ -1,6 +1,6 @@
-@import '../../styles/base/config';
-@import '../../styles/base/extends';
-@import '../../styles/base/mixins';
+@import '../../../styles/base/config';
+@import '../../../styles/base/extends';
+@import '../../../styles/base/mixins';
 
 .item {
   width: 100%;
@@ -11,7 +11,6 @@
   &.grid {
     flex-direction: column;
     max-width: 270px;
-    width: 100%;
 
     .image {
       max-width: 270px;
@@ -85,5 +84,9 @@
     font-family: $ff-open;
     @extend %smallFontSize;
     white-space: nowrap;
+
+    .author {
+      white-space: break-spaces;
+    }
   }
 }

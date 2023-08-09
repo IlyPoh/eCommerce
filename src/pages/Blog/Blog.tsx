@@ -1,10 +1,13 @@
 // IMPORTS
-// components
+// libraries
 import { useParams } from 'react-router-dom';
-import { BlogItem } from '../../components/BlogItem/BlogItem';
+
+// components
+import { BlogItem } from './BlogItem/BlogItem';
+import { Pagination } from '../../components/Pagination/Pagination';
 import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 import { PageHeadline } from '../../components/PageHeadline/PageHeadline';
-import { SidebarInBlock } from '../../components/SidebarInBlock/SidebarInBlock';
+import { SidebarLinks } from '../../components/SidebarLinks/SidebarLinks';
 import { HightlightArticle } from '../../components/HightlightArticle/HightlightArticle';
 
 // types
@@ -33,6 +36,7 @@ export const Blog: React.FC = () => {
     newsPerPage
   );
   const productHighlightLastIndex = productIndexesToRender.start + 2;
+  const totalPages = Math.ceil(newsData.length / newsPerPage);
 
   useFetchNews({
     year: Number(year),
@@ -56,9 +60,16 @@ export const Blog: React.FC = () => {
         ) : null}
         <section className={styles['body']}>
           <aside>
-            <SidebarInBlock data={MONTHS} title="Archives" />
+            <SidebarLinks data={MONTHS} title="Archives" />
             <div className={styles['categories']}>
-              <SidebarInBlock data={CATEGORIES} title="Category" />
+              <SidebarLinks data={CATEGORIES} title="Category" />
+            </div>
+            <div className={styles['subscription']}>
+              <h4>Join our list</h4>
+              <p>
+                Signup to be the first to hear about exclusive deals, special
+                offers, recepies from our masters and others.
+              </p>
             </div>
           </aside>
           <div
@@ -83,6 +94,13 @@ export const Blog: React.FC = () => {
               </div>
             )}
           </div>
+        </section>
+        <section className="section-small">
+          <Pagination
+            currentPage={Number(page)}
+            totalPages={totalPages}
+            type={EType.NEWS}
+          />
         </section>
       </div>
     </>

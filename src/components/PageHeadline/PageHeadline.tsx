@@ -1,19 +1,21 @@
 // IMPORTS
 // store
 import { setGridView } from '../../store/Slices/appSlice';
+
+// types
 import { EType } from '../../types';
-import { firstLettertoUppercase } from '../../utils/helpers';
 
 // utils
 import { useAppDispatch, useAppSelector } from '../../utils/hooks';
+import { Counter } from '../Counter/Counter';
 
 // styles
 import styles from './PageHeadline.module.scss';
 
 // TYPE
 interface IPageHeadlineProps {
-  title: string;
-  type: EType;
+  title?: string;
+  type?: EType;
 }
 
 // COMPONENT
@@ -23,10 +25,6 @@ export const PageHeadline: React.FC<Partial<IPageHeadlineProps>> = ({
 }) => {
   const dispatch = useAppDispatch();
   const gridView = useAppSelector((state) => state.appState.gridView);
-  const newsCount = useAppSelector((state) => state.newsState.news.length);
-  const productCount = useAppSelector(
-    (state) => state.productState.products.length
-  );
 
   const handleGridView = () => {
     dispatch(setGridView(!gridView));
@@ -51,13 +49,7 @@ export const PageHeadline: React.FC<Partial<IPageHeadlineProps>> = ({
             <i className="icon-layout-sections" />
             <span>List view</span>
           </button>
-          <div className={styles['item']}>
-            <div className="tag">
-              {type === EType.PRODUCTS && productCount}
-              {type === EType.NEWS && newsCount}
-            </div>
-            <span>{firstLettertoUppercase(type)}</span>
-          </div>
+          <Counter type={type} />
         </div>
       </div>
     </>

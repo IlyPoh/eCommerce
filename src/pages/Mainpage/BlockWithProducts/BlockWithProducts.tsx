@@ -5,16 +5,16 @@ import {
   IProductListProps,
 } from '../../../components/ProductList/ProductList';
 import {
-  ISidebarInBlockProps,
-  SidebarInBlock,
-} from '../../../components/SidebarInBlock/SidebarInBlock';
+  ISidebarLinksProps,
+  SidebarLinks,
+} from '../../../components/SidebarLinks/SidebarLinks';
 
 // styles
 import styles from './BlockWithProducts.module.scss';
 
 // TYPES
 interface BlockWithProductsProps {
-  sidebarData: ISidebarInBlockProps;
+  sidebarData: ISidebarLinksProps;
   productList: IProductListProps;
 }
 
@@ -26,7 +26,7 @@ export const BlockWithProducts: React.FC<BlockWithProductsProps> = ({
   return (
     <>
       <div className={styles['block-with-products']}>
-        <SidebarInBlock
+        <SidebarLinks
           data={sidebarData.data}
           title={sidebarData.title}
           link={sidebarData.link}

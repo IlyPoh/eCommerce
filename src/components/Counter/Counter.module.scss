@@ -1,0 +1,13 @@
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.counter {
+  @include display_flex($align: center, $gap: 4px);
+
+  .text {
+    font-family: $ff-open;
+    @extend %smallFontSize;
+    color: $color-grey-a9;
+  }
+}

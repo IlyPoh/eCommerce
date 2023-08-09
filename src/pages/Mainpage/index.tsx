@@ -4,7 +4,7 @@ import { TwoBlocks } from './TwoBlocks/TwoBlocks';
 import { BlogBlock } from './BlogBlock/BlogBlock';
 import { ReviewList } from './ReviewBlockList/ReviewList';
 import { ProductList } from '../../components/ProductList/ProductList';
-import { ISidebarInBlockProps } from '../../components/SidebarInBlock/SidebarInBlock';
+import { ISidebarLinksProps } from '../../components/SidebarLinks/SidebarLinks';
 import { BlockWithProducts } from './BlockWithProducts/BlockWithProducts';
 import { BlockHeadline } from '../../components/BlockHeadline/BlockHeadline';
 
@@ -27,13 +27,13 @@ export const Mainpage: React.FC = () => {
   const newsData = useAppSelector((state) => state.newsState.news);
   const reviewData = useAppSelector((state) => state.reviewsState.reviews);
 
-  const firstSidebarData: ISidebarInBlockProps = {
+  const firstSidebarData: ISidebarLinksProps = {
     data: firstLinks,
     title: 'Best selling products',
     link: { text: 'More products', icon: 'icon-chevron-right' },
   };
 
-  const secondSidebarData: ISidebarInBlockProps = {
+  const secondSidebarData: ISidebarLinksProps = {
     data: secondLinks,
     title: 'Best from Farmers',
     link: { text: 'More products', icon: 'icon-chevron-right' },
@@ -86,17 +86,21 @@ export const Mainpage: React.FC = () => {
           <ProductList list={[3, 5, 1, 20]} limit={4} />
         </section>
       </div>
-      {newsData && (
-        <div className="container">
-          <section className="section">
-            <BlockHeadline
-              title="Read our Blog posts"
-              link={{ link: '/blog', text: 'Go to Blog' }}
-            />
+      <div className="container">
+        <section className="section">
+          <BlockHeadline
+            title="Read our Blog posts"
+            link={{ link: '/blog', text: 'Go to Blog' }}
+          />
+          {newsData.length ? (
             <BlogBlock data={newsData} />
-          </section>
-        </div>
-      )}
+          ) : (
+            <div className="text-center">
+              <h3>No Articles</h3>
+            </div>
+          )}
+        </section>
+      </div>
     </>
   );
 };

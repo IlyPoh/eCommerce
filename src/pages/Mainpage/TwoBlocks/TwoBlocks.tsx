@@ -1,7 +1,7 @@
 // IMPORTS
 // components
 import { BannerBlock } from '../BannerBlock/BannerBlock';
-import { SidebarInBlock } from '../../../components/SidebarInBlock/SidebarInBlock';
+import { SidebarLinks } from '../../../components/SidebarLinks/SidebarLinks';
 
 // types
 import { ICategory } from '../../../types/store';
@@ -37,7 +37,7 @@ export const TwoBlocks: React.FC<TwoBlocksProps> = ({
     <>
       <div className={styles['two-blocks']}>
         {categoryData.length ? (
-          <SidebarInBlock
+          <SidebarLinks
             data={categoryData}
             title={sidebarTitle ?? 'Category menu'}
             link={{
