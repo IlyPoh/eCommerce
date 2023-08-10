@@ -13,15 +13,19 @@ export const Breadcrumbs: React.FC = () => {
   return (
     <>
       <div className={styles['breadcrumbs']}>
-        {breadcrumbs.map((breadcrumb) => (
-          <Link
-            to={breadcrumb.key}
-            key={breadcrumb.key}
-            className={styles['item']}
-          >
-            {breadcrumb.breadcrumb}
-          </Link>
-        ))}
+        {breadcrumbs.map(({ match, breadcrumb }) => {
+          if (match.pathname !== '/blog/category') {
+            return (
+              <Link
+                to={match.pathname}
+                key={match.pathname}
+                className={styles['item']}
+              >
+                {breadcrumb}
+              </Link>
+            );
+          }
+        })}
       </div>
     </>
   );

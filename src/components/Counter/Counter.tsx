@@ -10,7 +10,7 @@ import styles from './Counter.module.scss';
 
 // TYPE
 interface ICounterProps {
-  type?: EType;
+  type: EType;
 }
 
 // COMPONENT
@@ -21,7 +21,7 @@ export const Counter: React.FC<ICounterProps> = ({ type }) => {
   );
 
   let count = 0;
-  let text = '';
+  let text = 'Items';
 
   if (type === EType.PRODUCTS) {
     count = productCount;

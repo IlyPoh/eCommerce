@@ -15,34 +15,45 @@ import { IArticle } from '../../types/store';
 import { EType, EView, IPaginationIndexes } from '../../types';
 
 // utils
-import { getPaginationIndexes } from '../../utils/helpers';
-import { useAppSelector, useFetchNews } from '../../utils/hooks';
+import { getBlogLink, getPaginationIndexes } from '../../utils/helpers';
 import {
-  BLOG_LINKS_MONTHS as MONTHS,
-  BLOG_LINKS_CATEGORIES as CATEGORIES,
-} from '../../utils/constants';
+  useAppSelector,
+  useFetchNews,
+  useFetchNewsCategories,
+} from '../../utils/hooks';
+import { BLOG_LINKS_MONTHS as MONTHS } from '../../utils/constants';
 
 // styles
 import styles from './Blog.module.scss';
 
 // COMPONENT
 export const Blog: React.FC = () => {
-  const { year, month, tag, page = 1 } = useParams();
+  const { year, month, category, tag, page = 1 } = useParams();
+  console.log('page:', page);
+  console.log('tag:', tag);
+  console.log('category:', category);
+  console.log('month:', month);
+  console.log('year:', year);
   const newsData = useAppSelector((state) => state.newsState.news);
+  const newsCategories = useAppSelector((state) => state.newsState.categories);
   const gridView = useAppSelector((state) => state.appState.gridView);
   const newsPerPage = 11;
   const productIndexesToRender: IPaginationIndexes = getPaginationIndexes(
     Number(page),
     newsPerPage
   );
+  const blogLink = getBlogLink(category, month, year);
   const productHighlightLastIndex = productIndexesToRender.start + 2;
   const totalPages = Math.ceil(newsData.length / newsPerPage);
 
   useFetchNews({
     year: Number(year),
     month: Number(month),
-    category: tag,
+    category: category,
+    tag: tag,
   });
+
+  useFetchNewsCategories();
 
   return (
     <>
@@ -52,18 +63,24 @@ export const Blog: React.FC = () => {
         {newsData.length ? (
           <section className={styles['headline']}>
             {newsData
-              .slice(0, productHighlightLastIndex)
+              .slice(productIndexesToRender.start, productHighlightLastIndex)
               .map((article: IArticle) => (
-                <HightlightArticle data={article} key={article.id} />
+                <HightlightArticle
+                  data={article}
+                  key={article.id}
+                  link={blogLink}
+                />
               ))}
           </section>
         ) : null}
         <section className={styles['body']}>
           <aside>
-            <SidebarLinks data={MONTHS} title="Archives" />
-            <div className={styles['categories']}>
-              <SidebarLinks data={CATEGORIES} title="Category" />
-            </div>
+            {MONTHS && <SidebarLinks data={MONTHS} title="Archives" />}
+            {newsCategories && (
+              <div className={styles['categories']}>
+                <SidebarLinks data={newsCategories} title="Category" />
+              </div>
+            )}
             <div className={styles['subscription']}>
               <h4>Join our list</h4>
               <p>
@@ -86,6 +103,7 @@ export const Blog: React.FC = () => {
                     article={article}
                     key={article.id}
                     view={gridView ? EView.GRID : EView.LIST}
+                    tagLink={blogLink}
                   />
                 ))
             ) : (
@@ -99,6 +117,7 @@ export const Blog: React.FC = () => {
           <Pagination
             currentPage={Number(page)}
             totalPages={totalPages}
+            link={blogLink}
             type={EType.NEWS}
           />
         </section>

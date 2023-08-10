@@ -3,7 +3,7 @@
 import { Link } from 'react-router-dom';
 
 // types
-import { ICategory } from '../../types/store';
+import { ICategory, ISubcategory } from '../../types/store';
 import { ILinkProps, ILink } from '../../types';
 
 // styles
@@ -11,7 +11,7 @@ import styles from './SidebarLinks.module.scss';
 
 // TYPES
 export interface ISidebarLinksProps {
-  data: (ILink | ICategory)[];
+  data: (ILink | ICategory | ISubcategory)[];
   title: string;
   limit?: number;
   link?: ILinkProps;
@@ -24,14 +24,13 @@ export const SidebarLinks: React.FC<ISidebarLinksProps> = ({
   link,
   limit = 5,
 }) => {
+  if (!data.length) return null;
+
   const linkText = link?.text ?? 'Link text';
-
-  if (data === null) return null;
-
   const isCategoryData = 'id' in data[0];
 
   const renderedData = isCategoryData
-    ? (data as ICategory[]).slice(0, limit)
+    ? (data as (ICategory | ISubcategory)[]).slice(0, limit)
     : (data as ILink[]);
 
   return (
@@ -43,18 +42,20 @@ export const SidebarLinks: React.FC<ISidebarLinksProps> = ({
             <div
               className={styles['item']}
               key={
-                isCategoryData ? (item as ICategory).id : (item as ILink).text
+                isCategoryData
+                  ? (item as ICategory | ISubcategory).id
+                  : (item as ILink).text
               }
             >
               <Link
                 to={
                   isCategoryData
-                    ? `/${(item as ICategory).id}`
+                    ? `/${(item as ICategory | ISubcategory).id}`
                     : (item as ILink).link
                 }
               >
                 {isCategoryData
-                  ? (item as ICategory).name
+                  ? (item as ICategory | ISubcategory).name
                   : (item as ILink).text}
               </Link>
             </div>

@@ -13,22 +13,17 @@ import styles from './Pagination.module.scss';
 interface IPaginationProps {
   totalPages: number;
   currentPage: number;
-  type?: EType;
+  link: string;
+  type: EType;
 }
 
 // COMPONENT
 export const Pagination: React.FC<IPaginationProps> = ({
   totalPages,
   type,
+  link,
   currentPage = 1,
 }) => {
-  let link = '';
-  if (type === EType.PRODUCTS) {
-    link = '/products';
-  } else if (type === EType.NEWS) {
-    link = '/blog';
-  }
-
   const getClassNames = (index: number): string => {
     if (index === currentPage) return `${styles['link']} ${styles['active']}`;
     else return styles['link'];
@@ -38,7 +33,7 @@ export const Pagination: React.FC<IPaginationProps> = ({
     const paginationLinks = [];
 
     paginationLinks.push(
-      <Link key={1} to="/blog" className={getClassNames(1)}>
+      <Link key={1} to={link} className={getClassNames(1)}>
         1
       </Link>
     );

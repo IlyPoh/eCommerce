@@ -6,9 +6,10 @@ export const STORE_API_URL = 'http://localhost:3001/';
 export const STORE_API_ENDPOINTS: IStoreApiUrls = {
   categories: 'categories',
   products: 'products',
-  tags: 'tags',
+  productTags: 'productTags',
   reviews: 'reviews',
   news: 'news',
+  newsCategories: 'newsCategories',
 };
 
 export const NEWS_API_URL = 'https://newsapi.org/v2/everything';
@@ -212,24 +213,24 @@ export const BLOG_LINKS_MONTHS: ILink[] = [
 
 export const BLOG_LINKS_CATEGORIES: ILink[] = [
   {
+    text: 'Technology',
+    link: '/blog/category/Technology',
+  },
+  {
+    text: 'Innovation',
+    link: '/blog/category/Innovation',
+  },
+  {
     text: 'AI',
-    link: '/blog/category/ai',
+    link: '/blog/category/AI',
   },
   {
-    text: 'Ukraine',
-    link: '/blog/category/Ukraine',
+    text: 'Sustainability',
+    link: '/blog/category/Sustainability',
   },
   {
-    text: 'News',
-    link: '/blog/category/news',
-  },
-  {
-    text: 'Politics',
-    link: '/blog/category/politics',
-  },
-  {
-    text: 'Business',
-    link: '/blog/category/business',
+    text: 'Space',
+    link: '/blog/category/Space',
   },
 ];
 

@@ -21,9 +21,10 @@ export interface ButtonProps
 export interface IStoreApiUrls {
   products: string;
   categories: string;
-  tags: string;
+  productTags: string;
   reviews: string;
   news: string;
+  newsCategories: string;
 }
 
 // Links

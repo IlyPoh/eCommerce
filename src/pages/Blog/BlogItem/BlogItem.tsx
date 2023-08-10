@@ -19,10 +19,15 @@ import styles from './BlogItem.module.scss';
 interface IBlogItemProps {
   article: IArticle;
   view: EView;
+  tagLink: string;
 }
 
 // COMPONENT
-export const BlogItem: React.FC<IBlogItemProps> = ({ article, view }) => {
+export const BlogItem: React.FC<IBlogItemProps> = ({
+  article,
+  view,
+  tagLink,
+}) => {
   if (!article) return null;
 
   return (
@@ -39,7 +44,7 @@ export const BlogItem: React.FC<IBlogItemProps> = ({ article, view }) => {
           {view === EView.GRID && (
             <div className={styles['tags']}>
               {article?.tags?.map((tag) => (
-                <Link className="tag" to={`/blog/category/${tag}`} key={tag}>
+                <Link className="tag" to={`${tagLink}/${tag}`} key={tag}>
                   {tag}
                 </Link>
               ))}

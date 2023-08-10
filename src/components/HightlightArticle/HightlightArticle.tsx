@@ -17,11 +17,13 @@ import styles from './HightlightArticle.module.scss';
 // TYPES
 interface IHighlightArticleProps {
   data: IArticle;
+  link?: string;
 }
 
 // COMPONENT
 export const HightlightArticle: React.FC<IHighlightArticleProps> = ({
   data,
+  link = '/blog',
 }) => {
   return (
     <>
@@ -31,7 +33,7 @@ export const HightlightArticle: React.FC<IHighlightArticleProps> = ({
       >
         <div className={styles['tags']}>
           {data?.tags?.map((tag: string) => (
-            <Link to={`/blog/category/${tag}`} className="tag" key={tag}>
+            <Link to={`${link}/${tag}`} className="tag" key={tag}>
               {tag}
             </Link>
           ))}

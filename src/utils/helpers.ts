@@ -6,7 +6,11 @@ import { setError } from '../store/Slices/appSlice';
 
 // types
 import { IError } from '../types';
-import { IProductsEndpointOptions, INewsEndpointOptions } from '../types/store';
+import {
+  IProductsEndpointOptions,
+  INewsEndpointOptions,
+  ISubcategory,
+} from '../types/store';
 
 export const firstLettertoUppercase = (string: string): string => {
   return string[0].toUpperCase() + string.slice(1);
@@ -17,6 +21,20 @@ export const getPaginationIndexes = (page: number, productsPerPage = 10) => {
   const end = page * productsPerPage;
 
   return { start, end };
+};
+
+export const getBlogLink = (
+  category: string | undefined,
+  month: string | undefined,
+  year: string | undefined
+) => {
+  if (category) return `/blog/category/${category}`;
+  else if (month && year) return `/blog/${year}/${month}`;
+  else return `/blog`;
+};
+
+export const convertDataToArrayOfStrings = (data: ISubcategory[]) => {
+  return data.map((item) => item.name);
 };
 
 export const errorHandler = (error: IError, dispatch: Dispatch<AnyAction>) => {
@@ -82,7 +100,7 @@ export const buildNewsQueryString = (
   endpoint: string,
   searchOptions: Partial<INewsEndpointOptions>
 ) => {
-  const { year, month, limit, page, category } = searchOptions;
+  const { year, month, limit, page, tag, category } = searchOptions;
   const queryParameters = [];
 
   if (limit) queryParameters.push(`_limit=${limit}`);
@@ -98,7 +116,9 @@ export const buildNewsQueryString = (
     queryParameters.push(`publishedAt_lte=${isoEndDate}`);
   }
 
-  if (category) queryParameters.push(`tags_like=${category}`);
+  if (tag) queryParameters.push(`tags_like=${tag}`);
+
+  if (category) queryParameters.push(`category=${category}`);
 
   const queryString =
     queryParameters.length > 0 ? `?${queryParameters.join('&')}` : '';

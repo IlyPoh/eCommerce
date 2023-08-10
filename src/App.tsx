@@ -47,13 +47,24 @@ function App(): React.JSX.Element {
           <Route path="/product/:product" element={<Product />} />
 
           {/* Blog */}
-          <Route path="/blog/" element={<Blog />} />
-          <Route path="/blog/:page" element={<Blog />} />
-          <Route path="/blog/:year/:month" element={<Blog />} />
-          <Route path="/blog/:year/:month/:page" element={<Blog />} />
-          <Route path="/blog/category" element={<Blog />} />
-          <Route path="/blog/category/:tag" element={<Blog />} />
-          <Route path="/blog/category/:tag/:page" element={<Blog />} />
+          <Route path="/blog/:page(\d+)?" element={<Blog />} />
+          <Route
+            path="/blog/:year(\d+)/:month(\d+)/:page(\d+)?"
+            element={<Blog />}
+          />
+          <Route
+            path="/blog/:year/:month/:tag?/:page(\d+)?"
+            element={<Blog />}
+          />
+          <Route
+            path="/blog/category/:category/:page(\d+)?"
+            element={<Blog />}
+          />
+          <Route
+            path="/blog/category/:category/:tag?/:page(\d+)?"
+            element={<Blog />}
+          />
+          <Route path="/blog/:tag/:page(\d+)?" element={<Blog />} />
         </Route>
       </Routes>
     </>

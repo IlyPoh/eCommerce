@@ -110,5 +110,6 @@ export interface INewsEndpointOptions {
   page: number;
   year: number;
   month: number;
+  tag: string;
   category: string;
 }

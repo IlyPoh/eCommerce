@@ -5,14 +5,15 @@ import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 // store
-import { setNews } from '../store/Slices/newsSlice';
+import { setNews, setNewsCategories } from '../store/Slices/newsSlice';
 import { setTags } from '../store/Slices/tagsSlice';
 import { setLoading } from '../store/Slices/appSlice';
 import { setReviews } from '../store/Slices/reviewSlice';
 import { setProducts } from '../store/Slices/productsSlice';
-import { setCategories } from '../store/Slices/categorySlice';
+import { setProductCategories } from '../store/Slices/categorySlice';
 import {
-  useGetCategoriesQuery,
+  useGetProductCategoriesQuery,
+  useGetNewsCategoriesQuery,
   useGetNewsQuery,
   useGetProductsQuery,
   useGetReviewsQuery,
@@ -58,7 +59,7 @@ const useFetchData = (
 
 // Custom hook for fetching categories
 export const useFetchCategories = () => {
-  return useFetchData(useGetCategoriesQuery, setCategories);
+  return useFetchData(useGetProductCategoriesQuery, setProductCategories);
 };
 
 // Custom hook for fetching tags
@@ -74,6 +75,11 @@ export const useFetchReviews = () => {
 // Custom hook for fetching news
 export const useFetchNews = (options: Partial<INewsEndpointOptions> = {}) => {
   return useFetchData(useGetNewsQuery, setNews, options);
+};
+
+// Custom hook for fetching news categories
+export const useFetchNewsCategories = () => {
+  return useFetchData(useGetNewsCategoriesQuery, setNewsCategories);
 };
 
 // Custom hook for fetching products

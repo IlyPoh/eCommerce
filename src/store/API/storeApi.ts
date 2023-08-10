@@ -19,11 +19,20 @@ import {
   buildProductQueryString,
 } from '../../utils/helpers';
 import { STORE_API_URL, STORE_API_ENDPOINTS } from '../../utils/constants';
+import { ILink } from '../../types';
 
 // API
 export const storeApi = createApi({
   reducerPath: 'storeApi',
-  tagTypes: ['Products', 'Categories', 'Tags', 'Reviews', 'News', 'Article'],
+  tagTypes: [
+    'Products',
+    'Categories',
+    'Tags',
+    'Reviews',
+    'News',
+    'Article',
+    'News Categories',
+  ],
   baseQuery: fetchBaseQuery({ baseUrl: STORE_API_URL }),
   endpoints: (builder) => ({
     getProducts: builder.query<IProduct[], Partial<IProductsEndpointOptions>>({
@@ -31,12 +40,12 @@ export const storeApi = createApi({
         buildProductQueryString(STORE_API_ENDPOINTS.products, searchOptions),
       providesTags: ['Products'],
     }),
-    getCategories: builder.query<ICategory[], void>({
+    getProductCategories: builder.query<ICategory[], void>({
       query: () => STORE_API_ENDPOINTS.categories,
       providesTags: ['Categories'],
     }),
     getTags: builder.query<ITag[], void>({
-      query: () => STORE_API_ENDPOINTS.tags,
+      query: () => STORE_API_ENDPOINTS.productTags,
       providesTags: ['Tags'],
     }),
     getReviews: builder.query<IReview[], void>({
@@ -48,6 +57,10 @@ export const storeApi = createApi({
         buildNewsQueryString(STORE_API_ENDPOINTS.news, searchOptions),
       providesTags: ['News'],
     }),
+    getNewsCategories: builder.query<ILink[], void>({
+      query: () => STORE_API_ENDPOINTS.newsCategories,
+      providesTags: ['News Categories'],
+    }),
     getArticle: builder.query<IArticle, string | number>({
       query: (id) => `${STORE_API_ENDPOINTS.news}/${id}`,
       providesTags: ['Article'],
@@ -57,9 +70,10 @@ export const storeApi = createApi({
 
 export const {
   useGetProductsQuery,
-  useGetCategoriesQuery,
+  useGetProductCategoriesQuery,
   useGetTagsQuery,
   useGetReviewsQuery,
   useGetNewsQuery,
+  useGetNewsCategoriesQuery,
   useGetArticleQuery,
 } = storeApi;
