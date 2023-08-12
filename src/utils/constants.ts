@@ -1,4 +1,10 @@
-import { IStoreApiUrls, IHeaderLinks, IFooterLink, ILink } from '../types';
+import {
+  IStoreApiUrls,
+  IHeaderLinks,
+  IFooterLink,
+  ILink,
+  ILinkWithYear,
+} from '../types';
 
 // apis
 export const STORE_API_URL = 'http://localhost:3001/';
@@ -188,26 +194,46 @@ export const SECOND_SIDEBAR_LINKS: ILink[] = [
   },
 ];
 
-export const BLOG_LINKS_MONTHS: ILink[] = [
+export const BLOG_LINKS_MONTHS: ILinkWithYear[] = [
   {
     text: 'July 2023',
-    link: '/blog/2023/7',
+    link: '/blog',
+    year: {
+      year: 2023,
+      month: 7,
+    },
   },
   {
     text: 'June 2023',
-    link: '/blog/2023/6',
+    link: '/blog',
+    year: {
+      year: 2023,
+      month: 6,
+    },
   },
   {
     text: 'May 2023',
-    link: '/blog/2023/5',
+    link: '/blog',
+    year: {
+      year: 2023,
+      month: 5,
+    },
   },
   {
     text: 'April 2023',
-    link: '/blog/2023/4',
+    link: '/blog',
+    year: {
+      year: 2023,
+      month: 4,
+    },
   },
   {
     text: 'March 2023',
-    link: '/blog/2023/3',
+    link: '/blog',
+    year: {
+      year: 2023,
+      month: 3,
+    },
   },
 ];
 

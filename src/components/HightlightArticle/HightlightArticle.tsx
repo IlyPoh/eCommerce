@@ -1,6 +1,6 @@
 // IMPORTS
 // libraries
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 // placeholder
 import placeholder from '/images/placeholder_32.png';
@@ -25,6 +25,7 @@ export const HightlightArticle: React.FC<IHighlightArticleProps> = ({
   data,
   link = '/blog',
 }) => {
+  const { state } = useLocation();
   return (
     <>
       <div
@@ -33,7 +34,12 @@ export const HightlightArticle: React.FC<IHighlightArticleProps> = ({
       >
         <div className={styles['tags']}>
           {data?.tags?.map((tag: string) => (
-            <Link to={`${link}/${tag}`} className="tag" key={tag}>
+            <Link
+              key={tag}
+              to={link}
+              state={{ ...state, tag: tag }}
+              className="tag"
+            >
               {tag}
             </Link>
           ))}
@@ -41,7 +47,7 @@ export const HightlightArticle: React.FC<IHighlightArticleProps> = ({
         <div className={styles['body']}>
           <div className={styles['title']}>
             <h3>
-              <Link to={`/blog/article/${data.id}`}>
+              <Link to={`${link}/article/${data.id}`}>
                 {data.title ?? 'No title'}
               </Link>
             </h3>

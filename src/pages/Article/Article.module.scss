@@ -1,0 +1,86 @@
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.info {
+  max-width: 170px;
+  width: 100%;
+}
+
+.content {
+  max-width: 570px;
+  width: 100%;
+}
+
+.header {
+  height: 480px;
+
+  color: $color-white;
+
+  @include display_flex($align: flex-end, $justify: center, $gap: 32px);
+
+  padding: 32px;
+
+  border-radius: 12px;
+
+  .info {
+    @include display_flex($direction: column, $gap: 12px);
+
+    @extend %smallFontSize;
+    font-weight: 700;
+
+    .item {
+      @include display_flex();
+
+      .category {
+        width: 50%;
+
+        color: $color-grey-a9;
+      }
+
+      .link {
+        color: $color-white;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.body {
+  @include display_flex($justify: center, $gap: 32px);
+
+  .info {
+    @include display_flex($direction: column, $gap: 48px);
+
+    h4 {
+      margin-bottom: 16px;
+    }
+
+    .list {
+      @include display_flex($wrap: wrap, $gap: 8px);
+    }
+
+    .back {
+      a {
+        @extend %display_inline_flex;
+
+        color: $color-main;
+      }
+    }
+  }
+
+  .content {
+    font-size: 17px;
+
+    .article {
+      margin-bottom: 48px;
+    }
+
+    .share {
+      font-weight: 700;
+
+      @include display_flex($align: center, $wrap: wrap, $gap: 16px);
+
+      margin-bottom: 48px;
+    }
+  }
+}

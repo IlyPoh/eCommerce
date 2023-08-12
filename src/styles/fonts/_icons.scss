@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src: url('/fonts/icomoon.eot?2wm24u');
-  src: url('/fonts/icomoon.eot?2wm24u#iefix') format('embedded-opentype'),
-    url('/fonts/icomoon.ttf?2wm24u') format('truetype'),
-    url('/fonts/icomoon.woff?2wm24u') format('woff'),
-    url('/fonts/icomoon.svg?2wm24u#icomoon') format('svg');
+  src: url('/fonts/icomoon.eot?7emvcs');
+  src: url('/fonts/icomoon.eot?7emvcs#iefix') format('embedded-opentype'),
+    url('/fonts/icomoon.ttf?7emvcs') format('truetype'),
+    url('/fonts/icomoon.woff?7emvcs') format('woff'),
+    url('/fonts/icomoon.svg?7emvcs#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,6 +24,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 $icons: (
   'actions-add': '\e900',
   'actions-add-file': '\e901',
@@ -314,6 +315,10 @@ $icons: (
   'weather-wind': '\ea1e',
   'weather-wind-storm': '\ea1f',
   'weather-wind-storm-rain': '\ea20',
+  'socials-facebook': '\ea91',
+  'socials-twitter': '\ea96',
+  'socials-linked': '\eaca',
+  'socials-pinterest': '\ead1',
 );
 
 @each $icon-name, $icon-content in $icons {

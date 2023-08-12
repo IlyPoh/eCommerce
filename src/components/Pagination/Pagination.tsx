@@ -1,7 +1,7 @@
 // IMPORTS
 // types
-import { EType } from '../../types';
-import { Link } from 'react-router-dom';
+import { EItemType } from '../../types';
+import { Link, useLocation } from 'react-router-dom';
 
 // utils
 import { Counter } from '../Counter/Counter';
@@ -14,7 +14,7 @@ interface IPaginationProps {
   totalPages: number;
   currentPage: number;
   link: string;
-  type: EType;
+  type: EItemType;
 }
 
 // COMPONENT
@@ -24,6 +24,7 @@ export const Pagination: React.FC<IPaginationProps> = ({
   link,
   currentPage = 1,
 }) => {
+  const { state } = useLocation();
   const getClassNames = (index: number): string => {
     if (index === currentPage) return `${styles['link']} ${styles['active']}`;
     else return styles['link'];
@@ -33,12 +34,17 @@ export const Pagination: React.FC<IPaginationProps> = ({
     const paginationLinks = [];
 
     paginationLinks.push(
-      <Link key={1} to={link} className={getClassNames(1)}>
+      <Link
+        to={link}
+        state={{ ...state, page: 1 }}
+        key={1}
+        className={getClassNames(1)}
+      >
         1
       </Link>
     );
 
-    if (currentPage > 4) {
+    if (currentPage > 3) {
       paginationLinks.push(<span key="ellipsis1">...</span>);
     }
 
@@ -48,7 +54,8 @@ export const Pagination: React.FC<IPaginationProps> = ({
     for (let i = start; i <= end; i++) {
       paginationLinks.push(
         <Link
-          to={`${link}/${i}`}
+          to={link}
+          state={{ ...state, page: i }}
           className={getClassNames(i)}
           key={`${link}-${i}`}
         >
@@ -57,7 +64,7 @@ export const Pagination: React.FC<IPaginationProps> = ({
       );
     }
 
-    if (currentPage < totalPages - 3) {
+    if (currentPage < totalPages - 2) {
       paginationLinks.push(<span key="ellipsis2">...</span>);
     }
 
@@ -67,7 +74,12 @@ export const Pagination: React.FC<IPaginationProps> = ({
       totalPages > 1
     ) {
       paginationLinks.push(
-        <Link key={totalPages} to={`${link}/${totalPages}`}>
+        <Link
+          to={link}
+          className={getClassNames(totalPages)}
+          state={{ ...state, page: totalPages }}
+          key={totalPages}
+        >
           {totalPages}
         </Link>
       );
@@ -86,8 +98,9 @@ export const Pagination: React.FC<IPaginationProps> = ({
         <div className={styles['buttons']}>
           {currentPage > 1 ? (
             <Link
+              to={link}
+              state={{ ...state, page: currentPage - 1 }}
               className="btn btn-medium btn-green"
-              to={`${link}/${currentPage - 1}`}
             >
               <i className="icon-chevron-left"></i>
               Previous page
@@ -96,8 +109,9 @@ export const Pagination: React.FC<IPaginationProps> = ({
 
           {currentPage < totalPages ? (
             <Link
+              to={link}
+              state={{ ...state, page: currentPage + 1 }}
               className="btn btn-medium btn-green"
-              to={`${link}/${currentPage + 1}`}
             >
               Next page
               <i className="icon-chevron-right"></i>

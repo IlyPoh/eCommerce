@@ -1,6 +1,6 @@
 // IMPOTS
 // types
-import { EType } from '../../types';
+import { EItemType } from '../../types';
 
 // utils
 import { useAppSelector } from '../../utils/hooks';
@@ -10,7 +10,7 @@ import styles from './Counter.module.scss';
 
 // TYPE
 interface ICounterProps {
-  type: EType;
+  type: EItemType;
 }
 
 // COMPONENT
@@ -23,10 +23,10 @@ export const Counter: React.FC<ICounterProps> = ({ type }) => {
   let count = 0;
   let text = 'Items';
 
-  if (type === EType.PRODUCTS) {
+  if (type === EItemType.PRODUCTS) {
     count = productCount;
     text = 'Products';
-  } else if (type === EType.NEWS) {
+  } else if (type === EItemType.NEWS) {
     count = newsCount;
     text = 'Articles';
   }

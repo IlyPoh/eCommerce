@@ -23,13 +23,8 @@ export const getPaginationIndexes = (page: number, productsPerPage = 10) => {
   return { start, end };
 };
 
-export const getBlogLink = (
-  category: string | undefined,
-  month: string | undefined,
-  year: string | undefined
-) => {
-  if (category) return `/blog/category/${category}`;
-  else if (month && year) return `/blog/${year}/${month}`;
+export const getBlogLink = (category: string | undefined) => {
+  if (category) return `/blog/${category}`;
   else return `/blog`;
 };
 

@@ -14,7 +14,7 @@ export const Breadcrumbs: React.FC = () => {
     <>
       <div className={styles['breadcrumbs']}>
         {breadcrumbs.map(({ match, breadcrumb }) => {
-          if (match.pathname !== '/blog/category') {
+          if (match.pathname !== '/blog/article') {
             return (
               <Link
                 to={match.pathname}

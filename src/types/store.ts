@@ -98,6 +98,7 @@ export interface IArticle {
   author: string;
   title: string;
   description: string;
+  category: string;
   tags?: string[];
   url: string;
   urlToImage: string;

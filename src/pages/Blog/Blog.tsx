@@ -1,18 +1,17 @@
 // IMPORTS
 // libraries
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 // components
 import { BlogItem } from './BlogItem/BlogItem';
 import { Pagination } from '../../components/Pagination/Pagination';
-import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 import { PageHeadline } from '../../components/PageHeadline/PageHeadline';
 import { SidebarLinks } from '../../components/SidebarLinks/SidebarLinks';
 import { HightlightArticle } from '../../components/HightlightArticle/HightlightArticle';
 
 // types
 import { IArticle } from '../../types/store';
-import { EType, EView, IPaginationIndexes } from '../../types';
+import { EItemType, EView, IPaginationIndexes } from '../../types';
 
 // utils
 import { getBlogLink, getPaginationIndexes } from '../../utils/helpers';
@@ -28,29 +27,28 @@ import styles from './Blog.module.scss';
 
 // COMPONENT
 export const Blog: React.FC = () => {
-  const { year, month, category, tag, page = 1 } = useParams();
-  console.log('page:', page);
-  console.log('tag:', tag);
-  console.log('category:', category);
-  console.log('month:', month);
-  console.log('year:', year);
+  const { category } = useParams();
+  const { state } = useLocation();
+
   const newsData = useAppSelector((state) => state.newsState.news);
   const newsCategories = useAppSelector((state) => state.newsState.categories);
   const gridView = useAppSelector((state) => state.appState.gridView);
+
   const newsPerPage = 11;
   const productIndexesToRender: IPaginationIndexes = getPaginationIndexes(
-    Number(page),
+    state?.page ?? 1,
     newsPerPage
   );
-  const blogLink = getBlogLink(category, month, year);
+
+  const blogLink = getBlogLink(category);
   const productHighlightLastIndex = productIndexesToRender.start + 2;
   const totalPages = Math.ceil(newsData.length / newsPerPage);
 
   useFetchNews({
-    year: Number(year),
-    month: Number(month),
+    year: state?.year,
+    month: state?.month,
     category: category,
-    tag: tag,
+    tag: state?.tag,
   });
 
   useFetchNewsCategories();
@@ -58,18 +56,13 @@ export const Blog: React.FC = () => {
   return (
     <>
       <div className="container">
-        <Breadcrumbs />
-        <PageHeadline title="Blog" type={EType.NEWS} />
+        <PageHeadline title="Blog" type={EItemType.NEWS} />
         {newsData.length ? (
           <section className={styles['headline']}>
             {newsData
               .slice(productIndexesToRender.start, productHighlightLastIndex)
               .map((article: IArticle) => (
-                <HightlightArticle
-                  data={article}
-                  key={article.id}
-                  link={blogLink}
-                />
+                <HightlightArticle data={article} key={article.id} />
               ))}
           </section>
         ) : null}
@@ -103,7 +96,6 @@ export const Blog: React.FC = () => {
                     article={article}
                     key={article.id}
                     view={gridView ? EView.GRID : EView.LIST}
-                    tagLink={blogLink}
                   />
                 ))
             ) : (
@@ -115,10 +107,10 @@ export const Blog: React.FC = () => {
         </section>
         <section className="section-small">
           <Pagination
-            currentPage={Number(page)}
+            currentPage={state?.page}
             totalPages={totalPages}
             link={blogLink}
-            type={EType.NEWS}
+            type={EItemType.NEWS}
           />
         </section>
       </div>

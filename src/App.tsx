@@ -6,10 +6,12 @@ import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout/Layout';
 import { Loading } from './components/Loading/Loading';
 import { ErrorBox } from './components/ErrorBox/ErrorBox';
+import { LayoutWithBreadcrumbs } from './components/LayoutWithBreadcrumbs/LayoutWithBreadcrumbs';
 
 // pages
 import { Blog } from './pages/Blog/Blog';
 import { Mainpage } from './pages/Mainpage';
+import { Article } from './pages/Article/Article';
 import { Product } from './pages/Product/Product';
 import { Category } from './pages/Category/Category';
 
@@ -40,31 +42,19 @@ function App(): React.JSX.Element {
           <Route index element={<Mainpage />} />
 
           {/* Category */}
-          <Route path="/:category" element={<Category />} />
-          <Route path="/:category/:subcategory" element={<Category />} />
+          <Route path="/:category/:subcategory?" element={<Category />} />
 
           {/* Product */}
           <Route path="/product/:product" element={<Product />} />
 
-          {/* Blog */}
-          <Route path="/blog/:page(\d+)?" element={<Blog />} />
-          <Route
-            path="/blog/:year(\d+)/:month(\d+)/:page(\d+)?"
-            element={<Blog />}
-          />
-          <Route
-            path="/blog/:year/:month/:tag?/:page(\d+)?"
-            element={<Blog />}
-          />
-          <Route
-            path="/blog/category/:category/:page(\d+)?"
-            element={<Blog />}
-          />
-          <Route
-            path="/blog/category/:category/:tag?/:page(\d+)?"
-            element={<Blog />}
-          />
-          <Route path="/blog/:tag/:page(\d+)?" element={<Blog />} />
+          {/* Pages with breadcrumbs */}
+          <Route element={<LayoutWithBreadcrumbs />}>
+            {/* Blog */}
+            <Route path="/blog">
+              <Route path=":category?" element={<Blog />} />
+              <Route path="article/:articleId" element={<Article />} />
+            </Route>
+          </Route>
         </Route>
       </Routes>
     </>

@@ -3,7 +3,7 @@
 import { setGridView } from '../../store/Slices/appSlice';
 
 // types
-import { EType } from '../../types';
+import { EItemType } from '../../types';
 
 // utils
 import { useAppDispatch, useAppSelector } from '../../utils/hooks';
@@ -15,13 +15,13 @@ import styles from './PageHeadline.module.scss';
 // TYPE
 interface IPageHeadlineProps {
   title?: string;
-  type?: EType;
+  type?: EItemType;
 }
 
 // COMPONENT
 export const PageHeadline: React.FC<Partial<IPageHeadlineProps>> = ({
   title,
-  type = EType.PRODUCTS,
+  type = EItemType.PRODUCTS,
 }) => {
   const dispatch = useAppDispatch();
   const gridView = useAppSelector((state) => state.appState.gridView);

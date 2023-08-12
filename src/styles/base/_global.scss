@@ -13,6 +13,7 @@ body {
   height: 100%;
 
   font-family: $ff-poppins;
+  color: $color-main;
   @extend %defaultFontSize;
 }
 
@@ -74,4 +75,10 @@ section {
 
 .text-center {
   text-align: center;
+}
+
+.link {
+  color: $color-green-6a;
+  padding: 0;
+  text-decoration: underline;
 }

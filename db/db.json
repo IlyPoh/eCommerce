@@ -1241,23 +1241,23 @@
   "newsCategories": [
     {
       "text": "Technology",
-      "link": "/blog/category/Technology"
+      "link": "/blog/Technology"
     },
     {
       "text": "Innovation",
-      "link": "/blog/category/Innovation"
+      "link": "/blog/Innovation"
     },
     {
       "text": "AI",
-      "link": "/blog/category/AI"
+      "link": "/blog/AI"
     },
     {
       "text": "Culture",
-      "link": "/blog/category/Culture"
+      "link": "/blog/Culture"
     },
     {
       "text": "Sustainability",
-      "link": "/blog/category/Sustainability"
+      "link": "/blog/Sustainability"
     }
   ]
 }

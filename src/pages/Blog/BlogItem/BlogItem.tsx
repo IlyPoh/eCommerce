@@ -1,6 +1,6 @@
 // IMPORTS
 // libraries
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 // placeholder
 import placeholder from '/images/placeholder.png';
@@ -19,15 +19,16 @@ import styles from './BlogItem.module.scss';
 interface IBlogItemProps {
   article: IArticle;
   view: EView;
-  tagLink: string;
+  link?: string;
 }
 
 // COMPONENT
 export const BlogItem: React.FC<IBlogItemProps> = ({
   article,
   view,
-  tagLink,
+  link = '/blog',
 }) => {
+  const state = useLocation();
   if (!article) return null;
 
   return (
@@ -44,7 +45,12 @@ export const BlogItem: React.FC<IBlogItemProps> = ({
           {view === EView.GRID && (
             <div className={styles['tags']}>
               {article?.tags?.map((tag) => (
-                <Link className="tag" to={`${tagLink}/${tag}`} key={tag}>
+                <Link
+                  className="tag"
+                  to={link}
+                  state={{ ...state, tag }}
+                  key={tag}
+                >
                   {tag}
                 </Link>
               ))}
@@ -53,10 +59,12 @@ export const BlogItem: React.FC<IBlogItemProps> = ({
           <div className={styles['title']}>
             {view === EView.GRID ? (
               <h4>
-                <Link to={`/blog/article/${article.id}`}>{article.title}</Link>
+                <Link to={`${link}/article/${article.id}`}>
+                  {article.title}
+                </Link>
               </h4>
             ) : (
-              <Link to={`/blog/article/${article.id}`}>{article.title}</Link>
+              <Link to={`${link}/article/${article.id}`}>{article.title}</Link>
             )}
           </div>
           <div className={styles['info']}>

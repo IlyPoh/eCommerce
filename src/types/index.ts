@@ -4,9 +4,14 @@ export enum EView {
   LIST = 'list',
 }
 
-export enum EType {
+export enum EItemType {
   PRODUCTS = 'products',
   NEWS = 'news',
+}
+
+export enum ELinkType {
+  link = 'link',
+  button = 'button',
 }
 
 // props for button component
@@ -31,6 +36,12 @@ export interface IStoreApiUrls {
 export interface ILink {
   text: string;
   link: string;
+}
+
+export interface ILinkWithYear {
+  text: string;
+  link: string;
+  year: { year: number; month: number };
 }
 
 export interface IHeaderLinks {

@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 // types
 import { ICategory, ISubcategory } from '../../types/store';
-import { ILinkProps, ILink } from '../../types';
+import { ILinkProps, ILink, ILinkWithYear } from '../../types';
 
 // styles
 import styles from './SidebarLinks.module.scss';
 
 // TYPES
 export interface ISidebarLinksProps {
-  data: (ILink | ICategory | ISubcategory)[];
+  data: (ILink | ILinkWithYear | ICategory | ISubcategory)[];
   title: string;
   limit?: number;
   link?: ILinkProps;
@@ -31,7 +31,7 @@ export const SidebarLinks: React.FC<ISidebarLinksProps> = ({
 
   const renderedData = isCategoryData
     ? (data as (ICategory | ISubcategory)[]).slice(0, limit)
-    : (data as ILink[]);
+    : (data as (ILink | ILinkWithYear)[]);
 
   return (
     <aside className={styles['sidebar']}>
@@ -47,17 +47,23 @@ export const SidebarLinks: React.FC<ISidebarLinksProps> = ({
                   : (item as ILink).text
               }
             >
-              <Link
-                to={
-                  isCategoryData
-                    ? `/${(item as ICategory | ISubcategory).id}`
-                    : (item as ILink).link
-                }
-              >
-                {isCategoryData
-                  ? (item as ICategory | ISubcategory).name
-                  : (item as ILink).text}
-              </Link>
+              {
+                <Link
+                  to={
+                    isCategoryData
+                      ? `/${(item as ICategory | ISubcategory).id}`
+                      : (item as ILink | ILinkWithYear).link
+                  }
+                  state={{
+                    year: (item as ILinkWithYear).year?.year,
+                    month: (item as ILinkWithYear).year?.month,
+                  }}
+                >
+                  {isCategoryData
+                    ? (item as ICategory | ISubcategory).name
+                    : (item as ILink).text}
+                </Link>
+              }
             </div>
           ))}
         </div>
