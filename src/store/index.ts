@@ -8,6 +8,7 @@ import { storeApi } from './API/storeApi';
 // slices
 import tagsSlice from './Slices/tagsSlice';
 import newsSlice from './Slices/newsSlice';
+import pageSlice from './Slices/pageSlice';
 import appStateSlice from './Slices/appSlice';
 import reviewSlice from './Slices/reviewSlice';
 import categorySlice from './Slices/categorySlice';
@@ -17,6 +18,7 @@ import productsSlice from './Slices/productsSlice';
 export const store = configureStore({
   reducer: {
     appState: appStateSlice,
+    pageState: pageSlice,
     productState: productsSlice,
     categoryState: categorySlice,
     newsState: newsSlice,

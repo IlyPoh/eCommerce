@@ -1,7 +1,7 @@
 // IMPORTS
 // components
 import { BlogItem } from '../../Blog/BlogItem/BlogItem';
-import { HightlightArticle } from '../../../components/HightlightArticle/HightlightArticle';
+import { HighlightArticle } from '../../../components/HighlightArticle/HighlightArticle';
 // store
 import { IArticle } from '../../../types/store';
 
@@ -23,7 +23,7 @@ export const BlogBlock: React.FC<IBlogBlockProps> = ({ data }) => {
   return (
     <>
       <div className={styles['blog']}>
-        <HightlightArticle data={data[0]} />
+        <HighlightArticle data={data[0]} />
         {data.length >= 2 && <BlogItem article={data[1]} view={EView.GRID} />}
         {data.length >= 3 && (
           <div className={styles['list']}>

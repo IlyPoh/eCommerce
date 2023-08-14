@@ -1,4 +1,7 @@
 // IMPORTS
+// components
+import { Counter } from '../Counter/Counter';
+
 // store
 import { setGridView } from '../../store/Slices/appSlice';
 
@@ -7,7 +10,6 @@ import { EItemType } from '../../types';
 
 // utils
 import { useAppDispatch, useAppSelector } from '../../utils/hooks';
-import { Counter } from '../Counter/Counter';
 
 // styles
 import styles from './PageHeadline.module.scss';
@@ -19,11 +21,9 @@ interface IPageHeadlineProps {
 }
 
 // COMPONENT
-export const PageHeadline: React.FC<Partial<IPageHeadlineProps>> = ({
-  title,
-  type = EItemType.PRODUCTS,
-}) => {
+export const PageHeadline: React.FC<Partial<IPageHeadlineProps>> = () => {
   const dispatch = useAppDispatch();
+  const pageTitle = useAppSelector((state) => state.pageState.pageTitle);
   const gridView = useAppSelector((state) => state.appState.gridView);
 
   const handleGridView = () => {
@@ -33,7 +33,7 @@ export const PageHeadline: React.FC<Partial<IPageHeadlineProps>> = ({
   return (
     <>
       <div className={styles['title']}>
-        <h2>{title ?? 'Page Headline'}</h2>
+        <h2>{pageTitle ?? 'Page Headline'}</h2>
         <div className={styles['filters']}>
           <button
             onClick={handleGridView}
@@ -49,7 +49,7 @@ export const PageHeadline: React.FC<Partial<IPageHeadlineProps>> = ({
             <i className="icon-layout-sections" />
             <span>List view</span>
           </button>
-          <Counter type={type} />
+          <Counter />
         </div>
       </div>
     </>

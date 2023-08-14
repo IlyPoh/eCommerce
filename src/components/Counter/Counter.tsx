@@ -8,14 +8,10 @@ import { useAppSelector } from '../../utils/hooks';
 // styles
 import styles from './Counter.module.scss';
 
-// TYPE
-interface ICounterProps {
-  type: EItemType;
-}
-
 // COMPONENT
-export const Counter: React.FC<ICounterProps> = ({ type }) => {
+export const Counter: React.FC = () => {
   const newsCount = useAppSelector((state) => state.newsState.news.length);
+  const type = useAppSelector((state) => state.pageState.pageType);
   const productCount = useAppSelector(
     (state) => state.productState.products.length
   );

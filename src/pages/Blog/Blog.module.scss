@@ -6,7 +6,7 @@
   @include display_flex($gap: 32px);
 }
 .body {
-  @include display_flex($justify: space-between, $gap: 32px);
+  @include display_flex($gap: 32px);
 
   aside {
     max-width: 270px;
@@ -35,11 +35,13 @@
   }
 
   .content {
+    width: 100%;
     transition: gap $shortTransition, display $shortTransition;
 
     &.grid {
       @include display_grid($columns: 3, $gap: 32px);
     }
+
     &.list {
       width: 100%;
       @include display_flex($direction: column, $gap: 16px);

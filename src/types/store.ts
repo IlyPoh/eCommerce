@@ -1,8 +1,20 @@
+import { EItemType } from '.';
+
 // App
 export interface IAppState {
   loading: boolean;
   error: string | null;
   gridView: boolean;
+}
+
+// Page
+export interface IPageState {
+  currentPage: number;
+  pageType: EItemType | null;
+  pageURL: string;
+  pageTitle: string;
+  productCount: number;
+  pageCount: number;
 }
 
 // Category

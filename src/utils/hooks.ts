@@ -25,10 +25,18 @@ import { IError } from '../types';
 
 // store types
 import type { RootState, AppDispatch } from '../store';
-import { INewsEndpointOptions, IProduct } from '../types/store';
+import { INewsEndpointOptions, IPageState, IProduct } from '../types/store';
 
 // utils
 import { errorHandler } from './helpers';
+import {
+  setCurrentPage,
+  setPageCount,
+  setPageTitle,
+  setPageType,
+  setPageURL,
+  setProductCount,
+} from '../store/Slices/pageSlice';
 
 // HOOKS
 // Store hooks
@@ -85,4 +93,28 @@ export const useFetchNewsCategories = () => {
 // Custom hook for fetching products
 export const useFetchProducts = (options: Partial<IProduct> = {}) => {
   return useFetchData(useGetProductsQuery, setProducts, options);
+};
+
+// Custom hook for page state
+export const usePageState = (state: Partial<IPageState>) => {
+  const dispatch = useAppDispatch();
+  const { currentPage, pageURL, pageTitle, pageType, productCount, pageCount } =
+    state;
+
+  useEffect(() => {
+    dispatch(setCurrentPage(currentPage));
+    dispatch(setPageURL(pageURL));
+    dispatch(setPageTitle(pageTitle));
+    dispatch(setPageType(pageType));
+    dispatch(setProductCount(productCount));
+    dispatch(setPageCount(pageCount));
+  }, [
+    dispatch,
+    currentPage,
+    pageTitle,
+    pageType,
+    productCount,
+    pageCount,
+    pageURL,
+  ]);
 };

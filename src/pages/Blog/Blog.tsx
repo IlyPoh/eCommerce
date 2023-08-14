@@ -4,10 +4,8 @@ import { useLocation, useParams } from 'react-router-dom';
 
 // components
 import { BlogItem } from './BlogItem/BlogItem';
-import { Pagination } from '../../components/Pagination/Pagination';
-import { PageHeadline } from '../../components/PageHeadline/PageHeadline';
 import { SidebarLinks } from '../../components/SidebarLinks/SidebarLinks';
-import { HightlightArticle } from '../../components/HightlightArticle/HightlightArticle';
+import { HighlightArticle } from '../../components/HighlightArticle/HighlightArticle';
 
 // types
 import { IArticle } from '../../types/store';
@@ -19,6 +17,7 @@ import {
   useAppSelector,
   useFetchNews,
   useFetchNewsCategories,
+  usePageState,
 } from '../../utils/hooks';
 import { BLOG_LINKS_MONTHS as MONTHS } from '../../utils/constants';
 
@@ -40,6 +39,8 @@ export const Blog: React.FC = () => {
     newsPerPage
   );
 
+  const pageTitle = category ?? 'Blog';
+
   const blogLink = getBlogLink(category);
   const productHighlightLastIndex = productIndexesToRender.start + 2;
   const totalPages = Math.ceil(newsData.length / newsPerPage);
@@ -53,19 +54,61 @@ export const Blog: React.FC = () => {
 
   useFetchNewsCategories();
 
+  usePageState({
+    currentPage: state?.page ?? 1,
+    pageURL: blogLink,
+    pageType: EItemType.NEWS,
+    pageTitle: pageTitle,
+    pageCount: totalPages,
+    productCount: newsData.length,
+  });
+
+  const renderHighlightArticles = () => {
+    return (
+      <section className={styles['headline']}>
+        {newsData
+          .slice(productIndexesToRender.start, productHighlightLastIndex)
+          .map((article: IArticle) => (
+            <HighlightArticle data={article} key={article.id} />
+          ))}
+      </section>
+    );
+  };
+
+  const renderBlogItems = () => {
+    return (
+      <div
+        className={`${styles['content']}
+          ${gridView ? styles[EView.GRID] : styles[EView.LIST]}
+        `}
+      >
+        {newsData
+          .slice(productHighlightLastIndex, productIndexesToRender.end)
+          .map((article: IArticle) => (
+            <BlogItem
+              article={article}
+              key={article.id}
+              view={gridView ? EView.GRID : EView.LIST}
+            />
+          ))}
+      </div>
+    );
+  };
+
+  const renderNoArticlesMessage = () => {
+    return (
+      <div className={styles['content']}>
+        <div className="text-center">
+          <h2>No Articles</h2>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       <div className="container">
-        <PageHeadline title="Blog" type={EItemType.NEWS} />
-        {newsData.length ? (
-          <section className={styles['headline']}>
-            {newsData
-              .slice(productIndexesToRender.start, productHighlightLastIndex)
-              .map((article: IArticle) => (
-                <HightlightArticle data={article} key={article.id} />
-              ))}
-          </section>
-        ) : null}
+        {!!newsData.length && renderHighlightArticles()}
         <section className={styles['body']}>
           <aside>
             {MONTHS && <SidebarLinks data={MONTHS} title="Archives" />}
@@ -82,36 +125,7 @@ export const Blog: React.FC = () => {
               </p>
             </div>
           </aside>
-          <div
-            className={`${styles['content']} ${
-              gridView ? styles[EView.GRID] : styles[EView.LIST]
-            }`}
-          >
-            {newsData.length ? (
-              productIndexesToRender &&
-              newsData
-                .slice(productHighlightLastIndex, productIndexesToRender.end)
-                .map((article: IArticle) => (
-                  <BlogItem
-                    article={article}
-                    key={article.id}
-                    view={gridView ? EView.GRID : EView.LIST}
-                  />
-                ))
-            ) : (
-              <div className="text-center">
-                <h2>No Articles</h2>
-              </div>
-            )}
-          </div>
-        </section>
-        <section className="section-small">
-          <Pagination
-            currentPage={state?.page}
-            totalPages={totalPages}
-            link={blogLink}
-            type={EItemType.NEWS}
-          />
+          {newsData.length > 0 ? renderBlogItems() : renderNoArticlesMessage()}
         </section>
       </div>
     </>

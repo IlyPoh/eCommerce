@@ -2,11 +2,17 @@
 // libraries
 import { Link, useParams } from 'react-router-dom';
 
+// components
+import { Button } from '../../components/UI/Button/Button';
+
+// store
+import { useGetArticleQuery } from '../../store/API/storeApi';
+
+// utils
+import { formatDate } from '../../utils/helpers';
+
 // styles
 import styles from './Article.module.scss';
-import { useGetArticleQuery } from '../../store/API/storeApi';
-import { formatDate } from '../../utils/helpers';
-import { Button } from '../../components/UI/Button/Button';
 
 // COMPONENT
 export const Article: React.FC = () => {

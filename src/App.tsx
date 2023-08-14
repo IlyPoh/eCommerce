@@ -6,7 +6,8 @@ import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout/Layout';
 import { Loading } from './components/Loading/Loading';
 import { ErrorBox } from './components/ErrorBox/ErrorBox';
-import { LayoutWithBreadcrumbs } from './components/LayoutWithBreadcrumbs/LayoutWithBreadcrumbs';
+import { LayoutWithHeadline } from './components/LayoutWithHeadline';
+import { BreadcrumbsAndPaginationLayout } from './components/BreadcrumbsAndPaginationLayout';
 
 // pages
 import { Blog } from './pages/Blog/Blog';
@@ -48,12 +49,16 @@ function App(): React.JSX.Element {
           <Route path="/product/:product" element={<Product />} />
 
           {/* Pages with breadcrumbs */}
-          <Route element={<LayoutWithBreadcrumbs />}>
-            {/* Blog */}
-            <Route path="/blog">
-              <Route path=":category?" element={<Blog />} />
-              <Route path="article/:articleId" element={<Article />} />
+          <Route element={<BreadcrumbsAndPaginationLayout />}>
+            <Route element={<LayoutWithHeadline />}>
+              {/* Blog */}
+              <Route path="/blog">
+                <Route path=":category?" element={<Blog />} />
+              </Route>
             </Route>
+
+            {/* Article */}
+            <Route path="blog/article/:articleId" element={<Article />} />
           </Route>
         </Route>
       </Routes>

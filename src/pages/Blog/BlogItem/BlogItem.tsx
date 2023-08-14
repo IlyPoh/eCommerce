@@ -2,7 +2,7 @@
 // libraries
 import { Link, useLocation } from 'react-router-dom';
 
-// placeholder
+// placeholders
 import placeholder from '/images/placeholder.png';
 
 // utils
@@ -39,6 +39,7 @@ export const BlogItem: React.FC<IBlogItemProps> = ({
             src={article.urlToImage ?? placeholder}
             width={300}
             alt={article.title}
+            onError={(e) => (e.currentTarget.src = `${placeholder}`)}
           />
         </Link>
         <div className={styles['body']}>

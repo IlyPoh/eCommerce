@@ -2,8 +2,9 @@
 // libraries
 import { Link, useLocation } from 'react-router-dom';
 
-// placeholder
-import placeholder from '/images/placeholder_32.png';
+// placeholders
+import placeholderAuthor from '/images/placeholder_32.png';
+import placeholderArticle from '/images/placeholder.png';
 
 // types
 import { IArticle } from '../../types/store';
@@ -12,7 +13,7 @@ import { IArticle } from '../../types/store';
 import { formatDate } from '../../utils/helpers';
 
 // styles
-import styles from './HightlightArticle.module.scss';
+import styles from './HighlightArticle.module.scss';
 
 // TYPES
 interface IHighlightArticleProps {
@@ -21,7 +22,7 @@ interface IHighlightArticleProps {
 }
 
 // COMPONENT
-export const HightlightArticle: React.FC<IHighlightArticleProps> = ({
+export const HighlightArticle: React.FC<IHighlightArticleProps> = ({
   data,
   link = '/blog',
 }) => {
@@ -54,7 +55,11 @@ export const HightlightArticle: React.FC<IHighlightArticleProps> = ({
           </div>
           <div className={styles['info']}>
             <div className={styles['author']}>
-              <img src={placeholder} alt={data?.author ?? 'No author'} />
+              <img
+                src={placeholderAuthor}
+                alt={data?.author ?? 'No author'}
+                onError={(e) => (e.currentTarget.src = `${placeholderArticle}`)}
+              />
               <span>{data?.author ?? 'No author'}</span>
             </div>
             <div className={styles['date']}>
