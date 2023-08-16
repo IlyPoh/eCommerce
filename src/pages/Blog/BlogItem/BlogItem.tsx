@@ -6,7 +6,7 @@ import { Link, useLocation } from 'react-router-dom';
 import placeholder from '/images/placeholder.png';
 
 // utils
-import { formatDate } from '../../../utils/helpers';
+import { addFilter, formatDate } from '../../../utils/helpers';
 
 // types
 import { EView } from '../../../types';
@@ -28,7 +28,8 @@ export const BlogItem: React.FC<IBlogItemProps> = ({
   view,
   link = '/blog',
 }) => {
-  const state = useLocation();
+  const { state } = useLocation();
+
   if (!article) return null;
 
   return (
@@ -49,7 +50,7 @@ export const BlogItem: React.FC<IBlogItemProps> = ({
                 <Link
                   className="tag"
                   to={link}
-                  state={{ ...state, tag }}
+                  state={{ ...state, tags: addFilter(state?.tags || [], tag) }}
                   key={tag}
                 >
                   {tag}

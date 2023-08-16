@@ -116,7 +116,7 @@ export const Pagination: React.FC = () => {
 
   return (
     <>
-      <section className="section-small">
+      <section className="section-medium">
         <div className={styles['block']}>
           <div className={styles['list']}>
             <span>Page:</span>

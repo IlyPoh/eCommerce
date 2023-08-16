@@ -4,7 +4,6 @@
 
 .title {
   @include display_flex($align: center, $justify: space-between);
-  padding: 8px 0;
 
   .filters {
     @include display_flex($gap: 24px);

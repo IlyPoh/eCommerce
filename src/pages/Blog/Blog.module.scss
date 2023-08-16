@@ -2,6 +2,16 @@
 @import '../../styles/base/extends';
 @import '../../styles/base/mixins';
 
+.filter {
+  @include display_flex($align: center, $gap: 12px, $wrap: wrap);
+
+  .text {
+    @extend %smallFontSize;
+    color: $color-grey-a9;
+    font-weight: 600;
+  }
+}
+
 .headline {
   @include display_flex($gap: 32px);
 }

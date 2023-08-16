@@ -3,14 +3,14 @@
 import { Link, useLocation } from 'react-router-dom';
 
 // placeholders
-import placeholderAuthor from '/images/placeholder_32.png';
 import placeholderArticle from '/images/placeholder.png';
+import placeholderAuthor from '/images/placeholder_32.png';
 
 // types
 import { IArticle } from '../../types/store';
 
 // utils
-import { formatDate } from '../../utils/helpers';
+import { addFilter, formatDate } from '../../utils/helpers';
 
 // styles
 import styles from './HighlightArticle.module.scss';
@@ -27,6 +27,7 @@ export const HighlightArticle: React.FC<IHighlightArticleProps> = ({
   link = '/blog',
 }) => {
   const { state } = useLocation();
+
   return (
     <>
       <div
@@ -38,7 +39,7 @@ export const HighlightArticle: React.FC<IHighlightArticleProps> = ({
             <Link
               key={tag}
               to={link}
-              state={{ ...state, tag: tag }}
+              state={{ ...state, tags: addFilter(state?.tags || [], tag) }}
               className="tag"
             >
               {tag}

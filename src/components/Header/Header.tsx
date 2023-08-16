@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
     <>
       <header className={styles['header']}>
         <div className="container">
-          <div className={styles['info']}>
+          <section className={`section-medium ${styles['info']}`}>
             <div className={styles['left']}>
               <Link to={links.chatWithUs.link}>{links.chatWithUs.text}</Link>
               <Link to={links.phone.link} className="no-color">
@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
               <Link to={links.aboutUs.link}>{links.aboutUs.text}</Link>
               <Link to={links.careers.link}>{links.careers.text}</Link>
             </div>
-          </div>
+          </section>
           <div className={styles['content']}>
             <div className={styles['logo']}>
               <Link to="/">
@@ -67,11 +67,7 @@ export const Header: React.FC = () => {
             </div>
           </div>
         </div>
-        <nav className={styles['nav']}>
-          <div className="container">
-            <NavBar />
-          </div>
-        </nav>
+        <NavBar />
       </header>
     </>
   );

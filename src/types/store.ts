@@ -123,6 +123,6 @@ export interface INewsEndpointOptions {
   page: number;
   year: number;
   month: number;
-  tag: string;
+  tags: string[];
   category: string;
 }

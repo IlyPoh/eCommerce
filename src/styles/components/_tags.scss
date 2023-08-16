@@ -1,5 +1,6 @@
 .tag {
-  display: inline-block;
+  @include display_flex($flex: inline-flex, $align: center, $gap: 4px);
+
   @extend %smallFontSize;
   font-weight: 600;
   color: $color-green-6a;

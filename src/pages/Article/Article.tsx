@@ -62,7 +62,7 @@ export const Article: React.FC = () => {
                 {tags?.map((tag) => (
                   <Link
                     to="/blog"
-                    state={{ tag: tag }}
+                    state={{ tags: [tag] }}
                     key={tag}
                     className="tag"
                   >

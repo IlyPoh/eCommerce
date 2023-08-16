@@ -60,9 +60,14 @@ section {
     padding: 64px 0;
   }
 
+  &.section-medium,
+  .section-medium {
+    padding: 16px 0;
+  }
+
   &.section-small,
   .section-small {
-    padding: 16px 0;
+    padding: 8px 0;
   }
 }
 

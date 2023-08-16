@@ -32,7 +32,7 @@ export const PageHeadline: React.FC<Partial<IPageHeadlineProps>> = () => {
 
   return (
     <>
-      <div className={styles['title']}>
+      <section className={`section-small ${styles['title']}`}>
         <h2>{pageTitle ?? 'Page Headline'}</h2>
         <div className={styles['filters']}>
           <button
@@ -51,7 +51,7 @@ export const PageHeadline: React.FC<Partial<IPageHeadlineProps>> = () => {
           </button>
           <Counter />
         </div>
-      </div>
+      </section>
     </>
   );
 };

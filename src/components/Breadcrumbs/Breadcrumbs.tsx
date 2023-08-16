@@ -12,7 +12,7 @@ export const Breadcrumbs: React.FC = () => {
 
   return (
     <>
-      <div className={styles['breadcrumbs']}>
+      <section className={`section-medium ${styles['breadcrumbs']}`}>
         {breadcrumbs.map(({ match, breadcrumb }) => {
           if (match.pathname !== '/blog/article') {
             return (
@@ -26,7 +26,7 @@ export const Breadcrumbs: React.FC = () => {
             );
           }
         })}
-      </div>
+      </section>
     </>
   );
 };

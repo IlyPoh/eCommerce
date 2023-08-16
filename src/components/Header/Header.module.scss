@@ -6,10 +6,9 @@
   .info {
     @include display_flex($justify: space-between);
 
-    font-family: $ff-open;
     @extend %smallFontSize;
+    font-family: $ff-open;
 
-    padding: 16px 0;
     margin-bottom: 40px;
 
     border-bottom: 1px solid rgba(21, 21, 21, 0.05);
@@ -79,12 +78,6 @@
     .buttons {
       @include display_flex($align: center, $justify: flex-end, $gap: 40px);
     }
-  }
-
-  .nav {
-    background-color: $color-grey-f9;
-    padding: 16px 0;
-    font-weight: 500;
   }
 
   .icon-green {

@@ -32,11 +32,23 @@ export const convertDataToArrayOfStrings = (data: ISubcategory[]) => {
   return data.map((item) => item.name);
 };
 
+export const addFilter = (state: (string | number)[], filter: string) => {
+  return state.find((item) => `${item}` === filter)
+    ? state
+    : [...state, filter];
+};
+
+export const removeFilter = (state: (string | number)[], filter: string) => {
+  return state.filter((item) => `${item}` !== filter);
+};
+
 export const errorHandler = (error: IError, dispatch: Dispatch<AnyAction>) => {
-  if ('status' in error) {
-    dispatch(setError(errorCodeChecker(error.status)));
+  const { status, message } = error;
+
+  if (status) {
+    dispatch(setError(errorCodeChecker(status)));
   } else {
-    dispatch(setError(`${error.message}`));
+    dispatch(setError(`${message}`));
   }
 };
 
@@ -95,7 +107,7 @@ export const buildNewsQueryString = (
   endpoint: string,
   searchOptions: Partial<INewsEndpointOptions>
 ) => {
-  const { year, month, limit, page, tag, category } = searchOptions;
+  const { year, month, limit, page, tags, category } = searchOptions;
   const queryParameters = [];
 
   if (limit) queryParameters.push(`_limit=${limit}`);
@@ -111,7 +123,12 @@ export const buildNewsQueryString = (
     queryParameters.push(`publishedAt_lte=${isoEndDate}`);
   }
 
-  if (tag) queryParameters.push(`tags_like=${tag}`);
+  if (tags) {
+    const tagsQuery = tags
+      .map((tag) => `tags_like=${encodeURIComponent(tag)}`)
+      .join('&');
+    queryParameters.push(`${tagsQuery}`);
+  }
 
   if (category) queryParameters.push(`category=${category}`);
 

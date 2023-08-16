@@ -18,11 +18,15 @@ export const NavBar: React.FC = () => {
   return (
     <>
       {categories && (
-        <ul className={styles['nav']}>
-          {categories.map((category: ICategory) => (
-            <NavBarLink category={category} key={category.id} />
-          ))}
-        </ul>
+        <section className={`section-medium ${styles['nav']}`}>
+          <nav className="container">
+            <ul className={styles['list']}>
+              {categories.map((category: ICategory) => (
+                <NavBarLink category={category} key={category.id} />
+              ))}
+            </ul>
+          </nav>
+        </section>
       )}
     </>
   );
