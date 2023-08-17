@@ -6,15 +6,15 @@ import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout/Layout';
 import { Loading } from './components/Loading/Loading';
 import { ErrorBox } from './components/ErrorBox/ErrorBox';
-import { LayoutWithHeadline } from './components/LayoutWithHeadline';
-import { BreadcrumbsAndPaginationLayout } from './components/BreadcrumbsAndPaginationLayout';
+import { BreadcrumbsLayout } from './components/BreadcrumbsLayout';
+import { HeadlineAndPaginationLayout } from './components/HeadlineAndPaginationLayout';
 
 // pages
 import { Blog } from './pages/Blog/Blog';
 import { Mainpage } from './pages/Mainpage';
 import { Article } from './pages/Article/Article';
 import { Product } from './pages/Product/Product';
-import { Category } from './pages/Category/Category';
+import { Products } from './pages/Products/Products';
 
 // utils
 import {
@@ -42,20 +42,20 @@ function App(): React.JSX.Element {
           {/* Main page */}
           <Route index element={<Mainpage />} />
 
-          {/* Category */}
-          <Route path="/:category/:subcategory?" element={<Category />} />
-
-          {/* Product */}
-          <Route path="/product/:product" element={<Product />} />
-
           {/* Pages with breadcrumbs */}
-          <Route element={<BreadcrumbsAndPaginationLayout />}>
-            <Route element={<LayoutWithHeadline />}>
+          <Route element={<BreadcrumbsLayout />}>
+            <Route element={<HeadlineAndPaginationLayout />}>
+              {/* Category */}
+              <Route path="/products" element={<Products />} />
+
               {/* Blog */}
               <Route path="/blog">
                 <Route path=":category?" element={<Blog />} />
               </Route>
             </Route>
+
+            {/* Product */}
+            <Route path="/products/:productId" element={<Product />} />
 
             {/* Article */}
             <Route path="blog/article/:articleId" element={<Article />} />

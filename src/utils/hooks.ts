@@ -9,8 +9,10 @@ import { setNews, setNewsCategories } from '../store/Slices/newsSlice';
 import { setTags } from '../store/Slices/tagsSlice';
 import { setLoading } from '../store/Slices/appSlice';
 import { setReviews } from '../store/Slices/reviewSlice';
-import { setProducts } from '../store/Slices/productsSlice';
-import { setProductCategories } from '../store/Slices/categorySlice';
+import {
+  setProducts,
+  setProductCategories,
+} from '../store/Slices/productsSlice';
 import {
   useGetProductCategoriesQuery,
   useGetNewsCategoriesQuery,
@@ -31,11 +33,12 @@ import { INewsEndpointOptions, IPageState, IProduct } from '../types/store';
 import { errorHandler } from './helpers';
 import {
   setCurrentPage,
+  setItemCount,
+  setItemsPerPage,
   setPageCount,
   setPageTitle,
   setPageType,
   setPageURL,
-  setProductCount,
 } from '../store/Slices/pageSlice';
 
 // HOOKS
@@ -98,22 +101,31 @@ export const useFetchProducts = (options: Partial<IProduct> = {}) => {
 // Custom hook for page state
 export const usePageState = (state: Partial<IPageState>) => {
   const dispatch = useAppDispatch();
-  const { currentPage, pageURL, pageTitle, pageType, productCount, pageCount } =
-    state;
+  const {
+    currentPage,
+    pageURL,
+    pageTitle,
+    pageType,
+    itemsPerPage,
+    itemCount,
+    pageCount,
+  } = state;
 
   useEffect(() => {
     dispatch(setCurrentPage(currentPage));
     dispatch(setPageURL(pageURL));
     dispatch(setPageTitle(pageTitle));
     dispatch(setPageType(pageType));
-    dispatch(setProductCount(productCount));
+    dispatch(setItemsPerPage(itemsPerPage));
+    dispatch(setItemCount(itemCount));
     dispatch(setPageCount(pageCount));
   }, [
     dispatch,
     currentPage,
     pageTitle,
     pageType,
-    productCount,
+    itemsPerPage,
+    itemCount,
     pageCount,
     pageURL,
   ]);

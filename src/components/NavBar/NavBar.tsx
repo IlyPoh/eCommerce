@@ -13,7 +13,7 @@ import styles from './NavBar.module.scss';
 
 // COMPONENT
 export const NavBar: React.FC = () => {
-  const categories = useAppSelector((state) => state.categoryState.categories);
+  const categories = useAppSelector((state) => state.productState.categories);
 
   return (
     <>

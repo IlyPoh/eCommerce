@@ -13,17 +13,12 @@ export interface IPageState {
   pageType: EItemType | null;
   pageURL: string;
   pageTitle: string;
-  productCount: number;
+  itemsPerPage: number;
+  itemCount: number;
   pageCount: number;
 }
 
 // Category
-export interface ICategoryState {
-  categories: ICategory[];
-  currentCategory: ICategory | null;
-  categoryProducts: IProduct[];
-}
-
 export interface ICategory {
   id: number | string;
   name: string;
@@ -38,7 +33,7 @@ export interface ISubcategory {
 // Product
 export interface IProductsState {
   products: IProduct[];
-  currentProduct: IProduct | null;
+  categories: ICategory[];
 }
 
 export interface IProduct {

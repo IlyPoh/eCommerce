@@ -10,7 +10,8 @@ const initialState: IPageState = {
   pageType: null,
   pageURL: '',
   pageTitle: '',
-  productCount: 0,
+  itemsPerPage: 10,
+  itemCount: 0,
   pageCount: 0,
 };
 
@@ -31,8 +32,11 @@ const pageSlice = createSlice({
     setPageTitle: (state, action) => {
       state.pageTitle = action.payload;
     },
-    setProductCount: (state, action) => {
-      state.productCount = action.payload;
+    setItemsPerPage: (state, action) => {
+      state.itemsPerPage = action.payload;
+    },
+    setItemCount: (state, action) => {
+      state.itemCount = action.payload;
     },
     setPageCount: (state, action) => {
       state.pageCount = action.payload;
@@ -46,7 +50,8 @@ export const {
   setPageURL,
   setPageTitle,
   setPageType,
-  setProductCount,
+  setItemsPerPage,
+  setItemCount,
   setPageCount,
 } = pageSlice.actions;
 

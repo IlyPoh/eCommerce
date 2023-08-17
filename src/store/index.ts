@@ -11,7 +11,6 @@ import newsSlice from './Slices/newsSlice';
 import pageSlice from './Slices/pageSlice';
 import appStateSlice from './Slices/appSlice';
 import reviewSlice from './Slices/reviewSlice';
-import categorySlice from './Slices/categorySlice';
 import productsSlice from './Slices/productsSlice';
 
 // STORE
@@ -20,7 +19,6 @@ export const store = configureStore({
     appState: appStateSlice,
     pageState: pageSlice,
     productState: productsSlice,
-    categoryState: categorySlice,
     newsState: newsSlice,
     tagsState: tagsSlice,
     reviewsState: reviewSlice,

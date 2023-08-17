@@ -82,7 +82,7 @@ export const Mainpage: React.FC = () => {
       )}
       <div className="container">
         <section className="section">
-          <BlockHeadline />
+          <BlockHeadline link={{ link: '/products' }} />
           <ProductList list={[3, 5, 1, 20]} limit={4} />
         </section>
       </div>

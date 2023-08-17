@@ -39,8 +39,9 @@ export const Blog: React.FC = () => {
   const newsData = useAppSelector((state) => state.newsState.news);
   const newsCategories = useAppSelector((state) => state.newsState.categories);
   const gridView = useAppSelector((state) => state.appState.gridView);
+  const itemsPerPage = useAppSelector((state) => state.pageState.itemsPerPage);
 
-  const newsPerPage = 11;
+  const newsPerPage = itemsPerPage;
   const productIndexesToRender: IPaginationIndexes = getPaginationIndexes(
     state?.page ?? 1,
     newsPerPage
@@ -67,15 +68,13 @@ export const Blog: React.FC = () => {
     pageType: EItemType.NEWS,
     pageTitle: pageTitle,
     pageCount: totalPages,
-    productCount: newsData.length,
+    itemsPerPage: 11,
+    itemCount: newsData.length,
   });
 
   const filteredData = newsData.filter((article: IArticle) => {
-    if (!state?.tags?.length) {
-      return true;
-    }
-
-    return state.tags.some((tag: string) => article.tags?.includes(tag));
+    if (!state?.tags?.length) return true;
+    else return state.tags.every((tag: string) => article.tags?.includes(tag));
   });
 
   const renderFilter = () => {

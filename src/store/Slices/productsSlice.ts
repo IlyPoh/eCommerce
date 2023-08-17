@@ -8,7 +8,7 @@ import { IProductsState } from '../../types/store';
 // INITIAL STATE
 const initialState: IProductsState = {
   products: [],
-  currentProduct: null,
+  categories: [],
 };
 
 // SLICE
@@ -19,9 +19,12 @@ const productsSlice = createSlice({
     setProducts: (state, action) => {
       state.products = action.payload;
     },
+    setProductCategories: (state, action) => {
+      state.categories = action.payload;
+    },
   },
 });
 
-export const { setProducts } = productsSlice.actions;
+export const { setProducts, setProductCategories } = productsSlice.actions;
 
 export default productsSlice.reducer;
