@@ -85,6 +85,7 @@ video {
   font-size: 100%;
   font-family: inherit;
   vertical-align: baseline;
+  outline: none;
 }
 *,
 *:before,
@@ -138,10 +139,6 @@ q {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-a {
-  outline: none;
 }
 
 button {

@@ -1,0 +1,21 @@
+@import '../../../styles/base/config';
+@import '../../../styles/base/extends';
+@import '../../../styles/base/mixins';
+
+.filters {
+  @include display_flex($align: center, $gap: 16px);
+}
+
+.item {
+  @include display_flex($flex: inline-flex, $align: center);
+
+  height: 100%;
+  max-height: 40px;
+
+  padding: 0 8px;
+
+  background: $color-grey-f9;
+
+  border: 1px solid $color-grey-d1;
+  border-radius: 12px;
+}

@@ -64,7 +64,7 @@ export const Article: React.FC = () => {
                     to="/blog"
                     state={{ tags: [tag] }}
                     key={tag}
-                    className="tag"
+                    className="tag tag-green"
                   >
                     {tag}
                   </Link>

@@ -43,7 +43,7 @@ export const SidebarLinks: React.FC<ISidebarLinksProps> = ({
               className={styles['item']}
               key={
                 isCategoryData
-                  ? (item as ICategory | ISubcategory).id
+                  ? (item as ICategory | ISubcategory).name
                   : (item as ILink).text
               }
             >
@@ -51,7 +51,7 @@ export const SidebarLinks: React.FC<ISidebarLinksProps> = ({
                 <Link
                   to={
                     isCategoryData
-                      ? `/${(item as ICategory | ISubcategory).id}`
+                      ? `/products/${(item as ICategory | ISubcategory).name}`
                       : (item as ILink | ILinkWithYear).link
                   }
                   state={{

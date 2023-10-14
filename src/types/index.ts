@@ -14,6 +14,21 @@ export enum ELinkType {
   button = 'button',
 }
 
+export enum ESort {
+  POPULAR = 'popular',
+  CHEAPEST = 'cheapest',
+}
+
+export enum EFilter {
+  CLOTHING = 'clothing',
+  KIDS = 'kids',
+}
+
+export enum ICheckboxType {
+  CHECKBOX = 'checkbox',
+  RADIO = 'radio',
+}
+
 // props for button component
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -80,4 +95,10 @@ export interface IBannerProps {
 export interface IPaginationIndexes {
   start: number;
   end: number;
+}
+
+// Checkbox data
+export interface ICheckboxData {
+  value: string;
+  count: number;
 }

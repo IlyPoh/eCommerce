@@ -1,6 +1,9 @@
 // IMPORTS
 // libraries
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
+
+// components
+import { ProductFilters } from './ProductFilters/ProductFilters';
 
 // types
 import { EItemType, IPaginationIndexes } from '../../types';
@@ -19,14 +22,19 @@ import styles from './Products.module.scss';
 
 // COMPONENT
 export const Products: React.FC = () => {
+  const { category } = useParams();
   const { state } = useLocation();
 
-  const { products, categories } = useAppSelector(
+  const { products, categories, sort } = useAppSelector(
     (state) => state.productState
   );
+  console.log('🚀 ~ file: index.tsx:31 ~ products:', products);
+  // console.log('🚀 ~ file: Products.tsx:32 ~ categories:', categories);
+
+  const pageState = useAppSelector((state) => state.pageState);
   const gridView = useAppSelector((state) => state.appState.gridView);
 
-  const pageTitle = state?.category ?? 'Products';
+  const pageTitle = category ?? 'Products';
 
   const productsPerPage = 9;
   const productIndexesToRender: IPaginationIndexes = getPaginationIndexes(
@@ -51,7 +59,9 @@ export const Products: React.FC = () => {
 
   return (
     <>
-      <div></div>
+      <div className="container">
+        <ProductFilters />
+      </div>
     </>
   );
 };

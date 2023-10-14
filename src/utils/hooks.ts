@@ -78,6 +78,11 @@ export const useFetchTags = () => {
   return useFetchData(useGetTagsQuery, setTags);
 };
 
+// Custom hook for fetching products
+export const useFetchProducts = (options: Partial<IProduct> = {}) => {
+  return useFetchData(useGetProductsQuery, setProducts, options);
+};
+
 // Custom hook for fetching reviews
 export const useFetchReviews = () => {
   return useFetchData(useGetReviewsQuery, setReviews);
@@ -91,11 +96,6 @@ export const useFetchNews = (options: Partial<INewsEndpointOptions> = {}) => {
 // Custom hook for fetching news categories
 export const useFetchNewsCategories = () => {
   return useFetchData(useGetNewsCategoriesQuery, setNewsCategories);
-};
-
-// Custom hook for fetching products
-export const useFetchProducts = (options: Partial<IProduct> = {}) => {
-  return useFetchData(useGetProductsQuery, setProducts, options);
 };
 
 // Custom hook for page state

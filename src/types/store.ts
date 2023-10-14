@@ -1,4 +1,4 @@
-import { EItemType } from '.';
+import { EItemType, ESort } from '.';
 
 // App
 export interface IAppState {
@@ -34,6 +34,9 @@ export interface ISubcategory {
 export interface IProductsState {
   products: IProduct[];
   categories: ICategory[];
+  subcategories: ISubcategory[];
+  sort: ESort;
+  filters: string[];
 }
 
 export interface IProduct {

@@ -88,7 +88,7 @@ export const Blog: React.FC = () => {
                 <Link
                   to="/blog"
                   state={{ ...state, year: null, month: null }}
-                  className="tag"
+                  className="tag tag-green"
                 >
                   {MONTHS[Number(state?.month) - 1]} {state?.year}
                   <i className="icon-actions-close-simple"></i>
@@ -96,12 +96,13 @@ export const Blog: React.FC = () => {
               </div>
             </>
           )}
+
           {state?.tags?.length && (
             <>
               <div className={styles['text']}>Filtered by tags:</div>
               {state?.tags.map((tag: string) => (
                 <Link
-                  className="tag"
+                  className="tag tag-green"
                   key={tag}
                   to={blogLink}
                   state={{ ...state, tags: removeFilter(state.tags, tag) }}
@@ -116,6 +117,7 @@ export const Blog: React.FC = () => {
       </>
     );
   };
+
   const renderHighlightArticles = () => {
     return (
       <>

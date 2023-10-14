@@ -48,7 +48,7 @@ export const BlogItem: React.FC<IBlogItemProps> = ({
             <div className={styles['tags']}>
               {article?.tags?.map((tag) => (
                 <Link
-                  className="tag"
+                  className="tag tag-green"
                   to={link}
                   state={{ ...state, tags: addFilter(state?.tags || [], tag) }}
                   key={tag}

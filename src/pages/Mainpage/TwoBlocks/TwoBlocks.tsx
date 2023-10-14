@@ -43,7 +43,7 @@ export const TwoBlocks: React.FC<TwoBlocksProps> = ({
             link={{
               text: sidebarLink?.text ?? 'More categories',
               icon: sidebarLink?.icon ?? 'icon-chevron-right',
-              link: sidebarLink?.link ?? '/category',
+              link: sidebarLink?.link ?? '/products',
             }}
           />
         ) : null}

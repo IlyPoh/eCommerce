@@ -21,22 +21,28 @@ import {
 
 // COMPONENT
 export const Mainpage: React.FC = () => {
-  const categoryData = useAppSelector(
-    (state) => state.categoryState.categories
-  );
+  const categoryData = useAppSelector((state) => state.productState.categories);
   const newsData = useAppSelector((state) => state.newsState.news);
   const reviewData = useAppSelector((state) => state.reviewsState.reviews);
 
   const firstSidebarData: ISidebarLinksProps = {
     data: firstLinks,
     title: 'Best selling products',
-    link: { text: 'More products', icon: 'icon-chevron-right' },
+    link: {
+      text: 'More products',
+      icon: 'icon-chevron-right',
+      link: '/products',
+    },
   };
 
   const secondSidebarData: ISidebarLinksProps = {
     data: secondLinks,
     title: 'Best from Farmers',
-    link: { text: 'More products', icon: 'icon-chevron-right' },
+    link: {
+      text: 'More products',
+      icon: 'icon-chevron-right',
+      link: '/products',
+    },
   };
 
   useFetchReviews();

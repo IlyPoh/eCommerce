@@ -13,7 +13,6 @@ interface IBannerBlockProps {
   title: string;
   subtitle: string;
   link: ILinkProps;
-  children: React.ReactNode;
 }
 
 //  COMPONENT
@@ -36,9 +35,9 @@ export const BannerBlock: React.FC<Partial<IBannerBlockProps>> = ({
         <div className={styles['banner-background']}>
           <div className={styles['banner-header']}>
             <div className={styles['banner-subtitle']}>
-              {subtitle ? subtitle : 'Banner subfocus'}
+              {subtitle ?? 'Banner subfocus'}
             </div>
-            <h3>{title ? title : 'Space for heading'}</h3>
+            <h3>{title ?? 'Space for heading'}</h3>
           </div>
           <Link className="btn btn-medium btn-no-bg" to={link?.link ?? '/'}>
             {linkText}

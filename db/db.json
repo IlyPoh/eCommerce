@@ -67,7 +67,8 @@
       },
       "tags": ["clothing", "men"],
       "price": 20.99,
-      "discount": null
+      "discount": null,
+      "rating": 5
     },
     {
       "id": 2,
@@ -88,7 +89,8 @@
       "discount": {
         "discount_percent": 10,
         "final_price": 35.99
-      }
+      },
+      "rating": 2
     },
     {
       "id": 3,
@@ -106,7 +108,8 @@
       },
       "tags": ["clothing", "kids"],
       "price": 15.99,
-      "discount": null
+      "discount": null,
+      "rating": 2.7
     },
     {
       "id": 4,
@@ -124,7 +127,8 @@
       },
       "tags": ["electronics"],
       "price": 899.99,
-      "discount": null
+      "discount": null,
+      "rating": 4.2
     },
     {
       "id": 5,
@@ -142,7 +146,8 @@
       },
       "tags": ["electronics"],
       "price": 1499.99,
-      "discount": null
+      "discount": null,
+      "rating": null
     },
     {
       "id": 6,
@@ -163,7 +168,8 @@
       "discount": {
         "discount_percent": 20,
         "final_price": 7.99
-      }
+      },
+      "rating": null
     },
     {
       "id": 7,
@@ -181,7 +187,8 @@
       },
       "tags": ["clothing", "men"],
       "price": 59.99,
-      "discount": null
+      "discount": null,
+      "rating": 1
     },
     {
       "id": 8,
@@ -202,7 +209,8 @@
       "discount": {
         "discount_percent": 15,
         "final_price": 25.49
-      }
+      },
+      "rating": null
     },
     {
       "id": 9,
@@ -220,7 +228,8 @@
       },
       "tags": ["clothing", "kids"],
       "price": 24.99,
-      "discount": null
+      "discount": null,
+      "rating": null
     },
     {
       "id": 10,
@@ -240,7 +249,8 @@
       },
       "tags": ["electronics"],
       "price": 999.99,
-      "discount": null
+      "discount": null,
+      "rating": null
     },
     {
       "id": 11,
@@ -261,7 +271,8 @@
       },
       "tags": ["clothing", "men"],
       "price": 29.99,
-      "discount": null
+      "discount": null,
+      "rating": null
     },
     {
       "id": 12,
@@ -282,7 +293,8 @@
       "discount": {
         "discount_percent": 15,
         "final_price": 42.49
-      }
+      },
+      "rating": 1.1
     },
     {
       "id": 13,
@@ -300,7 +312,8 @@
       },
       "tags": ["clothing", "kids"],
       "price": 19.99,
-      "discount": null
+      "discount": null,
+      "rating": null
     },
     {
       "id": 14,
@@ -318,7 +331,8 @@
       },
       "tags": ["electronics"],
       "price": 699.99,
-      "discount": null
+      "discount": null,
+      "rating": null
     },
     {
       "id": 15,
@@ -336,7 +350,8 @@
       },
       "tags": ["electronics"],
       "price": 1199.99,
-      "discount": null
+      "discount": null,
+      "rating": 2.63
     },
     {
       "id": 16,
@@ -357,7 +372,8 @@
       "discount": {
         "discount_percent": 10,
         "final_price": 13.4
-      }
+      },
+      "rating": 3.9
     },
     {
       "id": 17,
@@ -375,7 +391,8 @@
       },
       "tags": ["clothing", "men"],
       "price": 79.99,
-      "discount": null
+      "discount": null,
+      "rating": null
     },
     {
       "id": 18,
@@ -396,7 +413,8 @@
       "discount": {
         "discount_percent": 20,
         "final_price": 31.99
-      }
+      },
+      "rating": null
     },
     {
       "id": 19,
@@ -414,7 +432,8 @@
       },
       "tags": ["clothing", "kids"],
       "price": 9.99,
-      "discount": null
+      "discount": null,
+      "rating": null
     },
     {
       "id": 20,
@@ -432,7 +451,8 @@
       },
       "tags": ["books", "non-fiction"],
       "price": 19.99,
-      "discount": null
+      "discount": null,
+      "rating": 4.2
     }
   ],
   "reviews": [

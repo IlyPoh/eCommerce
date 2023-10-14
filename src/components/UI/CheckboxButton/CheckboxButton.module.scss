@@ -1,0 +1,73 @@
+@import '../../../styles/base/config';
+@import '../../../styles/base/extends';
+@import '../../../styles/base/mixins';
+
+.label {
+  @include display_flex($align: center);
+  cursor: pointer;
+  padding: 8px;
+}
+
+.input {
+  display: none;
+
+  margin: 0;
+  padding: 0;
+
+  &:checked + .text {
+    &.radio {
+      &:before {
+        background: $color-white;
+        border: 6px solid $color-green-6a;
+      }
+    }
+    &.checkbox {
+      &:before {
+        color: $color-white;
+        background: $color-green-6a;
+        border: 1px solid $color-green-46;
+      }
+    }
+  }
+}
+
+.text {
+  @include display_flex($align: center, $gap: 8px);
+
+  &.radio {
+    &:before {
+      padding: 2px;
+
+      border-radius: 50%;
+    }
+  }
+
+  &.checkbox {
+    &:before {
+      border-radius: 2px;
+    }
+  }
+
+  &:before {
+    content: '';
+    display: inline-block;
+
+    min-width: 20px;
+    min-height: 20px;
+
+    font-size: 18px;
+
+    color: transparent;
+    background: transparent;
+
+    border: 1px solid $color-grey-d1;
+
+    transition: color $longTransition, background $longTransition,
+      border $longTransition;
+  }
+
+  span {
+    font-family: $ff-open;
+    @extend %filterFontSize;
+  }
+}

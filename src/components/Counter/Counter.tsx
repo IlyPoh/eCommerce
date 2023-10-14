@@ -17,7 +17,7 @@ export const Counter: React.FC = () => {
   );
 
   let count = 0;
-  let text = 'Items';
+  let text = null;
 
   if (type === EItemType.PRODUCTS) {
     count = productCount;
@@ -30,8 +30,8 @@ export const Counter: React.FC = () => {
   return (
     <>
       <div className={styles['counter']}>
-        <div className="tag">{count}</div>
-        <div className={styles['text']}>{text}</div>
+        <div className="tag tag-green">{count}</div>
+        {text && <div className={styles['text']}>{text}</div>}
       </div>
     </>
   );

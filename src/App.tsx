@@ -44,9 +44,14 @@ function App(): React.JSX.Element {
 
           {/* Pages with breadcrumbs */}
           <Route element={<BreadcrumbsLayout />}>
+            {/* Pages this Headline and Pagination */}
             <Route element={<HeadlineAndPaginationLayout />}>
               {/* Category */}
-              <Route path="/products" element={<Products />} />
+              <Route path="/products">
+                <Route path=":category?">
+                  <Route path=":subcategory?" element={<Products />} />
+                </Route>
+              </Route>
 
               {/* Blog */}
               <Route path="/blog">
@@ -55,7 +60,15 @@ function App(): React.JSX.Element {
             </Route>
 
             {/* Product */}
-            <Route path="/products/:productId" element={<Product />} />
+            <Route path="/products/product/:productId">
+              <Route path=":category?">
+                <Route path=":productId" element={<Product />} />
+
+                <Route path=":subcategory?">
+                  <Route path=":productId" element={<Product />} />
+                </Route>
+              </Route>
+            </Route>
 
             {/* Article */}
             <Route path="blog/article/:articleId" element={<Article />} />

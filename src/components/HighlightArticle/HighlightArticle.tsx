@@ -40,7 +40,7 @@ export const HighlightArticle: React.FC<IHighlightArticleProps> = ({
               key={tag}
               to={link}
               state={{ ...state, tags: addFilter(state?.tags || [], tag) }}
-              className="tag"
+              className="tag tag-green"
             >
               {tag}
             </Link>
