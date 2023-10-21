@@ -13,9 +13,10 @@ import { EItemType, EView, IPaginationIndexes } from '../../types';
 
 // utils
 import {
+  firstLettertoUppercase,
   getBlogLink,
   getPaginationIndexes,
-  removeFilter,
+  handleRemoveFilter,
 } from '../../utils/helpers';
 import {
   useAppSelector,
@@ -41,17 +42,16 @@ export const Blog: React.FC = () => {
   const gridView = useAppSelector((state) => state.appState.gridView);
   const itemsPerPage = useAppSelector((state) => state.pageState.itemsPerPage);
 
-  const newsPerPage = itemsPerPage;
   const productIndexesToRender: IPaginationIndexes = getPaginationIndexes(
     state?.page ?? 1,
-    newsPerPage
+    itemsPerPage
   );
 
   const pageTitle = category ?? 'Blog';
 
   const blogLink = getBlogLink(category);
   const productHighlightLastIndex = productIndexesToRender.start + 2;
-  const totalPages = Math.ceil(newsData.length / newsPerPage);
+  const totalPages = Math.ceil(newsData.length / itemsPerPage);
 
   useFetchNews({
     year: state?.year,
@@ -79,60 +79,52 @@ export const Blog: React.FC = () => {
 
   const renderFilter = () => {
     return (
-      <>
-        <section className={`section-small ${styles['filter']}`}>
-          {state?.year && state?.month && (
-            <>
-              <div className={styles['text']}>Filtered by date:</div>
-              <div className={styles['date']}>
-                <Link
-                  to="/blog"
-                  state={{ ...state, year: null, month: null }}
-                  className="tag tag-green"
-                >
-                  {MONTHS[Number(state?.month) - 1]} {state?.year}
-                  <i className="icon-actions-close-simple"></i>
-                </Link>
-              </div>
-            </>
-          )}
+      <section className={`section-small ${styles['filter']}`}>
+        {state?.year && state?.month && (
+          <>
+            <div className={styles['text']}>Filtered by date:</div>
+            <div className={styles['date']}>
+              <Link
+                to="/blog"
+                state={{ ...state, year: null, month: null }}
+                className="tag tag-green"
+              >
+                {MONTHS[Number(state?.month) - 1]} {state?.year}
+                <i className="icon-actions-close-simple"></i>
+              </Link>
+            </div>
+          </>
+        )}
 
-          {state?.tags?.length && (
-            <>
-              <div className={styles['text']}>Filtered by tags:</div>
-              {state?.tags.map((tag: string) => (
-                <Link
-                  className="tag tag-green"
-                  key={tag}
-                  to={blogLink}
-                  state={{ ...state, tags: removeFilter(state.tags, tag) }}
-                >
-                  {tag}
-                  <i className="icon-actions-close-simple"></i>
-                </Link>
-              ))}
-            </>
-          )}
-        </section>
-      </>
+        {state?.tags?.length && (
+          <>
+            <div className={styles['text']}>Filtered by tags:</div>
+            {state?.tags.map((tag: string) => (
+              <Link
+                className="tag tag-green"
+                key={tag}
+                to={blogLink}
+                state={{ ...state, tags: handleRemoveFilter(state.tags, tag) }}
+              >
+                {firstLettertoUppercase(tag)}
+                <i className="icon-actions-close-simple"></i>
+              </Link>
+            ))}
+          </>
+        )}
+      </section>
     );
   };
 
   const renderHighlightArticles = () => {
     return (
-      <>
-        <section className={styles['headline']}>
-          {filteredData
-            .slice(productIndexesToRender.start, productHighlightLastIndex)
-            .map((article: IArticle) => (
-              <HighlightArticle
-                data={article}
-                key={article.id}
-                link={blogLink}
-              />
-            ))}
-        </section>
-      </>
+      <section className={styles['headline']}>
+        {filteredData
+          .slice(productIndexesToRender.start, productHighlightLastIndex)
+          .map((article: IArticle) => (
+            <HighlightArticle data={article} key={article.id} link={blogLink} />
+          ))}
+      </section>
     );
   };
 
@@ -167,33 +159,31 @@ export const Blog: React.FC = () => {
   };
 
   return (
-    <>
-      <div className="container">
-        {(state?.year && state?.month) || state?.tags?.length
-          ? renderFilter()
-          : null}
-        {!!newsData.length && renderHighlightArticles()}
-        <section className={styles['body']}>
-          <aside>
-            {MONTHS_LINKS && (
-              <SidebarLinks data={MONTHS_LINKS} title="Archives" />
-            )}
-            {newsCategories && (
-              <div className={styles['categories']}>
-                <SidebarLinks data={newsCategories} title="Category" />
-              </div>
-            )}
-            <div className={styles['subscription']}>
-              <h4>Join our list</h4>
-              <p>
-                Signup to be the first to hear about exclusive deals, special
-                offers, recepies from our masters and others.
-              </p>
+    <div className="container">
+      {(state?.year && state?.month) || state?.tags?.length
+        ? renderFilter()
+        : null}
+      {!!newsData.length && renderHighlightArticles()}
+      <section className={styles['body']}>
+        <aside>
+          {MONTHS_LINKS && (
+            <SidebarLinks data={MONTHS_LINKS} title="Archives" />
+          )}
+          {newsCategories && (
+            <div className={styles['categories']}>
+              <SidebarLinks data={newsCategories} title="Category" />
             </div>
-          </aside>
-          {newsData.length > 0 ? renderBlogItems() : renderNoArticlesMessage()}
-        </section>
-      </div>
-    </>
+          )}
+          <div className={styles['subscription']}>
+            <h4>Join our list</h4>
+            <p>
+              Signup to be the first to hear about exclusive deals, special
+              offers, recepies from our masters and others.
+            </p>
+          </div>
+        </aside>
+        {filteredData.length ? renderBlogItems() : renderNoArticlesMessage()}
+      </section>
+    </div>
   );
 };

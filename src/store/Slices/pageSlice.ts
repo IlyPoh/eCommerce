@@ -11,6 +11,7 @@ const initialState: IPageState = {
   pageURL: '',
   pageTitle: '',
   itemsPerPage: 10,
+  itemsToShow: 10,
   itemCount: 0,
   pageCount: 0,
 };
@@ -35,6 +36,9 @@ const pageSlice = createSlice({
     setItemsPerPage: (state, action) => {
       state.itemsPerPage = action.payload;
     },
+    setItemsToShow: (state, action) => {
+      state.itemsToShow = action.payload;
+    },
     setItemCount: (state, action) => {
       state.itemCount = action.payload;
     },
@@ -51,6 +55,7 @@ export const {
   setPageTitle,
   setPageType,
   setItemsPerPage,
+  setItemsToShow,
   setItemCount,
   setPageCount,
 } = pageSlice.actions;

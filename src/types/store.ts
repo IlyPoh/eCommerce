@@ -14,6 +14,7 @@ export interface IPageState {
   pageURL: string;
   pageTitle: string;
   itemsPerPage: number;
+  itemsToShow: number;
   itemCount: number;
   pageCount: number;
 }
@@ -22,12 +23,14 @@ export interface IPageState {
 export interface ICategory {
   id: number | string;
   name: string;
+  productsCount: number;
   subcategories: ISubcategory[];
 }
 
 export interface ISubcategory {
   id: number;
   name: string;
+  productsCount: number;
 }
 
 // Product
@@ -35,8 +38,13 @@ export interface IProductsState {
   products: IProduct[];
   categories: ICategory[];
   subcategories: ISubcategory[];
+  brands: string[];
   sort: ESort;
   filters: string[];
+  country?: string | null;
+  brandsToFilter: string[];
+  ratingToFilter: number[];
+  pricesToFilter: number[];
 }
 
 export interface IProduct {
@@ -44,15 +52,19 @@ export interface IProduct {
   name: string;
   category_id: number;
   subcategory_id: number;
+  country: string;
   image_urls: string[];
   description: string;
   stock: number;
   new: boolean;
-  company: string;
+  brand: string;
   characteristics: ICharacteristics;
   tags: string[];
   price: number;
   discount?: IDiscount;
+  rating: number;
+  freshness: boolean;
+  delivery: string;
 }
 
 interface ICharacteristics {

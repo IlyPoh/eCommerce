@@ -3,22 +3,131 @@
 @import '../../styles/base/mixins';
 
 .card {
-  max-width: 270px;
   width: 100%;
-
-  @include display_flex(
-    $justify: space-between,
-    $direction: column,
-    $gap: 16px
-  );
-
-  padding: 16px;
 
   border: 1px solid $color-grey-d1;
   border-radius: 12px;
 
+  &.grid {
+    max-width: 270px;
+
+    @include display_flex(
+      $justify: space-between,
+      $direction: column,
+      $gap: 16px
+    );
+
+    padding: 16px;
+
+    .image {
+      max-width: 250px;
+      height: 250px;
+
+      img {
+        max-width: 250px;
+        aspect-ratio: 1;
+      }
+    }
+
+    .body {
+      .title {
+        font-weight: 500;
+      }
+    }
+
+    .footer {
+      @include display_flex($align: center, $justify: space-between);
+    }
+  }
+
+  &.list {
+    @include display_flex($justify: space-between);
+
+    .image {
+      width: 280px;
+      height: 280px;
+
+      img {
+        max-width: 280px;
+        aspect-ratio: 1;
+      }
+    }
+
+    .body {
+      max-width: 270px;
+      margin: 32px;
+
+      .title {
+        @extend %h4;
+        font-weight: 600;
+      }
+
+      .subtitle {
+        margin-bottom: 8px;
+      }
+
+      .rating {
+        @include display_flex($gap: 2px);
+        margin-bottom: 25px;
+      }
+
+      .no-rating {
+        color: $color-grey-eb;
+      }
+
+      .info {
+        width: 100%;
+        @include display_flex($direction: column, $gap: 12px);
+
+        &-item {
+          @include display_flex($justify: space-between, $gap: 32px);
+          color: $color-grey-a9;
+          @extend %filterFontSize;
+
+          & > * {
+            width: 50%;
+          }
+
+          .green {
+            color: $color-green-6a;
+          }
+        }
+      }
+    }
+
+    .footer {
+      width: 165px;
+
+      margin: 32px;
+
+      white-space: nowrap;
+
+      .prices {
+        margin-bottom: 16px;
+      }
+
+      .shipping {
+        color: $color-grey-a9;
+        font-size: 12px;
+
+        margin-bottom: 26px;
+
+        .title {
+          font-weight: 600;
+          line-height: normal;
+        }
+
+        .text {
+          font-family: $ff-open;
+          line-height: normal;
+        }
+      }
+    }
+  }
+
   .image {
     position: relative;
+    width: 100%;
 
     .discount {
       position: absolute;
@@ -34,26 +143,26 @@
     }
   }
 
-  .title {
-    font-weight: 500;
-  }
+  .body {
+    .subtitle {
+      @extend %smallFontSize;
+      color: $color-grey-57;
 
-  .subtitle {
-    @extend %smallFontSize;
-    color: $color-grey-57;
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
 
-    position: relative;
-    white-space: nowrap;
-    overflow: hidden;
-
-    &::after {
-      @include fadeEffect($position: right, $width: 30px, $color: $color-white);
+      &::after {
+        @include fadeEffect(
+          $position: right,
+          $width: 30px,
+          $color: $color-white
+        );
+      }
     }
   }
 
   .footer {
-    @include display_flex($align: center, $justify: space-between);
-
     .prices {
       font-weight: 600;
 

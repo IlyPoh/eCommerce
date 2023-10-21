@@ -28,18 +28,35 @@ export const getBlogLink = (category: string | undefined) => {
   else return `/blog`;
 };
 
+export const getProductsLink = (
+  category: string | undefined,
+  subcategory: string | undefined
+) => {
+  switch (true) {
+    case !!category && !!subcategory:
+      return `/products/${category}/${subcategory}`;
+    case !!category:
+      return `/products/${category}`;
+    default:
+      return `/products`;
+  }
+};
+
 export const convertDataToArrayOfStrings = (data: ISubcategory[]) => {
   return data.map((item) => item.name);
 };
 
-export const addFilter = (state: (string | number)[], filter: string) => {
-  return state.find((item) => `${item}` === filter)
+export const handleAddFilter = (state: (string | number)[], filter: string) => {
+  return state?.find((item) => `${item}` === filter)
     ? state
     : [...state, filter];
 };
 
-export const removeFilter = (state: (string | number)[], filter: string) => {
-  return state.filter((item) => `${item}` !== filter);
+export const handleRemoveFilter = (
+  state: (string | number)[],
+  filter: string
+) => {
+  return state?.filter((item) => `${item}` !== filter);
 };
 
 export const errorHandler = (error: IError, dispatch: Dispatch<AnyAction>) => {

@@ -6,7 +6,7 @@ import { Link, useLocation } from 'react-router-dom';
 import placeholder from '/images/placeholder.png';
 
 // utils
-import { addFilter, formatDate } from '../../../utils/helpers';
+import { handleAddFilter, formatDate } from '../../../utils/helpers';
 
 // types
 import { EView } from '../../../types';
@@ -50,7 +50,10 @@ export const BlogItem: React.FC<IBlogItemProps> = ({
                 <Link
                   className="tag tag-green"
                   to={link}
-                  state={{ ...state, tags: addFilter(state?.tags || [], tag) }}
+                  state={{
+                    ...state,
+                    tags: handleAddFilter(state?.tags || [], tag),
+                  }}
                   key={tag}
                 >
                   {tag}

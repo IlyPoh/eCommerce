@@ -1,0 +1,42 @@
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.filter {
+  @include display_flex($align: center, $gap: 12px, $wrap: wrap);
+
+  .text {
+    @extend %smallFontSize;
+    color: $color-grey-a9;
+    font-weight: 600;
+  }
+}
+
+.body {
+  @include display_flex($gap: 32px);
+
+  aside {
+    max-width: 270px;
+    width: 100%;
+
+    @include display_flex($direction: column, $gap: 48px);
+  }
+
+  .content {
+    width: 100%;
+    transition: gap $shortTransition, display $shortTransition;
+
+    &.grid {
+      @include display_grid($columns: 3, $column-gap: 32px, $row-gap: 48px);
+    }
+
+    &.list {
+      width: 100%;
+      @include display_flex($direction: column, $gap: 32px);
+    }
+
+    .no-products {
+      text-align: center;
+    }
+  }
+}

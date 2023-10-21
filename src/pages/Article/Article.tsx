@@ -2,9 +2,6 @@
 // libraries
 import { Link, useParams } from 'react-router-dom';
 
-// components
-import { Button } from '../../components/UI/Button/Button';
-
 // store
 import { useGetArticleQuery } from '../../store/API/storeApi';
 
@@ -82,22 +79,22 @@ export const Article: React.FC = () => {
             <div className={styles['article']}>{content}</div>
             <div className={styles['share']}>
               <span>Share</span>
-              <Button className="btn btn-small btn-grey">
+              <button className="btn btn-small btn-grey">
                 <i className="icon-socials-facebook"></i>
                 Facebook
-              </Button>
-              <Button className="btn btn-small btn-grey">
+              </button>
+              <button className="btn btn-small btn-grey">
                 <i className="icon-socials-pinterest"></i>
                 Pinterest
-              </Button>
-              <Button className="btn btn-small btn-grey">
+              </button>
+              <button className="btn btn-small btn-grey">
                 <i className="icon-socials-twitter"></i>
                 Twitter
-              </Button>
-              <Button className="btn btn-small btn-grey">
+              </button>
+              <button className="btn btn-small btn-grey">
                 <i className="icon-socials-linked"></i>
                 Linked In
-              </Button>
+              </button>
             </div>
           </div>
         </section>

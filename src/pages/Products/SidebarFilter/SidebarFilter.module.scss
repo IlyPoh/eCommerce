@@ -1,0 +1,154 @@
+@import '../../../styles/base/config';
+@import '../../../styles/base/extends';
+@import '../../../styles/base/mixins';
+
+.aside-content {
+  h4 {
+    margin-bottom: 16px;
+  }
+
+  section {
+    padding-top: 0;
+  }
+
+  .block {
+    @include display_flex($direction: column, $gap: 12px);
+
+    .item {
+      @include display_flex($align: center, $justify: space-between);
+      color: $color-main;
+    }
+
+    label {
+      padding: 0;
+    }
+  }
+
+  .brands {
+    position: relative;
+
+    .block {
+      overflow: hidden;
+
+      transition: max-height $longTransition;
+
+      &.expanded {
+        max-height: none;
+      }
+    }
+
+    .button {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+
+      @include display_flex($justify: center);
+
+      background-color: $color-white;
+
+      &:after {
+        --size: 30px;
+        @include fadeEffect(
+          $position: bottom,
+          $height: var(--size),
+          $color: $color-white
+        );
+        top: calc(0px - var(--size));
+      }
+    }
+  }
+
+  .rating {
+    .full {
+      color: $color-orange;
+    }
+
+    .empty {
+      color: $color-grey-d1;
+    }
+  }
+
+  .slider {
+    height: 20px;
+
+    .track {
+      top: 50%;
+      transform: translateY(-50%);
+
+      height: 6px;
+
+      border-radius: 12px;
+
+      background: $color-grey-eb;
+
+      &:nth-child(2) {
+        background: $color-green-6a;
+      }
+    }
+
+    .thumb {
+      width: 20px;
+      aspect-ratio: 1;
+
+      border-radius: 50%;
+      border: 1px solid $color-grey-d1;
+
+      background: $color-white;
+
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .inputs {
+    @include display_flex(
+      $align: flex-end,
+      $justify: space-between,
+      $gap: 16px
+    );
+
+    span {
+      line-height: 48px;
+    }
+
+    &-item {
+      input {
+        border: 1px solid $color-grey-d1;
+        border-radius: 12px;
+
+        background: $color-grey-f9;
+
+        padding: 12px 16px;
+
+        max-width: 110px;
+
+        transition: background $shortTransition, border $shortTransition,
+          box-shadow $shortTransition;
+
+        &:focus {
+          background: $color-white;
+          border: 1px solid $color-green-6a;
+          box-shadow: 0 0 4px 1px $color-box-shadow;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+
+    &-title {
+      @extend %smallFontSize;
+      font-weight: 600;
+    }
+  }
+
+  .buttons {
+    @include display_flex($align: center, $justify: center, $gap: 16px);
+
+    .reset {
+      color: $color-grey-a9;
+    }
+  }
+}

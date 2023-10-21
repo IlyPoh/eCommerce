@@ -32,6 +32,7 @@ export const storeApi = createApi({
     'News',
     'Article',
     'News Categories',
+    'Brands',
   ],
   baseQuery: fetchBaseQuery({ baseUrl: STORE_API_URL }),
   endpoints: (builder) => ({
@@ -65,6 +66,9 @@ export const storeApi = createApi({
       query: (id) => `${STORE_API_ENDPOINTS.news}/${id}`,
       providesTags: ['Article'],
     }),
+    getBrands: builder.query<string[], void>({
+      query: () => STORE_API_ENDPOINTS.brands,
+    }),
   }),
 });
 
@@ -76,4 +80,5 @@ export const {
   useGetNewsQuery,
   useGetNewsCategoriesQuery,
   useGetArticleQuery,
+  useGetBrandsQuery,
 } = storeApi;

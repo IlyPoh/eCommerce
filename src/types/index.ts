@@ -22,6 +22,7 @@ export enum ESort {
 export enum EFilter {
   CLOTHING = 'clothing',
   KIDS = 'kids',
+  UKRAINE = 'Ukraine',
 }
 
 export enum ICheckboxType {
@@ -45,6 +46,7 @@ export interface IStoreApiUrls {
   reviews: string;
   news: string;
   newsCategories: string;
+  brands: string;
 }
 
 // Links
@@ -101,4 +103,12 @@ export interface IPaginationIndexes {
 export interface ICheckboxData {
   value: string;
   count: number;
+}
+
+export interface ICheckboxDataWithSelector {
+  value: string;
+  count: number;
+  selector: {
+    [key: string]: number;
+  };
 }

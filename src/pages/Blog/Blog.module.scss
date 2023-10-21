@@ -15,6 +15,7 @@
 .headline {
   @include display_flex($gap: 32px);
 }
+
 .body {
   @include display_flex($gap: 32px);
 
@@ -29,6 +30,7 @@
         color: $color-grey-a9;
       }
     }
+
     .subscription {
       h4 {
         margin-bottom: 8px;

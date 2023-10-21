@@ -2,38 +2,54 @@
 // libraries
 import { Link, useLocation } from 'react-router-dom';
 
-// utils
+// components
 import { Counter } from '../Counter/Counter';
+
+// store
+import { setItemsToShow } from '../../store/Slices/pageSlice';
+
+// types
+import { EItemType } from '../../types';
+
+// utils
+import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 
 // styles
 import styles from './Pagination.module.scss';
-import { useAppSelector } from '../../utils/hooks';
-import { EItemType } from '../../types';
 
 // COMPONENT
 export const Pagination: React.FC = () => {
+  const dispatch = useAppDispatch();
   const { state } = useLocation();
-  const { pageType, currentPage, pageURL, pageCount } = useAppSelector(
-    (state) => state.pageState
-  );
+  const {
+    itemCount,
+    pageType,
+    currentPage,
+    pageURL,
+    pageCount,
+    itemsPerPage,
+    itemsToShow,
+  } = useAppSelector((state) => state.pageState);
   const getClassNames = (index: number): string => {
     if (index === currentPage) return `${styles['link']} ${styles['active']}`;
     else return styles['link'];
   };
 
-  const renderPagination = () => {
+  const createPaginationLink = (index: number) => (
+    <Link
+      to={pageURL}
+      state={{ ...state, page: index }}
+      className={getClassNames(index)}
+      key={`${pageURL}-${index}`}
+    >
+      {index}
+    </Link>
+  );
+
+  const renderPaginationLinks = () => {
     const paginationLinks = [];
 
-    paginationLinks.push(
-      <Link
-        to={pageURL}
-        state={{ ...state, page: 1 }}
-        key={1}
-        className={getClassNames(1)}
-      >
-        1
-      </Link>
-    );
+    paginationLinks.push(createPaginationLink(1));
 
     if (currentPage > 3) {
       paginationLinks.push(<span key="ellipsis1">...</span>);
@@ -43,16 +59,7 @@ export const Pagination: React.FC = () => {
     const end = Math.min(currentPage + 1, pageCount);
 
     for (let i = start; i <= end; i++) {
-      paginationLinks.push(
-        <Link
-          to={pageURL}
-          state={{ ...state, page: i }}
-          className={getClassNames(i)}
-          key={`${pageURL}-${i}`}
-        >
-          {i}
-        </Link>
-      );
+      paginationLinks.push(createPaginationLink(i));
     }
 
     if (currentPage < pageCount - 2) {
@@ -64,16 +71,7 @@ export const Pagination: React.FC = () => {
       currentPage !== pageCount &&
       pageCount > 1
     ) {
-      paginationLinks.push(
-        <Link
-          to={pageURL}
-          className={getClassNames(pageCount)}
-          state={{ ...state, page: pageCount }}
-          key={pageCount}
-        >
-          {pageCount}
-        </Link>
-      );
+      paginationLinks.push(createPaginationLink(pageCount));
     }
 
     return paginationLinks;
@@ -105,6 +103,20 @@ export const Pagination: React.FC = () => {
     ) : null;
   };
 
+  const renderMoreButton = () => {
+    if (itemCount < itemsToShow) return null;
+
+    return currentPage < pageCount ? (
+      <button
+        onClick={() => dispatch(setItemsToShow(itemsToShow + itemsPerPage))}
+        className="btn btn-medium btn-green"
+      >
+        Show more products
+        <i className="icon-chevron-down"></i>
+      </button>
+    ) : null;
+  };
+
   const renderBlogButtons = () => {
     return (
       <>
@@ -120,10 +132,11 @@ export const Pagination: React.FC = () => {
         <div className={styles['block']}>
           <div className={styles['list']}>
             <span>Page:</span>
-            {renderPagination()}
+            {renderPaginationLinks()}
           </div>
           <div className={styles['buttons']}>
-            {pageType === EItemType.NEWS ? renderBlogButtons() : null}
+            {pageType === EItemType.NEWS && renderBlogButtons()}
+            {pageType === EItemType.PRODUCTS && renderMoreButton()}
           </div>
           <Counter />
         </div>

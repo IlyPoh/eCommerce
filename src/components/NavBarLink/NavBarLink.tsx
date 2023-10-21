@@ -2,9 +2,6 @@
 // libraries
 import { useState } from 'react';
 
-// components
-import { Button } from '../UI/Button/Button';
-
 // types
 import { ICategory } from '../../types/store';
 
@@ -36,11 +33,9 @@ export const NavBarLink: React.FC<INavBarLinkProps> = ({ category }) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <Button
-          className="btn btn-transparent btn-small-gap"
-          text={category.name}
-          icon="icon-chevron-down"
-        />
+        <button className="btn btn-transparent btn-small-gap">
+          {category.name} <i className="icon-chevron-down" />
+        </button>
         {category.subcategories && (
           <div
             className={open ? styles['dropdown'] : styles['dropdown-hidden']}

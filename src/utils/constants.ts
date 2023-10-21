@@ -4,6 +4,9 @@ import {
   IFooterLink,
   ILink,
   ILinkWithYear,
+  ICheckboxData,
+  EFilter,
+  ICheckboxDataWithSelector,
 } from '../types';
 
 export const MONTHS: string[] = [
@@ -31,6 +34,7 @@ export const STORE_API_ENDPOINTS: IStoreApiUrls = {
   reviews: 'reviews',
   news: 'news',
   newsCategories: 'newsCategories',
+  brands: 'brands',
 };
 
 export const NEWS_API_URL = 'https://newsapi.org/v2/everything';
@@ -162,6 +166,7 @@ export const FOOTER_LINKS: IFooterLink[] = [
     links: footerFourthColumnLinks,
   },
 ];
+
 // sidebar links
 export const FIRST_SIDEBAR_LINKS: ILink[] = [
   {
@@ -274,6 +279,30 @@ export const BLOG_LINKS_CATEGORIES: ILink[] = [
     link: '/blog/category/Space',
   },
 ];
+
+// Product checkbox data
+export const FIRST_CHECKBOX_DATA: ICheckboxData = {
+  value: EFilter.CLOTHING,
+  count: 13,
+};
+
+export const SECOND_CHECKBOX_DATA: ICheckboxData = {
+  value: EFilter.KIDS,
+  count: 4,
+};
+
+export const THIRD_CHECKBOX_DATA: ICheckboxDataWithSelector = {
+  value: EFilter.UKRAINE,
+  count: 6,
+  selector: {
+    Ukraine: 6,
+    UK: 5,
+    Germany: 3,
+    France: 4,
+    Spain: 2,
+    Italy: 0,
+  },
+};
 
 // other
 export const COPYRIGHT = 'Copyright © 2020 petrbilek.com';

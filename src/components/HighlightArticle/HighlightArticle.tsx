@@ -10,7 +10,7 @@ import placeholderAuthor from '/images/placeholder_32.png';
 import { IArticle } from '../../types/store';
 
 // utils
-import { addFilter, formatDate } from '../../utils/helpers';
+import { handleAddFilter, formatDate } from '../../utils/helpers';
 
 // styles
 import styles from './HighlightArticle.module.scss';
@@ -39,7 +39,10 @@ export const HighlightArticle: React.FC<IHighlightArticleProps> = ({
             <Link
               key={tag}
               to={link}
-              state={{ ...state, tags: addFilter(state?.tags || [], tag) }}
+              state={{
+                ...state,
+                tags: handleAddFilter(state?.tags || [], tag),
+              }}
               className="tag tag-green"
             >
               {tag}

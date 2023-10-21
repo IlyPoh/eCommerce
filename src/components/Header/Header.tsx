@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 // components
 import { NavBar } from '../NavBar/NavBar';
-import { Button } from '../UI/Button/Button';
 
 // assets
 import logo from '../../assets/images/logo.png';
@@ -45,25 +44,28 @@ export const Header: React.FC = () => {
             </div>
             <div className={styles['input']}>
               <div className={styles['search-filter']}>
-                <Button className="btn btn-transparent">
-                  All Categories{' '}
+                <button className="btn btn-transparent">
+                  All Categories
                   <span
                     className={`${styles['icon-green']} icon-chevron-down`}
                   ></span>
-                </Button>
+                </button>
               </div>
               <input
                 type="text"
                 placeholder="Search Products, categories ..."
               />
-              <Button
-                className="btn btn-transparent btn-search"
-                icon="icon-actions-search"
-              />
+              <button className="btn btn-transparent btn-search">
+                <i className="icon-actions-search" />
+              </button>
             </div>
             <div className={styles['buttons']}>
-              <Button className="btn btn-icon" icon="icon-actions-user" />
-              <Button className="btn btn-icon" icon="icon-ecommerce-basket" />
+              <button className="btn btn-icon">
+                <i className="icon-actions-user" />
+              </button>
+              <button className="btn btn-icon">
+                <i className="icon-ecommerce-basket" />
+              </button>
             </div>
           </div>
         </div>

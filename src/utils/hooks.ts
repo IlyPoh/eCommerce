@@ -12,6 +12,8 @@ import { setReviews } from '../store/Slices/reviewSlice';
 import {
   setProducts,
   setProductCategories,
+  setBrands,
+  setFilters,
 } from '../store/Slices/productsSlice';
 import {
   useGetProductCategoriesQuery,
@@ -20,6 +22,7 @@ import {
   useGetProductsQuery,
   useGetReviewsQuery,
   useGetTagsQuery,
+  useGetBrandsQuery,
 } from '../store/API/storeApi';
 
 // types
@@ -35,6 +38,7 @@ import {
   setCurrentPage,
   setItemCount,
   setItemsPerPage,
+  setItemsToShow,
   setPageCount,
   setPageTitle,
   setPageType,
@@ -98,6 +102,11 @@ export const useFetchNewsCategories = () => {
   return useFetchData(useGetNewsCategoriesQuery, setNewsCategories);
 };
 
+// Custom hook for fetching brands
+export const useFetchBrands = () => {
+  return useFetchData(useGetBrandsQuery, setBrands);
+};
+
 // Custom hook for page state
 export const usePageState = (state: Partial<IPageState>) => {
   const dispatch = useAppDispatch();
@@ -107,6 +116,7 @@ export const usePageState = (state: Partial<IPageState>) => {
     pageTitle,
     pageType,
     itemsPerPage,
+    itemsToShow,
     itemCount,
     pageCount,
   } = state;
@@ -117,16 +127,18 @@ export const usePageState = (state: Partial<IPageState>) => {
     dispatch(setPageTitle(pageTitle));
     dispatch(setPageType(pageType));
     dispatch(setItemsPerPage(itemsPerPage));
+    dispatch(setItemsToShow(itemsToShow));
     dispatch(setItemCount(itemCount));
     dispatch(setPageCount(pageCount));
   }, [
     dispatch,
     currentPage,
+    pageURL,
     pageTitle,
     pageType,
     itemsPerPage,
+    itemsToShow,
     itemCount,
     pageCount,
-    pageURL,
   ]);
 };

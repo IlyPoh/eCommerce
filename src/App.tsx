@@ -60,14 +60,8 @@ function App(): React.JSX.Element {
             </Route>
 
             {/* Product */}
-            <Route path="/products/product/:productId">
-              <Route path=":category?">
-                <Route path=":productId" element={<Product />} />
-
-                <Route path=":subcategory?">
-                  <Route path=":productId" element={<Product />} />
-                </Route>
-              </Route>
+            <Route path="/products/:category/subcategory">
+              <Route path=":product" element={<Product />} />
             </Route>
 
             {/* Article */}

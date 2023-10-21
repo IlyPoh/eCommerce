@@ -12,8 +12,13 @@ const initialState: IProductsState = {
   products: [],
   categories: [],
   subcategories: [],
+  brands: [],
   sort: ESort.POPULAR,
   filters: [],
+  country: '',
+  brandsToFilter: [],
+  ratingToFilter: [],
+  pricesToFilter: [],
 };
 
 // SLICE
@@ -36,8 +41,27 @@ const productsSlice = createSlice({
     setFilters: (state, action) => {
       state.filters = action.payload;
     },
-    removeFilter: (state, action) => {
-      state.filters = state.filters.filter((item) => item !== action.payload);
+    setCountry: (state, action) => {
+      state.country = action.payload;
+    },
+    setBrands: (state, action) => {
+      state.brands = action.payload;
+    },
+    setBrandsToFilter: (state, action) => {
+      state.brandsToFilter = action.payload;
+    },
+    setRatingToFilter: (state, action) => {
+      state.ratingToFilter = action.payload;
+    },
+    setpricesToFilter: (state, action) => {
+      state.pricesToFilter = action.payload;
+    },
+    resetFilters: (state) => {
+      state.filters = initialState.filters;
+      state.country = initialState.country;
+      state.brandsToFilter = initialState.brandsToFilter;
+      state.ratingToFilter = initialState.ratingToFilter;
+      state.pricesToFilter = initialState.pricesToFilter;
     },
   },
 });
@@ -48,7 +72,12 @@ export const {
   setProductSubcategories,
   setSort,
   setFilters,
-  removeFilter,
+  setCountry,
+  setBrands,
+  setBrandsToFilter,
+  setRatingToFilter,
+  setpricesToFilter,
+  resetFilters,
 } = productsSlice.actions;
 
 export default productsSlice.reducer;
