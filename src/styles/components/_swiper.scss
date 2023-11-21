@@ -1,36 +1,36 @@
 .swiper {
   &-slide {
-    max-width: 370px;
+    max-width: rems(370);
   }
 
   &-button-next,
   &-button-prev {
     background: $color-main;
-    width: 50px;
+    width: rems(50);
     box-shadow: 0px 0px 3px 1px $color-box-shadow;
     border-radius: 12px;
 
     &::after {
       color: $color-white;
-      font-size: 20px;
+      font-size: rems(20);
       min-width: 0;
     }
   }
   &-button-next {
-    padding-right: 20px;
-    right: -20px;
+    padding-right: rems(20);
+    right: rems(-20);
   }
 
   &-button-prev {
-    padding-left: 20px;
-    left: -20px;
+    padding-left: rems(20);
+    left: rems(-20);
   }
 
   &:after {
-    @include fadeEffect($position: right, $width: 100px);
+    @include fadeEffect($position: right, $width: rems(100));
   }
 
   &:before {
-    @include fadeEffect($position: left, $width: 100px);
+    @include fadeEffect($position: left, $width: rems(100));
   }
 }

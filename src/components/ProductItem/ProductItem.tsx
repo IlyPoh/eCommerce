@@ -107,8 +107,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
   const buttonGridView = (id: number) => {
     return (
       <Link className="btn btn-medium btn-green" to={`/product/${id}`}>
-        Product Detail
-        <i className="icon-chevron-right"></i>
+        Product Detail <i className="icon-chevron-right"></i>
       </Link>
     );
   };
@@ -116,63 +115,61 @@ export const ProductItem: React.FC<ProductItemProps> = ({
   if (!productInfo) return null;
 
   return (
-    <>
-      <div className={`${styles['card']} ${styles[view]}`}>
-        <div className={styles['image']}>
-          {productInfo.discount && renderDiscountOnImage(productInfo.discount)}
-          <img
-            src={productInfo.image_urls[0]}
-            width={280}
-            alt={productInfo.name}
-          />
+    <div className={`${styles['card']} ${styles[view]}`}>
+      <div className={styles['image']}>
+        {productInfo.discount && renderDiscountOnImage(productInfo.discount)}
+        <img
+          src={productInfo.image_urls[0]}
+          width={280}
+          alt={productInfo.name}
+        />
+      </div>
+      <div className={styles['body']}>
+        <div className={styles['title']}>{productInfo.name}</div>
+        <div className={styles['subtitle']} title={productInfo.description}>
+          {productInfo.description}
         </div>
-        <div className={styles['body']}>
-          <div className={styles['title']}>{productInfo.name}</div>
-          <div className={styles['subtitle']} title={productInfo.description}>
-            {productInfo.description}
-          </div>
-          {view == EView.LIST && (
-            <>
-              <div className={styles['rating']}>
-                {productInfo.rating == null ? (
-                  <div className={styles['no-rating']}>No rating</div>
-                ) : (
-                  renderRating(productInfo.rating)
+        {view == EView.LIST && (
+          <>
+            <div className={styles['rating']}>
+              {productInfo.rating == null ? (
+                <div className={styles['no-rating']}>No rating</div>
+              ) : (
+                renderRating(productInfo.rating)
+              )}
+            </div>
+            <div className={styles['info']}>
+              <div className={styles['info-item']}>
+                {productInfo.freshness && (
+                  <>
+                    <div className={styles['info-title']}>Freshness</div>
+                    <div
+                      className={`${styles['info-text']} ${styles['green']}`}
+                    >
+                      {productInfo.freshness ? 'New' : 'Old'}
+                    </div>
+                  </>
                 )}
               </div>
-              <div className={styles['info']}>
-                <div className={styles['info-item']}>
-                  {productInfo.freshness && (
-                    <>
-                      <div className={styles['info-title']}>Freshness</div>
-                      <div
-                        className={`${styles['info-text']} ${styles['green']}`}
-                      >
-                        {productInfo.freshness ? 'New' : 'Old'}
-                      </div>
-                    </>
-                  )}
-                </div>
-                {productInfo.country &&
-                  renderInfoItem({ country: productInfo.country })}
-                {productInfo.delivery &&
-                  renderInfoItem({ delivery: productInfo.delivery })}
-                {productInfo.stock !== null &&
-                  renderInfoItem({ stock: productInfo.stock }, true)}
-              </div>
-            </>
-          )}
-        </div>
-        <div className={styles['footer']}>
-          {productInfo.discount
-            ? renderPriceWithDiscount(productInfo.discount)
-            : renderPrice(productInfo.price)}
-          {view == EView.LIST && shippingText()}
-          {view == EView.GRID
-            ? buttonListView(productInfo.id)
-            : buttonGridView(productInfo.id)}
-        </div>
+              {productInfo.country &&
+                renderInfoItem({ country: productInfo.country })}
+              {productInfo.delivery &&
+                renderInfoItem({ delivery: productInfo.delivery })}
+              {productInfo.stock !== null &&
+                renderInfoItem({ stock: productInfo.stock }, true)}
+            </div>
+          </>
+        )}
       </div>
-    </>
+      <div className={styles['footer']}>
+        {productInfo.discount
+          ? renderPriceWithDiscount(productInfo.discount)
+          : renderPrice(productInfo.price)}
+        {view == EView.LIST && shippingText()}
+        {view == EView.GRID
+          ? buttonListView(productInfo.id)
+          : buttonGridView(productInfo.id)}
+      </div>
+    </div>
   );
 };

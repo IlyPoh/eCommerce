@@ -1,3 +1,4 @@
+@import '../../styles/base/functions';
 @import '../../styles/base/config';
 @import '../../styles/base/extends';
 @import '../../styles/base/mixins';
@@ -5,7 +6,7 @@
 .highlight {
   position: relative;
 
-  min-height: 400px;
+  min-height: rems(400);
   min-width: 40%;
   width: 100%;
 
@@ -16,15 +17,19 @@
   background-position: center;
 
   .tags {
-    @include display_flex($align: center, $wrap: wrap, $gap: 8px);
+    @include display_flex($align: center, $wrap: wrap, $gap: rems(8));
 
     position: absolute;
-    top: 24px;
-    left: 24px;
+    top: rems(24);
+    left: rems(24);
   }
 
   .body {
-    @include display_flex($direction: column, $justify: flex-end, $gap: 8px);
+    @include display_flex(
+      $direction: column,
+      $justify: flex-end,
+      $gap: rems(8)
+    );
     height: 50%;
     background: linear-gradient(
       0deg,
@@ -32,7 +37,7 @@
       rgba(0, 0, 0, 0) 100%
     );
 
-    padding: 24px;
+    padding: rems(24);
   }
 
   .title {
@@ -45,14 +50,14 @@
   }
 
   .info {
-    @include display_flex($align: center, $gap: 16px);
+    @include display_flex($align: center, $gap: rems(16));
 
     font-family: $ff-open;
     @extend %smallFontSize;
     white-space: nowrap;
 
     .author {
-      @include display_flex($align: center, $gap: 8px);
+      @include display_flex($align: center, $gap: rems(8));
 
       img {
         border-radius: 50%;

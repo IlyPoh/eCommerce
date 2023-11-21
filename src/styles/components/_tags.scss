@@ -1,11 +1,11 @@
 .tag {
-  @include display_flex($flex: inline-flex, $align: center, $gap: 4px);
+  @include display_flex($flex: inline-flex, $align: center, $gap: rems(4));
 
   font-family: $ff-poppins;
   @extend %smallFontSize;
   font-weight: 600;
 
-  padding: 0 8px;
+  padding: 0 rems(8);
 
   border-radius: 12px;
 

@@ -1,3 +1,4 @@
+@import '../../styles/base/functions';
 @import '../../styles/base/config';
 @import '../../styles/base/extends';
 @import '../../styles/base/mixins';
@@ -6,18 +7,18 @@
   @include display_flex($align: center, $justify: space-between);
 
   .filters {
-    @include display_flex($gap: 24px);
+    @include display_flex($gap: rems(24));
 
     .item {
-      @include display_flex($align: center, $gap: 4px);
+      @include display_flex($align: center, $gap: rems(4));
 
-      font-size: 12px;
+      font-size: rems(12);
       color: $color-grey-a9;
 
       transition: color $shortTransition;
 
       i {
-        font-size: 16px;
+        font-size: rems(16);
         font-weight: 700;
 
         transition: color $shortTransition;

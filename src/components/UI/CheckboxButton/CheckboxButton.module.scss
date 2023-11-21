@@ -1,3 +1,4 @@
+@import '../../../styles/base/functions';
 @import '../../../styles/base/config';
 @import '../../../styles/base/extends';
 @import '../../../styles/base/mixins';
@@ -5,7 +6,7 @@
 .label {
   @include display_flex($align: center);
   cursor: pointer;
-  padding: 8px;
+  padding: rems(8);
 }
 
 .input {
@@ -32,11 +33,11 @@
 }
 
 .text {
-  @include display_flex($align: center, $gap: 8px);
+  @include display_flex($align: center, $gap: rems(8));
 
   &.radio {
     &:before {
-      padding: 2px;
+      padding: rems(2);
 
       border-radius: 50%;
     }
@@ -49,13 +50,14 @@
   }
 
   &:before {
+    $size: rems(20);
     content: '';
     display: inline-block;
 
-    min-width: 20px;
-    min-height: 20px;
+    min-width: $size;
+    aspect-ratio: 1;
 
-    font-size: 18px;
+    font-size: rems(18);
 
     color: transparent;
     background: transparent;

@@ -1,12 +1,13 @@
+@import '../../styles/base/functions';
 @import '../../styles/base/config';
 @import '../../styles/base/mixins';
 @import '../../styles/base/extends';
 
 .footer {
-  padding: 64px 0;
+  padding: rems(64) 0;
 
   .sections {
-    @include display_flex($direction: column, $gap: 48px);
+    @include display_flex($direction: column, $gap: rems(48));
   }
 
   .columns {
@@ -15,6 +16,6 @@
 
   .copyright {
     font-family: $ff-open;
-    font-size: 14px;
+    font-size: rems(14);
   }
 }

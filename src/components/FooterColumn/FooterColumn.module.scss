@@ -1,3 +1,4 @@
+@import '../../styles/base/functions';
 @import '../../styles/base/config';
 @import '../../styles/base/mixins';
 @import '../../styles/base/extends';
@@ -7,11 +8,11 @@
     $direction: column,
     $align: flex-start,
     $justify: space-between,
-    $gap: 16px
+    $gap: rems(16)
   );
 
   .link {
     font-family: $ff-open;
-    font-size: 14px;
+    font-size: rems(14);
   }
 }

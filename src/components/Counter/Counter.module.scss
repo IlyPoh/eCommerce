@@ -1,9 +1,10 @@
+@import '../../styles/base/functions';
 @import '../../styles/base/config';
 @import '../../styles/base/extends';
 @import '../../styles/base/mixins';
 
 .counter {
-  @include display_flex($align: center, $gap: 4px);
+  @include display_flex($align: center, $gap: rems(4));
 
   .text {
     font-family: $ff-open;

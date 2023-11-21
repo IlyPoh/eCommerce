@@ -1,3 +1,4 @@
+@import '../../../styles/base/functions';
 @import '../../../styles/base/config';
 @import '../../../styles/base/extends';
 @import '../../../styles/base/mixins';
@@ -10,11 +11,15 @@
   border-radius: 12px;
 
   &-background {
-    @include display_flex($align: flex-start, $direction: column, $gap: 94px);
+    @include display_flex(
+      $align: flex-start,
+      $direction: column,
+      $gap: rems(94)
+    );
 
     height: 100%;
 
-    padding: 32px;
+    padding: rems(32);
 
     background: url(/src/assets/images/card-background.png);
     background-size: cover;
@@ -25,7 +30,7 @@
   }
 
   &-header {
-    @include display_flex($direction: column, $gap: 8px);
+    @include display_flex($direction: column, $gap: rems(8));
   }
 
   &-subtitle {

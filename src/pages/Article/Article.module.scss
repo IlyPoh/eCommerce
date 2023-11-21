@@ -1,30 +1,31 @@
+@import '../../styles/base/functions';
 @import '../../styles/base/config';
 @import '../../styles/base/extends';
 @import '../../styles/base/mixins';
 
 .info {
-  max-width: 170px;
+  max-width: rems(170);
   width: 100%;
 }
 
 .content {
-  max-width: 570px;
+  max-width: rems(570);
   width: 100%;
 }
 
 .header {
-  height: 480px;
+  height: rems(480);
 
   color: $color-white;
 
-  @include display_flex($align: flex-end, $justify: center, $gap: 32px);
+  @include display_flex($align: flex-end, $justify: center, $gap: rems(32));
 
-  padding: 32px;
+  padding: rems(32);
 
   border-radius: 12px;
 
   .info {
-    @include display_flex($direction: column, $gap: 12px);
+    @include display_flex($direction: column, $gap: rems(12));
 
     @extend %smallFontSize;
     font-weight: 700;
@@ -46,17 +47,17 @@
   }
 }
 .body {
-  @include display_flex($justify: center, $gap: 32px);
+  @include display_flex($justify: center, $gap: rems(32));
 
   .info {
-    @include display_flex($direction: column, $gap: 48px);
+    @include display_flex($direction: column, $gap: rems(48));
 
     h4 {
-      margin-bottom: 16px;
+      margin-bottom: rems(16);
     }
 
     .list {
-      @include display_flex($wrap: wrap, $gap: 8px);
+      @include display_flex($wrap: wrap, $gap: rems(8));
     }
 
     .back {
@@ -69,18 +70,18 @@
   }
 
   .content {
-    font-size: 17px;
+    font-size: rems(17);
 
     .article {
-      margin-bottom: 48px;
+      margin-bottom: rems(48);
     }
 
     .share {
       font-weight: 700;
 
-      @include display_flex($align: center, $wrap: wrap, $gap: 16px);
+      @include display_flex($align: center, $wrap: wrap, $gap: rems(16));
 
-      margin-bottom: 48px;
+      margin-bottom: rems(48);
     }
   }
 }

@@ -1,30 +1,33 @@
+@import '../../styles/base/functions';
 @import '../../styles/base/config';
 @import '../../styles/base/extends';
 @import '../../styles/base/mixins';
 
 .card {
+  $border-width: 1px;
   width: 100%;
 
   border: 1px solid $color-grey-d1;
   border-radius: 12px;
 
   &.grid {
-    max-width: 270px;
+    max-width: rems(270);
 
     @include display_flex(
       $justify: space-between,
       $direction: column,
-      $gap: 16px
+      $gap: rems(16)
     );
 
-    padding: 16px;
+    padding: rems(16);
 
     .image {
-      max-width: 250px;
-      height: 250px;
+      $size: 250px;
+      max-width: $size;
+      aspect-ratio: 1;
 
       img {
-        max-width: 250px;
+        max-width: $size;
         aspect-ratio: 1;
       }
     }
@@ -41,21 +44,25 @@
   }
 
   &.list {
+    $size: 280px;
     @include display_flex($justify: space-between);
 
+    max-height: calc($size + ($border-width * 2));
+
     .image {
-      width: 280px;
-      height: 280px;
+      width: $size;
+      height: $size;
 
       img {
-        max-width: 280px;
+        width: $size;
         aspect-ratio: 1;
       }
     }
 
     .body {
-      max-width: 270px;
-      margin: 32px;
+      $size: 270px;
+      max-width: $size;
+      margin: rems(32);
 
       .title {
         @extend %h4;
@@ -67,8 +74,8 @@
       }
 
       .rating {
-        @include display_flex($gap: 2px);
-        margin-bottom: 25px;
+        @include display_flex($gap: rems(2));
+        margin-bottom: rems(25);
       }
 
       .no-rating {
@@ -77,10 +84,10 @@
 
       .info {
         width: 100%;
-        @include display_flex($direction: column, $gap: 12px);
+        @include display_flex($direction: column, $gap: rems(12));
 
         &-item {
-          @include display_flex($justify: space-between, $gap: 32px);
+          @include display_flex($justify: space-between, $gap: rems(32));
           color: $color-grey-a9;
           @extend %filterFontSize;
 
@@ -96,21 +103,21 @@
     }
 
     .footer {
-      width: 165px;
+      width: rems(165);
 
-      margin: 32px;
+      margin: rems(32);
 
       white-space: nowrap;
 
       .prices {
-        margin-bottom: 16px;
+        margin-bottom: rems(16);
       }
 
       .shipping {
         color: $color-grey-a9;
-        font-size: 12px;
+        font-size: rems(12);
 
-        margin-bottom: 26px;
+        margin-bottom: rems(26);
 
         .title {
           font-weight: 600;
@@ -131,8 +138,8 @@
 
     .discount {
       position: absolute;
-      top: 12px;
-      left: 12px;
+      top: rems(12);
+      left: rems(12);
     }
 
     img {
@@ -155,7 +162,7 @@
       &::after {
         @include fadeEffect(
           $position: right,
-          $width: 30px,
+          $width: rems(30),
           $color: $color-white
         );
       }

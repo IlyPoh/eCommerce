@@ -1,32 +1,33 @@
+@import '../../../styles/base/functions';
 @import '../../../styles/base/config';
 @import '../../../styles/base/extends';
 @import '../../../styles/base/mixins';
 
 .item {
   width: 100%;
-  @include display_flex($align: center, $gap: 24px);
+  @include display_flex($align: center, $gap: rems(24));
 
   transition: width $shortTransition, max-width $shortTransition;
 
   &.grid {
     flex-direction: column;
-    max-width: 270px;
+    max-width: rems(270);
 
     .image {
-      max-width: 270px;
+      max-width: rems(270);
       width: 100%;
       height: 180px;
 
       img {
-        max-width: 270px;
+        max-width: rems(270);
         width: 100%;
-        height: 180px;
+        height: rems(180);
       }
     }
 
     .tags {
-      @include display_flex($align: center, $wrap: wrap, $gap: 8px);
-      margin-bottom: 8px;
+      @include display_flex($align: center, $wrap: wrap, $gap: rems(8));
+      margin-bottom: rems(8);
     }
 
     .title {
@@ -49,12 +50,12 @@
       }
     }
     .image {
-      width: 96px;
-      height: 96px;
+      width: rems(96);
+      height: rems(96);
 
       img {
-        width: 96px;
-        height: 96px;
+        width: rems(96);
+        height: rems(96);
       }
     }
   }
@@ -71,7 +72,7 @@
   }
 
   .title {
-    margin-bottom: 16px;
+    margin-bottom: rems(16);
 
     a {
       color: $color-main;
@@ -79,7 +80,7 @@
   }
 
   .info {
-    @include display_flex($align: center, $gap: 16px);
+    @include display_flex($align: center, $gap: rems(16));
 
     font-family: $ff-open;
     @extend %smallFontSize;

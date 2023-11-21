@@ -1,3 +1,4 @@
+@import '../../styles/base/functions';
 @import '../../styles/base/config';
 @import '../../styles/base/mixins';
 @import '../../styles/base/extends';
@@ -5,10 +6,10 @@
 .link {
   position: relative;
 
-  padding-right: 40px;
+  padding-right: rems(40);
 
   button {
-    line-height: 23px;
+    line-height: rems(23);
 
     padding-top: 0;
     padding-bottom: 0;
@@ -24,7 +25,7 @@
 
   width: 100%;
 
-  padding: 6px;
+  padding: rems(6);
   margin-right: 0;
 
   opacity: 1;
@@ -46,6 +47,6 @@
   }
 
   ul {
-    @include display_flex($direction: column, $gap: 10px);
+    @include display_flex($direction: column, $gap: rems(10));
   }
 }

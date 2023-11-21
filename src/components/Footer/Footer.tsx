@@ -12,20 +12,18 @@ import styles from './Footer.module.scss';
 // COMPONENT
 export const Footer: React.FC = () => {
   return (
-    <>
-      <footer className={styles['footer']}>
-        <div className="container">
-          <div className={styles['sections']}>
-            <div className={styles['columns']}>
-              {links.map((column) => (
-                <FooterColumn column={column} key={column.title} />
-              ))}
-            </div>
-            <FooterTags />
-            <div className={styles['copyright']}>{COPYRIGHT}</div>
+    <footer className={styles['footer']}>
+      <div className="container">
+        <div className={styles['sections']}>
+          <div className={styles['columns']}>
+            {links.map((column) => (
+              <FooterColumn column={column} key={column.title} />
+            ))}
           </div>
+          <FooterTags />
+          <div className={styles['copyright']}>{COPYRIGHT}</div>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 };

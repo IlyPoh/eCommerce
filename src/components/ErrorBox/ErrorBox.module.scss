@@ -1,3 +1,4 @@
+@import '../../styles/base/functions';
 @import '../../styles/base/config';
 
 .error {
@@ -9,7 +10,7 @@
   font-weight: 700;
   color: $color-red;
 
-  padding: 5px 25px;
+  padding: rems(5) rems(25);
 
   transform: translateX(-50%);
 
@@ -22,6 +23,6 @@
   border-bottom-right-radius: 12px;
 
   &-message {
-    margin-right: 10px;
+    margin-right: rems(10);
   }
 }

@@ -31,27 +31,25 @@ export const PageHeadline: React.FC<Partial<IPageHeadlineProps>> = () => {
   };
 
   return (
-    <>
-      <section className={`section-small ${styles['title']}`}>
-        <h2>{pageTitle ?? 'Page Headline'}</h2>
-        <div className={styles['filters']}>
-          <button
-            onClick={handleGridView}
-            className={`${styles['item']} ${gridView ? styles['active'] : ''}`}
-          >
-            <i className="icon-layout-square-grid" />
-            <span>Grid view</span>
-          </button>
-          <button
-            onClick={handleGridView}
-            className={`${styles['item']} ${gridView ? '' : styles['active']}`}
-          >
-            <i className="icon-layout-sections" />
-            <span>List view</span>
-          </button>
-          <Counter />
-        </div>
-      </section>
-    </>
+    <section className={`section-small ${styles['title']}`}>
+      <h2>{pageTitle ?? 'Page Headline'}</h2>
+      <div className={styles['filters']}>
+        <button
+          onClick={handleGridView}
+          className={`${styles['item']} ${gridView ? styles['active'] : ''}`}
+        >
+          <i className="icon-layout-square-grid" />
+          <span>Grid view</span>
+        </button>
+        <button
+          onClick={handleGridView}
+          className={`${styles['item']} ${gridView ? '' : styles['active']}`}
+        >
+          <i className="icon-layout-sections" />
+          <span>List view</span>
+        </button>
+        <Counter />
+      </div>
+    </section>
   );
 };

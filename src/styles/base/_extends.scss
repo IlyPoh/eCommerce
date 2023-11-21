@@ -11,36 +11,36 @@
 
 // font-sizes
 %h1 {
-  font-size: 32px;
-  line-height: 45px;
+  font-size: rems(32);
+  line-height: rems(45);
 }
 
 %h2 {
-  font-size: 26px;
-  line-height: 39px;
+  font-size: rems(26);
+  line-height: rems(39);
 }
 
 %h3 {
-  font-size: 22px;
-  line-height: 33px;
+  font-size: rems(22);
+  line-height: rems(33);
 }
 
 %h4 {
-  font-size: 18px;
-  line-height: 27px;
+  font-size: rems(18);
+  line-height: rems(27);
 }
 
 %defaultFontSize {
-  font-size: 15px;
-  line-height: 22px;
+  font-size: rems(15);
+  line-height: rems(22);
 }
 
 %smallFontSize {
-  font-size: 12px;
-  line-height: 18px;
+  font-size: rems(12);
+  line-height: rems(18);
 }
 
 %filterFontSize {
-  font-size: 14px;
-  line-height: 19px;
+  font-size: rems(14);
+  line-height: rems(19);
 }

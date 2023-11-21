@@ -18,21 +18,27 @@
   @if ($align) {
     align-items: $align;
   }
+
   @if ($justify) {
     justify-content: $justify;
   }
+
   @if ($direction) {
     flex-direction: $direction;
   }
+
   @if ($gap) {
     gap: $gap;
   }
+
   @if ($column-gap) {
     column-gap: $column-gap;
   }
+
   @if ($row-gap) {
     row-gap: $row-gap;
   }
+
   @if ($wrap) {
     flex-wrap: $wrap;
   }
@@ -47,28 +53,33 @@
   @if ($gap) {
     grid-gap: $gap;
   }
+
   @if ($column-gap) {
     column-gap: $column-gap;
   }
+
   @if ($row-gap) {
     row-gap: $row-gap;
   }
+
   @content;
 }
 
 // media
 @mixin tablet {
-  @media (min-width: 768px) {
+  @media (min-width: rems(768)) {
     @content;
   }
 }
+
 @mixin desktop {
-  @media (min-width: 1024px) {
+  @media (min-width: rems(1024)) {
     @content;
   }
 }
+
 @mixin desktop-hr {
-  @media (min-width: 1440px) {
+  @media (min-width: rems(1440)) {
     @content;
   }
 }

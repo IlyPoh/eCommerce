@@ -127,20 +127,18 @@ export const Pagination: React.FC = () => {
   };
 
   return (
-    <>
-      <section className="section-medium">
-        <div className={styles['block']}>
-          <div className={styles['list']}>
-            <span>Page:</span>
-            {renderPaginationLinks()}
-          </div>
-          <div className={styles['buttons']}>
-            {pageType === EItemType.NEWS && renderBlogButtons()}
-            {pageType === EItemType.PRODUCTS && renderMoreButton()}
-          </div>
-          <Counter />
+    <section className="section-medium">
+      <div className={styles['block']}>
+        <div className={styles['list']}>
+          <span>Page:</span>
+          {renderPaginationLinks()}
         </div>
-      </section>
-    </>
+        <div className={styles['buttons']}>
+          {pageType === EItemType.NEWS && renderBlogButtons()}
+          {pageType === EItemType.PRODUCTS && renderMoreButton()}
+        </div>
+        <Counter />
+      </div>
+    </section>
   );
 };

@@ -1,3 +1,4 @@
+@import '../../styles/base/functions';
 @import '../../styles/base/config';
 @import '../../styles/base/extends';
 @import '../../styles/base/mixins';
@@ -8,11 +9,11 @@
 
   .item {
     color: $color-grey-a9;
-    margin-right: 8px;
+    margin-right: rems(8);
 
     &:after {
       content: '/';
-      padding-left: 8px;
+      padding-left: rems(8);
     }
 
     &:last-child {

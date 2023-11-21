@@ -1,14 +1,15 @@
+@import '../../../styles/base/functions';
 @import '../../../styles/base/config';
 @import '../../../styles/base/extends';
 @import '../../../styles/base/mixins';
 
 .blog {
-  @include display_flex($gap: 32px);
+  @include display_flex($gap: rems(32));
 
   .highlight {
     position: relative;
 
-    min-height: 400px;
+    min-height: rems(400);
     min-width: 40%;
     width: 100%;
 
@@ -20,12 +21,16 @@
 
     .tags {
       position: absolute;
-      top: 24px;
-      left: 24px;
+      top: rems(24);
+      left: rems(24);
     }
 
     .body {
-      @include display_flex($direction: column, $justify: flex-end, $gap: 8px);
+      @include display_flex(
+        $direction: column,
+        $justify: flex-end,
+        $gap: rems(8)
+      );
       height: 50%;
       background: linear-gradient(
         0deg,
@@ -46,6 +51,6 @@
   }
 
   .list {
-    @include display_flex($direction: column, $gap: 32px);
+    @include display_flex($direction: column, $gap: rems(32));
   }
 }

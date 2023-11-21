@@ -24,16 +24,14 @@ export const BlockWithProducts: React.FC<BlockWithProductsProps> = ({
   productList,
 }) => {
   return (
-    <>
-      <div className={styles['block-with-products']}>
-        <SidebarLinks
-          data={sidebarData.data}
-          title={sidebarData.title}
-          link={sidebarData.link}
-          limit={sidebarData.limit}
-        />
-        <ProductList list={productList.list} limit={productList.limit} />
-      </div>
-    </>
+    <div className={styles['block-with-products']}>
+      <SidebarLinks
+        data={sidebarData.data}
+        title={sidebarData.title}
+        link={sidebarData.link}
+        limit={sidebarData.limit}
+      />
+      <ProductList list={productList.list} limit={productList.limit} />
+    </div>
   );
 };

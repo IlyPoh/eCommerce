@@ -2,11 +2,11 @@
 
 * {
   font-family: $ff-poppins;
-  @extend %defaultFontSize;
 }
 
 html {
   height: 100%;
+  @extend %defaultFontSize;
 }
 
 body {
@@ -53,29 +53,29 @@ a {
 }
 
 section {
-  padding: 48px 0;
+  padding: rems(48) 0;
 
   &.section,
   .section {
-    padding: 64px 0;
+    padding: rems(64) 0;
   }
 
   &.section-medium,
   .section-medium {
-    padding: 16px 0;
+    padding: rems(16) 0;
   }
 
   &.section-small,
   .section-small {
-    padding: 8px 0;
+    padding: rems(8) 0;
   }
 }
 
 .container {
-  max-width: 1260px;
+  max-width: rems(1260);
   width: 100%;
   margin: 0 auto;
-  padding: 0 45px;
+  padding: 0 rems(45);
 }
 
 .text-center {

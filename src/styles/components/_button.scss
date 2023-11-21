@@ -1,5 +1,5 @@
 .btn {
-  @include display_flex($align: center, $gap: 6px);
+  @include display_flex($align: center, $gap: rems(6));
 
   font-weight: 700;
 
@@ -12,7 +12,7 @@
     text-shadow $shortTransition, filter $shortTransition;
 
   a {
-    @include display_flex($align: center, $gap: 6px);
+    @include display_flex($align: center, $gap: rems(6));
 
     color: $color-main;
   }
@@ -27,15 +27,15 @@
   }
 
   &-large {
-    padding: 17px 48px;
+    padding: rems(17) rems(48);
   }
 
   &-medium {
-    padding: 12px 16px;
+    padding: rems(12) rems(16);
   }
 
   &-small {
-    padding: 7px 12px;
+    padding: rems(7) rems(12);
   }
 
   &-green {
@@ -88,11 +88,11 @@
   }
 
   &-icon {
-    font-size: 20px;
+    font-size: rems(20);
 
     background: none;
 
-    padding: 2px;
+    padding: rems(2);
 
     border: none;
     border-radius: 50%;
@@ -104,7 +104,7 @@
   }
 
   &-search {
-    font-size: 16px;
+    font-size: rems(16);
 
     padding: 0;
 
@@ -125,10 +125,10 @@
   }
 
   &-small-gap {
-    gap: 2px;
+    gap: rems(2);
 
     a {
-      gap: 2px;
+      gap: rems(2);
     }
   }
 }

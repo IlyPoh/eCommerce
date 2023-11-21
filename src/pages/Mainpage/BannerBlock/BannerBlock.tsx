@@ -30,21 +30,19 @@ export const BannerBlock: React.FC<Partial<IBannerBlockProps>> = ({
   }
 
   return (
-    <>
-      <div className={styles['banner']}>
-        <div className={styles['banner-background']}>
-          <div className={styles['banner-header']}>
-            <div className={styles['banner-subtitle']}>
-              {subtitle ?? 'Banner subfocus'}
-            </div>
-            <h3>{title ?? 'Space for heading'}</h3>
+    <div className={styles['banner']}>
+      <div className={styles['banner-background']}>
+        <div className={styles['banner-header']}>
+          <div className={styles['banner-subtitle']}>
+            {subtitle ?? 'Banner subfocus'}
           </div>
-          <Link className="btn btn-medium btn-no-bg" to={link?.link ?? '/'}>
-            {linkText}
-            <i className={link?.icon}></i>
-          </Link>
+          <h3>{title ?? 'Space for heading'}</h3>
         </div>
+        <Link className="btn btn-medium btn-no-bg" to={link?.link ?? '/'}>
+          {linkText}
+          <i className={link?.icon}></i>
+        </Link>
       </div>
-    </>
+    </div>
   );
 };

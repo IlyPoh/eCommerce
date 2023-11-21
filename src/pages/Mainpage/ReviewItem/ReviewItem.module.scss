@@ -1,3 +1,4 @@
+@import '../../../styles/base/functions';
 @import '../../../styles/base/config';
 @import '../../../styles/base/extends';
 @import '../../../styles/base/mixins';
@@ -5,8 +6,8 @@
 .item {
   position: relative;
 
-  padding: 24px 32px 40px;
-  margin-bottom: 24px;
+  padding: rems(24) rems(32) rems(40);
+  margin-bottom: rems(24);
 
   border: 1px solid $color-grey-f1;
   border-radius: 12px;
@@ -14,7 +15,7 @@
   cursor: grab;
 
   .body {
-    @include display_flex($align: center, $direction: column, $gap: 24px);
+    @include display_flex($align: center, $direction: column, $gap: rems(24));
     text-align: center;
   }
 
@@ -34,14 +35,14 @@
     left: 50%;
     transform: translate(-50%, 50%);
 
-    width: 48px;
-    height: 48px;
+    width: rems(48);
+    height: rems(48);
 
     border-radius: 50%;
 
     img {
-      width: 48px;
-      height: 48px;
+      width: rems(48);
+      height: rems(48);
       object-fit: cover;
     }
   }

@@ -117,21 +117,19 @@ export const Products: React.FC = () => {
   };
 
   return (
-    <>
-      <div className="container">
-        <section className="section-medium">
-          <HeaderFilters />
-          <div className={styles['filter']}>
-            {state?.tags?.length && renderFilters()}
-          </div>
-        </section>
-        <section className={`section ${styles['body']}`}>
-          <aside>
-            <SidebarFilter />
-          </aside>
-          {filteredData.length ? renderProducts() : renderNoProducts()}
-        </section>
-      </div>
-    </>
+    <div className="container">
+      <section className="section-medium">
+        <HeaderFilters />
+        <div className={styles['filter']}>
+          {state?.tags?.length && renderFilters()}
+        </div>
+      </section>
+      <section className={`section ${styles['body']}`}>
+        <aside>
+          <SidebarFilter />
+        </aside>
+        {filteredData.length ? renderProducts() : renderNoProducts()}
+      </section>
+    </div>
   );
 };

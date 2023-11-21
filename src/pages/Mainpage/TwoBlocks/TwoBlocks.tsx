@@ -34,38 +34,36 @@ export const TwoBlocks: React.FC<TwoBlocksProps> = ({
   if (!categoryData) return null;
 
   return (
-    <>
-      <div className={styles['two-blocks']}>
-        {categoryData.length ? (
-          <SidebarLinks
-            data={categoryData}
-            title={sidebarTitle ?? 'Category menu'}
-            link={{
-              text: sidebarLink?.text ?? 'More categories',
-              icon: sidebarLink?.icon ?? 'icon-chevron-right',
-              link: sidebarLink?.link ?? '/products',
-            }}
-          />
-        ) : null}
-        <BannerBlock
-          title={firstBlockInfo?.title}
-          subtitle={firstBlockInfo?.subtitle}
+    <div className={styles['two-blocks']}>
+      {categoryData.length ? (
+        <SidebarLinks
+          data={categoryData}
+          title={sidebarTitle ?? 'Category menu'}
           link={{
-            text: firstBlockLink?.text ?? 'Read recepies',
-            icon: firstBlockLink?.icon ?? 'icon-chevron-right',
-            link: firstBlockLink?.link ?? '/',
+            text: sidebarLink?.text ?? 'More categories',
+            icon: sidebarLink?.icon ?? 'icon-chevron-right',
+            link: sidebarLink?.link ?? '/products',
           }}
-        ></BannerBlock>
-        <BannerBlock
-          title={secondBlockInfo?.title}
-          subtitle={secondBlockInfo?.subtitle}
-          link={{
-            text: secondBlockLink?.text ?? 'Read recepies',
-            icon: secondBlockLink?.icon ?? 'icon-chevron-right',
-            link: secondBlockLink?.link ?? '/',
-          }}
-        ></BannerBlock>
-      </div>
-    </>
+        />
+      ) : null}
+      <BannerBlock
+        title={firstBlockInfo?.title}
+        subtitle={firstBlockInfo?.subtitle}
+        link={{
+          text: firstBlockLink?.text ?? 'Read recepies',
+          icon: firstBlockLink?.icon ?? 'icon-chevron-right',
+          link: firstBlockLink?.link ?? '/',
+        }}
+      ></BannerBlock>
+      <BannerBlock
+        title={secondBlockInfo?.title}
+        subtitle={secondBlockInfo?.subtitle}
+        link={{
+          text: secondBlockLink?.text ?? 'Read recepies',
+          icon: secondBlockLink?.icon ?? 'icon-chevron-right',
+          link: secondBlockLink?.link ?? '/',
+        }}
+      ></BannerBlock>
+    </div>
   );
 };

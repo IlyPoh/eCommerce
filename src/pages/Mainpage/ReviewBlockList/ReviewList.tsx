@@ -39,23 +39,8 @@ export const ReviewList: React.FC<IReviewListProps> = ({
           scrollbar={{ draggable: true }}
           initialSlide={1}
           navigation
-          loop
-          centeredSlides
           slideToClickedSlide
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-            1200: {
-              slidesPerView: 4,
-            },
-          }}
+          slidesPerView={'auto'}
         >
           <div className="swipper-container">
             {data.map((item) => (

@@ -28,11 +28,9 @@ export const Counter: React.FC = () => {
   }
 
   return (
-    <>
-      <div className={styles['counter']}>
-        <div className="tag tag-green">{count}</div>
-        {text && <div className={styles['text']}>{text}</div>}
-      </div>
-    </>
+    <div className={styles['counter']}>
+      <div className="tag tag-green">{count}</div>
+      {text && <div className={styles['text']}>{text}</div>}
+    </div>
   );
 };

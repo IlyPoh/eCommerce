@@ -1,31 +1,36 @@
+@import '../../styles/base/functions';
 @import '../../styles/base/config';
 @import '../../styles/base/extends';
 @import '../../styles/base/mixins';
 
 .sidebar {
-  max-width: 270px;
+  max-width: rems(270);
   width: 100%;
 
   @include display_flex(
     $align: flex-start,
     $justify: space-between,
     $direction: column,
-    $gap: 16px
+    $gap: rems(16)
   );
 
   .content {
     h4 {
-      margin-bottom: 16px;
+      margin-bottom: rems(16);
     }
 
     .links {
-      @include display_flex($align: flex-start, $direction: column, $gap: 12px);
+      @include display_flex(
+        $align: flex-start,
+        $direction: column,
+        $gap: rems(12)
+      );
 
       text-decoration: underline;
       font-family: $ff-open;
-      font-size: 14px;
+      font-size: rems(14);
 
-      margin-bottom: 32px;
+      margin-bottom: rems(32);
     }
   }
 }

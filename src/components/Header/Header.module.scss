@@ -1,3 +1,4 @@
+@import '../../styles/base/functions';
 @import '../../styles/base/config';
 @import '../../styles/base/extends';
 @import '../../styles/base/mixins';
@@ -9,15 +10,15 @@
     @extend %smallFontSize;
     font-family: $ff-open;
 
-    margin-bottom: 40px;
+    margin-bottom: rems(40);
 
     border-bottom: 1px solid rgba(21, 21, 21, 0.05);
 
     .left {
-      @include display_flex($gap: 35px);
+      @include display_flex($gap: rems(35));
     }
     .right {
-      @include display_flex($gap: 35px);
+      @include display_flex($gap: rems(35));
     }
 
     a {
@@ -30,24 +31,28 @@
   }
 
   .content {
-    @include display_flex($align: center, $justify: space-between, $gap: 40px);
-    margin-bottom: 48px;
+    @include display_flex(
+      $align: center,
+      $justify: space-between,
+      $gap: rems(40)
+    );
+    margin-bottom: rems(48);
 
     .input {
       @include display_flex($align: center);
 
       white-space: nowrap;
 
-      padding: 10px 15px;
+      padding: rems(10) rems(15);
 
       border: 1px solid $color-grey-d1;
       border-radius: 12px;
 
       .search-filter {
-        line-height: 18px;
+        line-height: rems(18);
 
-        padding-right: 24px;
-        margin-right: 24px;
+        padding-right: rems(24);
+        margin-right: rems(24);
 
         border-right: 1px solid $color-grey-d1;
 
@@ -60,11 +65,11 @@
       }
 
       input {
-        min-width: 250px;
+        min-width: rems(250);
 
-        line-height: 18px;
+        line-height: rems(18);
 
-        margin-right: 12px;
+        margin-right: rems(12);
 
         border: none;
         outline: none;
@@ -76,7 +81,7 @@
     }
 
     .buttons {
-      @include display_flex($align: center, $justify: flex-end, $gap: 40px);
+      @include display_flex($align: center, $justify: flex-end, $gap: rems(40));
     }
   }
 

@@ -21,14 +21,12 @@ export const BlockHeadline: React.FC<IBlockHeadlineProps> = ({
   const linkText = link?.text ? link.text : 'Button';
 
   return (
-    <>
-      <div className={styles['title']}>
-        <h4>{title ? title : 'Section Headline'}</h4>
-        <Link className="btn btn-small btn-transparent" to={link?.link ?? '/'}>
-          {linkText}
-          <i className={link?.icon ?? 'icon-chevron-right'} />
-        </Link>
-      </div>
-    </>
+    <div className={styles['title']}>
+      <h4>{title ?? 'Section Headline'}</h4>
+      <Link className="btn btn-small btn-transparent" to={link?.link ?? '/'}>
+        {linkText}
+        <i className={link?.icon ?? 'icon-chevron-right'} />
+      </Link>
+    </div>
   );
 };

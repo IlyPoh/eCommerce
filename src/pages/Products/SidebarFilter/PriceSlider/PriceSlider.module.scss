@@ -1,22 +1,23 @@
+@import '../../../../styles/base/functions';
 @import '../../../../styles/base/config';
 @import '../../../../styles/base/extends';
 @import '../../../../styles/base/mixins';
 
 section {
-  padding-bottom: 32px;
+  padding-bottom: rems(32);
 }
 
 .block {
-  @include display_flex($direction: column, $gap: 12px);
+  @include display_flex($direction: column, $gap: rems(12));
 
   .slider {
-    height: 20px;
+    height: rems(20);
 
     .track {
       top: 50%;
       transform: translateY(-50%);
 
-      height: 6px;
+      height: rems(6);
 
       border-radius: 12px;
 
@@ -28,7 +29,7 @@ section {
     }
 
     .thumb {
-      width: 20px;
+      width: rems(20);
       aspect-ratio: 1;
 
       border-radius: 50%;
@@ -44,11 +45,11 @@ section {
     @include display_flex(
       $align: flex-end,
       $justify: space-between,
-      $gap: 16px
+      $gap: rems(16)
     );
 
     span {
-      line-height: 48px;
+      line-height: rems(48);
     }
 
     &-item {
@@ -58,9 +59,9 @@ section {
 
         background: $color-grey-f9;
 
-        padding: 12px 16px;
+        padding: rems(12) rems(16);
 
-        max-width: 110px;
+        max-width: rems(110);
 
         transition: background $shortTransition, border $shortTransition,
           box-shadow $shortTransition;

@@ -19,12 +19,10 @@ export const ProductList: React.FC<IProductListProps> = ({
   const renderedList = list.slice(0, limit);
 
   return (
-    <>
-      <div className={styles['list']}>
-        {renderedList.map((item) => (
-          <ProductItem key={item} id={item} />
-        ))}
-      </div>
-    </>
+    <div className={styles['list']}>
+      {renderedList.map((item) => (
+        <ProductItem key={item} id={item} />
+      ))}
+    </div>
   );
 };
