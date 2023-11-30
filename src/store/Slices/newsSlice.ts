@@ -3,7 +3,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 // INITIAL STATE
 const initialState = {
-  news: [],
+  news: {
+    newsData: [],
+    totalPages: 0,
+  },
   categories: [],
   currentArticle: null,
 };

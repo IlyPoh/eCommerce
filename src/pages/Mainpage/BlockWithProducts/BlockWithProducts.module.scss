@@ -4,5 +4,5 @@
 @import '../../../styles/base/mixins';
 
 .block-with-products {
-  @include display_flex($gap: rems(32));
+  @include display_flex($justify: space-between, $gap: rems(32));
 }

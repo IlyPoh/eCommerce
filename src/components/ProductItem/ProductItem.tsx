@@ -25,7 +25,11 @@ export const ProductItem: React.FC<ProductItemProps> = ({
   view = EView.GRID,
 }) => {
   const fetchData = useGetProductsQuery({ id: id });
-  const productInfo = data ?? (fetchData.data ? fetchData.data[0] : null);
+  const productFromFetch = fetchData.data
+    ? fetchData.data.productsData[0]
+    : null;
+  console.log('🚀 ~ file: ProductItem.tsx:28 ~ fetchData:', fetchData);
+  const productInfo = data ?? productFromFetch;
 
   const renderDiscountOnImage = (discount: { discount_percent: number }) => {
     return (

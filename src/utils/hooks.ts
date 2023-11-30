@@ -13,7 +13,6 @@ import {
   setProducts,
   setProductCategories,
   setBrands,
-  setFilters,
 } from '../store/Slices/productsSlice';
 import {
   useGetProductCategoriesQuery,
@@ -30,7 +29,11 @@ import { IError } from '../types';
 
 // store types
 import type { RootState, AppDispatch } from '../store';
-import { INewsEndpointOptions, IPageState, IProduct } from '../types/store';
+import {
+  INewsEndpointOptions,
+  IPageState,
+  IProductsEndpointOptions,
+} from '../types/store';
 
 // utils
 import { errorHandler } from './helpers';
@@ -83,7 +86,9 @@ export const useFetchTags = () => {
 };
 
 // Custom hook for fetching products
-export const useFetchProducts = (options: Partial<IProduct> = {}) => {
+export const useFetchProducts = (
+  options: Partial<IProductsEndpointOptions> = {}
+) => {
   return useFetchData(useGetProductsQuery, setProducts, options);
 };
 

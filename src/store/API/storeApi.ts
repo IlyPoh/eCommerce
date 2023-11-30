@@ -7,7 +7,7 @@ import {
   IArticle,
   ICategory,
   INewsEndpointOptions,
-  IProduct,
+  IProductsData,
   IProductsEndpointOptions,
   IReview,
   ITag,
@@ -18,7 +18,10 @@ import {
   buildNewsQueryString,
   buildProductQueryString,
 } from '../../utils/helpers';
-import { STORE_API_URL, STORE_API_ENDPOINTS } from '../../utils/constants';
+import {
+  STORE_API_URL,
+  STORE_API_ENDPOINTS as ENDPOINTS,
+} from '../../utils/constants';
 import { ILink } from '../../types';
 
 // API
@@ -36,38 +39,41 @@ export const storeApi = createApi({
   ],
   baseQuery: fetchBaseQuery({ baseUrl: STORE_API_URL }),
   endpoints: (builder) => ({
-    getProducts: builder.query<IProduct[], Partial<IProductsEndpointOptions>>({
+    getProducts: builder.query<
+      IProductsData,
+      Partial<IProductsEndpointOptions>
+    >({
       query: (searchOptions) =>
-        buildProductQueryString(STORE_API_ENDPOINTS.products, searchOptions),
+        buildProductQueryString(ENDPOINTS.products, searchOptions),
       providesTags: ['Products'],
     }),
     getProductCategories: builder.query<ICategory[], void>({
-      query: () => STORE_API_ENDPOINTS.categories,
+      query: () => ENDPOINTS.categories,
       providesTags: ['Categories'],
     }),
     getTags: builder.query<ITag[], void>({
-      query: () => STORE_API_ENDPOINTS.productTags,
+      query: () => ENDPOINTS.productTags,
       providesTags: ['Tags'],
     }),
     getReviews: builder.query<IReview[], void>({
-      query: () => STORE_API_ENDPOINTS.reviews,
+      query: () => ENDPOINTS.reviews,
       providesTags: ['Reviews'],
     }),
     getNews: builder.query<IArticle[], Partial<INewsEndpointOptions>>({
       query: (searchOptions) =>
-        buildNewsQueryString(STORE_API_ENDPOINTS.news, searchOptions),
+        buildNewsQueryString(ENDPOINTS.news, searchOptions),
       providesTags: ['News'],
     }),
     getNewsCategories: builder.query<ILink[], void>({
-      query: () => STORE_API_ENDPOINTS.newsCategories,
+      query: () => ENDPOINTS.newsCategories,
       providesTags: ['News Categories'],
     }),
     getArticle: builder.query<IArticle, string | number>({
-      query: (id) => `${STORE_API_ENDPOINTS.news}/${id}`,
+      query: (id) => `${ENDPOINTS.news}/${id}`,
       providesTags: ['Article'],
     }),
     getBrands: builder.query<string[], void>({
-      query: () => STORE_API_ENDPOINTS.brands,
+      query: () => ENDPOINTS.brands,
     }),
   }),
 });

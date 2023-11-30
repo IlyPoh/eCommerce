@@ -24,21 +24,20 @@ export const MONTHS: string[] = [
   'December',
 ];
 
+export const env = import.meta.env;
+
 // apis
-export const STORE_API_URL = 'http://localhost:3001/';
+export const STORE_API_URL = env.VITE_URL;
 
 export const STORE_API_ENDPOINTS: IStoreApiUrls = {
-  categories: 'categories',
-  products: 'products',
-  productTags: 'productTags',
-  reviews: 'reviews',
-  news: 'news',
-  newsCategories: 'newsCategories',
-  brands: 'brands',
+  categories: env.VITE_ENDPOINT_CATEGORIES,
+  products: env.VITE_ENDPOINT_PRODUCTS,
+  productTags: env.VITE_ENDPOINT_PRODUCT_TAGS,
+  reviews: env.VITE_ENDPOINT_REVIEWS,
+  news: env.VITE_ENDPOINT_NEWS,
+  newsCategories: env.VITE_ENDPOINT_NEWS_CATEGORIES,
+  brands: env.VITE_ENDPOINT_BRANDS,
 };
-
-export const NEWS_API_URL = 'https://newsapi.org/v2/everything';
-export const NEWS_API_KEY: string = import.meta.env.VITE_NEWS_API_KEY;
 
 // links
 export const HEADER_LINKS: IHeaderLinks = {

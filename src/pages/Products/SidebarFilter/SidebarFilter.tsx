@@ -40,6 +40,7 @@ export const SidebarFilter: React.FC = () => {
     brandsToFilter,
     ratingToFilter,
   } = useAppSelector((state) => state.productState);
+  const { productsData } = products;
   const contentRefBrands = useRef<HTMLDivElement>(null);
   const [brandsExpanded, setBrandsExpanded] = useState(false);
   const [contentHeightBrands, setContentHeightBrands] = useState(0);
@@ -47,7 +48,9 @@ export const SidebarFilter: React.FC = () => {
     useState<string[]>(brandsToFilter);
   const [ratingToRender, setRatingToRender] =
     useState<number[]>(ratingToFilter);
-  const productMaxPrice = Math.max(...products.map((product) => product.price));
+  const productMaxPrice = Math.max(
+    ...productsData.map((product) => product.price)
+  );
   const [minPrice, setMinPrice] = useState<number>(0);
   const [maxPrice, setMaxPrice] = useState<number>(productMaxPrice);
 
@@ -101,7 +104,7 @@ export const SidebarFilter: React.FC = () => {
                 category ? `${category}/${item.name}` : item.name
               }`}
             >
-              {item.name}
+              <span>{item.name}</span>
               <div className="tag tag-green">{item.productsCount}</div>
             </Link>
           ))}

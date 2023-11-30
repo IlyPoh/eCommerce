@@ -31,7 +31,7 @@
 }
 
 %defaultFontSize {
-  font-size: rems(15);
+  font-size: $fs-default + px;
   line-height: rems(22);
 }
 

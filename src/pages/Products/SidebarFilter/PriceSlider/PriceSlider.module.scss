@@ -37,7 +37,13 @@ section {
 
       background: $color-white;
 
-      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 5px 0 $color-shadow-03;
+
+      transition: box-shadow $shortTransition;
+
+      &:hover {
+        box-shadow: 0 0 5px 0 $color-shadow-08;
+      }
     }
   }
 
@@ -69,7 +75,7 @@ section {
         &:focus {
           background: $color-white;
           border: 1px solid $color-green-6a;
-          box-shadow: 0 0 4px 1px $color-box-shadow;
+          box-shadow: 0 0 4px 1px $color-shadow-05;
         }
 
         &::-webkit-outer-spin-button,

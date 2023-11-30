@@ -35,16 +35,28 @@ export interface ISubcategory {
 
 // Product
 export interface IProductsState {
-  products: IProduct[];
+  products: IProductsData;
   categories: ICategory[];
   subcategories: ISubcategory[];
   brands: string[];
   sort: ESort;
-  filters: string[];
-  country?: string | null;
+  filters: IProductStateFilters;
   brandsToFilter: string[];
   ratingToFilter: number[];
   pricesToFilter: number[];
+}
+
+export interface IProductsData {
+  productsData: IProduct[];
+  totalPages: number;
+}
+
+export interface IProductStateFilters {
+  rating: number[];
+  prices: { min: number; max: number } | null;
+  tags: string[];
+  brands: string[];
+  country: string | null;
 }
 
 export interface IProduct {

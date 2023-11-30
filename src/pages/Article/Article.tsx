@@ -2,6 +2,9 @@
 // libraries
 import { Link, useParams } from 'react-router-dom';
 
+// placeholders
+import placeholder from '/images/placeholder.png';
+
 // store
 import { useGetArticleQuery } from '../../store/API/storeApi';
 
@@ -25,7 +28,7 @@ export const Article: React.FC = () => {
       <section>
         <div
           className={styles['header']}
-          style={{ backgroundImage: `url(${urlToImage})` }}
+          style={{ backgroundImage: `url(${urlToImage ?? placeholder})` }}
         >
           <aside className={styles['info']}>
             <div className={styles['item']}>
@@ -74,7 +77,10 @@ export const Article: React.FC = () => {
           </div>
         </aside>
         <div className={styles['content']}>
-          <div className={styles['article']}>{content}</div>
+          <article
+            className={styles['article']}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
           <div className={styles['share']}>
             <span>Share</span>
             <button className="btn btn-small btn-grey">

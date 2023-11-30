@@ -4,8 +4,8 @@ $ff-open: 'Open Sans', sans-serif;
 
 // colors
 $color-main: #151515;
-$color-orange: #fdbc15;
 $color-red: #f00e0e;
+$color-yellow: #fdbc15;
 
 $color-black: #000;
 
@@ -47,7 +47,9 @@ $color-teal-b9: #b9e6e8;
 
 $color-gradient-shadow: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 100%);
 
-$color-box-shadow: rgba(0, 0, 0, 0.5);
+$color-shadow-03: rgba(0, 0, 0, 0.3);
+$color-shadow-05: rgba(0, 0, 0, 0.5);
+$color-shadow-08: rgba(0, 0, 0, 0.8);
 
 // transitions
 $shortTransition: 0.3s ease;

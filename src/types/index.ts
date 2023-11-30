@@ -93,12 +93,6 @@ export interface IBannerProps {
   subtitle?: string;
 }
 
-// Indexes for pagination
-export interface IPaginationIndexes {
-  start: number;
-  end: number;
-}
-
 // Checkbox data
 export interface ICheckboxData {
   value: string;

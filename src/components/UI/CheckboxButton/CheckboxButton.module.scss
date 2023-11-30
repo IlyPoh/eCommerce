@@ -7,26 +7,32 @@
   @include display_flex($align: center);
   cursor: pointer;
   padding: rems(8);
-}
 
-.input {
-  display: none;
-
-  margin: 0;
-  padding: 0;
-
-  &:checked + .text {
-    &.radio {
-      &:before {
-        background: $color-white;
-        border: 6px solid $color-green-6a;
-      }
+  &:hover {
+    .text {
+      text-shadow: 0 0 1px $color-shadow-03;
     }
-    &.checkbox {
-      &:before {
-        color: $color-white;
-        background: $color-green-6a;
-        border: 1px solid $color-green-46;
+  }
+
+  .input {
+    display: none;
+
+    margin: 0;
+    padding: 0;
+
+    &:checked + .text {
+      &.radio {
+        &:before {
+          background: $color-white;
+          border: 6px solid $color-green-6a;
+        }
+      }
+      &.checkbox {
+        &:before {
+          color: $color-white;
+          background: $color-green-6a;
+          border: 1px solid $color-green-46;
+        }
       }
     }
   }
@@ -34,6 +40,8 @@
 
 .text {
   @include display_flex($align: center, $gap: rems(8));
+
+  transition: text-shadow $shortTransition;
 
   &.radio {
     &:before {

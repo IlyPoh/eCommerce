@@ -52,6 +52,7 @@ export const BlogItem: React.FC<IBlogItemProps> = ({
                 state={{
                   ...state,
                   tags: handleAddFilter(state?.tags || [], tag),
+                  page: 1,
                 }}
                 key={tag}
               >

@@ -9,13 +9,12 @@ import { HighlightArticle } from '../../components/HighlightArticle/HighlightArt
 
 // types
 import { IArticle } from '../../types/store';
-import { EItemType, EView, IPaginationIndexes } from '../../types';
+import { EItemType, EView } from '../../types';
 
 // utils
 import {
   firstLettertoUppercase,
   getBlogLink,
-  getPaginationIndexes,
   handleRemoveFilter,
 } from '../../utils/helpers';
 import {
@@ -37,27 +36,26 @@ export const Blog: React.FC = () => {
   const { category } = useParams();
   const { state } = useLocation();
 
-  const newsData = useAppSelector((state) => state.newsState.news);
+  const { newsData, totalPages } = useAppSelector(
+    (state) => state.newsState.news
+  );
+
   const newsCategories = useAppSelector((state) => state.newsState.categories);
   const gridView = useAppSelector((state) => state.appState.gridView);
   const itemsPerPage = useAppSelector((state) => state.pageState.itemsPerPage);
-
-  const productIndexesToRender: IPaginationIndexes = getPaginationIndexes(
-    state?.page ?? 1,
-    itemsPerPage
-  );
+  const indexesToRenderHightlight = { first: 0, second: 2 };
 
   const pageTitle = category ?? 'Blog';
 
   const blogLink = getBlogLink(category);
-  const productHighlightLastIndex = productIndexesToRender.start + 2;
-  const totalPages = Math.ceil(newsData.length / itemsPerPage);
 
   useFetchNews({
     year: state?.year,
     month: state?.month,
     category: category,
     tags: state?.tags,
+    limit: itemsPerPage,
+    page: state?.page ?? 1,
   });
 
   useFetchNewsCategories();
@@ -72,11 +70,6 @@ export const Blog: React.FC = () => {
     itemCount: newsData.length,
   });
 
-  const filteredData = newsData.filter((article: IArticle) => {
-    if (!state?.tags?.length) return true;
-    else return state.tags.every((tag: string) => article.tags?.includes(tag));
-  });
-
   const renderFilter = () => {
     return (
       <section className={`section-small ${styles['filter']}`}>
@@ -86,7 +79,7 @@ export const Blog: React.FC = () => {
             <div className={styles['date']}>
               <Link
                 to="/blog"
-                state={{ ...state, year: null, month: null }}
+                state={{ ...state, year: null, month: null, page: 1 }}
                 className="tag tag-green"
               >
                 {MONTHS[Number(state?.month) - 1]} {state?.year}
@@ -104,7 +97,11 @@ export const Blog: React.FC = () => {
                 className="tag tag-green"
                 key={tag}
                 to={blogLink}
-                state={{ ...state, tags: handleRemoveFilter(state.tags, tag) }}
+                state={{
+                  ...state,
+                  tags: handleRemoveFilter(state.tags, tag),
+                  page: 1,
+                }}
               >
                 {firstLettertoUppercase(tag)}
                 <i className="icon-actions-close-simple"></i>
@@ -119,8 +116,11 @@ export const Blog: React.FC = () => {
   const renderHighlightArticles = () => {
     return (
       <section className={styles['headline']}>
-        {filteredData
-          .slice(productIndexesToRender.start, productHighlightLastIndex)
+        {newsData
+          .slice(
+            indexesToRenderHightlight.first,
+            indexesToRenderHightlight.second
+          )
           .map((article: IArticle) => (
             <HighlightArticle data={article} key={article.id} link={blogLink} />
           ))}
@@ -135,8 +135,8 @@ export const Blog: React.FC = () => {
           ${gridView ? styles[EView.GRID] : styles[EView.LIST]}
         `}
       >
-        {filteredData
-          .slice(productHighlightLastIndex, productIndexesToRender.end)
+        {newsData
+          .slice(indexesToRenderHightlight.second, newsData.length)
           .map((article: IArticle) => (
             <BlogItem
               article={article}
@@ -182,7 +182,7 @@ export const Blog: React.FC = () => {
             </p>
           </div>
         </aside>
-        {filteredData.length ? renderBlogItems() : renderNoArticlesMessage()}
+        {newsData.length ? renderBlogItems() : renderNoArticlesMessage()}
       </section>
     </div>
   );

@@ -18,6 +18,16 @@
     .item {
       @include display_flex($align: center, $justify: space-between);
       color: $color-main;
+
+      span {
+        transition: text-shadow $shortTransition;
+      }
+
+      &:hover {
+        span {
+          text-shadow: 0 0 1px $color-shadow-03;
+        }
+      }
     }
 
     label {
@@ -62,43 +72,24 @@
   }
 
   .rating {
-    .full {
-      color: $color-orange;
-    }
-
-    .empty {
-      color: $color-grey-d1;
-    }
-  }
-
-  .slider {
-    height: rems(20);
-
-    .track {
-      top: 50%;
-      transform: translateY(-50%);
-
-      height: rems(6);
-
-      border-radius: rems(12);
-
-      background: $color-grey-eb;
-
-      &:nth-child(2) {
-        background: $color-green-6a;
+    .item {
+      i {
+        transition: filter $shortTransition;
       }
-    }
 
-    .thumb {
-      width: rems(20);
-      aspect-ratio: 1;
+      .full {
+        color: $color-yellow;
+      }
 
-      border-radius: 50%;
-      border: 1px solid $color-grey-d1;
+      .empty {
+        color: $color-grey-d1;
+      }
 
-      background: $color-white;
-
-      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+      &:hover {
+        i {
+          filter: brightness(0.9);
+        }
+      }
     }
   }
 
@@ -130,7 +121,7 @@
         &:focus {
           background: $color-white;
           border: 1px solid $color-green-6a;
-          box-shadow: 0 0 4px 1px $color-box-shadow;
+          box-shadow: 0 0 4px 1px $color-shadow-05;
         }
 
         &::-webkit-outer-spin-button,

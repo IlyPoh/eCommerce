@@ -16,13 +16,6 @@ export const firstLettertoUppercase = (string: string): string => {
   return string[0].toUpperCase() + string.slice(1);
 };
 
-export const getPaginationIndexes = (page: number, productsPerPage = 10) => {
-  const start = page * productsPerPage - productsPerPage;
-  const end = page * productsPerPage;
-
-  return { start, end };
-};
-
 export const getBlogLink = (category: string | undefined) => {
   if (category) return `/blog/${category}`;
   else return `/blog`;
@@ -103,15 +96,16 @@ export const buildProductQueryString = (
   const queryParameters = [];
 
   if (id) queryParameters.push(`id=${id}`);
-  else if (name) queryParameters.push(`name=${encodeURIComponent(name)}`);
-  else if (category_id) queryParameters.push(`category_id=${category_id}`);
-  else if (subcategory_id)
-    queryParameters.push(`subcategory_id=${subcategory_id}`);
-  else if (tags) {
-    const tagsQuery = tags
-      .map((tag) => `tags_like=${encodeURIComponent(tag)}`)
-      .join('&');
-    queryParameters.push(`?${tagsQuery}`);
+
+  if (name) queryParameters.push(`name=${encodeURIComponent(name)}`);
+
+  if (category_id) queryParameters.push(`category_id=${category_id}`);
+
+  if (subcategory_id) queryParameters.push(`subcategory_id=${subcategory_id}`);
+
+  if (tags) {
+    const tagsString = tags.join(',');
+    queryParameters.push(`tags=${tagsString}`);
   }
 
   const queryString =
@@ -124,11 +118,10 @@ export const buildNewsQueryString = (
   endpoint: string,
   searchOptions: Partial<INewsEndpointOptions>
 ) => {
-  const { year, month, limit, page, tags, category } = searchOptions;
+  const { year, month, limit, tags, category, page } = searchOptions;
   const queryParameters = [];
 
-  if (limit) queryParameters.push(`_limit=${limit}`);
-  else if (page) queryParameters.push(`_page=${page}`);
+  if (limit) queryParameters.push(`limit=${limit}`);
 
   if (year && month) {
     const startDate = new Date(year, month - 1, 1);
@@ -136,18 +129,18 @@ export const buildNewsQueryString = (
     const isoStartDate = startDate.toISOString();
     const isoEndDate = endDate.toISOString();
 
-    queryParameters.push(`publishedAt_gte=${isoStartDate}`);
-    queryParameters.push(`publishedAt_lte=${isoEndDate}`);
+    queryParameters.push(`gte=${isoStartDate}`);
+    queryParameters.push(`lte=${isoEndDate}`);
   }
 
   if (tags) {
-    const tagsQuery = tags
-      .map((tag) => `tags_like=${encodeURIComponent(tag)}`)
-      .join('&');
-    queryParameters.push(`${tagsQuery}`);
+    const tagsString = tags.join(',');
+    queryParameters.push(`tags=${tagsString}`);
   }
 
   if (category) queryParameters.push(`category=${category}`);
+
+  if (page) queryParameters.push(`page=${page}`);
 
   const queryString =
     queryParameters.length > 0 ? `?${queryParameters.join('&')}` : '';

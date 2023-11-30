@@ -22,7 +22,7 @@ import {
 // COMPONENT
 export const Mainpage: React.FC = () => {
   const categoryData = useAppSelector((state) => state.productState.categories);
-  const newsData = useAppSelector((state) => state.newsState.news);
+  const { newsData } = useAppSelector((state) => state.newsState.news);
   const reviewData = useAppSelector((state) => state.reviewsState.reviews);
 
   const firstSidebarData: ISidebarLinksProps = {

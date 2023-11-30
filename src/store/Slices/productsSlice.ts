@@ -9,13 +9,21 @@ import { IProductsState } from '../../types/store';
 // INITIAL STATE
 
 const initialState: IProductsState = {
-  products: [],
+  products: {
+    productsData: [],
+    totalPages: 0,
+  },
   categories: [],
   subcategories: [],
   brands: [],
   sort: ESort.POPULAR,
-  filters: [],
-  country: '',
+  filters: {
+    rating: [],
+    prices: null,
+    tags: [],
+    brands: [],
+    country: null,
+  },
   brandsToFilter: [],
   ratingToFilter: [],
   pricesToFilter: [],
@@ -41,8 +49,16 @@ const productsSlice = createSlice({
     setFilters: (state, action) => {
       state.filters = action.payload;
     },
+    setTags: (state, action) => {
+      state.filters.tags = action.payload;
+    },
+    removeTag: (state, action) => {
+      state.filters.tags = state.filters.tags.filter(
+        (tag) => tag !== action.payload
+      );
+    },
     setCountry: (state, action) => {
-      state.country = action.payload;
+      state.filters.country = action.payload;
     },
     setBrands: (state, action) => {
       state.brands = action.payload;
@@ -58,7 +74,6 @@ const productsSlice = createSlice({
     },
     resetFilters: (state) => {
       state.filters = initialState.filters;
-      state.country = initialState.country;
       state.brandsToFilter = initialState.brandsToFilter;
       state.ratingToFilter = initialState.ratingToFilter;
       state.pricesToFilter = initialState.pricesToFilter;
@@ -72,6 +87,8 @@ export const {
   setProductSubcategories,
   setSort,
   setFilters,
+  setTags,
+  removeTag,
   setCountry,
   setBrands,
   setBrandsToFilter,

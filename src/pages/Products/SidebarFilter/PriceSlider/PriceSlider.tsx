@@ -15,7 +15,10 @@ interface IPriceSliderProps {
 // COMPONENT
 export const PriceSlider: React.FC<IPriceSliderProps> = ({ onPriceChange }) => {
   const { products } = useAppSelector((state) => state.productState);
-  const productMaxPrice = Math.max(...products.map((product) => product.price));
+  const { productsData } = products;
+  const productMaxPrice = Math.max(
+    ...productsData.map((product) => product.price)
+  );
   const [minPrice, setMinPrice] = useState<number>(0);
   const [maxPrice, setMaxPrice] = useState<number>(productMaxPrice);
 

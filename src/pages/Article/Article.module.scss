@@ -14,11 +14,18 @@
 }
 
 .header {
+  position: relative;
+
   height: rems(480);
 
   color: $color-white;
 
   @include display_flex($align: flex-end, $justify: center, $gap: rems(32));
+
+  background-image: url('/images/placeholder.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
 
   padding: rems(32);
 
@@ -34,7 +41,7 @@
       @include display_flex();
 
       .category {
-        width: 50%;
+        min-width: 50%;
 
         color: $color-grey-a9;
       }
@@ -46,6 +53,7 @@
     }
   }
 }
+
 .body {
   @include display_flex($justify: center, $gap: rems(32));
 
@@ -74,6 +82,10 @@
 
     .article {
       margin-bottom: rems(48);
+
+      p {
+        margin-bottom: rems(5);
+      }
     }
 
     .share {
