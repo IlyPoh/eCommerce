@@ -32,9 +32,18 @@ export const BlogItem: React.FC<IBlogItemProps> = ({
 
   if (!article) return null;
 
+  const productLink = () => (
+    <Link to={`${link}/${article.category}/${article.id}`}>
+      {article.title}
+    </Link>
+  );
+
   return (
     <div className={`${styles['item']} ${styles[view]}`}>
-      <Link className={styles['image']} to={`/blog/article/${article.id}`}>
+      <Link
+        className={styles['image']}
+        to={`/blog/${article.category}/${article.id}`}
+      >
         <img
           src={article.urlToImage ?? placeholder}
           width={300}
@@ -62,13 +71,7 @@ export const BlogItem: React.FC<IBlogItemProps> = ({
           </div>
         )}
         <div className={styles['title']}>
-          {view === EView.GRID ? (
-            <h4>
-              <Link to={`${link}/article/${article.id}`}>{article.title}</Link>
-            </h4>
-          ) : (
-            <Link to={`${link}/article/${article.id}`}>{article.title}</Link>
-          )}
+          {view === EView.GRID ? <h4>{productLink()}</h4> : productLink()}
         </div>
         <div className={styles['info']}>
           <span className={styles['author']}>{article.author}</span>

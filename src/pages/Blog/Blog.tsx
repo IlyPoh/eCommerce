@@ -1,5 +1,6 @@
 // IMPORTS
 // libraries
+import { useEffect } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 
 // components
@@ -18,21 +19,26 @@ import {
   handleRemoveFilter,
 } from '../../utils/helpers';
 import {
+  useAppDispatch,
   useAppSelector,
   useFetchNews,
   useFetchNewsCategories,
+  useFetchTotal,
   usePageState,
 } from '../../utils/hooks';
 import {
   MONTHS,
   BLOG_LINKS_MONTHS as MONTHS_LINKS,
+  ITEMS_PER_PAGE as IPP,
 } from '../../utils/constants';
 
 // styles
 import styles from './Blog.module.scss';
+import { setBreadcrumbs } from '../../store/Slices/pageSlice';
 
 // COMPONENT
 export const Blog: React.FC = () => {
+  const dispatch = useAppDispatch();
   const { category } = useParams();
   const { state } = useLocation();
 
@@ -49,16 +55,29 @@ export const Blog: React.FC = () => {
 
   const blogLink = getBlogLink(category);
 
+  useEffect(() => {
+    const breadcrumbs = [{ name: 'Blog', url: '/blog' }];
+
+    if (category)
+      breadcrumbs.push({
+        name: category,
+        url: `/blog/${category}`,
+      });
+
+    dispatch(setBreadcrumbs(breadcrumbs));
+  }, [dispatch, category]);
+
   useFetchNews({
     year: state?.year,
     month: state?.month,
     category: category,
     tags: state?.tags,
-    limit: itemsPerPage,
+    limit: itemsPerPage ?? IPP.news,
     page: state?.page ?? 1,
   });
 
   useFetchNewsCategories();
+  useFetchTotal();
 
   usePageState({
     currentPage: state?.page ?? 1,
@@ -66,8 +85,7 @@ export const Blog: React.FC = () => {
     pageType: EItemType.NEWS,
     pageTitle: pageTitle,
     pageCount: totalPages,
-    itemsPerPage: 11,
-    itemCount: newsData.length,
+    itemsPerPage: IPP.news,
   });
 
   const renderFilter = () => {

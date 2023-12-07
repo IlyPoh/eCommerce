@@ -10,10 +10,10 @@ const initialState: IPageState = {
   pageType: null,
   pageURL: '',
   pageTitle: '',
-  itemsPerPage: 10,
-  itemsToShow: 10,
-  itemCount: 0,
+  itemsPerPage: null,
+  itemsToShow: null,
   pageCount: 0,
+  breadcrumbs: [],
 };
 
 // SLICE
@@ -39,11 +39,11 @@ const pageSlice = createSlice({
     setItemsToShow: (state, action) => {
       state.itemsToShow = action.payload;
     },
-    setItemCount: (state, action) => {
-      state.itemCount = action.payload;
-    },
     setPageCount: (state, action) => {
       state.pageCount = action.payload;
+    },
+    setBreadcrumbs: (state, action) => {
+      state.breadcrumbs = action.payload;
     },
   },
 });
@@ -56,8 +56,8 @@ export const {
   setPageType,
   setItemsPerPage,
   setItemsToShow,
-  setItemCount,
   setPageCount,
+  setBreadcrumbs,
 } = pageSlice.actions;
 
 // EXPORT REDUCER

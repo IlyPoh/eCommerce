@@ -4,20 +4,21 @@ import { TwoBlocks } from './TwoBlocks/TwoBlocks';
 import { BlogBlock } from './BlogBlock/BlogBlock';
 import { ReviewList } from './ReviewBlockList/ReviewList';
 import { ProductList } from '../../components/ProductList/ProductList';
-import { ISidebarLinksProps } from '../../components/SidebarLinks/SidebarLinks';
 import { BlockWithProducts } from './BlockWithProducts/BlockWithProducts';
 import { BlockHeadline } from '../../components/BlockHeadline/BlockHeadline';
+import { ISidebarLinksProps } from '../../components/SidebarLinks/SidebarLinks';
 
 // utils
-import {
-  FIRST_SIDEBAR_LINKS as firstLinks,
-  SECOND_SIDEBAR_LINKS as secondLinks,
-} from '../../utils/constants';
 import {
   useAppSelector,
   useFetchNews,
   useFetchReviews,
 } from '../../utils/hooks';
+import {
+  FIRST_SIDEBAR_LINKS as firstLinks,
+  SECOND_SIDEBAR_LINKS as secondLinks,
+  ITEMS_PER_PAGE as IPP,
+} from '../../utils/constants';
 
 // COMPONENT
 export const Mainpage: React.FC = () => {
@@ -46,7 +47,7 @@ export const Mainpage: React.FC = () => {
   };
 
   useFetchReviews();
-  useFetchNews({ limit: 5 });
+  useFetchNews({ limit: IPP.mainpageNews });
 
   return (
     <>

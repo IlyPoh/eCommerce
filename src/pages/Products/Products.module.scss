@@ -31,7 +31,8 @@
       @include display_grid(
         $columns: 3,
         $column-gap: rems(32),
-        $row-gap: rems(48)
+        $row-gap: rems(48),
+        $align: flex-start
       );
     }
 

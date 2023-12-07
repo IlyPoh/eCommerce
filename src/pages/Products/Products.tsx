@@ -1,51 +1,77 @@
 // IMPORTS
 // libraries
+import { useEffect } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 
 // components
 import { HeaderFilters } from './HeaderFilters/HeaderFilters';
+import { SidebarFilter } from './SidebarFilter/SidebarFilter';
+import { ProductItem } from '../../components/ProductItem/ProductItem';
 
 // types
+import { IProduct } from '../../types/store';
 import { EItemType, EView } from '../../types';
 
+// store
+import { setBreadcrumbs } from '../../store/Slices/pageSlice';
+
 // utils
+import { ITEMS_PER_PAGE as IPP } from '../../utils/constants';
 import {
   firstLettertoUppercase,
   getProductsLink,
   handleRemoveFilter,
 } from '../../utils/helpers';
 import {
+  useAppDispatch,
   useAppSelector,
   useFetchCategories,
   useFetchProducts,
+  useFetchTotal,
   usePageState,
 } from '../../utils/hooks';
 
 // styles
 import styles from './Products.module.scss';
-import { IProduct } from '../../types/store';
-import { ProductItem } from '../../components/ProductItem/ProductItem';
-import { SidebarFilter } from './SidebarFilter/SidebarFilter';
 
 // COMPONENT
 export const Products: React.FC = () => {
+  const dispatch = useAppDispatch();
   const { category, subcategory } = useParams();
   const { state } = useLocation();
-  const { products, categories, subcategories, sort, filters } = useAppSelector(
+  const { products, sort, filters } = useAppSelector(
     (state) => state.productState
   );
-  const { itemsPerPage, itemsToShow } = useAppSelector(
+  const { currentPage, itemsToShow } = useAppSelector(
     (state) => state.pageState
   );
-  const { productsData, totalPages } = products;
   const gridView = useAppSelector((state) => state.appState.gridView);
 
+  const { productsData, totalPages } = products;
   const pageTitle = subcategory ?? category ?? 'Products';
 
   const productsLink = getProductsLink(category, subcategory);
 
-  useFetchProducts();
   useFetchCategories();
+  useFetchTotal();
+
+  useEffect(() => {
+    const breadcrumbs = [{ name: 'Products', url: '/products' }];
+
+    if (category)
+      breadcrumbs.push({
+        name: category,
+        url: `/products/${category}`,
+      });
+
+    if (subcategory)
+      breadcrumbs.push({
+        name: subcategory,
+        url: `/products/${category}/${subcategory}`,
+      });
+
+    dispatch(setBreadcrumbs(breadcrumbs));
+  }, [dispatch, category, subcategory]);
 
   usePageState({
     currentPage: state?.page ?? 1,
@@ -53,9 +79,22 @@ export const Products: React.FC = () => {
     pageType: EItemType.PRODUCTS,
     pageTitle: pageTitle,
     pageCount: totalPages,
-    itemsPerPage: 9,
-    itemsToShow: itemsPerPage,
-    itemCount: productsData.length,
+    itemsPerPage: IPP.products,
+    itemsToShow: itemsToShow ?? IPP.products,
+  });
+
+  useFetchProducts({
+    category: category,
+    subcategory: subcategory,
+    brands: filters?.brands,
+    tags: filters?.tags,
+    ratings: filters?.ratings,
+    minPrice: filters?.minPrice,
+    maxPrice: filters?.maxPrice,
+    country: filters?.country,
+    sort: sort,
+    limit: itemsToShow ?? IPP.products,
+    page: currentPage,
   });
 
   const filteredData = productsData.filter((product: IProduct) => {

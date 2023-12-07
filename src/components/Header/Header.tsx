@@ -14,6 +14,17 @@ import { HEADER_LINKS as links } from '../../utils/constants';
 // styles
 import styles from './Header.module.scss';
 
+// FUNCTIONS
+const InfoLinks: React.FC<{ to: string; text: string; className?: string }> = ({
+  to,
+  text,
+  className,
+}) => (
+  <Link to={to} className={className}>
+    {text}
+  </Link>
+);
+
 // COMPONENT
 export const Header: React.FC = () => {
   return (
@@ -21,18 +32,25 @@ export const Header: React.FC = () => {
       <div className="container">
         <section className={`section-medium ${styles['info']}`}>
           <div className={styles['left']}>
-            <Link to={links.chatWithUs.link}>{links.chatWithUs.text}</Link>
-            <Link to={links.phone.link} className="no-color">
-              {links.phone.text}
-            </Link>
-            <Link to={links.email.link} className="no-color">
-              {links.email.text}
-            </Link>
+            <InfoLinks
+              to={links.chatWithUs.link}
+              text={links.chatWithUs.text}
+            />
+            <InfoLinks
+              to={links.phone.link}
+              text={links.phone.text}
+              className="no-color"
+            />
+            <InfoLinks
+              to={links.email.link}
+              text={links.email.text}
+              className="no-color"
+            />
           </div>
           <div className={styles['right']}>
-            <Link to={links.blog.link}>{links.blog.text}</Link>
-            <Link to={links.aboutUs.link}>{links.aboutUs.text}</Link>
-            <Link to={links.careers.link}>{links.careers.text}</Link>
+            <InfoLinks to={links.blog.link} text={links.blog.text} />
+            <InfoLinks to={links.aboutUs.link} text={links.aboutUs.text} />
+            <InfoLinks to={links.careers.link} text={links.careers.text} />
           </div>
         </section>
         <div className={styles['content']}>

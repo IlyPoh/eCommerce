@@ -5,7 +5,7 @@ import { AnyAction, Dispatch } from '@reduxjs/toolkit';
 import { setError } from '../store/Slices/appSlice';
 
 // types
-import { IError } from '../types';
+import { IError, QueryOptions } from '../types';
 import {
   IProductsEndpointOptions,
   INewsEndpointOptions,
@@ -16,22 +16,20 @@ export const firstLettertoUppercase = (string: string): string => {
   return string[0].toUpperCase() + string.slice(1);
 };
 
-export const getBlogLink = (category: string | undefined) => {
-  if (category) return `/blog/${category}`;
-  else return `/blog`;
+export const getBlogLink = (category: string | undefined): string => {
+  return category ? `/blog/${category}` : `/blog`;
 };
 
 export const getProductsLink = (
   category: string | undefined,
   subcategory: string | undefined
-) => {
-  switch (true) {
-    case !!category && !!subcategory:
-      return `/products/${category}/${subcategory}`;
-    case !!category:
-      return `/products/${category}`;
-    default:
-      return `/products`;
+): string => {
+  if (category && subcategory) {
+    return `/products/${category}/${subcategory}`;
+  } else if (category) {
+    return `/products/${category}`;
+  } else {
+    return `/products`;
   }
 };
 
@@ -63,20 +61,19 @@ export const errorHandler = (error: IError, dispatch: Dispatch<AnyAction>) => {
 };
 
 const errorCodeChecker = (code: number | undefined): string => {
-  switch (code) {
-    case 400:
-      return `${code} - Bad request`;
-    case 401:
-      return `${code} - Unauthorized`;
-    case 403:
-      return `${code} - Forbidden`;
-    case 404:
-      return `${code} - Not found`;
-    case 500:
-      return `${code} - Internal server error`;
-    default:
-      return `${code} - Unknown error`;
-  }
+  const errorMessages: { [key: number]: string } = {
+    400: 'Bad request',
+    401: 'Unauthorized',
+    403: 'Forbidden',
+    404: 'Not found',
+    500: 'Internal server error',
+  };
+
+  const defaultMessage = 'Unknown error';
+
+  return code !== undefined && errorMessages[code] !== undefined
+    ? `${code} - ${errorMessages[code]}`
+    : defaultMessage;
 };
 
 export const formatDate = (inputDate: string): string => {
@@ -88,62 +85,47 @@ export const formatDate = (inputDate: string): string => {
   return `${day}.${month}.${year}`;
 };
 
-export const buildProductQueryString = (
+// Query builders
+const appendQueryParameter = (
+  queryParameters: string[],
+  key: string,
+  value: string | number | string[] | number[] | null | undefined
+): void => {
+  if (
+    value !== null &&
+    value !== undefined &&
+    !(Array.isArray(value) && value.length === 0)
+  ) {
+    queryParameters.push(`${key}=${value}`);
+  }
+};
+
+const buildQueryString = (
   endpoint: string,
-  searchOptions: Partial<IProductsEndpointOptions>
+  searchOptions: Partial<QueryOptions>
 ): string => {
-  const { id, name, category_id, subcategory_id, tags } = searchOptions;
-  const queryParameters = [];
+  const queryParameters: string[] = [];
 
-  if (id) queryParameters.push(`id=${id}`);
-
-  if (name) queryParameters.push(`name=${encodeURIComponent(name)}`);
-
-  if (category_id) queryParameters.push(`category_id=${category_id}`);
-
-  if (subcategory_id) queryParameters.push(`subcategory_id=${subcategory_id}`);
-
-  if (tags) {
-    const tagsString = tags.join(',');
-    queryParameters.push(`tags=${tagsString}`);
+  for (const key in searchOptions) {
+    const value = searchOptions[key];
+    appendQueryParameter(queryParameters, key, value);
   }
 
   const queryString =
     queryParameters.length > 0 ? `?${queryParameters.join('&')}` : '';
-
   return endpoint + queryString;
+};
+
+export const buildProductQueryString = (
+  endpoint: string,
+  searchOptions: Partial<IProductsEndpointOptions>
+): string => {
+  return buildQueryString(endpoint, searchOptions);
 };
 
 export const buildNewsQueryString = (
   endpoint: string,
   searchOptions: Partial<INewsEndpointOptions>
-) => {
-  const { year, month, limit, tags, category, page } = searchOptions;
-  const queryParameters = [];
-
-  if (limit) queryParameters.push(`limit=${limit}`);
-
-  if (year && month) {
-    const startDate = new Date(year, month - 1, 1);
-    const endDate = new Date(year, month, 1);
-    const isoStartDate = startDate.toISOString();
-    const isoEndDate = endDate.toISOString();
-
-    queryParameters.push(`gte=${isoStartDate}`);
-    queryParameters.push(`lte=${isoEndDate}`);
-  }
-
-  if (tags) {
-    const tagsString = tags.join(',');
-    queryParameters.push(`tags=${tagsString}`);
-  }
-
-  if (category) queryParameters.push(`category=${category}`);
-
-  if (page) queryParameters.push(`page=${page}`);
-
-  const queryString =
-    queryParameters.length > 0 ? `?${queryParameters.join('&')}` : '';
-
-  return endpoint + queryString;
+): string => {
+  return buildQueryString(endpoint, searchOptions);
 };

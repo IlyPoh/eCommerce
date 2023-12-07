@@ -8,6 +8,7 @@ interface ImportMetaEnv {
   readonly VITE_ENDPOINT_NEWS: string;
   readonly VITE_ENDPOINT_NEWS_CATEGORIES: string;
   readonly VITE_ENDPOINT_BRANDS: string;
+  readonly VITE_ENDPOINT_TOTAL: string;
 }
 
 interface ImportMeta {
