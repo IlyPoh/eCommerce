@@ -1,0 +1,236 @@
+@import '../../styles/base/functions';
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.product {
+  @include display_grid($columns: 2, $gap: rems(32));
+
+  .images {
+    position: relative;
+
+    @include display_flex($direction: column, $gap: rems(32));
+
+    width: 100%;
+
+    img {
+      border-radius: 12px;
+    }
+
+    span {
+      position: absolute;
+      top: rems(32);
+      left: rems(16);
+    }
+  }
+
+  .rating {
+    @include display_flex($align: center, $gap: rems(8));
+
+    margin-bottom: rems(40);
+
+    .stars {
+      @include display_flex($gap: rems(2));
+
+      font-size: rems(20);
+
+      .full {
+        color: $color-yellow;
+      }
+
+      .empty {
+        color: $color-grey-d1;
+      }
+    }
+
+    .count {
+      font-family: $ff-open;
+      font-size: rems(12);
+      color: $color-grey-a9;
+      text-decoration: underline;
+    }
+
+    .no-rating {
+      font-size: rems(20);
+      color: $color-grey-a9;
+    }
+  }
+
+  .description {
+    font-family: $ff-open;
+    font-size: rems(17);
+
+    margin-bottom: rems(40);
+  }
+
+  .params {
+    @include display_grid(
+      $columns: 2,
+      $column-gap: rems(32),
+      $row-gap: rems(12)
+    );
+
+    font-family: $ff-open;
+    font-size: rems(14);
+
+    margin-bottom: rems(40);
+
+    .empty {
+      display: none;
+    }
+
+    .param {
+      @include display_flex($gap: rems(40));
+
+      .name {
+        color: $color-grey-a9;
+        min-width: 30%;
+      }
+
+      .in-stock {
+        color: $color-green-6a;
+        text-decoration: underline;
+      }
+
+      .out-of-stock {
+        color: $color-grey-a9;
+      }
+
+      .category {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .purchase {
+    @include display_flex($align: center, $justify: space-between);
+
+    border: 1px solid $color-grey-f5;
+    border-radius: 12px;
+
+    padding: rems(16);
+
+    .out-of-stock {
+      width: 100%;
+
+      text-align: center;
+      font-size: rems(24);
+      color: $color-grey-a9;
+    }
+
+    .prices {
+      font-weight: 600;
+
+      .price {
+        font-size: rems(26);
+        color: $color-green-6a;
+      }
+
+      .old-price {
+        font-size: rems(12);
+        color: $color-grey-a9;
+        text-decoration: line-through;
+      }
+    }
+
+    .buttons {
+      @include display_flex($align: center, $gap: rems(24));
+
+      .quantity {
+        position: relative;
+
+        @include display_flex();
+
+        padding: rems(14) rems(16);
+
+        background: $color-grey-f9;
+
+        border: 1px solid $color-grey-d1;
+        border-radius: 12px;
+
+        input {
+          max-width: rems(15);
+
+          color: $color-grey-d1;
+          font-size: rems(14);
+
+          padding: 0;
+
+          border: none;
+          background: none;
+
+          &:focus {
+            color: $color-main;
+          }
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+
+        .button {
+          padding: 0;
+          padding-left: rems(16);
+          margin-left: rems(16);
+
+          border-left: 1px solid $color-grey-d1;
+
+          border-radius: 0;
+        }
+
+        .selection {
+          $font-size: rems(14);
+
+          position: absolute;
+          top: calc(100% - rems(5));
+          left: 50%;
+
+          transform: translateX(-50%);
+
+          text-align: center;
+          font-size: $font-size;
+
+          background: $color-grey-f9;
+
+          border: 1px solid $color-grey-d1;
+          border-top: none;
+
+          border-radius: 0 0 12px 12px;
+
+          max-height: calc($font-size * 10);
+
+          overflow: hidden auto;
+
+          .item {
+            padding: rems(5) rems(30);
+
+            transition: background $shortTransition;
+
+            &.active {
+              background: $color-green-92;
+              font-weight: 700;
+            }
+
+            &:hover {
+              background: $color-grey-d1;
+            }
+          }
+
+          &::-webkit-scrollbar {
+            width: rems(5);
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: $color-grey-d1;
+          }
+
+          &::-webkit-scrollbar-track {
+            margin: rems(10) 0;
+          }
+        }
+      }
+    }
+  }
+}

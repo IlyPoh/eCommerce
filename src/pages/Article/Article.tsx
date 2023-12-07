@@ -1,27 +1,53 @@
 // IMPORTS
 // libraries
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 // placeholders
 import placeholder from '/images/placeholder.png';
 
 // store
+import { setBreadcrumbs } from '../../store/Slices/pageSlice';
 import { useGetArticleQuery } from '../../store/API/storeApi';
 
 // utils
 import { formatDate } from '../../utils/helpers';
+import { useAppDispatch } from '../../utils/hooks';
 
 // styles
 import styles from './Article.module.scss';
 
 // COMPONENT
 export const Article: React.FC = () => {
+  const dispatch = useAppDispatch();
   const { articleId } = useParams();
   const article = useGetArticleQuery(articleId ?? '').data;
+
+  useEffect(() => {
+    if (article) {
+      const breadcrumbs = [
+        { name: 'Blog', url: '/blog' },
+        { name: article.category, url: `/blog/${article.category}` },
+        {
+          name: article.title,
+          url: `/blog/article/${article.id}`,
+        },
+      ];
+
+      dispatch(setBreadcrumbs(breadcrumbs));
+    }
+  }, [dispatch, article]);
+
   if (!article) return null;
 
   const { author, category, publishedAt, title, urlToImage, content, tags } =
     article;
+
+  const socialButton = (classNames: string, icon: string, text: string) => (
+    <button className={classNames}>
+      <i className={icon}></i> {text}
+    </button>
+  );
 
   return (
     <div className="container">
@@ -83,18 +109,26 @@ export const Article: React.FC = () => {
           />
           <div className={styles['share']}>
             <span>Share</span>
-            <button className="btn btn-small btn-grey">
-              <i className="icon-socials-facebook"></i> Facebook
-            </button>
-            <button className="btn btn-small btn-grey">
-              <i className="icon-socials-pinterest"></i> Pinterest
-            </button>
-            <button className="btn btn-small btn-grey">
-              <i className="icon-socials-twitter"></i> Twitter
-            </button>
-            <button className="btn btn-small btn-grey">
-              <i className="icon-socials-linked"></i> Linked In
-            </button>
+            {socialButton(
+              'btn btn-small btn-grey',
+              'icon-socials-facebook',
+              'Facebook'
+            )}
+            {socialButton(
+              'btn btn-small btn-grey',
+              'icon-socials-pinterest',
+              'Pinterest'
+            )}
+            {socialButton(
+              'btn btn-small btn-grey',
+              'icon-socials-twitter',
+              'Twitter'
+            )}
+            {socialButton(
+              'btn btn-small btn-grey',
+              'icon-socials-linked',
+              'Linked In'
+            )}
           </div>
         </div>
       </section>

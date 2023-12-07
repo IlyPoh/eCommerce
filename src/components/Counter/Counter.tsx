@@ -10,20 +10,17 @@ import styles from './Counter.module.scss';
 
 // COMPONENT
 export const Counter: React.FC = () => {
-  const newsCount = useAppSelector((state) => state.newsState.news.length);
+  const { total } = useAppSelector((state) => state.appState);
   const type = useAppSelector((state) => state.pageState.pageType);
-  const productCount = useAppSelector(
-    (state) => state.productState.products.length
-  );
 
   let count = 0;
   let text = null;
 
   if (type === EItemType.PRODUCTS) {
-    count = productCount;
+    count = total.products;
     text = 'Products';
   } else if (type === EItemType.NEWS) {
-    count = newsCount;
+    count = total.news;
     text = 'Articles';
   }
 

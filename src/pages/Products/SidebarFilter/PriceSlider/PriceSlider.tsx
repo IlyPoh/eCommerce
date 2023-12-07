@@ -1,27 +1,27 @@
 // IMPORTS
-// libraries
-import { useEffect, useState } from 'react';
-
 // styles
 import styles from './PriceSlider.module.scss';
-import { useAppSelector } from '../../../../utils/hooks';
 import ReactSlider from 'react-slider';
 
 // TYPES
 interface IPriceSliderProps {
   onPriceChange: (prices: number[]) => void;
+  minPrice: number;
+  maxPrice: number;
+  setMinPrice: React.Dispatch<React.SetStateAction<number>>;
+  setMaxPrice: React.Dispatch<React.SetStateAction<number>>;
+  total: { min: number; max: number };
 }
 
 // COMPONENT
-export const PriceSlider: React.FC<IPriceSliderProps> = ({ onPriceChange }) => {
-  const { products } = useAppSelector((state) => state.productState);
-  const { productsData } = products;
-  const productMaxPrice = Math.max(
-    ...productsData.map((product) => product.price)
-  );
-  const [minPrice, setMinPrice] = useState<number>(0);
-  const [maxPrice, setMaxPrice] = useState<number>(productMaxPrice);
-
+export const PriceSlider: React.FC<IPriceSliderProps> = ({
+  onPriceChange,
+  minPrice,
+  maxPrice,
+  setMinPrice,
+  setMaxPrice,
+  total,
+}) => {
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     isMin: boolean
@@ -43,20 +43,16 @@ export const PriceSlider: React.FC<IPriceSliderProps> = ({ onPriceChange }) => {
     onPriceChange([newValues[0], newValues[1]]);
   };
 
-  useEffect(() => {
-    setMaxPrice(productMaxPrice);
-  }, [productMaxPrice]);
-
-  if (!productMaxPrice) return null;
+  if (!maxPrice) return null;
 
   return (
-    <section>
-      <h4>Price</h4>
-      <div className={styles['block']}>
-        {isFinite(productMaxPrice) && (
-          <>
+    <>
+      {isFinite(maxPrice) && (
+        <section>
+          <h4>Price</h4>
+          <div className={styles['block']}>
             <ReactSlider
-              max={productMaxPrice}
+              max={total.max}
               value={[minPrice, maxPrice]}
               className={styles['slider']}
               thumbClassName={styles['thumb']}
@@ -87,9 +83,9 @@ export const PriceSlider: React.FC<IPriceSliderProps> = ({ onPriceChange }) => {
                 />
               </div>
             </div>
-          </>
-        )}
-      </div>
-    </section>
+          </div>
+        </section>
+      )}
+    </>
   );
 };

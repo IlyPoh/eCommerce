@@ -1,28 +1,26 @@
-// imports
+// IMPORTS
 import process from 'process';
 import { loadEnv } from 'vite';
 import jsonServer from 'json-server';
 
-// constants
+// CONSTANTS
 const server = jsonServer.create();
 const middlewares = jsonServer.defaults();
 const router = jsonServer.router('db/db.json');
 const env = loadEnv(process.env.NODE_ENV, process.cwd());
 const port = env.VITE_SERVER_PORT ? parseInt(env.VITE_SERVER_PORT) : 3333;
 
-// apply middlewares to server
+// APPLY MIDDLEWARES TO SERVER
 server.use(middlewares);
 
-// filters
+// FILTERS
 // general filters
 const filterById = (items, id) => {
   return id ? items.filter((item) => item.id == id) : items;
 };
 
-const filterByCategory = (items, category_id) => {
-  return category_id
-    ? items.filter((item) => item.category_id == category_id)
-    : items;
+const filterByCategory = (items, category) => {
+  return category ? items.filter((item) => item.category == category) : items;
 };
 
 const filterByTags = (items, tags) => {
@@ -45,7 +43,7 @@ const filterByPage = (items, limit, page) => {
   return paginatedNews;
 };
 
-// product filters
+// PRODUCT FILTERS
 const filterByName = (products, name) => {
   return name
     ? products.filter((product) =>
@@ -54,10 +52,16 @@ const filterByName = (products, name) => {
     : products;
 };
 
-const filterBySubcategory = (products, subcategory_id) => {
-  return subcategory_id
-    ? products.filter((product) => product.subcategory_id == subcategory_id)
+const filterBySubcategory = (products, subcategory) => {
+  return subcategory
+    ? products.filter((product) => product.subcategory == subcategory)
     : products;
+};
+
+const filterByBrands = (products, brands) => {
+  if (!brands) return products;
+  brands = brands.split(',');
+  return products.filter((product) => brands.includes(product.brand));
 };
 
 const filterByCountry = (products, country) => {
@@ -86,7 +90,6 @@ const filterByPriceRange = (products, minPrice, maxPrice) => {
 
 const filterByRatings = (products, ratings) => {
   if (!ratings) return products;
-
   const ratingsArray = ratings.split(',').map((rating) => parseInt(rating));
   return products.filter((product) =>
     ratingsArray.some(
@@ -95,7 +98,13 @@ const filterByRatings = (products, ratings) => {
   );
 };
 
-// news filters
+const filterBySort = (products, sort) => {
+  if (!sort) return products;
+  if (sort === 'popular') return products.sort((a, b) => b.rating - a.rating);
+  if (sort === 'cheapest') return products.sort((a, b) => a.price - b.price);
+};
+
+// NEWS FILTERS
 const filterByDateRange = (news, gte, lte) => {
   if (gte && lte) {
     return news.filter(
@@ -112,32 +121,36 @@ const filterByDateRange = (news, gte, lte) => {
   }
 };
 
-// Server routes
+// SERVER ROUTES
 server.get(env.VITE_ENDPOINT_PRODUCTS, (req, res) => {
   let filteredProducts = router.db.get('products').value();
 
   const {
     id,
     name,
-    category_id,
-    subcategory_id,
+    category,
+    subcategory,
     country,
+    brands,
     tags,
-    minPrice,
-    maxPrice,
     ratings,
+    sort,
     limit,
     page,
+    minPrice,
+    maxPrice,
   } = req.query;
 
   filteredProducts = filterById(filteredProducts, id);
   filteredProducts = filterByName(filteredProducts, name);
-  filteredProducts = filterByCategory(filteredProducts, category_id);
-  filteredProducts = filterBySubcategory(filteredProducts, subcategory_id);
+  filteredProducts = filterByCategory(filteredProducts, category);
+  filteredProducts = filterBySubcategory(filteredProducts, subcategory);
   filteredProducts = filterByCountry(filteredProducts, country);
+  filteredProducts = filterByBrands(filteredProducts, brands);
   filteredProducts = filterByTags(filteredProducts, tags);
   filteredProducts = filterByPriceRange(filteredProducts, minPrice, maxPrice);
   filteredProducts = filterByRatings(filteredProducts, ratings);
+  filteredProducts = filterBySort(filteredProducts, sort);
 
   const pageCount = Math.ceil(filteredProducts.length / parseInt(limit));
 
@@ -153,11 +166,12 @@ server.get(env.VITE_ENDPOINT_PRODUCTS, (req, res) => {
 server.get(env.VITE_ENDPOINT_NEWS, (req, res) => {
   let filteredNews = router.db.get('news').value();
 
-  const { id, limit, page, tags, gte, lte } = req.query;
+  const { id, category, limit, page, tags, gte, lte } = req.query;
 
   filteredNews = filterById(filteredNews, id);
   filteredNews = filterByDateRange(filteredNews, gte, lte);
   filteredNews = filterByTags(filteredNews, tags);
+  filteredNews = filterByCategory(filteredNews, category);
 
   const pageCount = Math.ceil(filteredNews.length / parseInt(limit));
 
@@ -168,8 +182,10 @@ server.get(env.VITE_ENDPOINT_NEWS, (req, res) => {
   res.json({ newsData: filteredNews, totalPages: pageCount });
 });
 
+// USE DEFAULT ROUTER
 server.use(router);
 
+// START SERVER
 server.listen(port, () => {
   console.log(`JSON Server is running on port ${port}`);
 });

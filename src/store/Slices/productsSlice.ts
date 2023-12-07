@@ -18,15 +18,13 @@ const initialState: IProductsState = {
   brands: [],
   sort: ESort.POPULAR,
   filters: {
-    rating: [],
-    prices: null,
     tags: [],
-    brands: [],
+    minPrice: null,
+    maxPrice: null,
     country: null,
+    brands: [],
+    ratings: [],
   },
-  brandsToFilter: [],
-  ratingToFilter: [],
-  pricesToFilter: [],
 };
 
 // SLICE
@@ -63,20 +61,12 @@ const productsSlice = createSlice({
     setBrands: (state, action) => {
       state.brands = action.payload;
     },
-    setBrandsToFilter: (state, action) => {
-      state.brandsToFilter = action.payload;
-    },
-    setRatingToFilter: (state, action) => {
-      state.ratingToFilter = action.payload;
-    },
-    setpricesToFilter: (state, action) => {
-      state.pricesToFilter = action.payload;
-    },
     resetFilters: (state) => {
       state.filters = initialState.filters;
-      state.brandsToFilter = initialState.brandsToFilter;
-      state.ratingToFilter = initialState.ratingToFilter;
-      state.pricesToFilter = initialState.pricesToFilter;
+    },
+    setPrices: (state, action) => {
+      state.filters.minPrice = action.payload.min;
+      state.filters.maxPrice = action.payload.max;
     },
   },
 });
@@ -91,10 +81,8 @@ export const {
   removeTag,
   setCountry,
   setBrands,
-  setBrandsToFilter,
-  setRatingToFilter,
-  setpricesToFilter,
   resetFilters,
+  setPrices,
 } = productsSlice.actions;
 
 export default productsSlice.reducer;

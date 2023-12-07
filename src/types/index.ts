@@ -30,12 +30,11 @@ export enum ICheckboxType {
   RADIO = 'radio',
 }
 
-// props for button component
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  text?: string;
-  icon?: string;
-  classes?: string;
+// interfaces for constants
+export interface IItemsPerPage {
+  products: number;
+  news: number;
+  mainpageNews: number;
 }
 
 // API URLs
@@ -47,6 +46,7 @@ export interface IStoreApiUrls {
   news: string;
   newsCategories: string;
   brands: string;
+  total: string;
 }
 
 // Links
@@ -105,4 +105,9 @@ export interface ICheckboxDataWithSelector {
   selector: {
     [key: string]: number;
   };
+}
+
+// Query options
+export interface QueryOptions {
+  [key: string]: string | number | string[] | null | undefined | number[];
 }

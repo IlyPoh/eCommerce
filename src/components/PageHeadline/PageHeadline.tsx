@@ -30,24 +30,27 @@ export const PageHeadline: React.FC<Partial<IPageHeadlineProps>> = () => {
     dispatch(setGridView(!gridView));
   };
 
+  const renderViewButton = (
+    iconClass: string,
+    text: string,
+    isActive: boolean
+  ) => (
+    <button
+      onClick={handleGridView}
+      className={`${styles['item']} ${isActive && styles['active']}`}
+    >
+      <i className={iconClass} />
+      <span>{text}</span>
+    </button>
+  );
+
   return (
     <section className={`section-small ${styles['title']}`}>
       <h2>{pageTitle ?? 'Page Headline'}</h2>
       <div className={styles['filters']}>
-        <button
-          onClick={handleGridView}
-          className={`${styles['item']} ${gridView ? styles['active'] : ''}`}
-        >
-          <i className="icon-layout-square-grid" />
-          <span>Grid view</span>
-        </button>
-        <button
-          onClick={handleGridView}
-          className={`${styles['item']} ${gridView ? '' : styles['active']}`}
-        >
-          <i className="icon-layout-sections" />
-          <span>List view</span>
-        </button>
+        {renderViewButton('icon-layout-square-grid', 'Grid view', gridView)}
+        {renderViewButton('icon-layout-sections', 'List view', !gridView)}
+        <Counter />
         <Counter />
       </div>
     </section>

@@ -5,6 +5,12 @@ export interface IAppState {
   loading: boolean;
   error: string | null;
   gridView: boolean;
+  total: {
+    products: number;
+    news: number;
+    minPriceProduct: number;
+    maxPriceProduct: number;
+  };
 }
 
 // Page
@@ -13,10 +19,15 @@ export interface IPageState {
   pageType: EItemType | null;
   pageURL: string;
   pageTitle: string;
-  itemsPerPage: number;
-  itemsToShow: number;
-  itemCount: number;
+  itemsPerPage: number | null;
+  itemsToShow: number | null;
   pageCount: number;
+  breadcrumbs: IBreadcrumb[];
+}
+
+interface IBreadcrumb {
+  name: string;
+  url: string;
 }
 
 // Category
@@ -41,9 +52,6 @@ export interface IProductsState {
   brands: string[];
   sort: ESort;
   filters: IProductStateFilters;
-  brandsToFilter: string[];
-  ratingToFilter: number[];
-  pricesToFilter: number[];
 }
 
 export interface IProductsData {
@@ -52,18 +60,19 @@ export interface IProductsData {
 }
 
 export interface IProductStateFilters {
-  rating: number[];
-  prices: { min: number; max: number } | null;
   tags: string[];
-  brands: string[];
+  minPrice: number | null;
+  maxPrice: number | null;
   country: string | null;
+  brands: string[];
+  ratings: number[];
 }
 
 export interface IProduct {
   id: number;
   name: string;
-  category_id: number;
-  subcategory_id: number;
+  category: string;
+  subcategory: string;
   country: string;
   image_urls: string[];
   description: string;
@@ -74,7 +83,7 @@ export interface IProduct {
   tags: string[];
   price: number;
   discount?: IDiscount;
-  rating: number;
+  rating: IRating;
   freshness: boolean;
   delivery: string;
 }
@@ -92,16 +101,25 @@ interface IDiscount {
   final_price: number;
 }
 
+interface IRating {
+  value: number | null;
+  count: number;
+}
+
 export interface IProductsEndpointOptions {
-  id?: number;
-  name?: string;
-  limit?: number;
-  page?: number;
-  category_id?: number;
-  subcategory_id?: number;
-  tags?: string[];
-  sort?: string;
-  order?: string;
+  id: number;
+  name: string;
+  category: string;
+  subcategory: string;
+  brands: string[];
+  tags: string[];
+  ratings: number[];
+  minPrice: number | null;
+  maxPrice: number | null;
+  country: string | null;
+  sort: string;
+  limit: number;
+  page: number;
 }
 
 // Tags

@@ -51,7 +51,7 @@ export const HighlightArticle: React.FC<IHighlightArticleProps> = ({
       <div className={styles['body']}>
         <div className={styles['title']}>
           <h3>
-            <Link to={`${link}/article/${data.id}`}>
+            <Link to={`/blog/${data.category}/${data.id}`}>
               {data.title ?? 'No title'}
             </Link>
           </h3>

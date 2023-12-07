@@ -46,12 +46,27 @@
   @content;
 }
 
-@mixin display_grid($columns, $gap: null, $column-gap: null, $row-gap: null) {
+@mixin display_grid(
+  $columns: 1,
+  $gap: null,
+  $align: null,
+  $justify: null,
+  $column-gap: null,
+  $row-gap: null
+) {
   @extend %display_grid;
   grid-template-columns: repeat($columns, 1fr);
 
   @if ($gap) {
     grid-gap: $gap;
+  }
+
+  @if ($align) {
+    align-items: $align;
+  }
+
+  @if ($justify) {
+    justify-content: $justify;
   }
 
   @if ($column-gap) {

@@ -7,7 +7,9 @@ import {
   ICheckboxData,
   EFilter,
   ICheckboxDataWithSelector,
+  IItemsPerPage,
 } from '../types';
+export const env = import.meta.env;
 
 export const MONTHS: string[] = [
   'January',
@@ -24,7 +26,11 @@ export const MONTHS: string[] = [
   'December',
 ];
 
-export const env = import.meta.env;
+export const ITEMS_PER_PAGE: IItemsPerPage = {
+  products: 9,
+  news: 11,
+  mainpageNews: 5,
+};
 
 // apis
 export const STORE_API_URL = env.VITE_URL;
@@ -37,6 +43,7 @@ export const STORE_API_ENDPOINTS: IStoreApiUrls = {
   news: env.VITE_ENDPOINT_NEWS,
   newsCategories: env.VITE_ENDPOINT_NEWS_CATEGORIES,
   brands: env.VITE_ENDPOINT_BRANDS,
+  total: env.VITE_ENDPOINT_TOTAL,
 };
 
 // links
@@ -253,29 +260,6 @@ export const BLOG_LINKS_MONTHS: ILinkWithYear[] = [
       year: 2023,
       month: 3,
     },
-  },
-];
-
-export const BLOG_LINKS_CATEGORIES: ILink[] = [
-  {
-    text: 'Technology',
-    link: '/blog/category/Technology',
-  },
-  {
-    text: 'Innovation',
-    link: '/blog/category/Innovation',
-  },
-  {
-    text: 'AI',
-    link: '/blog/category/AI',
-  },
-  {
-    text: 'Sustainability',
-    link: '/blog/category/Sustainability',
-  },
-  {
-    text: 'Space',
-    link: '/blog/category/Space',
   },
 ];
 

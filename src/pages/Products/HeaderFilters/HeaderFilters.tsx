@@ -110,12 +110,13 @@ export const HeaderFilters: React.FC = () => {
         </CheckboxButton>
 
         <div className={styles['selector']}>
-          <div
+          <button
             className={styles['text']}
             onClick={() => setListOpen(!listOpen)}
           >
-            Select: <i className="icon-chevron-down"></i>
-          </div>
+            Select:{' '}
+            <i className={`icon-chevron-down ${listOpen ? 'open' : null}`}></i>
+          </button>
           <ul
             className={`${styles['list']} ${listOpen ? styles['open'] : null}`}
           >

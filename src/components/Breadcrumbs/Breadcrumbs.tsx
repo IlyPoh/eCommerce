@@ -1,29 +1,30 @@
 // IMPORTS
 // libraries
 import { Link } from 'react-router-dom';
-import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
+
+// utils
+import { useAppSelector } from '../../utils/hooks';
 
 // styles
 import styles from './Breadcrumbs.module.scss';
 
 // COMPONENT
 export const Breadcrumbs: React.FC = () => {
-  const breadcrumbs = useReactRouterBreadcrumbs();
+  const breadcrumbs = useAppSelector((state) => state.pageState.breadcrumbs);
+
+  if (!breadcrumbs.length) return null;
 
   return (
     <section className={`section-medium ${styles['breadcrumbs']}`}>
-      {breadcrumbs.map(({ match, breadcrumb }) => {
-        if (match.pathname !== '/blog/article') {
-          return (
-            <Link
-              to={match.pathname}
-              key={match.pathname}
-              className={styles['item']}
-            >
-              {breadcrumb}
-            </Link>
-          );
-        }
+      <Link to={'/'} className={styles['item']}>
+        Home
+      </Link>
+      {breadcrumbs.map(({ name, url }) => {
+        return (
+          <Link to={url} key={name} className={styles['item']}>
+            {name}
+          </Link>
+        );
       })}
     </section>
   );

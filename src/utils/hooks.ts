@@ -7,7 +7,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 // store
 import { setNews, setNewsCategories } from '../store/Slices/newsSlice';
 import { setTags } from '../store/Slices/tagsSlice';
-import { setLoading } from '../store/Slices/appSlice';
+import { setLoading, setTotal } from '../store/Slices/appSlice';
 import { setReviews } from '../store/Slices/reviewSlice';
 import {
   setProducts,
@@ -22,6 +22,7 @@ import {
   useGetReviewsQuery,
   useGetTagsQuery,
   useGetBrandsQuery,
+  useGetTotalQuery,
 } from '../store/API/storeApi';
 
 // types
@@ -39,7 +40,6 @@ import {
 import { errorHandler } from './helpers';
 import {
   setCurrentPage,
-  setItemCount,
   setItemsPerPage,
   setItemsToShow,
   setPageCount,
@@ -112,6 +112,11 @@ export const useFetchBrands = () => {
   return useFetchData(useGetBrandsQuery, setBrands);
 };
 
+// Custom hook for fetching total
+export const useFetchTotal = () => {
+  return useFetchData(useGetTotalQuery, setTotal);
+};
+
 // Custom hook for page state
 export const usePageState = (state: Partial<IPageState>) => {
   const dispatch = useAppDispatch();
@@ -122,7 +127,6 @@ export const usePageState = (state: Partial<IPageState>) => {
     pageType,
     itemsPerPage,
     itemsToShow,
-    itemCount,
     pageCount,
   } = state;
 
@@ -133,7 +137,6 @@ export const usePageState = (state: Partial<IPageState>) => {
     dispatch(setPageType(pageType));
     dispatch(setItemsPerPage(itemsPerPage));
     dispatch(setItemsToShow(itemsToShow));
-    dispatch(setItemCount(itemCount));
     dispatch(setPageCount(pageCount));
   }, [
     dispatch,
@@ -143,7 +146,6 @@ export const usePageState = (state: Partial<IPageState>) => {
     pageType,
     itemsPerPage,
     itemsToShow,
-    itemCount,
     pageCount,
   ]);
 };

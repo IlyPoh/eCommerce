@@ -21,8 +21,8 @@ import styles from './Pagination.module.scss';
 export const Pagination: React.FC = () => {
   const dispatch = useAppDispatch();
   const { state } = useLocation();
+  const { total } = useAppSelector((state) => state.appState);
   const {
-    itemCount,
     pageType,
     currentPage,
     pageURL,
@@ -84,8 +84,7 @@ export const Pagination: React.FC = () => {
         state={{ ...state, page: currentPage - 1 }}
         className="btn btn-medium btn-green"
       >
-        <i className="icon-chevron-left"></i>
-        Previous page
+        <i className="icon-chevron-left"></i> Previous page
       </Link>
     ) : null;
   };
@@ -97,22 +96,21 @@ export const Pagination: React.FC = () => {
         state={{ ...state, page: currentPage + 1 }}
         className="btn btn-medium btn-green"
       >
-        Next page
-        <i className="icon-chevron-right"></i>
+        Next page <i className="icon-chevron-right"></i>
       </Link>
     ) : null;
   };
 
   const renderMoreButton = () => {
-    if (itemCount < itemsToShow) return null;
+    if (!itemsToShow || !itemsPerPage || total.products < itemsToShow)
+      return null;
 
     return currentPage < pageCount ? (
       <button
         onClick={() => dispatch(setItemsToShow(itemsToShow + itemsPerPage))}
         className="btn btn-medium btn-green"
       >
-        Show more products
-        <i className="icon-chevron-down"></i>
+        Show more products<i className="icon-chevron-down"></i>
       </button>
     ) : null;
   };

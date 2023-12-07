@@ -61,8 +61,8 @@
     {
       "id": 1,
       "name": "T-Shirt",
-      "category_id": 1,
-      "subcategory_id": 1,
+      "category": "Clothing",
+      "subcategory": "Men's Clothing",
       "country": "Ukraine",
       "image_urls": [
         "/images/products/t-shirt/image1.jpg",
@@ -79,15 +79,18 @@
       "tags": ["clothing", "men"],
       "price": 20.99,
       "discount": null,
-      "rating": 5,
+      "rating": {
+        "value": 5,
+        "count": 1
+      },
       "freshness": true,
       "delivery": "Europe"
     },
     {
       "id": 2,
       "name": "Dress",
-      "category_id": 1,
-      "subcategory_id": 2,
+      "category": "Clothing",
+      "subcategory": "Women's Clothing",
       "country": "France",
       "image_urls": ["/images/products/dress/image1.jpg"],
       "description": "Make a stunning entrance with this elegant dress. Designed with exquisite craftsmanship and attention to detail, this dress features a flattering silhouette and a delicate lace pattern. Perfect for special occasions and evening events.",
@@ -104,15 +107,18 @@
         "discount_percent": 10,
         "final_price": 35.99
       },
-      "rating": 2,
+      "rating": {
+        "value": 2,
+        "count": 3
+      },
       "freshness": true,
       "delivery": "Europe"
     },
     {
       "id": 3,
       "name": "Kids' T-Shirt",
-      "category_id": 1,
-      "subcategory_id": 3,
+      "category": "Clothing",
+      "subcategory": "Kids' Clothing",
       "country": "Spain",
       "image_urls": ["/images/products/kids_t-shirt/image1.jpg"],
       "description": "Let your little ones express their style with this adorable kids' T-shirt. Made from soft and breathable fabric, it ensures maximum comfort for active play. Available in vibrant colors and cute designs.",
@@ -126,15 +132,18 @@
       "tags": ["clothing", "kids"],
       "price": 15.99,
       "discount": null,
-      "rating": 2.7,
+      "rating": {
+        "value": 2.7,
+        "count": 6
+      },
       "freshness": true,
       "delivery": "Europe"
     },
     {
       "id": 4,
       "name": "iPhone 12 128GB Space Gray",
-      "category_id": 2,
-      "subcategory_id": 4,
+      "category": "Electronics",
+      "subcategory": "Mobile Phones",
       "country": "Germany",
       "image_urls": ["/images/products/iphone_12_space_gray/image1.jpg"],
       "description": "Experience the future of smartphones with the revolutionary iPhone 12. Packed with advanced features and cutting-edge technology, it offers stunning performance, exceptional camera capabilities, and a sleek design. Stay connected like never before.",
@@ -148,15 +157,18 @@
       "tags": ["electronics"],
       "price": 899.99,
       "discount": null,
-      "rating": 4.2,
+      "rating": {
+        "value": 4.2,
+        "count": 8
+      },
       "freshness": true,
       "delivery": "Europe"
     },
     {
       "id": 5,
       "name": "MacBook Pro",
-      "category_id": 2,
-      "subcategory_id": 5,
+      "category": "Electronics",
+      "subcategory": "Laptops",
       "country": "France",
       "image_urls": ["/images/products/macbook_pro_silver/image1.jpg"],
       "description": "Unleash your creativity with the powerful MacBook Pro. Designed for professionals and creatives, it delivers exceptional performance, stunning graphics, and a brilliant Retina display. Experience the ultimate productivity and seamless user experience.",
@@ -170,15 +182,18 @@
       "tags": ["electronics"],
       "price": 1499.99,
       "discount": null,
-      "rating": 0,
+      "rating": {
+        "value": 0,
+        "count": 1
+      },
       "freshness": false,
       "delivery": "Europe"
     },
     {
       "id": 6,
       "name": "The Great Gatsby",
-      "category_id": 3,
-      "subcategory_id": 6,
+      "category": "Books",
+      "subcategory": "Fiction",
       "country": "Ukraine",
       "image_urls": ["/images/products/the_great_gatsby/image1.jpg"],
       "description": "Immerse yourself in the captivating world of 'The Great Gatsby'. This literary masterpiece by F. Scott Fitzgerald takes you on a journey through the dazzling and decadent Jazz Age. Explore themes of love, wealth, and the American Dream.",
@@ -195,15 +210,18 @@
         "discount_percent": 20,
         "final_price": 7.99
       },
-      "rating": null,
+      "rating": {
+        "value": null,
+        "count": 0
+      },
       "freshness": false,
       "delivery": "Europe"
     },
     {
       "id": 7,
       "name": "Jeans",
-      "category_id": 1,
-      "subcategory_id": 1,
+      "category": "Clothing",
+      "subcategory": "Men's Clothing",
       "country": "Germany",
       "image_urls": ["/images/products/jeans/image1.jpg"],
       "description": "Discover the perfect pair of jeans that combines style and comfort. Crafted with premium denim fabric and a modern slim fit, these jeans are a versatile addition to your wardrobe. Dress them up or down for any occasion.",
@@ -217,15 +235,18 @@
       "tags": ["clothing", "men"],
       "price": 59.99,
       "discount": null,
-      "rating": 1,
+      "rating": {
+        "value": 1,
+        "count": 2
+      },
       "freshness": false,
       "delivery": "Europe"
     },
     {
       "id": 8,
       "name": "Blouse",
-      "category_id": 1,
-      "subcategory_id": 2,
+      "category": "Clothing",
+      "subcategory": "Women's Clothing",
       "country": "Ukraine",
       "image_urls": ["/images/products/blouse/image1.jpg"],
       "description": "Elevate your style with this chic blouse. Made from lightweight and breathable fabric, it features delicate details and a flattering silhouette. Pair it with your favorite bottoms for a sophisticated and elegant look.",
@@ -242,15 +263,18 @@
         "discount_percent": 15,
         "final_price": 25.49
       },
-      "rating": null,
+      "rating": {
+        "value": null,
+        "count": 0
+      },
       "freshness": true,
       "delivery": "Europe"
     },
     {
       "id": 9,
       "name": "Kids' Dress",
-      "category_id": 1,
-      "subcategory_id": 3,
+      "category": "Clothing",
+      "subcategory": "Kids' Clothing",
       "country": "Ukraine",
       "image_urls": ["/images/products/kids_dress/image1.jpg"],
       "description": "Let your little princess shine with this adorable kids' dress. Designed with soft and comfortable fabric, it features a charming design and a playful skirt. Perfect for special occasions and everyday wear.",
@@ -264,15 +288,18 @@
       "tags": ["clothing", "kids"],
       "price": 24.99,
       "discount": null,
-      "rating": null,
+      "rating": {
+        "value": null,
+        "count": 0
+      },
       "freshness": true,
       "delivery": "Europe"
     },
     {
       "id": 10,
       "name": "Samsung Galaxy S21",
-      "category_id": 2,
-      "subcategory_id": 4,
+      "category": "Electronics",
+      "subcategory": "Mobile Phones",
       "country": "Ukraine",
       "image_urls": [
         "/images/products/samsung_galaxy_s21_phantom_black/image1.jpg"
@@ -288,15 +315,18 @@
       "tags": ["electronics"],
       "price": 999.99,
       "discount": null,
-      "rating": null,
+      "rating": {
+        "value": null,
+        "count": 0
+      },
       "freshness": false,
       "delivery": "Europe"
     },
     {
       "id": 11,
       "name": "Men's Shirt",
-      "category_id": 1,
-      "subcategory_id": 1,
+      "category": "Clothing",
+      "subcategory": "Men's Clothing",
       "country": "Spain",
       "image_urls": [
         "/images/products/mens_shirt/image1.jpg",
@@ -313,15 +343,18 @@
       "tags": ["clothing", "men"],
       "price": 29.99,
       "discount": null,
-      "rating": null,
+      "rating": {
+        "value": null,
+        "count": 0
+      },
       "freshness": true,
       "delivery": "Europe"
     },
     {
       "id": 12,
       "name": "Women's Dress",
-      "category_id": 1,
-      "subcategory_id": 2,
+      "category": "Clothing",
+      "subcategory": "Women's Clothing",
       "country": "Germany",
       "image_urls": ["/images/products/womens_dress/image1.jpg"],
       "description": "Make a statement with this elegant women's dress. Crafted with attention to detail, it features a flattering silhouette and a sophisticated print. Perfect for parties and special occasions.",
@@ -338,15 +371,18 @@
         "discount_percent": 15,
         "final_price": 42.49
       },
-      "rating": 1.1,
+      "rating": {
+        "value": 1.1,
+        "count": 4
+      },
       "freshness": true,
       "delivery": "Europe"
     },
     {
       "id": 13,
       "name": "Kids' Sweater",
-      "category_id": 1,
-      "subcategory_id": 3,
+      "category": "Clothing",
+      "subcategory": "Kids' Clothing",
       "country": "UK",
       "image_urls": ["/images/products/kids_sweater/image1.jpg"],
       "description": "Keep your little ones warm and stylish with this adorable kids' sweater. Made from soft and cozy fabric, it features a cute design and a comfortable fit. Ideal for colder days.",
@@ -360,15 +396,18 @@
       "tags": ["clothing", "kids"],
       "price": 19.99,
       "discount": null,
-      "rating": null,
+      "rating": {
+        "value": null,
+        "count": 0
+      },
       "freshness": false,
       "delivery": "Europe"
     },
     {
       "id": 14,
       "name": "Samsung Galaxy A14",
-      "category_id": 2,
-      "subcategory_id": 4,
+      "category": "Electronics",
+      "subcategory": "Mobile Phones",
       "country": "France",
       "image_urls": ["/images/products/samsung_galaxy_a14_silver/image1.jpg"],
       "description": "Experience the latest technology with this advanced smartphone. It offers a high-resolution display, powerful performance, and a feature-packed camera. Stay connected and enjoy all the benefits of a modern smartphone.",
@@ -382,15 +421,18 @@
       "tags": ["electronics"],
       "price": 699.99,
       "discount": null,
-      "rating": null,
+      "rating": {
+        "value": null,
+        "count": 0
+      },
       "freshness": true,
       "delivery": "Europe"
     },
     {
       "id": 15,
       "name": "MacBook Pro",
-      "category_id": 2,
-      "subcategory_id": 5,
+      "category": "Electronics",
+      "subcategory": "Laptops",
       "country": "UK",
       "image_urls": ["/images/products/macbook_pro_space_gray/image1.jpg"],
       "description": "Enhance your productivity with this high-performance laptop. It features a fast processor, ample storage, and a stunning display. Perfect for work or entertainment purposes.",
@@ -404,15 +446,18 @@
       "tags": ["electronics"],
       "price": 1199.99,
       "discount": null,
-      "rating": 2.63,
+      "rating": {
+        "value": 2.63,
+        "count": 12
+      },
       "freshness": true,
       "delivery": "Europe"
     },
     {
       "id": 16,
       "name": "Misery",
-      "category_id": 3,
-      "subcategory_id": 6,
+      "category": "Books",
+      "subcategory": "Fiction",
       "country": "Ukraine",
       "image_urls": ["/images/products/misery/image1.jpg"],
       "description": "Get ready for an adrenaline-pumping read with this thrilling novel. It's filled with suspense, twists, and unexpected turns that will keep you on the edge of your seat until the very end.",
@@ -429,15 +474,18 @@
         "discount_percent": 10,
         "final_price": 13.4
       },
-      "rating": 3.9,
+      "rating": {
+        "value": 3.9,
+        "count": 5
+      },
       "freshness": false,
       "delivery": "Europe"
     },
     {
       "id": 17,
       "name": "Men's Jeans",
-      "category_id": 1,
-      "subcategory_id": 1,
+      "category": "Clothing",
+      "subcategory": "Men's Clothing",
       "country": "UK",
       "image_urls": ["/images/products/mens_jeans/image1.jpg"],
       "description": "Discover the perfect pair of jeans for men. Made from durable denim fabric, these jeans offer a comfortable fit and a timeless design. Suitable for various occasions and styles.",
@@ -451,15 +499,18 @@
       "tags": ["clothing", "men"],
       "price": 79.99,
       "discount": null,
-      "rating": null,
+      "rating": {
+        "value": null,
+        "count": 0
+      },
       "freshness": true,
       "delivery": "Europe"
     },
     {
       "id": 18,
       "name": "Women's Blouse",
-      "category_id": 1,
-      "subcategory_id": 2,
+      "category": "Clothing",
+      "subcategory": "Women's Clothing",
       "country": "UK",
       "image_urls": ["/images/products/womens_blouse/image1.jpg"],
       "description": "Add a touch of elegance to your outfit with this beautiful women's blouse. It features delicate details and a comfortable fit. Perfect for both formal and casual occasions.",
@@ -476,15 +527,18 @@
         "discount_percent": 20,
         "final_price": 31.99
       },
-      "rating": null,
+      "rating": {
+        "value": null,
+        "count": 0
+      },
       "freshness": true,
       "delivery": "Europe"
     },
     {
       "id": 19,
       "name": "Kids' T-Shirt",
-      "category_id": 1,
-      "subcategory_id": 3,
+      "category": "Clothing",
+      "subcategory": "Kids' Clothing",
       "country": "UK",
       "image_urls": ["/images/products/kids_tshirt/image1.jpg"],
       "description": "Let your kids express their personality with this fun and comfortable T-shirt. It features vibrant colors and a playful design that they will love. Perfect for everyday wear.",
@@ -498,15 +552,18 @@
       "tags": ["clothing", "kids"],
       "price": 9.99,
       "discount": null,
-      "rating": null,
+      "rating": {
+        "value": null,
+        "count": 0
+      },
       "freshness": true,
       "delivery": "Europe"
     },
     {
       "id": 20,
       "name": "Churchill Factor",
-      "category_id": 3,
-      "subcategory_id": 7,
+      "category": "Books",
+      "subcategory": "Non-Fiction",
       "country": "France",
       "image_urls": ["/images/products/churchill_factor/image1.jpg"],
       "description": "Expand your knowledge with this insightful non-fiction book. It explores a fascinating subject and provides valuable information that will enrich your understanding of the world.",
@@ -520,7 +577,10 @@
       "tags": ["books", "non-fiction"],
       "price": 19.99,
       "discount": null,
-      "rating": 4.2,
+      "rating": {
+        "value": 4.2,
+        "count": 3
+      },
       "freshness": true,
       "delivery": "Europe"
     }
@@ -1332,5 +1392,11 @@
     "PlayfulKids",
     "Samsung",
     "XYZ Fashion"
-  ]
+  ],
+  "total": {
+    "news": 50,
+    "products": 20,
+    "minPriceProduct": 7.99,
+    "maxPriceProduct": 1499.99
+  }
 }

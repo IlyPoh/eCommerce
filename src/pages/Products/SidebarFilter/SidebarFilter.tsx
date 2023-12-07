@@ -10,9 +10,8 @@ import { CheckboxButton } from '../../../components/UI/CheckboxButton/CheckboxBu
 // store
 import {
   resetFilters,
-  setBrandsToFilter,
-  setpricesToFilter,
-  setRatingToFilter,
+  setFilters,
+  setPrices,
 } from '../../../store/Slices/productsSlice';
 
 // types
@@ -32,32 +31,29 @@ import styles from './SidebarFilter.module.scss';
 export const SidebarFilter: React.FC = () => {
   const dispatch = useAppDispatch();
   const { category, subcategory } = useParams();
-  const {
-    products,
-    categories,
-    subcategories,
-    brands,
-    brandsToFilter,
-    ratingToFilter,
-  } = useAppSelector((state) => state.productState);
-  const { productsData } = products;
+  const { categories, subcategories, brands } = useAppSelector(
+    (state) => state.productState
+  );
+  const { total } = useAppSelector((state) => state.appState);
   const contentRefBrands = useRef<HTMLDivElement>(null);
   const [brandsExpanded, setBrandsExpanded] = useState(false);
   const [contentHeightBrands, setContentHeightBrands] = useState(0);
-  const [brandsToRender, setBrandsToRender] =
-    useState<string[]>(brandsToFilter);
-  const [ratingToRender, setRatingToRender] =
-    useState<number[]>(ratingToFilter);
-  const productMaxPrice = Math.max(
-    ...productsData.map((product) => product.price)
+  const filters = useAppSelector((state) => state.productState.filters);
+  const [brandsToRender, setBrandsToRender] = useState<string[]>(
+    filters.brands
+  );
+  const [ratingsToRender, setRatingsToRender] = useState<number[]>(
+    filters.ratings
   );
   const [minPrice, setMinPrice] = useState<number>(0);
-  const [maxPrice, setMaxPrice] = useState<number>(productMaxPrice);
+  const [maxPrice, setMaxPrice] = useState<number>(total.maxPriceProduct);
 
   useEffect(() => {
     if (contentRefBrands.current)
       setContentHeightBrands(contentRefBrands.current.scrollHeight);
-  }, [brandsExpanded]);
+
+    setMaxPrice(total.maxPriceProduct);
+  }, [brandsExpanded, total.maxPriceProduct]);
   useFetchBrands();
 
   const handleSliderChange = (newValues: number[]) => {
@@ -66,25 +62,33 @@ export const SidebarFilter: React.FC = () => {
   };
 
   const handleBrands = (brand: string) => {
-    if (!brandsToFilter.includes(brand))
+    if (!brandsToRender.includes(brand))
       setBrandsToRender([...brandsToRender, brand]);
-    else setBrandsToRender(brandsToFilter.filter((item) => item !== brand));
+    else setBrandsToRender(brandsToRender.filter((item) => item !== brand));
   };
 
   const handleRating = (rating: number) => {
-    if (!ratingToRender.includes(rating))
-      setRatingToRender([...ratingToRender, rating]);
-    else setRatingToRender(ratingToRender.filter((item) => item !== rating));
+    if (!ratingsToRender.includes(rating))
+      setRatingsToRender([...ratingsToRender, rating]);
+    else setRatingsToRender(ratingsToRender.filter((item) => item !== rating));
   };
 
   const handleReset = () => {
     dispatch(resetFilters());
+    dispatch(setPrices({ min: 0, max: total.maxPriceProduct }));
+    setMaxPrice(total.maxPriceProduct);
   };
 
   const handleApplyFilters = () => {
-    dispatch(setBrandsToFilter(brandsToRender));
-    dispatch(setRatingToFilter(ratingToRender));
-    dispatch(setpricesToFilter([minPrice, maxPrice]));
+    dispatch(
+      setFilters({
+        ...filters,
+        ratings: ratingsToRender,
+        brands: brandsToRender,
+        minPrice: minPrice,
+        maxPrice: !maxPrice ? total.maxPriceProduct : maxPrice,
+      })
+    );
   };
 
   const renderCategories = () => {
@@ -185,7 +189,7 @@ export const SidebarFilter: React.FC = () => {
               <CheckboxButton
                 onChange={() => handleCheckboxChange(value)}
                 value={`${value}`}
-                checked={ratingToRender.includes(value)}
+                checked={ratingsToRender.includes(value)}
                 type={ICheckboxType.CHECKBOX}
               >
                 {renderStars(value)}
@@ -207,7 +211,14 @@ export const SidebarFilter: React.FC = () => {
       {categories && subcategories && renderCategories()}
       {brands && renderBrands()}
       {renderRating()}
-      <PriceSlider onPriceChange={handleSliderChange} />
+      <PriceSlider
+        onPriceChange={handleSliderChange}
+        maxPrice={maxPrice}
+        setMaxPrice={setMaxPrice}
+        minPrice={minPrice}
+        setMinPrice={setMinPrice}
+        total={{ min: 0, max: total.maxPriceProduct }}
+      />
       <section className={styles['buttons']}>
         <button
           className="btn btn-small btn-green"
