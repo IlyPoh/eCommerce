@@ -9,7 +9,6 @@ import {
   ICheckboxDataWithSelector,
   IItemsPerPage,
 } from '@customTypes/index';
-export const env = import.meta.env;
 
 export const MONTHS: string[] = [
   'January',
