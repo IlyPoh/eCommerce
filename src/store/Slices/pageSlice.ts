@@ -2,7 +2,7 @@
 // libraries
 import { createSlice } from '@reduxjs/toolkit';
 // types
-import { IPageState } from '../../types/store';
+import { IPageState } from '@customTypes/store';
 
 // INITIAL STATE
 const initialState: IPageState = {

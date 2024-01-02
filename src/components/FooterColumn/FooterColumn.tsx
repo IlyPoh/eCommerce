@@ -3,7 +3,7 @@
 import { Link } from 'react-router-dom';
 
 // types
-import { IFooterLink } from '../../types';
+import { IFooterLink } from '@customTypes/index';
 
 // styles
 import styles from './FooterColumn.module.scss';

@@ -6,22 +6,22 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 // components
 import { HeaderFilters } from './HeaderFilters/HeaderFilters';
 import { SidebarFilter } from './SidebarFilter/SidebarFilter';
-import { ProductItem } from '../../components/ProductItem/ProductItem';
+import { ProductItem } from '@components/ProductItem/ProductItem';
 
 // types
-import { IProduct } from '../../types/store';
-import { EItemType, EView } from '../../types';
+import { IProduct } from '@customTypes/store';
+import { EItemType, EView } from '@customTypes/index';
 
 // store
-import { setBreadcrumbs } from '../../store/Slices/pageSlice';
+import { setBreadcrumbs } from '@store/Slices/pageSlice';
 
 // utils
-import { ITEMS_PER_PAGE as IPP } from '../../utils/constants';
+import { ITEMS_PER_PAGE as IPP } from '@utils/constants';
 import {
   firstLettertoUppercase,
   getProductsLink,
   handleRemoveFilter,
-} from '../../utils/helpers';
+} from '@utils/helpers';
 import {
   useAppDispatch,
   useAppSelector,
@@ -29,7 +29,7 @@ import {
   useFetchProducts,
   useFetchTotal,
   usePageState,
-} from '../../utils/hooks';
+} from '@utils/hooks';
 
 // styles
 import styles from './Products.module.scss';

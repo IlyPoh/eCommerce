@@ -8,7 +8,7 @@ import {
   EFilter,
   ICheckboxDataWithSelector,
   IItemsPerPage,
-} from '../types';
+} from '@customTypes/index';
 export const env = import.meta.env;
 
 export const MONTHS: string[] = [

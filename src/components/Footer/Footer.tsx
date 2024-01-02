@@ -1,10 +1,10 @@
 // IMPORTS
 // components
-import { FooterTags } from '../FooterTags/FooterTags';
-import { FooterColumn } from '../FooterColumn/FooterColumn';
+import { FooterTags } from '@components/FooterTags/FooterTags';
+import { FooterColumn } from '@components/FooterColumn/FooterColumn';
 
 // utils
-import { FOOTER_LINKS as links, COPYRIGHT } from '../../utils/constants';
+import { FOOTER_LINKS as links, COPYRIGHT } from '@utils/constants';
 
 // styles
 import styles from './Footer.module.scss';

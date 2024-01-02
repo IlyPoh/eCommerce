@@ -7,10 +7,10 @@ import placeholderArticle from '/images/placeholder.png';
 import placeholderAuthor from '/images/placeholder_32.png';
 
 // types
-import { IArticle } from '../../types/store';
+import { IArticle } from '@customTypes/store';
 
 // utils
-import { handleAddFilter, formatDate } from '../../utils/helpers';
+import { handleAddFilter, formatDate } from '@utils/helpers';
 
 // styles
 import styles from './HighlightArticle.module.scss';

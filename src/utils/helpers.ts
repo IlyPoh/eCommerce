@@ -2,15 +2,15 @@
 import { AnyAction, Dispatch } from '@reduxjs/toolkit';
 
 // store
-import { setError } from '../store/Slices/appSlice';
+import { setError } from '@store/Slices/appSlice';
 
 // types
-import { IError, QueryOptions } from '../types';
+import { IError, QueryOptions } from '@customTypes/index';
 import {
   IProductsEndpointOptions,
   INewsEndpointOptions,
   ISubcategory,
-} from '../types/store';
+} from '@customTypes/store';
 
 export const firstLettertoUppercase = (string: string): string => {
   return string[0].toUpperCase() + string.slice(1);

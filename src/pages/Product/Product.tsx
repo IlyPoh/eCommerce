@@ -4,14 +4,14 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 // types
-import { IProduct } from '../../types/store';
+import { IProduct } from '@customTypes/store';
 
 // store
-import { setBreadcrumbs } from '../../store/Slices/pageSlice';
-import { useGetProductsQuery } from '../../store/API/storeApi';
+import { setBreadcrumbs } from '@store/Slices/pageSlice';
+import { useGetProductsQuery } from '@store/API/storeApi';
 
 // utils
-import { useAppDispatch } from '../../utils/hooks';
+import { useAppDispatch } from '@utils/hooks';
 
 // styles
 import styles from './Product.module.scss';

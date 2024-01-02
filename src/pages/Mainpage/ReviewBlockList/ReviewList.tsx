@@ -5,11 +5,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // components
 import { ReviewItem } from '../ReviewItem/ReviewItem';
-import { BlockHeadline } from '../../../components/BlockHeadline/BlockHeadline';
+import { BlockHeadline } from '@components/BlockHeadline/BlockHeadline';
 
 // types
-import { ILinkProps } from '../../../types';
-import { IReview } from '../../../types/store';
+import { ILinkProps } from '@customTypes/index';
+import { IReview } from '@customTypes/store';
 
 // styles
 import 'swiper/css';

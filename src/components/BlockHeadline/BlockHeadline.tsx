@@ -3,7 +3,7 @@
 import { Link } from 'react-router-dom';
 
 // types
-import { ILinkProps } from '../../types';
+import { ILinkProps } from '@customTypes/index';
 
 // styles
 import styles from './BlockHeadline.module.scss';

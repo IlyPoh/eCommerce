@@ -7,12 +7,12 @@ import { Link, useParams } from 'react-router-dom';
 import placeholder from '/images/placeholder.png';
 
 // store
-import { setBreadcrumbs } from '../../store/Slices/pageSlice';
-import { useGetArticleQuery } from '../../store/API/storeApi';
+import { setBreadcrumbs } from '@store/Slices/pageSlice';
+import { useGetArticleQuery } from '@store/API/storeApi';
 
 // utils
-import { formatDate } from '../../utils/helpers';
-import { useAppDispatch } from '../../utils/hooks';
+import { formatDate } from '@utils/helpers';
+import { useAppDispatch } from '@utils/hooks';
 
 // styles
 import styles from './Article.module.scss';

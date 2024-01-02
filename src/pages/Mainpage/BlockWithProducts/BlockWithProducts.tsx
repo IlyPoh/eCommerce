@@ -3,11 +3,11 @@
 import {
   ProductList,
   IProductListProps,
-} from '../../../components/ProductList/ProductList';
+} from '@components/ProductList/ProductList';
 import {
   ISidebarLinksProps,
   SidebarLinks,
-} from '../../../components/SidebarLinks/SidebarLinks';
+} from '@components/SidebarLinks/SidebarLinks';
 
 // styles
 import styles from './BlockWithProducts.module.scss';

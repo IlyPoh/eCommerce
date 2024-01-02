@@ -3,8 +3,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 // types
-import { ESort } from '../../types';
-import { IProductsState } from '../../types/store';
+import { ESort } from '@customTypes/index';
+import { IProductsState } from '@customTypes/store';
 
 // INITIAL STATE
 

@@ -3,13 +3,13 @@
 import { Link } from 'react-router-dom';
 
 // components
-import { NavBar } from '../NavBar/NavBar';
+import { NavBar } from '@components/NavBar/NavBar';
 
 // assets
-import logo from '../../assets/images/logo.png';
+import logo from '@assets/images/logo.png';
 
 // utils
-import { HEADER_LINKS as links } from '../../utils/constants';
+import { HEADER_LINKS as links } from '@utils/constants';
 
 // styles
 import styles from './Header.module.scss';

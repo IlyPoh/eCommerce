@@ -3,7 +3,7 @@
 import { FC } from 'react';
 
 // types
-import { ICheckboxType } from '../../../types';
+import { ICheckboxType } from '@customTypes/index';
 
 // styles
 import styles from './CheckboxButton.module.scss';

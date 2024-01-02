@@ -5,19 +5,19 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 
 // components
 import { BlogItem } from './BlogItem/BlogItem';
-import { SidebarLinks } from '../../components/SidebarLinks/SidebarLinks';
-import { HighlightArticle } from '../../components/HighlightArticle/HighlightArticle';
+import { SidebarLinks } from '@components/SidebarLinks/SidebarLinks';
+import { HighlightArticle } from '@components/HighlightArticle/HighlightArticle';
 
 // types
-import { IArticle } from '../../types/store';
-import { EItemType, EView } from '../../types';
+import { IArticle } from '@customTypes/store';
+import { EItemType, EView } from '@customTypes/index';
 
 // utils
 import {
   firstLettertoUppercase,
   getBlogLink,
   handleRemoveFilter,
-} from '../../utils/helpers';
+} from '@utils/helpers';
 import {
   useAppDispatch,
   useAppSelector,
@@ -25,16 +25,16 @@ import {
   useFetchNewsCategories,
   useFetchTotal,
   usePageState,
-} from '../../utils/hooks';
+} from '@utils/hooks';
 import {
   MONTHS,
   BLOG_LINKS_MONTHS as MONTHS_LINKS,
   ITEMS_PER_PAGE as IPP,
-} from '../../utils/constants';
+} from '@utils/constants';
 
 // styles
 import styles from './Blog.module.scss';
-import { setBreadcrumbs } from '../../store/Slices/pageSlice';
+import { setBreadcrumbs } from '@store/Slices/pageSlice';
 
 // COMPONENT
 export const Blog: React.FC = () => {

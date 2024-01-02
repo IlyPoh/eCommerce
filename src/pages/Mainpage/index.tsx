@@ -3,22 +3,18 @@
 import { TwoBlocks } from './TwoBlocks/TwoBlocks';
 import { BlogBlock } from './BlogBlock/BlogBlock';
 import { ReviewList } from './ReviewBlockList/ReviewList';
-import { ProductList } from '../../components/ProductList/ProductList';
+import { ProductList } from '@components/ProductList/ProductList';
 import { BlockWithProducts } from './BlockWithProducts/BlockWithProducts';
-import { BlockHeadline } from '../../components/BlockHeadline/BlockHeadline';
-import { ISidebarLinksProps } from '../../components/SidebarLinks/SidebarLinks';
+import { BlockHeadline } from '@components/BlockHeadline/BlockHeadline';
+import { ISidebarLinksProps } from '@components/SidebarLinks/SidebarLinks';
 
 // utils
-import {
-  useAppSelector,
-  useFetchNews,
-  useFetchReviews,
-} from '../../utils/hooks';
+import { useAppSelector, useFetchNews, useFetchReviews } from '@utils/hooks';
 import {
   FIRST_SIDEBAR_LINKS as firstLinks,
   SECOND_SIDEBAR_LINKS as secondLinks,
   ITEMS_PER_PAGE as IPP,
-} from '../../utils/constants';
+} from '@utils/constants';
 
 // COMPONENT
 export const Mainpage: React.FC = () => {

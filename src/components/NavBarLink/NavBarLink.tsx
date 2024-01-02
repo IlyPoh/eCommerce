@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 // types
-import { ICategory } from '../../types/store';
+import { ICategory } from '@customTypes/store';
 
 // styles
 import styles from './NavBarLink.module.scss';

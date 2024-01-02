@@ -3,7 +3,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 // types
-import { IReviewsState } from '../../types/store';
+import { IReviewsState } from '@customTypes/store';
 
 // INITIAL STATE
 const initialState: IReviewsState = {

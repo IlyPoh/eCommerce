@@ -6,11 +6,11 @@ import { Link, useLocation } from 'react-router-dom';
 import placeholder from '/images/placeholder.png';
 
 // utils
-import { handleAddFilter, formatDate } from '../../../utils/helpers';
+import { handleAddFilter, formatDate } from '@utils/helpers';
 
 // types
-import { EView } from '../../../types';
-import { IArticle } from '../../../types/store';
+import { EView } from '@customTypes/index';
+import { IArticle } from '@customTypes/store';
 
 // styles
 import styles from './BlogItem.module.scss';
