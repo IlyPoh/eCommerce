@@ -22,7 +22,7 @@ import {
   useFetchNewsCategories,
   useFetchTotal,
   usePageState,
-} from '@/hooks';
+} from '@hooks/index';
 import {
   MONTHS,
   BLOG_LINKS_MONTHS as MONTHS_LINKS,

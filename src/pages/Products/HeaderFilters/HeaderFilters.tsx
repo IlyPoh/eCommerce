@@ -21,7 +21,7 @@ import {
 import { firstLettertoUppercase } from '@utils/helpers/string';
 
 // utils
-import { useAppDispatch, useAppSelector } from '@/hooks';
+import { useAppDispatch, useAppSelector } from '@hooks/index';
 
 // styles
 import styles from './HeaderFilters.module.scss';

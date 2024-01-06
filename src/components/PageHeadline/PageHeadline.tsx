@@ -9,7 +9,7 @@ import { setGridView } from '@store/Slices/appSlice';
 import { EItemType } from '@customTypes/index';
 
 // utils
-import { useAppDispatch, useAppSelector } from '@/hooks';
+import { useAppDispatch, useAppSelector } from '@hooks/index';
 
 // styles
 import styles from './PageHeadline.module.scss';

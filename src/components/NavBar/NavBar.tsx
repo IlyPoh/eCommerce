@@ -6,7 +6,7 @@ import { NavBarLink } from '@components/NavBarLink/NavBarLink';
 import { ICategory } from '@customTypes/store';
 
 // utils
-import { useAppSelector } from '@/hooks';
+import { useAppSelector } from '@hooks/index';
 
 // styles
 import styles from './NavBar.module.scss';

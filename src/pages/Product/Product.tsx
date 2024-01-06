@@ -11,7 +11,7 @@ import { setBreadcrumbs } from '@store/Slices/pageSlice';
 import { useGetProductsQuery } from '@store/API/storeApi';
 
 // utils
-import { useAppDispatch } from '@/hooks';
+import { useAppDispatch } from '@hooks/index';
 
 // styles
 import styles from './Product.module.scss';

@@ -18,7 +18,7 @@ import {
 import { ICheckboxType } from '@customTypes/index';
 
 // utils
-import { useAppDispatch, useAppSelector, useFetchBrands } from '@/hooks';
+import { useAppDispatch, useAppSelector, useFetchBrands } from '@hooks/index';
 
 // styles
 import styles from './SidebarFilter.module.scss';

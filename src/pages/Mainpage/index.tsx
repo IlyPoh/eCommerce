@@ -9,7 +9,7 @@ import { BlockHeadline } from '@components/BlockHeadline/BlockHeadline';
 import { ISidebarLinksProps } from '@components/SidebarLinks/SidebarLinks';
 
 // utils
-import { useAppSelector, useFetchNews, useFetchReviews } from '@/hooks';
+import { useAppSelector, useFetchNews, useFetchReviews } from '@hooks/index';
 import {
   FIRST_SIDEBAR_LINKS as firstLinks,
   SECOND_SIDEBAR_LINKS as secondLinks,

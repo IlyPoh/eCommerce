@@ -26,7 +26,7 @@ import {
   useFetchProducts,
   useFetchTotal,
   usePageState,
-} from '@/hooks';
+} from '@hooks/index';
 
 // styles
 import styles from './Products.module.scss';

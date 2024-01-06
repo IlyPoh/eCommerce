@@ -3,7 +3,7 @@
 import { EItemType } from '@customTypes/index';
 
 // utils
-import { useAppSelector } from '@/hooks';
+import { useAppSelector } from '@hooks/index';
 
 // styles
 import styles from './Counter.module.scss';

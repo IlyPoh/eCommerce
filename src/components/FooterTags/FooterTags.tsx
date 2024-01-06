@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { firstLettertoUppercase } from '@utils/helpers/string';
 
 // utils
-import { useAppSelector } from '@/hooks';
+import { useAppSelector } from '@hooks/index';
 
 // styles
 import styles from './FooterTags.module.scss';
