@@ -3,7 +3,7 @@
 import { Link } from 'react-router-dom';
 
 // utils
-import { useAppSelector } from '@utils/hooks';
+import { useAppSelector } from '@/hooks';
 
 // styles
 import styles from './Breadcrumbs.module.scss';

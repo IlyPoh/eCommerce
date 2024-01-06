@@ -11,7 +11,7 @@ import { setBreadcrumbs } from '@store/Slices/pageSlice';
 import { useGetProductsQuery } from '@store/API/storeApi';
 
 // utils
-import { useAppDispatch } from '@utils/hooks';
+import { useAppDispatch } from '@/hooks';
 
 // styles
 import styles from './Product.module.scss';
@@ -146,12 +146,8 @@ const renderSelection = (
       : styles['item'];
 
   const selection = Array.from({ length: stock }, (_, index) => (
-    <div
-      key={index}
-      className={getClass(index + 1)}
-      onClick={() => setCurrentQuantity(index + 1)}
-    >
-      {index + 1}
+    <div key={index} className={getClass(index + 1)}>
+      <button onClick={() => setCurrentQuantity(index + 1)}>{index + 1}</button>
     </div>
   ));
 

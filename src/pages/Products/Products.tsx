@@ -17,11 +17,8 @@ import { setBreadcrumbs } from '@store/Slices/pageSlice';
 
 // utils
 import { ITEMS_PER_PAGE as IPP } from '@utils/constants';
-import {
-  firstLettertoUppercase,
-  getProductsLink,
-  handleRemoveFilter,
-} from '@utils/helpers';
+import { handleRemoveFilter } from '@utils/helpers/array';
+import { firstLettertoUppercase, getProductsLink } from '@utils/helpers/string';
 import {
   useAppDispatch,
   useAppSelector,
@@ -29,7 +26,7 @@ import {
   useFetchProducts,
   useFetchTotal,
   usePageState,
-} from '@utils/hooks';
+} from '@/hooks';
 
 // styles
 import styles from './Products.module.scss';

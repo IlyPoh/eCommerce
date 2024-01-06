@@ -73,6 +73,8 @@
 
       padding: rems(4) rems(8);
 
+      white-space: nowrap;
+
       &:hover {
         background: $color-grey-f1;
       }

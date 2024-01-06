@@ -11,8 +11,8 @@ import { setBreadcrumbs } from '@store/Slices/pageSlice';
 import { useGetArticleQuery } from '@store/API/storeApi';
 
 // utils
-import { formatDate } from '@utils/helpers';
-import { useAppDispatch } from '@utils/hooks';
+import { useAppDispatch } from '@hooks/index';
+import { formatDate } from '@utils/helpers/string';
 
 // styles
 import styles from './Article.module.scss';

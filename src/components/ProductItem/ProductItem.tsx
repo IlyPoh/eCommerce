@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useGetProductsQuery } from '@store/API/storeApi';
 
 // utils
-import { firstLettertoUppercase } from '@utils/helpers';
+import { firstLettertoUppercase } from '@utils/helpers/string';
 
 // types
 import { EView } from '@customTypes/index';

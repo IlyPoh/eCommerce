@@ -14,7 +14,10 @@ import {
 } from '@customTypes/store';
 
 // utils
-import { buildNewsQueryString, buildProductQueryString } from '@utils/helpers';
+import {
+  buildNewsQueryString,
+  buildProductQueryString,
+} from '@utils/helpers/queryBuilders';
 import {
   STORE_API_URL,
   STORE_API_ENDPOINTS as ENDPOINTS,

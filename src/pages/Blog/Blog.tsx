@@ -13,11 +13,8 @@ import { IArticle } from '@customTypes/store';
 import { EItemType, EView } from '@customTypes/index';
 
 // utils
-import {
-  firstLettertoUppercase,
-  getBlogLink,
-  handleRemoveFilter,
-} from '@utils/helpers';
+import { handleRemoveFilter } from '@utils/helpers/array';
+import { firstLettertoUppercase, getBlogLink } from '@utils/helpers/string';
 import {
   useAppDispatch,
   useAppSelector,
@@ -25,7 +22,7 @@ import {
   useFetchNewsCategories,
   useFetchTotal,
   usePageState,
-} from '@utils/hooks';
+} from '@/hooks';
 import {
   MONTHS,
   BLOG_LINKS_MONTHS as MONTHS_LINKS,

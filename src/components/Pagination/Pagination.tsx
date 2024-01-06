@@ -12,7 +12,7 @@ import { setItemsToShow } from '@store/Slices/pageSlice';
 import { EItemType } from '@customTypes/index';
 
 // utils
-import { useAppDispatch, useAppSelector } from '@utils/hooks';
+import { useAppDispatch, useAppSelector } from '@/hooks';
 
 // styles
 import styles from './Pagination.module.scss';

@@ -18,10 +18,10 @@ import {
   SECOND_CHECKBOX_DATA as SECOND,
   THIRD_CHECKBOX_DATA as THIRD,
 } from '@utils/constants';
-import { firstLettertoUppercase } from '@utils/helpers';
+import { firstLettertoUppercase } from '@utils/helpers/string';
 
 // utils
-import { useAppDispatch, useAppSelector } from '@utils/hooks';
+import { useAppDispatch, useAppSelector } from '@/hooks';
 
 // styles
 import styles from './HeaderFilters.module.scss';
@@ -121,14 +121,14 @@ export const HeaderFilters: React.FC = () => {
             className={`${styles['list']} ${listOpen ? styles['open'] : null}`}
           >
             {Object.entries(THIRD.selector).map(([country, value]) => (
-              <li
-                value={country}
-                key={country}
-                className={styles['list-item']}
-                onClick={() => handleSelector(country, value)}
-              >
-                {country}
-                <div className="tag tag-transparent">{value}</div>
+              <li key={country} className={styles['list-item']}>
+                <button
+                  value={country}
+                  onClick={() => handleSelector(country, value)}
+                >
+                  {country}
+                  <div className="tag tag-transparent">{value}</div>
+                </button>
               </li>
             ))}
           </ul>

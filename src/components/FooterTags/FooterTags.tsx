@@ -3,10 +3,10 @@
 import { Link } from 'react-router-dom';
 
 // utils
-import { firstLettertoUppercase } from '@utils/helpers';
+import { firstLettertoUppercase } from '@utils/helpers/string';
 
 // utils
-import { useAppSelector } from '@utils/hooks';
+import { useAppSelector } from '@/hooks';
 
 // styles
 import styles from './FooterTags.module.scss';

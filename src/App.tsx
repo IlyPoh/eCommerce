@@ -17,11 +17,7 @@ import { Product } from './pages/Product/Product';
 import { Products } from './pages/Products/Products';
 
 // utils
-import {
-  useAppSelector,
-  useFetchCategories,
-  useFetchTags,
-} from './utils/hooks';
+import { useAppSelector, useFetchCategories, useFetchTags } from './hooks';
 
 // styles
 import './styles/app.scss';

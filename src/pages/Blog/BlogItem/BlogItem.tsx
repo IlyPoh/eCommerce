@@ -6,7 +6,8 @@ import { Link, useLocation } from 'react-router-dom';
 import placeholder from '/images/placeholder.png';
 
 // utils
-import { handleAddFilter, formatDate } from '@utils/helpers';
+import { formatDate } from '@utils/helpers/string';
+import { handleAddFilter } from '@utils/helpers/array';
 
 // types
 import { EView } from '@customTypes/index';

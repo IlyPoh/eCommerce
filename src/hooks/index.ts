@@ -37,7 +37,7 @@ import {
 } from '@customTypes/store';
 
 // utils
-import { errorHandler } from './helpers';
+import { errorHandler } from '@utils/helpers/handlers';
 import {
   setCurrentPage,
   setItemsPerPage,
