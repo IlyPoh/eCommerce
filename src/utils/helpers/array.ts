@@ -1,5 +1,5 @@
 // IMPORTS
-import { ISubcategory } from '@types/store';
+import { ISubcategory } from '@customTypes/store';
 
 // HOOKS
 export const convertDataToArrayOfStrings = (data: ISubcategory[]) => {
