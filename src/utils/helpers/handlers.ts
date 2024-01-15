@@ -6,10 +6,10 @@ import { AnyAction, Dispatch } from '@reduxjs/toolkit';
 import { errorCodeChecker } from './string';
 
 // store
-import { setError } from '@store/Slices/appSlice';
+import { setError } from '@/store/Slices/appSlice';
 
 // types
-import { IError } from '@customTypes/index';
+import { IError } from '@/types';
 
 export const errorHandler = (error: IError, dispatch: Dispatch<AnyAction>) => {
   const { status, message } = error;

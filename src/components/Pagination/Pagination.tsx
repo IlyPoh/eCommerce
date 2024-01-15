@@ -3,16 +3,16 @@
 import { Link, useLocation } from 'react-router-dom';
 
 // components
-import { Counter } from '@components/Counter/Counter';
+import { Counter } from '@/components/Counter/Counter';
 
 // store
-import { setItemsToShow } from '@store/Slices/pageSlice';
+import { setItemsToShow } from '@/store/Slices/pageSlice';
 
 // types
-import { EItemType } from '@customTypes/index';
+import { EItemType } from '@/types';
 
 // utils
-import { useAppDispatch, useAppSelector } from '@hooks/index';
+import { useAppDispatch, useAppSelector } from '@/hooks';
 
 // styles
 import styles from './Pagination.module.scss';

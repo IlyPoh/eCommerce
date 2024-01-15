@@ -1,6 +1,6 @@
 // IMPORTS
 // components
-import { ProductItem } from '@components/ProductItem/ProductItem';
+import { ProductItem } from '@/components/ProductItem/ProductItem';
 
 // styles
 import styles from './ProductList.module.scss';

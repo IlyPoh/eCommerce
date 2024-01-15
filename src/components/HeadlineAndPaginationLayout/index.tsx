@@ -3,8 +3,8 @@
 import { Outlet } from 'react-router-dom';
 
 // components
-import { Pagination } from '@components/Pagination/Pagination';
-import { PageHeadline } from '@components/PageHeadline/PageHeadline';
+import { Pagination } from '@/components/Pagination/Pagination';
+import { PageHeadline } from '@/components/PageHeadline/PageHeadline';
 
 // COMPONENT
 export const HeadlineAndPaginationLayout: React.FC = () => {

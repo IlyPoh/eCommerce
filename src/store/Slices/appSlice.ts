@@ -3,7 +3,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 // types
-import { IAppState } from '@customTypes/store';
+import { IAppState } from '@/types/store';
 
 // INITIAL STATE
 const initialState: IAppState = {

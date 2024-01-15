@@ -11,18 +11,18 @@ import {
   IProductsEndpointOptions,
   IReview,
   ITag,
-} from '@customTypes/store';
+} from '@/types/store';
 
 // utils
 import {
   buildNewsQueryString,
   buildProductQueryString,
-} from '@utils/helpers/queryBuilders';
+} from '@/utils/helpers/queryBuilders';
 import {
   STORE_API_URL,
   STORE_API_ENDPOINTS as ENDPOINTS,
-} from '@utils/constants';
-import { ILink } from '@customTypes/index';
+} from '@/utils/constants';
+import { ILink } from '@/types';
 
 // API
 export const storeApi = createApi({

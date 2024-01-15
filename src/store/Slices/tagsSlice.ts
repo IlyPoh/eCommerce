@@ -3,7 +3,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 // types
-import { ITagsState } from '@customTypes/store';
+import { ITagsState } from '@/types/store';
 
 // INITIAL STATE
 const initialState: ITagsState = {

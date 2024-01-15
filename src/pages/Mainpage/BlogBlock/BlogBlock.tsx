@@ -1,12 +1,12 @@
 // IMPORTS
 // components
-import { BlogItem } from '@pages/Blog/BlogItem/BlogItem';
-import { HighlightArticle } from '@components/HighlightArticle/HighlightArticle';
+import { BlogItem } from '@/pages/Blog/BlogItem/BlogItem';
+import { HighlightArticle } from '@/components/HighlightArticle/HighlightArticle';
 // store
-import { IArticle } from '@customTypes/store';
+import { IArticle } from '@/types/store';
 
 // types
-import { EView } from '@customTypes/index';
+import { EView } from '@/types';
 
 // styles
 import styles from './BlogBlock.module.scss';

@@ -5,15 +5,15 @@ import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 // store
-import { setNews, setNewsCategories } from '@store/Slices/newsSlice';
-import { setTags } from '@store/Slices/tagsSlice';
-import { setLoading, setTotal } from '@store/Slices/appSlice';
-import { setReviews } from '@store/Slices/reviewSlice';
+import { setNews, setNewsCategories } from '@/store/Slices/newsSlice';
+import { setTags } from '@/store/Slices/tagsSlice';
+import { setLoading, setTotal } from '@/store/Slices/appSlice';
+import { setReviews } from '@/store/Slices/reviewSlice';
 import {
   setProducts,
   setProductCategories,
   setBrands,
-} from '@store/Slices/productsSlice';
+} from '@/store/Slices/productsSlice';
 import {
   useGetProductCategoriesQuery,
   useGetNewsCategoriesQuery,
@@ -23,21 +23,21 @@ import {
   useGetTagsQuery,
   useGetBrandsQuery,
   useGetTotalQuery,
-} from '@store/API/storeApi';
+} from '@/store/API/storeApi';
 
 // types
-import { IError } from '@customTypes/index';
+import { IError } from '@/types';
 
 // store types
-import type { RootState, AppDispatch } from '@store/index';
+import type { RootState, AppDispatch } from '@/store/index';
 import {
   INewsEndpointOptions,
   IPageState,
   IProductsEndpointOptions,
-} from '@customTypes/store';
+} from '@/types/store';
 
 // utils
-import { errorHandler } from '@utils/helpers/handlers';
+import { errorHandler } from '@/utils/helpers/handlers';
 import {
   setCurrentPage,
   setItemsPerPage,
@@ -46,7 +46,7 @@ import {
   setPageTitle,
   setPageType,
   setPageURL,
-} from '@store/Slices/pageSlice';
+} from '@/store/Slices/pageSlice';
 
 // HOOKS
 // Store hooks

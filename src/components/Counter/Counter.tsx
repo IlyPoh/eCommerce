@@ -1,9 +1,9 @@
 // IMPOTS
 // types
-import { EItemType } from '@customTypes/index';
+import { EItemType } from '@/types';
 
 // utils
-import { useAppSelector } from '@hooks/index';
+import { useAppSelector } from '@/hooks/index';
 
 // styles
 import styles from './Counter.module.scss';

@@ -1,12 +1,12 @@
 // IMPORTS
 // components
-import { NavBarLink } from '@components/NavBarLink/NavBarLink';
+import { NavBarLink } from '@/components/NavBarLink/NavBarLink';
 
 // store
-import { ICategory } from '@customTypes/store';
+import { ICategory } from '@/types/store';
 
 // utils
-import { useAppSelector } from '@hooks/index';
+import { useAppSelector } from '@/hooks';
 
 // styles
 import styles from './NavBar.module.scss';

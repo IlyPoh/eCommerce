@@ -1,10 +1,7 @@
 // IMPORTS
 // types
-import { QueryOptions } from '@customTypes/index';
-import {
-  INewsEndpointOptions,
-  IProductsEndpointOptions,
-} from '@customTypes/store';
+import { QueryOptions } from '@/types';
+import { INewsEndpointOptions, IProductsEndpointOptions } from '@/types/store';
 
 const appendQueryParameter = (
   queryParameters: string[],

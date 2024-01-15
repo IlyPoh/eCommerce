@@ -1,5 +1,5 @@
 // types
-import { IReview } from '@customTypes/store';
+import { IReview } from '@/types/store';
 
 // styles
 import styles from './ReviewItem.module.scss';

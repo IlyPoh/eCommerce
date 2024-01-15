@@ -5,20 +5,20 @@ import { useEffect, useRef, useState } from 'react';
 
 // components
 import { PriceSlider } from './PriceSlider/PriceSlider';
-import { CheckboxButton } from '@components/UI/CheckboxButton/CheckboxButton';
+import { CheckboxButton } from '@/components/UI/CheckboxButton/CheckboxButton';
 
 // store
 import {
   resetFilters,
   setFilters,
   setPrices,
-} from '@store/Slices/productsSlice';
+} from '@/store/Slices/productsSlice';
 
 // types
-import { ICheckboxType } from '@customTypes/index';
+import { ICheckboxType } from '@/types';
 
 // utils
-import { useAppDispatch, useAppSelector, useFetchBrands } from '@hooks/index';
+import { useAppDispatch, useAppSelector, useFetchBrands } from '@/hooks';
 
 // styles
 import styles from './SidebarFilter.module.scss';

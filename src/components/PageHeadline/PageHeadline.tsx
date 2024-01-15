@@ -1,15 +1,15 @@
 // IMPORTS
 // components
-import { Counter } from '@components/Counter/Counter';
+import { Counter } from '@/components/Counter/Counter';
 
 // store
-import { setGridView } from '@store/Slices/appSlice';
+import { setGridView } from '@/store/Slices/appSlice';
 
 // types
-import { EItemType } from '@customTypes/index';
+import { EItemType } from '@/types';
 
 // utils
-import { useAppDispatch, useAppSelector } from '@hooks/index';
+import { useAppDispatch, useAppSelector } from '@/hooks';
 
 // styles
 import styles from './PageHeadline.module.scss';

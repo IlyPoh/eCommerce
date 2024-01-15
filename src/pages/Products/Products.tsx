@@ -6,19 +6,22 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 // components
 import { HeaderFilters } from './HeaderFilters/HeaderFilters';
 import { SidebarFilter } from './SidebarFilter/SidebarFilter';
-import { ProductItem } from '@components/ProductItem/ProductItem';
+import { ProductItem } from '@/components/ProductItem/ProductItem';
 
 // types
-import { IProduct } from '@customTypes/store';
-import { EItemType, EView } from '@customTypes/index';
+import { IProduct } from '@/types/store';
+import { EItemType, EView } from '@/types';
 
 // store
-import { setBreadcrumbs } from '@store/Slices/pageSlice';
+import { setBreadcrumbs } from '@/store/Slices/pageSlice';
 
 // utils
-import { ITEMS_PER_PAGE as IPP } from '@utils/constants';
-import { handleRemoveFilter } from '@utils/helpers/array';
-import { firstLettertoUppercase, getProductsLink } from '@utils/helpers/string';
+import { ITEMS_PER_PAGE as IPP } from '@/utils/constants';
+import { handleRemoveFilter } from '@/utils/helpers/array';
+import {
+  firstLettertoUppercase,
+  getProductsLink,
+} from '@/utils/helpers/string';
 import {
   useAppDispatch,
   useAppSelector,
@@ -26,7 +29,7 @@ import {
   useFetchProducts,
   useFetchTotal,
   usePageState,
-} from '@hooks/index';
+} from '@/hooks';
 
 // styles
 import styles from './Products.module.scss';

@@ -3,8 +3,8 @@
 import { Link } from 'react-router-dom';
 
 // types
-import { ICategory, ISubcategory } from '@customTypes/store';
-import { ILinkProps, ILink, ILinkWithYear } from '@customTypes/index';
+import { ICategory, ISubcategory } from '@/types/store';
+import { ILinkProps, ILink, ILinkWithYear } from '@/types';
 
 // styles
 import styles from './SidebarLinks.module.scss';

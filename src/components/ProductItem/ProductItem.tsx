@@ -3,14 +3,14 @@
 import { Link } from 'react-router-dom';
 
 // store
-import { useGetProductsQuery } from '@store/API/storeApi';
+import { useGetProductsQuery } from '@/store/API/storeApi';
 
 // utils
-import { firstLettertoUppercase } from '@utils/helpers/string';
+import { firstLettertoUppercase } from '@/utils/helpers/string';
 
 // types
-import { EView } from '@customTypes/index';
-import { IProduct } from '@customTypes/store';
+import { EView } from '@/types';
+import { IProduct } from '@/types/store';
 
 // styles
 import styles from './ProductItem.module.scss';

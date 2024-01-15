@@ -6,12 +6,12 @@ import { Link, useLocation } from 'react-router-dom';
 import placeholder from '/images/placeholder.png';
 
 // utils
-import { formatDate } from '@utils/helpers/string';
-import { handleAddFilter } from '@utils/helpers/array';
+import { formatDate } from '@/utils/helpers/string';
+import { handleAddFilter } from '@/utils/helpers/array';
 
 // types
-import { EView } from '@customTypes/index';
-import { IArticle } from '@customTypes/store';
+import { EView } from '@/types';
+import { IArticle } from '@/types/store';
 
 // styles
 import styles from './BlogItem.module.scss';

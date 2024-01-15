@@ -1,7 +1,7 @@
 // IMPORTS
 // components
 import { useState } from 'react';
-import { CheckboxButton } from '@components/UI/CheckboxButton/CheckboxButton';
+import { CheckboxButton } from '@/components/UI/CheckboxButton/CheckboxButton';
 
 // store
 import {
@@ -9,19 +9,19 @@ import {
   setCountry,
   setSort,
   setTags,
-} from '@store/Slices/productsSlice';
+} from '@/store/Slices/productsSlice';
 
 // types
-import { ESort, ICheckboxType } from '@customTypes/index';
+import { ESort, ICheckboxType } from '@/types';
 import {
   FIRST_CHECKBOX_DATA as FIRST,
   SECOND_CHECKBOX_DATA as SECOND,
   THIRD_CHECKBOX_DATA as THIRD,
-} from '@utils/constants';
-import { firstLettertoUppercase } from '@utils/helpers/string';
+} from '@/utils/constants';
+import { firstLettertoUppercase } from '@/utils/helpers/string';
 
 // utils
-import { useAppDispatch, useAppSelector } from '@hooks/index';
+import { useAppDispatch, useAppSelector } from '@/hooks';
 
 // styles
 import styles from './HeaderFilters.module.scss';
