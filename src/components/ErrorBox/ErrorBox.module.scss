@@ -1,0 +1,28 @@
+@import '../../styles/base/functions';
+@import '../../styles/base/config';
+
+.error {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  font-weight: 700;
+  color: $color-red;
+
+  padding: rems(5) rems(25);
+
+  transform: translateX(-50%);
+
+  background-color: $color-grey-f9;
+
+  box-shadow: 0 0 5px 2px $color-shadow-05;
+
+  border-top: none;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  &-message {
+    margin-right: rems(10);
+  }
+}

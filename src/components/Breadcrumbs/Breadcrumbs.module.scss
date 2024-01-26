@@ -1,0 +1,27 @@
+@import '../../styles/base/functions';
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.breadcrumbs {
+  font-family: $ff-open;
+  @extend %smallFontSize;
+
+  .item {
+    color: $color-grey-a9;
+    margin-right: rems(8);
+
+    &:after {
+      content: '/';
+      padding-left: rems(8);
+    }
+
+    &:last-child {
+      color: $color-main;
+
+      &:after {
+        content: none;
+      }
+    }
+  }
+}

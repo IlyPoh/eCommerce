@@ -1,0 +1,83 @@
+@import '../../../styles/base/functions';
+@import '../../../styles/base/config';
+@import '../../../styles/base/extends';
+@import '../../../styles/base/mixins';
+
+.label {
+  @include display_flex($align: center);
+  cursor: pointer;
+  padding: rems(8);
+
+  &:hover {
+    .text {
+      text-shadow: 0 0 1px $color-shadow-03;
+    }
+  }
+
+  .input {
+    display: none;
+
+    margin: 0;
+    padding: 0;
+
+    &:checked + .text {
+      &.radio {
+        &:before {
+          background: $color-white;
+          border: 6px solid $color-green-6a;
+        }
+      }
+      &.checkbox {
+        &:before {
+          color: $color-white;
+          background: $color-green-6a;
+          border: 1px solid $color-green-46;
+        }
+      }
+    }
+  }
+}
+
+.text {
+  @include display_flex($align: center, $gap: rems(8));
+
+  transition: text-shadow $shortTransition;
+
+  &.radio {
+    &:before {
+      padding: rems(2);
+
+      border-radius: 50%;
+    }
+  }
+
+  &.checkbox {
+    &:before {
+      border-radius: 2px;
+    }
+  }
+
+  &:before {
+    $size: rems(20);
+    content: '';
+    display: inline-block;
+
+    min-width: $size;
+    aspect-ratio: 1;
+
+    font-size: rems(18);
+
+    color: transparent;
+    background: transparent;
+
+    border: 1px solid $color-grey-d1;
+
+    transition: color $longTransition, background $longTransition,
+      border $longTransition;
+  }
+
+  span {
+    font-family: $ff-open;
+    @extend %filterFontSize;
+  }
+}

@@ -1,0 +1,52 @@
+@import '../../styles/base/functions';
+@import '../../styles/base/config';
+@import '../../styles/base/mixins';
+@import '../../styles/base/extends';
+
+.link {
+  position: relative;
+
+  padding-right: rems(40);
+
+  button {
+    line-height: rems(23);
+
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  top: 100%;
+
+  border-radius: 12px;
+
+  width: 100%;
+
+  padding: rems(6);
+  margin-right: 0;
+
+  opacity: 1;
+  visibility: visible;
+
+  background-color: $color-grey-f9;
+
+  transition: opacity $shortTransition, visibility $shortTransition,
+    background $shortTransition;
+
+  &-hidden {
+    height: 0;
+    width: 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    background-color: transparent;
+  }
+
+  ul {
+    @include display_flex($direction: column, $gap: rems(10));
+  }
+}

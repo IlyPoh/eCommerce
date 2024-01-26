@@ -1,0 +1,4 @@
+@function rems($targetPx, $base: $fs-default) {
+  $remValue: calc($targetPx / $base) + rem;
+  @return $remValue;
+}

@@ -1,0 +1,94 @@
+@import '../../../../styles/base/functions';
+@import '../../../../styles/base/config';
+@import '../../../../styles/base/extends';
+@import '../../../../styles/base/mixins';
+
+section {
+  padding-bottom: rems(32);
+}
+
+.block {
+  @include display_flex($direction: column, $gap: rems(12));
+
+  .slider {
+    height: rems(20);
+
+    .track {
+      top: 50%;
+      transform: translateY(-50%);
+
+      height: rems(6);
+
+      border-radius: 12px;
+
+      background: $color-grey-eb;
+
+      &:nth-child(2) {
+        background: $color-green-6a;
+      }
+    }
+
+    .thumb {
+      width: rems(20);
+      aspect-ratio: 1;
+
+      border-radius: 50%;
+      border: 1px solid $color-grey-d1;
+
+      background: $color-white;
+
+      box-shadow: 0 0 5px 0 $color-shadow-03;
+
+      transition: box-shadow $shortTransition;
+
+      &:hover {
+        box-shadow: 0 0 5px 0 $color-shadow-08;
+      }
+    }
+  }
+
+  .inputs {
+    @include display_flex(
+      $align: flex-end,
+      $justify: space-between,
+      $gap: rems(16)
+    );
+
+    span {
+      line-height: rems(48);
+    }
+
+    &-item {
+      input {
+        border: 1px solid $color-grey-d1;
+        border-radius: 12px;
+
+        background: $color-grey-f9;
+
+        padding: rems(12) rems(16);
+
+        max-width: rems(110);
+
+        transition: background $shortTransition, border $shortTransition,
+          box-shadow $shortTransition;
+
+        &:focus {
+          background: $color-white;
+          border: 1px solid $color-green-6a;
+          box-shadow: 0 0 4px 1px $color-shadow-05;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+
+    &-title {
+      @extend %smallFontSize;
+      font-weight: 600;
+    }
+  }
+}

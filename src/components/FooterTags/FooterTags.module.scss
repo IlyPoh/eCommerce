@@ -1,0 +1,24 @@
+@import '../../styles/base/functions';
+@import '../../styles/base/config';
+@import '../../styles/base/mixins';
+@import '../../styles/base/extends';
+
+.tags {
+  @include display_flex($wrap: wrap, $gap: rems(16));
+
+  &-tag {
+    @extend %smallFontSize;
+    color: $color-main;
+    font-weight: 700;
+
+    padding: rems(4) rems(10);
+
+    background-color: $color-grey-f5;
+
+    border-radius: 12px;
+  }
+
+  .no-tags {
+    font-weight: 700;
+  }
+}

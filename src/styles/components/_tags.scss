@@ -1,0 +1,21 @@
+.tag {
+  @include display_flex($flex: inline-flex, $align: center, $gap: rems(4));
+
+  font-family: $ff-poppins;
+  @extend %smallFontSize;
+  font-weight: 600;
+
+  padding: 0 rems(8);
+
+  border-radius: 12px;
+
+  &-green {
+    color: $color-green-6a;
+    background-color: $color-white-f4;
+  }
+
+  &-transparent {
+    color: $color-main;
+    border: 1px solid $color-grey-eb;
+  }
+}

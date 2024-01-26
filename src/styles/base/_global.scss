@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: $ff-poppins;
+}
+
+html {
+  height: 100%;
+  @extend %defaultFontSize;
+}
+
+body {
+  height: 100%;
+
+  font-family: $ff-poppins;
+  color: $color-main;
+  @extend %defaultFontSize;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+.h1 {
+  @extend %h1;
+}
+
+h2,
+.h2 {
+  @extend %h2;
+}
+
+h3,
+.h3 {
+  @extend %h3;
+}
+
+h4,
+.h4 {
+  @extend %h4;
+}
+
+a {
+  color: $color-green-6a;
+  text-decoration: none;
+
+  &.no-color {
+    color: $color-main;
+  }
+}
+
+section {
+  padding: rems(48) 0;
+
+  &.section,
+  .section {
+    padding: rems(64) 0;
+  }
+
+  &.section-medium,
+  .section-medium {
+    padding: rems(16) 0;
+  }
+
+  &.section-small,
+  .section-small {
+    padding: rems(8) 0;
+  }
+}
+
+.container {
+  max-width: rems(1260);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 rems(45);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.link {
+  color: $color-green-6a;
+  padding: 0;
+  text-decoration: underline;
+}
+
+[class^='icon-'] {
+  transition: transform $longTransition;
+}
+
+[class^='icon-'].open {
+  transform: rotateX(-180deg);
+}

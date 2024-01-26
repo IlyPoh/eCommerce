@@ -1,35 +1,72 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// IMPORTS
+// libraries
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
+// components
+import { Layout } from './components/Layout/Layout';
+import { Loading } from './components/Loading/Loading';
+import { ErrorBox } from './components/ErrorBox/ErrorBox';
+import { BreadcrumbsLayout } from './components/BreadcrumbsLayout';
+import { HeadlineAndPaginationLayout } from './components/HeadlineAndPaginationLayout';
+
+// pages
+import { Blog } from './pages/Blog/Blog';
+import { Mainpage } from './pages/Mainpage';
+import { Article } from './pages/Article/Article';
+import { Product } from './pages/Product/Product';
+import { Products } from './pages/Products/Products';
+
+// utils
+import { useAppSelector, useFetchCategories, useFetchTags } from './hooks';
+
+// styles
+import './styles/app.scss';
+
+// COMPONENT
+function App(): React.JSX.Element {
+  const { error, loading } = useAppSelector(state => state.appState);
+
+  useFetchCategories();
+  useFetchTags();
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {error && <ErrorBox error={error} />}
+      {loading && <Loading />}
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          {/* Main page */}
+          <Route index element={<Mainpage />} />
+
+          {/* Pages with breadcrumbs */}
+          <Route element={<BreadcrumbsLayout />}>
+            {/* Pages this Headline and Pagination */}
+            <Route element={<HeadlineAndPaginationLayout />}>
+              {/* Category */}
+              <Route path='/products'>
+                <Route path=':category?'>
+                  <Route path=':subcategory?' element={<Products />} />
+                </Route>
+              </Route>
+
+              {/* Blog */}
+              <Route path='/blog'>
+                <Route path=':category?' element={<Blog />} />
+              </Route>
+            </Route>
+
+            {/* Product */}
+            <Route path='/products/:category/:subcategory'>
+              <Route path=':productId' element={<Product />} />
+            </Route>
+
+            {/* Article */}
+            <Route path='/blog/:category/:articleId' element={<Article />} />
+          </Route>
+        </Route>
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

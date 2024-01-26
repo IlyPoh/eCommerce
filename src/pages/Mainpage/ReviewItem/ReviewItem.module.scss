@@ -1,0 +1,49 @@
+@import '../../../styles/base/functions';
+@import '../../../styles/base/config';
+@import '../../../styles/base/extends';
+@import '../../../styles/base/mixins';
+
+.item {
+  position: relative;
+
+  padding: rems(24) rems(32) rems(40);
+  margin-bottom: rems(24);
+
+  border: 1px solid $color-grey-f1;
+  border-radius: 12px;
+
+  cursor: grab;
+
+  .body {
+    @include display_flex($align: center, $direction: column, $gap: rems(24));
+    text-align: center;
+  }
+
+  .text {
+    font-weight: 500;
+  }
+
+  .name {
+    @extend %smallFontSize;
+    font-weight: 600;
+    color: $color-grey-a9;
+  }
+
+  .image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    width: rems(48);
+    height: rems(48);
+
+    border-radius: 50%;
+
+    img {
+      width: rems(48);
+      height: rems(48);
+      object-fit: cover;
+    }
+  }
+}

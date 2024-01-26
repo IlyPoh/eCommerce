@@ -1,0 +1,63 @@
+@import '../../styles/base/functions';
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.filter {
+  @include display_flex($align: center, $gap: rems(12), $wrap: wrap);
+
+  .text {
+    @extend %smallFontSize;
+    color: $color-grey-a9;
+    font-weight: 600;
+  }
+}
+
+.headline {
+  @include display_flex($gap: rems(32));
+}
+
+.body {
+  @include display_flex($gap: rems(32));
+
+  aside {
+    max-width: rems(270);
+    width: 100%;
+
+    @include display_flex($direction: column, $gap: rems(48));
+
+    .categories {
+      a {
+        color: $color-grey-a9;
+      }
+    }
+
+    .subscription {
+      h4 {
+        margin-bottom: rems(8);
+      }
+
+      p {
+        font-family: $ff-open;
+        font-size: rems(14);
+        color: $color-grey-a9;
+
+        margin-bottom: rems(24);
+      }
+    }
+  }
+
+  .content {
+    width: 100%;
+    transition: gap $shortTransition, display $shortTransition;
+
+    &.grid {
+      @include display_grid($columns: 3, $gap: rems(32));
+    }
+
+    &.list {
+      width: 100%;
+      @include display_flex($direction: column, $gap: rems(16));
+    }
+  }
+}

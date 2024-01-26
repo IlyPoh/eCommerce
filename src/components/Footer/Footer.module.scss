@@ -1,0 +1,21 @@
+@import '../../styles/base/functions';
+@import '../../styles/base/config';
+@import '../../styles/base/mixins';
+@import '../../styles/base/extends';
+
+.footer {
+  padding: rems(64) 0;
+
+  .sections {
+    @include display_flex($direction: column, $gap: rems(48));
+  }
+
+  .columns {
+    @include display_flex($align: flex-start, $justify: space-between);
+  }
+
+  .copyright {
+    font-family: $ff-open;
+    font-size: rems(14);
+  }
+}

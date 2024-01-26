@@ -1,0 +1,12 @@
+@import '../../styles/base/config';
+@import '../../styles/base/mixins';
+@import '../../styles/base/extends';
+
+.nav {
+  background-color: $color-grey-f9;
+  font-weight: 500;
+}
+
+.list {
+  @include display_flex($align: center);
+}

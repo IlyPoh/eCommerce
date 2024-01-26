@@ -1,0 +1,186 @@
+@import '../../styles/base/functions';
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.card {
+  $border-width: 1px;
+  width: 100%;
+
+  border: 1px solid $color-grey-d1;
+  border-radius: 12px;
+
+  &.grid {
+    max-width: rems(270);
+
+    @include display_flex(
+      $justify: space-between,
+      $direction: column,
+      $gap: rems(16)
+    );
+
+    padding: rems(16);
+
+    .image {
+      $size: 250px;
+      max-width: $size;
+      aspect-ratio: 1;
+
+      img {
+        max-width: $size;
+        aspect-ratio: 1;
+      }
+    }
+
+    .body {
+      .title {
+        font-weight: 500;
+      }
+    }
+
+    .footer {
+      @include display_flex($align: center, $justify: space-between);
+    }
+  }
+
+  &.list {
+    $size: 280px;
+    @include display_flex($justify: space-between);
+
+    max-height: calc($size + ($border-width * 2));
+
+    .image {
+      width: $size;
+      height: $size;
+
+      img {
+        width: $size;
+        aspect-ratio: 1;
+      }
+    }
+
+    .body {
+      $size: 270px;
+      max-width: $size;
+      margin: rems(32);
+
+      .title {
+        @extend %h4;
+        font-weight: 600;
+      }
+
+      .subtitle {
+        margin-bottom: 8px;
+      }
+
+      .rating {
+        @include display_flex($gap: rems(2));
+        margin-bottom: rems(25);
+      }
+
+      .no-rating {
+        color: $color-grey-eb;
+      }
+
+      .info {
+        width: 100%;
+        @include display_flex($direction: column, $gap: rems(12));
+
+        &-item {
+          @include display_flex($justify: space-between, $gap: rems(32));
+          color: $color-grey-a9;
+          @extend %filterFontSize;
+
+          & > * {
+            width: 50%;
+          }
+
+          .green {
+            color: $color-green-6a;
+          }
+        }
+      }
+    }
+
+    .footer {
+      width: rems(165);
+
+      margin: rems(32);
+
+      white-space: nowrap;
+
+      .prices {
+        margin-bottom: rems(16);
+      }
+
+      .shipping {
+        color: $color-grey-a9;
+        font-size: rems(12);
+
+        margin-bottom: rems(26);
+
+        .title {
+          font-weight: 600;
+          line-height: normal;
+        }
+
+        .text {
+          font-family: $ff-open;
+          line-height: normal;
+        }
+      }
+    }
+  }
+
+  .image {
+    position: relative;
+    width: 100%;
+
+    .discount {
+      position: absolute;
+      top: rems(12);
+      left: rems(12);
+    }
+
+    img {
+      border-radius: 12px;
+      width: 100%;
+
+      object-fit: cover;
+    }
+  }
+
+  .body {
+    .subtitle {
+      @extend %smallFontSize;
+      color: $color-grey-57;
+
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
+
+      &::after {
+        @include fadeEffect(
+          $position: right,
+          $width: rems(30),
+          $color: $color-white
+        );
+      }
+    }
+  }
+
+  .footer {
+    .prices {
+      font-weight: 600;
+
+      .price {
+        @extend %h4;
+      }
+      .old-price {
+        @extend %smallFontSize;
+        color: $color-grey-a9;
+        text-decoration: line-through;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@import '../../styles/base/functions';
+@import '../../styles/base/config';
+@import '../../styles/base/extends';
+@import '../../styles/base/mixins';
+
+.highlight {
+  position: relative;
+
+  min-height: rems(400);
+  min-width: 40%;
+  width: 100%;
+
+  @include display_flex($direction: column, $justify: flex-end);
+
+  color: $color-white;
+
+  background-position: center;
+
+  .tags {
+    @include display_flex($align: center, $wrap: wrap, $gap: rems(8));
+
+    position: absolute;
+    top: rems(24);
+    left: rems(24);
+  }
+
+  .body {
+    @include display_flex(
+      $direction: column,
+      $justify: flex-end,
+      $gap: rems(8)
+    );
+    height: 50%;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+
+    padding: rems(24);
+  }
+
+  .title {
+    h3 {
+      a {
+        color: $color-white;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .info {
+    @include display_flex($align: center, $gap: rems(16));
+
+    font-family: $ff-open;
+    @extend %smallFontSize;
+    white-space: nowrap;
+
+    .author {
+      @include display_flex($align: center, $gap: rems(8));
+
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+}

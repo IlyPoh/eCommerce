@@ -1,0 +1,134 @@
+.btn {
+  @include display_flex($align: center, $gap: rems(6));
+
+  font-weight: 700;
+
+  border-radius: 12px;
+
+  box-shadow: none;
+
+  transition: border $shortTransition, background $shortTransition,
+    color $shortTransition, box-shadow $shortTransition,
+    text-shadow $shortTransition, filter $shortTransition;
+
+  a {
+    @include display_flex($align: center, $gap: rems(6));
+
+    color: $color-main;
+  }
+
+  &[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  i[class^='icon-'] {
+    font-weight: 700;
+  }
+
+  &-large {
+    padding: rems(17) rems(48);
+  }
+
+  &-medium {
+    padding: rems(12) rems(16);
+  }
+
+  &-small {
+    padding: rems(7) rems(12);
+  }
+
+  &-green {
+    color: $color-white;
+    background: $color-green-6a;
+    border: 2px solid $color-green-46;
+
+    &:hover {
+      background: $color-green-46;
+    }
+  }
+
+  &-no-bg {
+    color: $color-main;
+    background: none;
+    border: 2px solid $color-green-92;
+
+    i[class^='icon-'] {
+      color: $color-green-6a;
+    }
+
+    &:hover {
+      background: $color-white-transparent;
+      border-color: $color-green-46;
+    }
+  }
+
+  &-grey {
+    color: $color-main;
+    border: none;
+    background: $color-grey-f5;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  &-transparent {
+    color: $color-main;
+    border: none;
+    background: none;
+
+    i[class^='icon-'] {
+      color: $color-green-6a;
+    }
+
+    &:hover {
+      background: $color-grey-eb;
+    }
+  }
+
+  &-icon {
+    font-size: rems(20);
+
+    background: none;
+
+    padding: rems(2);
+
+    border: none;
+    border-radius: 50%;
+
+    &:hover {
+      background: $color-main;
+      color: $color-white;
+    }
+  }
+
+  &-search {
+    font-size: rems(16);
+
+    padding: 0;
+
+    i[class^='icon-'] {
+      color: $color-main;
+    }
+
+    &:hover {
+      text-shadow: 0 0 2px;
+      cursor: pointer;
+    }
+  }
+
+  &-shadow {
+    &:hover {
+      box-shadow: 0px 0px 5px 2px $color-shadow-05;
+    }
+  }
+
+  &-small-gap {
+    gap: rems(2);
+
+    a {
+      gap: rems(2);
+    }
+  }
+}
