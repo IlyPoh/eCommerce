@@ -51,7 +51,6 @@ export const PageHeadline: React.FC<Partial<IPageHeadlineProps>> = () => {
         {renderViewButton('icon-layout-square-grid', 'Grid view', gridView)}
         {renderViewButton('icon-layout-sections', 'List view', !gridView)}
         <Counter />
-        <Counter />
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import { ICategory } from '@/types/store';
 
 // styles
 import styles from './NavBarLink.module.scss';
+import { Link } from 'react-router-dom';
 
 //  TYPES
 interface INavBarLinkProps {
@@ -32,14 +33,21 @@ export const NavBarLink: React.FC<INavBarLinkProps> = ({ category }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <button className="btn btn-transparent btn-small-gap">
-        {category.name} <i className="icon-chevron-down" />
-      </button>
+      <Link
+        to={`/products/${category.name}`}
+        className='btn btn-transparent btn-small-gap'
+      >
+        {category.name} <i className='icon-chevron-down' />
+      </Link>
       {category.subcategories && (
         <div className={open ? styles['dropdown'] : styles['dropdown-hidden']}>
           <ul>
-            {category.subcategories.map((subcategory) => (
-              <li key={subcategory.id}>{subcategory.name}</li>
+            {category.subcategories.map(subcategory => (
+              <li key={subcategory.id}>
+                <Link to={`/products/${category.name}/${subcategory.name}`}>
+                  {subcategory.name}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
