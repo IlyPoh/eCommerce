@@ -29,7 +29,7 @@ const InfoLinks: React.FC<{ to: string; text: string; className?: string }> = ({
 export const Header: React.FC = () => {
   return (
     <header className={styles['header']}>
-      <div className="container">
+      <div className='container'>
         <section className={`section-medium ${styles['info']}`}>
           <div className={styles['left']}>
             <InfoLinks
@@ -39,12 +39,12 @@ export const Header: React.FC = () => {
             <InfoLinks
               to={links.phone.link}
               text={links.phone.text}
-              className="no-color"
+              className='no-color'
             />
             <InfoLinks
               to={links.email.link}
               text={links.email.text}
-              className="no-color"
+              className='no-color'
             />
           </div>
           <div className={styles['right']}>
@@ -55,28 +55,28 @@ export const Header: React.FC = () => {
         </section>
         <div className={styles['content']}>
           <div className={styles['logo']}>
-            <Link to="/">
-              <img src={logo} alt="logo" />
+            <Link to='/'>
+              <img src={logo} alt='logo' />
             </Link>
           </div>
           <div className={styles['input']}>
             <div className={styles['search-filter']}>
-              <button className="btn btn-transparent">
+              <button className='btn btn-transparent'>
                 All Categories{' '}
                 <i className={`${styles['icon-green']} icon-chevron-down`}></i>
               </button>
             </div>
-            <input type="text" placeholder="Search Products, categories ..." />
-            <button className="btn btn-transparent btn-search">
-              <i className="icon-actions-search" />
+            <input type='text' placeholder='Search Products, categories ...' />
+            <button className='btn btn-transparent btn-search'>
+              <i className='icon-actions-search' />
             </button>
           </div>
           <div className={styles['buttons']}>
-            <button className="btn btn-icon">
-              <i className="icon-actions-user" />
+            <button className='btn btn-icon'>
+              <i className='icon-actions-user' />
             </button>
-            <button className="btn btn-icon">
-              <i className="icon-ecommerce-basket" />
+            <button className='btn btn-icon'>
+              <i className='icon-ecommerce-basket' />
             </button>
           </div>
         </div>

@@ -24,7 +24,7 @@ export const store = configureStore({
     reviewsState: reviewSlice,
     [storeApi.reducerPath]: storeApi.reducer,
   },
-  middleware: (getDefaultMiddleware) => {
+  middleware: getDefaultMiddleware => {
     return getDefaultMiddleware().concat([storeApi.middleware]);
   },
 });

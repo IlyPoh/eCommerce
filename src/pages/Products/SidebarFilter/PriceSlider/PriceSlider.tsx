@@ -66,20 +66,20 @@ export const PriceSlider: React.FC<IPriceSliderProps> = ({
               <div className={styles['inputs-item']}>
                 <div className={styles['inputs-title']}>Min</div>
                 <input
-                  type="number"
-                  id="first-slider-label"
+                  type='number'
+                  id='first-slider-label'
                   value={minPrice}
-                  onChange={(e) => handleInputChange(e, true)}
+                  onChange={e => handleInputChange(e, true)}
                 />
               </div>
               <span>-</span>
               <div className={styles['inputs-item']}>
                 <div className={styles['inputs-title']}>Max</div>
                 <input
-                  type="number"
-                  id="second-slider-label"
+                  type='number'
+                  id='second-slider-label'
                   value={maxPrice}
-                  onChange={(e) => handleInputChange(e, false)}
+                  onChange={e => handleInputChange(e, false)}
                 />
               </div>
             </div>

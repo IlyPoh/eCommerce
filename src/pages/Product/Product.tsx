@@ -19,13 +19,13 @@ import styles from './Product.module.scss';
 // FUNCTIONS
 // renders
 const renderImages = (images: string[]) => {
-  return images.map((image) => (
-    <img key={image} className={styles['image']} src={image} alt="product" />
+  return images.map(image => (
+    <img key={image} className={styles['image']} src={image} alt='product' />
   ));
 };
 
 const renderDiscountTag = (discount: number) => {
-  return <span className="tag tag-green">-{discount}%</span>;
+  return <span className='tag tag-green'>-{discount}%</span>;
 };
 
 const renderRating = (ratingValue: number | null, ratingCount: number) => {
@@ -176,10 +176,10 @@ const renderQuantity = (
   return (
     <div className={styles['quantity']}>
       <input
-        type="number"
+        type='number'
         value={currentQuantity}
-        onChange={(e) => onChangeHandler(e)}
-        min="1"
+        onChange={e => onChangeHandler(e)}
+        min='1'
       />
       <button
         className={`btn btn-small ${styles['button']}`}
@@ -193,8 +193,8 @@ const renderQuantity = (
 };
 
 const renderAddToCart = () => (
-  <button className="btn btn-medium btn-green">
-    <i className="icon-actions-add-simple"></i> Add to cart
+  <button className='btn btn-medium btn-green'>
+    <i className='icon-actions-add-simple'></i> Add to cart
   </button>
 );
 

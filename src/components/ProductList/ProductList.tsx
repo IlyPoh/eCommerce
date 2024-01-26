@@ -20,7 +20,7 @@ export const ProductList: React.FC<IProductListProps> = ({
 
   return (
     <div className={styles['list']}>
-      {renderedList.map((item) => (
+      {renderedList.map(item => (
         <ProductItem key={item} id={item} />
       ))}
     </div>

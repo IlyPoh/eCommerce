@@ -29,7 +29,7 @@ import styles from './HeaderFilters.module.scss';
 // COMPONENT
 export const HeaderFilters: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { sort, filters } = useAppSelector((state) => state.productState);
+  const { sort, filters } = useAppSelector(state => state.productState);
   const [countrySelected, setCountrySelected] = useState(THIRD.value);
   const [countrySelectedNumber, setCountrySelectedNumber] = useState(
     THIRD.count
@@ -61,14 +61,14 @@ export const HeaderFilters: React.FC = () => {
           type={ICheckboxType.RADIO}
           onChange={() => dispatch(setSort(ESort.POPULAR))}
           checked={sort === ESort.POPULAR}
-          label="Most popular"
+          label='Most popular'
         />
         <CheckboxButton
           value={ESort.CHEAPEST}
           type={ICheckboxType.RADIO}
           onChange={() => dispatch(setSort(ESort.CHEAPEST))}
           checked={sort === ESort.CHEAPEST}
-          label="Cheapest"
+          label='Cheapest'
         />
       </div>
 
@@ -77,10 +77,10 @@ export const HeaderFilters: React.FC = () => {
           value={FIRST.value}
           checked={filters?.tags.includes(FIRST.value)}
           type={ICheckboxType.CHECKBOX}
-          onChange={(e) => handleFilter(e.target.value)}
+          onChange={e => handleFilter(e.target.value)}
         >
           <span>{firstLettertoUppercase(FIRST.value)}</span>
-          <div className="tag tag-transparent">{FIRST.count}</div>
+          <div className='tag tag-transparent'>{FIRST.count}</div>
         </CheckboxButton>
       </div>
 
@@ -89,11 +89,11 @@ export const HeaderFilters: React.FC = () => {
           value={SECOND.value}
           checked={filters?.tags.includes(SECOND.value)}
           type={ICheckboxType.CHECKBOX}
-          onChange={(e) => handleFilter(e.target.value)}
+          onChange={e => handleFilter(e.target.value)}
           label={firstLettertoUppercase(SECOND.value)}
         >
           <span>{firstLettertoUppercase(SECOND.value)}</span>
-          <div className="tag tag-transparent">{SECOND.count}</div>
+          <div className='tag tag-transparent'>{SECOND.count}</div>
         </CheckboxButton>
       </div>
 
@@ -102,11 +102,11 @@ export const HeaderFilters: React.FC = () => {
           value={countrySelected}
           checked={filters.country === countrySelected}
           type={ICheckboxType.CHECKBOX}
-          onChange={(e) => handleCountry(e.target.value)}
+          onChange={e => handleCountry(e.target.value)}
           label={firstLettertoUppercase(THIRD.value)}
         >
           <span>{countrySelected}</span>
-          <div className="tag tag-transparent">{countrySelectedNumber}</div>
+          <div className='tag tag-transparent'>{countrySelectedNumber}</div>
         </CheckboxButton>
 
         <div className={styles['selector']}>
@@ -127,7 +127,7 @@ export const HeaderFilters: React.FC = () => {
                   onClick={() => handleSelector(country, value)}
                 >
                   {country}
-                  <div className="tag tag-transparent">{value}</div>
+                  <div className='tag tag-transparent'>{value}</div>
                 </button>
               </li>
             ))}

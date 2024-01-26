@@ -50,7 +50,7 @@ export const Article: React.FC = () => {
   );
 
   return (
-    <div className="container">
+    <div className='container'>
       <section>
         <div
           className={styles['header']}
@@ -84,12 +84,12 @@ export const Article: React.FC = () => {
           <div className={styles['tags']}>
             <h4>Tags</h4>
             <div className={styles['list']}>
-              {tags?.map((tag) => (
+              {tags?.map(tag => (
                 <Link
-                  to="/blog"
+                  to='/blog'
                   state={{ tags: [tag] }}
                   key={tag}
-                  className="tag tag-green"
+                  className='tag tag-green'
                 >
                   {tag}
                 </Link>
@@ -97,8 +97,8 @@ export const Article: React.FC = () => {
             </div>
           </div>
           <div className={styles['back']}>
-            <Link className="btn" to="/blog">
-              <i className="icon-directions-left"></i> Back to blog
+            <Link className='btn' to='/blog'>
+              <i className='icon-directions-left'></i> Back to blog
             </Link>
           </div>
         </aside>

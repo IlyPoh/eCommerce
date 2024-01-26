@@ -28,13 +28,13 @@ export const SidebarFilter: React.FC = () => {
   const dispatch = useAppDispatch();
   const { category, subcategory } = useParams();
   const { categories, subcategories, brands } = useAppSelector(
-    (state) => state.productState
+    state => state.productState
   );
-  const { total } = useAppSelector((state) => state.appState);
+  const { total } = useAppSelector(state => state.appState);
   const contentRefBrands = useRef<HTMLDivElement>(null);
   const [brandsExpanded, setBrandsExpanded] = useState(false);
   const [contentHeightBrands, setContentHeightBrands] = useState(0);
-  const filters = useAppSelector((state) => state.productState.filters);
+  const filters = useAppSelector(state => state.productState.filters);
   const [brandsToRender, setBrandsToRender] = useState<string[]>(
     filters.brands
   );
@@ -60,13 +60,13 @@ export const SidebarFilter: React.FC = () => {
   const handleBrands = (brand: string) => {
     if (!brandsToRender.includes(brand))
       setBrandsToRender([...brandsToRender, brand]);
-    else setBrandsToRender(brandsToRender.filter((item) => item !== brand));
+    else setBrandsToRender(brandsToRender.filter(item => item !== brand));
   };
 
   const handleRating = (rating: number) => {
     if (!ratingsToRender.includes(rating))
       setRatingsToRender([...ratingsToRender, rating]);
-    else setRatingsToRender(ratingsToRender.filter((item) => item !== rating));
+    else setRatingsToRender(ratingsToRender.filter(item => item !== rating));
   };
 
   const handleReset = () => {
@@ -96,7 +96,7 @@ export const SidebarFilter: React.FC = () => {
       <section>
         <h4>Categories</h4>
         <div className={styles['block']}>
-          {items.map((item) => (
+          {items.map(item => (
             <Link
               key={item.id}
               className={styles['item']}
@@ -105,7 +105,7 @@ export const SidebarFilter: React.FC = () => {
               }`}
             >
               <span>{item.name}</span>
-              <div className="tag tag-green">{item.productsCount}</div>
+              <div className='tag tag-green'>{item.productsCount}</div>
             </Link>
           ))}
         </div>
@@ -128,10 +128,10 @@ export const SidebarFilter: React.FC = () => {
               : defaultHeight,
           }}
         >
-          {brands?.map((item) => (
+          {brands?.map(item => (
             <CheckboxButton
               key={item}
-              onChange={(e) => handleBrands(e.target.value)}
+              onChange={e => handleBrands(e.target.value)}
               value={item}
               checked={brandsToRender.includes(item)}
               type={ICheckboxType.CHECKBOX}
@@ -143,7 +143,7 @@ export const SidebarFilter: React.FC = () => {
         {!brandsExpanded ? (
           <div className={styles['button']}>
             <button
-              className="btn btn-small btn-no-bg"
+              className='btn btn-small btn-no-bg'
               onClick={() => setBrandsExpanded(!brandsExpanded)}
             >
               See more
@@ -180,7 +180,7 @@ export const SidebarFilter: React.FC = () => {
       <section className={styles['rating']}>
         <div className={styles['block']}>
           <h4>Rating</h4>
-          {ratingValues.map((value) => (
+          {ratingValues.map(value => (
             <div className={styles['item']} key={value}>
               <CheckboxButton
                 onChange={() => handleCheckboxChange(value)}
@@ -198,7 +198,7 @@ export const SidebarFilter: React.FC = () => {
   };
 
   const subcategoriesInCategory = categories?.filter(
-    (item) => item.name === category
+    item => item.name === category
   )[0]?.subcategories;
 
   if (!categories || !subcategories) return null;
@@ -217,7 +217,7 @@ export const SidebarFilter: React.FC = () => {
       />
       <section className={styles['buttons']}>
         <button
-          className="btn btn-small btn-green"
+          className='btn btn-small btn-green'
           onClick={() => handleApplyFilters()}
         >
           Apply

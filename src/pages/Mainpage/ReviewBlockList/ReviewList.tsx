@@ -42,8 +42,8 @@ export const ReviewList: React.FC<IReviewListProps> = ({
           slideToClickedSlide
           slidesPerView={'auto'}
         >
-          <div className="swipper-container">
-            {data.map((item) => (
+          <div className='swipper-container'>
+            {data.map(item => (
               <SwiperSlide key={item.id}>
                 <ReviewItem data={item} />
               </SwiperSlide>
@@ -56,7 +56,7 @@ export const ReviewList: React.FC<IReviewListProps> = ({
 
   return (
     <>
-      <div className="container">
+      <div className='container'>
         <BlockHeadline title={title} link={link} />
       </div>
 

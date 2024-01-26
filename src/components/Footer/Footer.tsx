@@ -13,10 +13,10 @@ import styles from './Footer.module.scss';
 export const Footer: React.FC = () => {
   return (
     <footer className={styles['footer']}>
-      <div className="container">
+      <div className='container'>
         <div className={styles['sections']}>
           <div className={styles['columns']}>
-            {links.map((column) => (
+            {links.map(column => (
               <FooterColumn column={column} key={column.title} />
             ))}
           </div>

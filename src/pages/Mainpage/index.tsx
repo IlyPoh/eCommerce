@@ -18,9 +18,9 @@ import {
 
 // COMPONENT
 export const Mainpage: React.FC = () => {
-  const categoryData = useAppSelector((state) => state.productState.categories);
-  const { newsData } = useAppSelector((state) => state.newsState.news);
-  const reviewData = useAppSelector((state) => state.reviewsState.reviews);
+  const categoryData = useAppSelector(state => state.productState.categories);
+  const { newsData } = useAppSelector(state => state.newsState.news);
+  const reviewData = useAppSelector(state => state.reviewsState.reviews);
 
   const firstSidebarData: ISidebarLinksProps = {
     data: firstLinks,
@@ -48,15 +48,15 @@ export const Mainpage: React.FC = () => {
   return (
     <>
       {categoryData && (
-        <div className="container">
-          <section className="section">
+        <div className='container'>
+          <section className='section'>
             <TwoBlocks categoryData={categoryData} />
           </section>
         </div>
       )}
       {firstSidebarData && (
-        <div className="container">
-          <section className="section">
+        <div className='container'>
+          <section className='section'>
             <BlockWithProducts
               sidebarData={firstSidebarData}
               productList={{ list: [1, 2, 3] }}
@@ -65,8 +65,8 @@ export const Mainpage: React.FC = () => {
         </div>
       )}
       {secondSidebarData && (
-        <div className="container">
-          <section className="section">
+        <div className='container'>
+          <section className='section'>
             <BlockWithProducts
               sidebarData={secondSidebarData}
               productList={{ list: [5, 7, 16] }}
@@ -75,30 +75,30 @@ export const Mainpage: React.FC = () => {
         </div>
       )}
       {reviewData && (
-        <section className="section">
+        <section className='section'>
           <ReviewList
             data={reviewData}
-            title="Our customers says"
+            title='Our customers says'
             link={{ icon: 'icon-chevron-right' }}
           />
         </section>
       )}
-      <div className="container">
-        <section className="section">
+      <div className='container'>
+        <section className='section'>
           <BlockHeadline link={{ link: '/products' }} />
           <ProductList list={[3, 5, 1, 20]} limit={4} />
         </section>
       </div>
-      <div className="container">
-        <section className="section">
+      <div className='container'>
+        <section className='section'>
           <BlockHeadline
-            title="Read our Blog posts"
+            title='Read our Blog posts'
             link={{ link: '/blog', text: 'Go to Blog' }}
           />
           {newsData.length ? (
             <BlogBlock data={newsData} />
           ) : (
-            <div className="text-center">
+            <div className='text-center'>
               <h3>No Articles</h3>
             </div>
           )}

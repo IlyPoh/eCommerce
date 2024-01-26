@@ -38,7 +38,7 @@ export const BannerBlock: React.FC<Partial<IBannerBlockProps>> = ({
           </div>
           <h3>{title ?? 'Space for heading'}</h3>
         </div>
-        <Link className="btn btn-medium btn-no-bg" to={link?.link ?? '/'}>
+        <Link className='btn btn-medium btn-no-bg' to={link?.link ?? '/'}>
           {linkText}
           <i className={link?.icon}></i>
         </Link>

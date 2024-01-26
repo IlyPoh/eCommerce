@@ -24,7 +24,7 @@ import './styles/app.scss';
 
 // COMPONENT
 function App(): React.JSX.Element {
-  const { error, loading } = useAppSelector((state) => state.appState);
+  const { error, loading } = useAppSelector(state => state.appState);
 
   useFetchCategories();
   useFetchTags();
@@ -34,7 +34,7 @@ function App(): React.JSX.Element {
       {error && <ErrorBox error={error} />}
       {loading && <Loading />}
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path='/' element={<Layout />}>
           {/* Main page */}
           <Route index element={<Mainpage />} />
 
@@ -43,25 +43,25 @@ function App(): React.JSX.Element {
             {/* Pages this Headline and Pagination */}
             <Route element={<HeadlineAndPaginationLayout />}>
               {/* Category */}
-              <Route path="/products">
-                <Route path=":category?">
-                  <Route path=":subcategory?" element={<Products />} />
+              <Route path='/products'>
+                <Route path=':category?'>
+                  <Route path=':subcategory?' element={<Products />} />
                 </Route>
               </Route>
 
               {/* Blog */}
-              <Route path="/blog">
-                <Route path=":category?" element={<Blog />} />
+              <Route path='/blog'>
+                <Route path=':category?' element={<Blog />} />
               </Route>
             </Route>
 
             {/* Product */}
-            <Route path="/products/:category/:subcategory">
-              <Route path=":productId" element={<Product />} />
+            <Route path='/products/:category/:subcategory'>
+              <Route path=':productId' element={<Product />} />
             </Route>
 
             {/* Article */}
-            <Route path="/blog/:category/:articleId" element={<Article />} />
+            <Route path='/blog/:category/:articleId' element={<Article />} />
           </Route>
         </Route>
       </Routes>

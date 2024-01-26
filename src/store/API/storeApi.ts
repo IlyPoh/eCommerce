@@ -39,12 +39,12 @@ export const storeApi = createApi({
     'Total',
   ],
   baseQuery: fetchBaseQuery({ baseUrl: STORE_API_URL }),
-  endpoints: (builder) => ({
+  endpoints: builder => ({
     getProducts: builder.query<
       IProductsData,
       Partial<IProductsEndpointOptions>
     >({
-      query: (searchOptions) =>
+      query: searchOptions =>
         buildProductQueryString(ENDPOINTS.products, searchOptions),
       providesTags: ['Products'],
     }),
@@ -61,7 +61,7 @@ export const storeApi = createApi({
       providesTags: ['Reviews'],
     }),
     getNews: builder.query<IArticle[], Partial<INewsEndpointOptions>>({
-      query: (searchOptions) =>
+      query: searchOptions =>
         buildNewsQueryString(ENDPOINTS.news, searchOptions),
       providesTags: ['News'],
     }),
@@ -70,7 +70,7 @@ export const storeApi = createApi({
       providesTags: ['News Categories'],
     }),
     getArticle: builder.query<IArticle, string | number>({
-      query: (id) => `${ENDPOINTS.news}/${id}`,
+      query: id => `${ENDPOINTS.news}/${id}`,
       providesTags: ['Article'],
     }),
     getBrands: builder.query<string[], void>({

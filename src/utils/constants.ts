@@ -33,7 +33,7 @@ export const ITEMS_PER_PAGE: IItemsPerPage = {
 };
 
 // apis
-export const STORE_API_URL = env.VITE_URL;
+export const STORE_API_URL = `${env.VITE_URL}:${env.VITE_SERVER_PORT}`;
 
 export const STORE_API_ENDPOINTS: IStoreApiUrls = {
   categories: env.VITE_ENDPOINT_CATEGORIES,

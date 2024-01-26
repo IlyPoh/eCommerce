@@ -16,17 +16,17 @@ server.use(middlewares);
 // FILTERS
 // general filters
 const filterById = (items, id) => {
-  return id ? items.filter((item) => item.id == id) : items;
+  return id ? items.filter(item => item.id == id) : items;
 };
 
 const filterByCategory = (items, category) => {
-  return category ? items.filter((item) => item.category == category) : items;
+  return category ? items.filter(item => item.category == category) : items;
 };
 
 const filterByTags = (items, tags) => {
   if (!tags) return items;
   tags = tags ? tags.split(',') : [];
-  return items.filter((items) => tags.every((tag) => items.tags.includes(tag)));
+  return items.filter(items => tags.every(tag => items.tags.includes(tag)));
 };
 
 const filterByLimit = (items, limit) => {
@@ -46,7 +46,7 @@ const filterByPage = (items, limit, page) => {
 // PRODUCT FILTERS
 const filterByName = (products, name) => {
   return name
-    ? products.filter((product) =>
+    ? products.filter(product =>
         product.name.toLowerCase().includes(name.toLowerCase())
       )
     : products;
@@ -54,20 +54,20 @@ const filterByName = (products, name) => {
 
 const filterBySubcategory = (products, subcategory) => {
   return subcategory
-    ? products.filter((product) => product.subcategory == subcategory)
+    ? products.filter(product => product.subcategory == subcategory)
     : products;
 };
 
 const filterByBrands = (products, brands) => {
   if (!brands) return products;
   brands = brands.split(',');
-  return products.filter((product) => brands.includes(product.brand));
+  return products.filter(product => brands.includes(product.brand));
 };
 
 const filterByCountry = (products, country) => {
   return country
     ? products.filter(
-        (product) => product.country.toLowerCase() === country.toLowerCase()
+        product => product.country.toLowerCase() === country.toLowerCase()
       )
     : products;
 };
@@ -77,7 +77,7 @@ const filterByPriceRange = (products, minPrice, maxPrice) => {
     return products;
   }
 
-  return products.filter((product) => {
+  return products.filter(product => {
     const finalPrice = product.discount
       ? product.discount.final_price
       : product.price;
@@ -90,10 +90,10 @@ const filterByPriceRange = (products, minPrice, maxPrice) => {
 
 const filterByRatings = (products, ratings) => {
   if (!ratings) return products;
-  const ratingsArray = ratings.split(',').map((rating) => parseInt(rating));
-  return products.filter((product) =>
+  const ratingsArray = ratings.split(',').map(rating => parseInt(rating));
+  return products.filter(product =>
     ratingsArray.some(
-      (rating) => product.rating >= rating && product.rating < rating + 1
+      rating => product.rating >= rating && product.rating < rating + 1
     )
   );
 };
@@ -108,14 +108,14 @@ const filterBySort = (products, sort) => {
 const filterByDateRange = (news, gte, lte) => {
   if (gte && lte) {
     return news.filter(
-      (item) =>
+      item =>
         new Date(item.publishedAt) >= new Date(gte) &&
         new Date(item.publishedAt) <= new Date(lte)
     );
   } else if (gte) {
-    return news.filter((item) => new Date(item.publishedAt) >= new Date(gte));
+    return news.filter(item => new Date(item.publishedAt) >= new Date(gte));
   } else if (lte) {
-    return news.filter((item) => new Date(item.publishedAt) <= new Date(lte));
+    return news.filter(item => new Date(item.publishedAt) <= new Date(lte));
   } else {
     return news;
   }

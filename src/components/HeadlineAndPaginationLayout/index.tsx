@@ -10,13 +10,13 @@ import { PageHeadline } from '@/components/PageHeadline/PageHeadline';
 export const HeadlineAndPaginationLayout: React.FC = () => {
   return (
     <>
-      <div className="container">
+      <div className='container'>
         <PageHeadline />
       </div>
 
       <Outlet />
 
-      <div className="container">
+      <div className='container'>
         <Pagination />
       </div>
     </>

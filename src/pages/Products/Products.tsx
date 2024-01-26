@@ -40,12 +40,10 @@ export const Products: React.FC = () => {
   const { category, subcategory } = useParams();
   const { state } = useLocation();
   const { products, sort, filters } = useAppSelector(
-    (state) => state.productState
+    state => state.productState
   );
-  const { currentPage, itemsToShow } = useAppSelector(
-    (state) => state.pageState
-  );
-  const gridView = useAppSelector((state) => state.appState.gridView);
+  const { currentPage, itemsToShow } = useAppSelector(state => state.pageState);
+  const gridView = useAppSelector(state => state.appState.gridView);
 
   const { productsData, totalPages } = products;
   const pageTitle = subcategory ?? category ?? 'Products';
@@ -108,13 +106,13 @@ export const Products: React.FC = () => {
         <div className={styles['text']}>Applied Filters:</div>
         {state.tags.map((tag: string) => (
           <Link
-            className="tag tag-green"
+            className='tag tag-green'
             key={tag}
             to={productsLink}
             state={{ ...state, tags: handleRemoveFilter(state.tags, tag) }}
           >
             {firstLettertoUppercase(tag)}
-            <i className="icon-actions-close-simple"></i>
+            <i className='icon-actions-close-simple'></i>
           </Link>
         ))}
       </>
@@ -150,8 +148,8 @@ export const Products: React.FC = () => {
   };
 
   return (
-    <div className="container">
-      <section className="section-medium">
+    <div className='container'>
+      <section className='section-medium'>
         <HeaderFilters />
         <div className={styles['filter']}>
           {state?.tags?.length && renderFilters()}

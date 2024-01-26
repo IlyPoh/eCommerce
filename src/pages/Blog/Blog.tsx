@@ -40,12 +40,12 @@ export const Blog: React.FC = () => {
   const { state } = useLocation();
 
   const { newsData, totalPages } = useAppSelector(
-    (state) => state.newsState.news
+    state => state.newsState.news
   );
 
-  const newsCategories = useAppSelector((state) => state.newsState.categories);
-  const gridView = useAppSelector((state) => state.appState.gridView);
-  const itemsPerPage = useAppSelector((state) => state.pageState.itemsPerPage);
+  const newsCategories = useAppSelector(state => state.newsState.categories);
+  const gridView = useAppSelector(state => state.appState.gridView);
+  const itemsPerPage = useAppSelector(state => state.pageState.itemsPerPage);
   const indexesToRenderHightlight = { first: 0, second: 2 };
 
   const pageTitle = category ?? 'Blog';
@@ -93,12 +93,12 @@ export const Blog: React.FC = () => {
             <div className={styles['text']}>Filtered by date:</div>
             <div className={styles['date']}>
               <Link
-                to="/blog"
+                to='/blog'
                 state={{ ...state, year: null, month: null, page: 1 }}
-                className="tag tag-green"
+                className='tag tag-green'
               >
                 {MONTHS[Number(state?.month) - 1]} {state?.year}
-                <i className="icon-actions-close-simple"></i>
+                <i className='icon-actions-close-simple'></i>
               </Link>
             </div>
           </>
@@ -109,7 +109,7 @@ export const Blog: React.FC = () => {
             <div className={styles['text']}>Filtered by tags:</div>
             {state?.tags.map((tag: string) => (
               <Link
-                className="tag tag-green"
+                className='tag tag-green'
                 key={tag}
                 to={blogLink}
                 state={{
@@ -119,7 +119,7 @@ export const Blog: React.FC = () => {
                 }}
               >
                 {firstLettertoUppercase(tag)}
-                <i className="icon-actions-close-simple"></i>
+                <i className='icon-actions-close-simple'></i>
               </Link>
             ))}
           </>
@@ -166,7 +166,7 @@ export const Blog: React.FC = () => {
   const renderNoArticlesMessage = () => {
     return (
       <div className={styles['content']}>
-        <div className="text-center">
+        <div className='text-center'>
           <h2>No Articles</h2>
         </div>
       </div>
@@ -174,7 +174,7 @@ export const Blog: React.FC = () => {
   };
 
   return (
-    <div className="container">
+    <div className='container'>
       {(state?.year && state?.month) || state?.tags?.length
         ? renderFilter()
         : null}
@@ -182,11 +182,11 @@ export const Blog: React.FC = () => {
       <section className={styles['body']}>
         <aside>
           {MONTHS_LINKS && (
-            <SidebarLinks data={MONTHS_LINKS} title="Archives" />
+            <SidebarLinks data={MONTHS_LINKS} title='Archives' />
           )}
           {newsCategories && (
             <div className={styles['categories']}>
-              <SidebarLinks data={newsCategories} title="Category" />
+              <SidebarLinks data={newsCategories} title='Category' />
             </div>
           )}
           <div className={styles['subscription']}>

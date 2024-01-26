@@ -23,8 +23,8 @@ interface IPageHeadlineProps {
 // COMPONENT
 export const PageHeadline: React.FC<Partial<IPageHeadlineProps>> = () => {
   const dispatch = useAppDispatch();
-  const pageTitle = useAppSelector((state) => state.pageState.pageTitle);
-  const gridView = useAppSelector((state) => state.appState.gridView);
+  const pageTitle = useAppSelector(state => state.pageState.pageTitle);
+  const gridView = useAppSelector(state => state.appState.gridView);
 
   const handleGridView = () => {
     dispatch(setGridView(!gridView));

@@ -21,7 +21,7 @@ import styles from './Pagination.module.scss';
 export const Pagination: React.FC = () => {
   const dispatch = useAppDispatch();
   const { state } = useLocation();
-  const { total } = useAppSelector((state) => state.appState);
+  const { total } = useAppSelector(state => state.appState);
   const {
     pageType,
     currentPage,
@@ -29,7 +29,7 @@ export const Pagination: React.FC = () => {
     pageCount,
     itemsPerPage,
     itemsToShow,
-  } = useAppSelector((state) => state.pageState);
+  } = useAppSelector(state => state.pageState);
   const getClassNames = (index: number): string => {
     if (index === currentPage) return `${styles['link']} ${styles['active']}`;
     else return styles['link'];
@@ -52,7 +52,7 @@ export const Pagination: React.FC = () => {
     paginationLinks.push(createPaginationLink(1));
 
     if (currentPage > 3) {
-      paginationLinks.push(<span key="ellipsis1">...</span>);
+      paginationLinks.push(<span key='ellipsis1'>...</span>);
     }
 
     const start = Math.max(currentPage - 1, 2);
@@ -63,7 +63,7 @@ export const Pagination: React.FC = () => {
     }
 
     if (currentPage < pageCount - 2) {
-      paginationLinks.push(<span key="ellipsis2">...</span>);
+      paginationLinks.push(<span key='ellipsis2'>...</span>);
     }
 
     if (
@@ -82,9 +82,9 @@ export const Pagination: React.FC = () => {
       <Link
         to={pageURL}
         state={{ ...state, page: currentPage - 1 }}
-        className="btn btn-medium btn-green"
+        className='btn btn-medium btn-green'
       >
-        <i className="icon-chevron-left"></i> Previous page
+        <i className='icon-chevron-left'></i> Previous page
       </Link>
     ) : null;
   };
@@ -94,9 +94,9 @@ export const Pagination: React.FC = () => {
       <Link
         to={pageURL}
         state={{ ...state, page: currentPage + 1 }}
-        className="btn btn-medium btn-green"
+        className='btn btn-medium btn-green'
       >
-        Next page <i className="icon-chevron-right"></i>
+        Next page <i className='icon-chevron-right'></i>
       </Link>
     ) : null;
   };
@@ -108,9 +108,9 @@ export const Pagination: React.FC = () => {
     return currentPage < pageCount ? (
       <button
         onClick={() => dispatch(setItemsToShow(itemsToShow + itemsPerPage))}
-        className="btn btn-medium btn-green"
+        className='btn btn-medium btn-green'
       >
-        Show more products<i className="icon-chevron-down"></i>
+        Show more products<i className='icon-chevron-down'></i>
       </button>
     ) : null;
   };
@@ -125,7 +125,7 @@ export const Pagination: React.FC = () => {
   };
 
   return (
-    <section className="section-medium">
+    <section className='section-medium'>
       <div className={styles['block']}>
         <div className={styles['list']}>
           <span>Page:</span>

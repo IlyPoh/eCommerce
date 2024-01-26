@@ -9,7 +9,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs';
 export const BreadcrumbsLayout: React.FC = () => {
   return (
     <>
-      <div className="container">
+      <div className='container'>
         <Breadcrumbs />
       </div>
       <Outlet />

@@ -49,15 +49,15 @@ export const BlogItem: React.FC<IBlogItemProps> = ({
           src={article.urlToImage ?? placeholder}
           width={300}
           alt={article.title}
-          onError={(e) => (e.currentTarget.src = `${placeholder}`)}
+          onError={e => (e.currentTarget.src = `${placeholder}`)}
         />
       </Link>
       <div className={styles['body']}>
         {view === EView.GRID && (
           <div className={styles['tags']}>
-            {article?.tags?.map((tag) => (
+            {article?.tags?.map(tag => (
               <Link
-                className="tag tag-green"
+                className='tag tag-green'
                 to={link}
                 state={{
                   ...state,

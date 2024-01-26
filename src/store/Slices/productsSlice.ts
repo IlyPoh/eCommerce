@@ -52,7 +52,7 @@ const productsSlice = createSlice({
     },
     removeTag: (state, action) => {
       state.filters.tags = state.filters.tags.filter(
-        (tag) => tag !== action.payload
+        tag => tag !== action.payload
       );
     },
     setCountry: (state, action) => {
@@ -61,7 +61,7 @@ const productsSlice = createSlice({
     setBrands: (state, action) => {
       state.brands = action.payload;
     },
-    resetFilters: (state) => {
+    resetFilters: state => {
       state.filters = initialState.filters;
     },
     setPrices: (state, action) => {
